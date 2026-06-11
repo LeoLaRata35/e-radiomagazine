@@ -125,9 +125,9 @@ body {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 16px;
-  min-height: 420px;
   position: relative;
   overflow: hidden;
+  height: 420px;
 }
 
 .hero-slide {
@@ -146,9 +146,7 @@ body {
 
 .hero-slide.active {
   opacity: 1;
-  position: relative;
   pointer-events: auto;
-  min-height: 420px;
 }
 
 .carousel-dots {
@@ -552,15 +550,11 @@ body {
   }
 
   .hero-featured {
-    min-height: 300px;
+    height: 300px;
   }
 
   .hero-slide {
     padding: 28px;
-  }
-
-  .hero-slide.active {
-    min-height: 300px;
   }
 
   .hero-slide h1 {
