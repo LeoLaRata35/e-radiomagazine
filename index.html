@@ -13,11 +13,11 @@
         <a href="#" class="logo"><img src="assets/E-Radio Magazine.png" alt="E-Radio Magazine" style="height: 40px; display: block;"></a>
         <nav class="nav">
           <ul>
-            <li><a href="#" class="active">Inicio</a></li>
-            <li><a href="#">Anime</a></li>
-            <li><a href="#">Videojuegos</a></li>
-            <li><a href="#">Manga</a></li>
-            <li><a href="#">Reviews</a></li>
+            <li><a href="#" class="active" data-filter="all">Inicio</a></li>
+            <li><a href="#" data-filter="anime">Anime</a></li>
+            <li><a href="#" data-filter="manga">Manga</a></li>
+            <li><a href="#" data-filter="reviews">Reviews</a></li>
+            <li><a href="#" data-filter="musica">Música</a></li>
           </ul>
         </nav>
         <button class="menu-toggle" id="menuToggle" aria-label="Menú">
@@ -30,12 +30,38 @@
   <section class="hero">
     <div class="container">
       <div class="hero-grid">
-        <article class="hero-featured" id="heroFeatured" style="background-image: linear-gradient(180deg, transparent 40%, rgba(15, 15, 19, 0.95) 100%), url('https://ogre.natalie.mu/media/news/comic/2026/0611/drstone_crymaxvisual.jpg?impolicy=twitter_card_face_crop'); background-size: cover; background-position: center;">
-          <div class="hero-category">Anime</div>
-          <h1>Dr.STONE: todos los astronautas reunidos en el visual final antes de la luna</h1>
-          <p>La cuenta regresiva para el clímax de Dr.STONE SCIENCE FUTURE está en marcha. El equipo reveló el "Climax Visual" que reúne a los cuatro héroes que enfrentarán al misterioso Why-man.</p>
-          <a href="articulos/articulo-drstone-climax.html" class="btn-read">Leer más →</a>
-        </article>
+        <div class="hero-featured" id="heroCarousel">
+          <div class="hero-slide active" data-slide="0" style="background-image: linear-gradient(180deg, rgba(15,15,19,0.5) 0%, rgba(15,15,19,0.8) 100%), url('https://ogre.natalie.mu/media/news/comic/2026/0611/drstone_crymaxvisual.jpg?impolicy=twitter_card_face_crop');">
+            <div class="hero-category">Anime</div>
+            <h1>Dr.STONE: todos los astronautas reunidos en el visual final antes de la luna</h1>
+            <p>La cuenta regresiva para el clímax de Dr.STONE SCIENCE FUTURE está en marcha. Reúnen a los cuatro héroes que enfrentarán al misterioso Why-man.</p>
+            <a href="articulos/articulo-drstone-climax.html" class="btn-read">Leer más →</a>
+          </div>
+          <div class="hero-slide" data-slide="1" style="background-image: linear-gradient(180deg, rgba(15,15,19,0.5) 0%, rgba(15,15,19,0.8) 100%), url('https://images.somoskudasai.com/2026/06/uma-musume-arte-refact-2.jpg');">
+            <div class="hero-category">Reviews</div>
+            <h1>Arte Refact colapsa: todos sus creadores renuncian tras escándalo</h1>
+            <p>El estudio de producción musical detrás de Umamusume y D4DJ sufre una crisis total. Todos los detalles del colapso.</p>
+            <a href="articulos/articulo-arte-refact.html" class="btn-read">Leer más →</a>
+          </div>
+          <div class="hero-slide" data-slide="2" style="background-image: linear-gradient(180deg, rgba(15,15,19,0.5) 0%, rgba(15,15,19,0.8) 100%), url('https://ogre.natalie.mu/media/news/comic/2026/0611/tedukaosamubunkasho_30_00026re.jpg?imwidth=1280&imdensity=1');">
+            <div class="hero-category">Manga</div>
+            <h1>Premio Cultural Tezuka 2026: "Hon nara Uru hodo" gana el gran galardón</h1>
+            <p>La 30ª edición del premio celebró su ceremonia en Tokio. Aoi Kojima se lleva el Manga Taisho por decisión unánime del jurado.</p>
+            <a href="articulos/articulo-tezuka-prize-30.html" class="btn-read">Leer más →</a>
+          </div>
+          <div class="hero-slide" data-slide="3" style="background-image: linear-gradient(180deg, rgba(15,15,19,0.5) 0%, rgba(15,15,19,0.8) 100%), url('https://blogger.googleusercontent.com/img/a/AVvXsEhTLd61iIwCo8qm8p2X5mlhIkPlHq4Vc5_gI3D-_nHAsgQ1aPKcM2RpE4OG9lhi70U1PUGYbEWa1T1I3jh8jVrq2GwVGbF7i78-l2AZWjbLKyibOI3zQYgBDjn-z-gGLKDRsdhYQZTcjTsTBzz7_uRziZuMkP-uJH8R6dQuqZHpsJEzMEhU3n6tFSoWfOY=w604-h339');">
+            <div class="hero-category">Anime</div>
+            <h1>My Hero Academia: Vigilantes S2 ya tiene fecha de estreno</h1>
+            <p>El spin-off de MHA regresa el 5 de enero de 2026 con nuevo key visual, tráiler y la incorporación de Ueda Kana al elenco.</p>
+            <a href="articulos/articulo-vigilante-s2.html" class="btn-read">Leer más →</a>
+          </div>
+          <div class="carousel-dots" id="carouselDots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+          </div>
+        </div>
         <div class="hero-side">
           <a href="articulos/articulo-ossankensei2.html" class="hero-item" style="background-image: linear-gradient(180deg, rgba(15,15,19,0.7), rgba(15,15,19,0.9)), url('https://ogre.natalie.mu/media/news/comic/2026/0610/ossankensei2_cm_cut1.jpg?imwidth=900'); background-size: cover; background-position: center; text-decoration: none; color: inherit;">
             <div class="hero-item-category">Anime</div>
