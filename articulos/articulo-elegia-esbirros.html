@@ -150,7 +150,7 @@
 <section class="comments-section">
   <div class="container">
     <h3>Deja un comentario</h3>
-    <form class="comment-form" action="https://formspree.io/f/xvgkogzw" method="POST">
+    <form class="comment-form" onsubmit="event.preventDefault(); this.textContent='Gracias por tu comentario.';this.style.textAlign='center';this.style.padding='20px';this.style.fontSize='1.1rem';this.style.color='#f0f0f5';">
       <div class="comment-form-row">
         <input type="text" name="nombre" placeholder="Tu nombre" required>
         <input type="email" name="email" placeholder="Tu email" required>
@@ -195,5 +195,8 @@
 <script src="../js/main.js"></script>
 </body>
 </html>
+
+
+
 
 
