@@ -135,6 +135,20 @@
   </div>
 
 </div>
+<section class="comments-section">
+  <div class="container">
+    <h3>Deja un comentario</h3>
+    <form class="comment-form" action="https://formspree.io/f/xvgkogzw" method="POST">
+      <div class="comment-form-row">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu email" required>
+      </div>
+      <textarea name="mensaje" rows="5" placeholder="Escribe tu comentario..." required></textarea>
+      <button type="submit" class="comment-submit">Enviar comentario</button>
+    </form>
+  </div>
+</section>
+
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -166,21 +180,8 @@
     </div>
   </div>
 </footer>
-
-<section class="comments-section">
-  <div class="container">
-    <h3>Deja un comentario</h3>
-    <form class="comment-form" action="https://formspree.io/f/xvgkogzw" method="POST">
-      <div class="comment-form-row">
-        <input type="text" name="nombre" placeholder="Tu nombre" required>
-        <input type="email" name="email" placeholder="Tu email" required>
-      </div>
-      <textarea name="mensaje" rows="5" placeholder="Escribe tu comentario..." required></textarea>
-      <button type="submit" class="comment-submit">Enviar comentario</button>
-    </form>
-  </div>
-</section>
 <script src="../js/main.js"></script>
 </body>
 </html>
+
 
