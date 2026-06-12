@@ -134,15 +134,21 @@
 
 <section class="comments-section">
   <div class="container">
-    <h3>Deja un comentario</h3>
-    <form class="comment-form" onsubmit="event.preventDefault(); this.textContent='Gracias por tu comentario.';this.style.textAlign='center';this.style.padding='20px';this.style.fontSize='1.1rem';this.style.color='#f0f0f5';">
-      <div class="comment-form-row">
-        <input type="text" name="nombre" placeholder="Tu nombre" required>
-        <input type="email" name="email" placeholder="Tu email" required>
-      </div>
-      <textarea name="mensaje" rows="5" placeholder="Escribe tu comentario..." required></textarea>
-      <button type="submit" class="comment-submit">Enviar comentario</button>
-    </form>
+    <h3>Comentarios</h3>
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = window.location.href;
+        this.page.identifier = window.location.pathname;
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://e-radiomagazine.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Por favor activa JavaScript para ver los comentarios de <a href="https://disqus.com/?ref_noscript">Disqus</a>.</noscript>
   </div>
 </section>
 
@@ -180,6 +186,7 @@
 <script src="../js/main.js"></script>
 </body>
 </html>
+
 
 
 
