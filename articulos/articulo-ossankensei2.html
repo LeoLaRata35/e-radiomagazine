@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -11,9 +11,30 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="E-Radio Magazine">
   <meta name="twitter:card" content="summary_large_image">
-  <style>body{margin:0;background:#1a1a1a;font-family:'Segoe UI',Arial,Helvetica,sans-serif}</style>
-</head>
+  <link rel="stylesheet" href="../css/styles.css"></head>
 <body>
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <div class="header-left">
+        <a href="../index.html" class="logo"><img src="../assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio Magazine" style="height: 60px; display: block;"></a>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../index.html" data-filter="anime">Anime</a></li>
+          <li><a href="../index.html" data-filter="manga">Manga</a></li>
+          <li><a href="../index.html" data-filter="reviews">Reviews</a></li>
+          <li><a href="../index.html" data-filter="musica">Música</a></li>
+          <li><a href="https://radioakari.blogspot.com/" class="nav-blog-link" target="_blank" rel="noopener">Radio Akari</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
 <div style="font-family: &quot;Segoe UI&quot;, Arial, Helvetica, sans-serif; line-height: 1.7; margin: 0px auto; max-width: 900px; background: #ffffff;">
 
   <span style="color: #1a1a1a;"><!--Encabezado con imagen conceptual--></span>
@@ -136,5 +157,52 @@
 
 </div>
 
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><img src="../assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio Magazine" style="height: 50px; display: block;"></a>
+        <p>Tu fuente de noticias sobre anime, manga y videojuegos. Actualidad, reviews y análisis desde 2016.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="../index.html">Anime</a></li>
+          <li><a href="../index.html">Videojuegos</a></li>
+          <li><a href="../index.html">Manga</a></li>
+          <li><a href="../index.html">Reviews</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Cookies</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 E-Radio Magazine. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<section class="comments-section">
+  <div class="container">
+    <h3>Deja un comentario</h3>
+    <form class="comment-form" action="https://formspree.io/f/xvgkogzw" method="POST">
+      <div class="comment-form-row">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu email" required>
+      </div>
+      <textarea name="mensaje" rows="5" placeholder="Escribe tu comentario..." required></textarea>
+      <button type="submit" class="comment-submit">Enviar comentario</button>
+    </form>
+  </div>
+</section>
+<script src="../js/main.js"></script>
 </body>
 </html>
+
