@@ -52,6 +52,9 @@ body {
   text-decoration: none;
   color: var(--text-primary);
   letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  filter: drop-shadow(0 0 8px rgba(124, 58, 237, 0.5));
 }
 
 .logo span {
