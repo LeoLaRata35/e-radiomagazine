@@ -1075,6 +1075,17 @@
     fig.style.marginRight = align === 'center' ? 'auto' : '';
   }
 
+  function extractTitle(html) {
+    var m = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i) || html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+    if (m) return m[1].replace(/<[^>]+>/g, '').trim();
+    return null;
+  }
+
+  function extractFirstImage(html) {
+    var m = html.match(/<img[^>]+src="(https?:\/\/[^"]+)"[^>]*>/i);
+    return m ? m[1] : null;
+  }
+
   /* ===== Publish to GitHub ===== */
   async function publishArticle() {
     const fileName = document.getElementById('fileName').value.trim();
