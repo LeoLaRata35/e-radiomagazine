@@ -398,6 +398,56 @@
       <div class="hint">El artículo se publicará en github.com/LeoLaRata35/e-radiomagazine/articulos/ y se agregará a la portada.</div>
     </div>
 
+    <!-- Kit para redes -->
+    <div class="panel">
+      <h3><span>🎯</span> Kit para Redes</h3>
+      <button onclick="generateSocialKit()">🎯 Generar kit</button>
+      <div id="socialKitOutput" style="display:none;margin-top:12px;">
+        <div style="margin-bottom:12px;">
+          <label style="font-weight:600;font-size:0.8rem;">SEO (140 caracteres)</label>
+          <div style="display:flex;gap:4px;">
+            <textarea id="kitSeo" rows="2" style="flex:1;font-size:0.8rem;padding:6px;" readonly></textarea>
+            <button class="secondary" onclick="copyKit('kitSeo')" title="Copiar">📋</button>
+          </div>
+        </div>
+        <div style="margin-bottom:12px;">
+          <label style="font-weight:600;font-size:0.8rem;">Copy 1</label>
+          <div style="display:flex;gap:4px;">
+            <textarea id="kitCopy1" rows="3" style="flex:1;font-size:0.8rem;padding:6px;" readonly></textarea>
+            <button class="secondary" onclick="copyKit('kitCopy1')" title="Copiar">📋</button>
+          </div>
+        </div>
+        <div style="margin-bottom:12px;">
+          <label style="font-weight:600;font-size:0.8rem;">Copy 2</label>
+          <div style="display:flex;gap:4px;">
+            <textarea id="kitCopy2" rows="3" style="flex:1;font-size:0.8rem;padding:6px;" readonly></textarea>
+            <button class="secondary" onclick="copyKit('kitCopy2')" title="Copiar">📋</button>
+          </div>
+        </div>
+        <div style="margin-bottom:12px;">
+          <label style="font-weight:600;font-size:0.8rem;">Copy 3</label>
+          <div style="display:flex;gap:4px;">
+            <textarea id="kitCopy3" rows="3" style="flex:1;font-size:0.8rem;padding:6px;" readonly></textarea>
+            <button class="secondary" onclick="copyKit('kitCopy3')" title="Copiar">📋</button>
+          </div>
+        </div>
+        <div style="margin-bottom:12px;">
+          <label style="font-weight:600;font-size:0.8rem;">Resumen afiche</label>
+          <div style="display:flex;gap:4px;">
+            <textarea id="kitPoster" rows="2" style="flex:1;font-size:0.8rem;padding:6px;" readonly></textarea>
+            <button class="secondary" onclick="copyKit('kitPoster')" title="Copiar">📋</button>
+          </div>
+        </div>
+        <div>
+          <label style="font-weight:600;font-size:0.8rem;">Hashtags</label>
+          <div style="display:flex;gap:4px;">
+            <textarea id="kitHashtags" rows="2" style="flex:1;font-size:0.8rem;padding:6px;" readonly></textarea>
+            <button class="secondary" onclick="copyKit('kitHashtags')" title="Copiar">📋</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- Status -->
@@ -1367,6 +1417,65 @@
     localStorage.setItem('gh_token', token);
     setStatus('✅ Token guardado localmente', 'success');
     alert('✅ Token guardado en el navegador');
+  }
+
+  /* ===== Social Kit ===== */
+  function generateSocialKit() {
+    const htmlContent = activeTab === 'html' ? htmlArea.value : visual.innerHTML;
+    const category = document.getElementById('articleCategory').value;
+    const title = extractTitle(htmlContent) || document.getElementById('fileName').value.trim().replace(/-/g, ' ') || 'Artículo';
+    const firstP = (htmlContent.match(/<p[^>]*>(.*?)<\/p>/) || ['', ''])[1].replace(/<[^>]+>/g, '').trim();
+
+    const catLabel = category.charAt(0).toUpperCase() + category.slice(1);
+    const siteUrl = 'https://LeoLaRata35.github.io/e-radiomagazine';
+    const articleFile = document.getElementById('fileName').value.trim() || sanitizeFilename(title);
+    const articleUrl = `${siteUrl}/articulos/${articleFile}.html`;
+
+    // Generate SEO (max 140 chars)
+    let seo = firstP ? firstP.substring(0, 137) + '...' : `${title} — Toda la información en E-Radio Magazine.`;
+    if (seo.length > 140) seo = seo.substring(0, 137) + '...';
+
+    // Hashtags base
+    const categoryHashtags = {
+      anime: '#Anime #AnimeNews',
+      manga: '#Manga #MangaNews',
+      reviews: '#Review #Critica',
+      musica: '#Musica #MusicNews',
+      videojuegos: '#Videojuegos #Gaming',
+      cine: '#Cine #Peliculas'
+    };
+    const baseTags = categoryHashtags[category] || '#Noticias';
+    const titleTag = '#' + title.replace(/[^a-zA-Z0-9]/g, '');
+
+    // FB copies
+    const copy1 = `📰 ¡${title}! ${firstP.substring(0, 200)}\n\n${articleUrl}\n\n${baseTags} ${titleTag}`;
+    const copy2 = `🎯 ${title} — Ya disponible en E-Radio Magazine.\n${firstP.substring(0, 180)}\n\n📎 ${articleUrl}\n\n${baseTags}`;
+    const copy3 = `📢 ${title}\n\nNo te pierdas todos los detalles. Leé la nota completa en E-Radio Magazine.\n\n🔗 ${articleUrl}\n\n${baseTags} ${titleTag}`;
+
+    // Poster summary
+    const poster = `${title}. ${firstP.substring(0, 120)}`;
+
+    // Show output
+    document.getElementById('socialKitOutput').style.display = 'block';
+    document.getElementById('kitSeo').value = seo;
+    document.getElementById('kitCopy1').value = copy1;
+    document.getElementById('kitCopy2').value = copy2;
+    document.getElementById('kitCopy3').value = copy3;
+    document.getElementById('kitPoster').value = poster;
+    document.getElementById('kitHashtags').value = `${baseTags} ${titleTag}`;
+    setStatus('✅ Kit para redes generado', 'success');
+  }
+
+  function copyKit(id) {
+    const ta = document.getElementById(id);
+    ta.select();
+    ta.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(ta.value).then(() => {
+      setStatus(`✅ "${id}" copiado al portapapeles`, 'success');
+    }).catch(() => {
+      document.execCommand('copy');
+      setStatus(`✅ "${id}" copiado`, 'success');
+    });
   }
 
   /* ===== Utilities ===== */
