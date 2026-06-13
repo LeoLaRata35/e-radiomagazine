@@ -996,21 +996,43 @@
   });
 
   /* ===== YouTube & Video ===== */
+  let savedRange = null;
+
+  function saveSelection() {
+    const sel = window.getSelection();
+    if (sel && sel.rangeCount > 0 && visual.contains(sel.anchorNode)) {
+      savedRange = sel.getRangeAt(0);
+    }
+  }
+
+  function restoreSelection() {
+    if (savedRange) {
+      visual.focus();
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(savedRange);
+    }
+  }
+
   function openYouTubePopup() {
+    saveSelection();
     const overlay = document.getElementById('youtubeOverlay');
+    if (!overlay) { setStatus('Error: no se encontró el panel YouTube', 'error'); return; }
     overlay.classList.add('open');
     document.getElementById('youtubeUrlInput').value = '';
-    document.getElementById('youtubeUrlInput').focus();
+    setTimeout(() => document.getElementById('youtubeUrlInput').focus(), 100);
   }
 
   function closeYouTubePopup() {
-    document.getElementById('youtubeOverlay').classList.remove('open');
+    const overlay = document.getElementById('youtubeOverlay');
+    if (overlay) overlay.classList.remove('open');
   }
 
   function insertYouTubeVideo() {
     const url = document.getElementById('youtubeUrlInput').value.trim();
     const id = extractYouTubeId(url);
     if (!id) { setStatus('URL de YouTube inválida', 'error'); return; }
+    restoreSelection();
     const thumbUrl = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
     const vid = 'vid-' + Date.now();
     const embedUrl = `https://www.youtube.com/embed/${id}`;
@@ -1032,7 +1054,7 @@
       </div>
     </figure>`);
     closeYouTubePopup();
-    setStatus('Video insertado (doble clic para abrir YouTube)', 'success');
+    setStatus('Video de YouTube insertado', 'success');
   }
 
   function extractYouTubeId(url) {
@@ -1278,10 +1300,10 @@
   <div class="modal-box">
     <h3><span>📺</span> Insertar video de YouTube</h3>
     <label>URL del video</label>
-    <input type="url" id="youtubeUrlInput" placeholder="https://youtube.com/watch?v=..." onkeydown="if(event.key==='Enter')insertYouTubeVideo()">
+    <input type="url" id="youtubeUrlInput" placeholder="https://youtube.com/watch?v=dQw4w9WgXcQ" onkeydown="if(event.key==='Enter')insertYouTubeVideo()">
     <div class="modal-actions">
-      <button class="secondary" onclick="closeYouTubePopup()">Cancelar</button>
-      <button class="primary" onclick="insertYouTubeVideo()">Insertar</button>
+      <button type="button" class="secondary" onclick="closeYouTubePopup()">Cancelar</button>
+      <button type="button" class="primary" onclick="insertYouTubeVideo()">Insertar</button>
     </div>
   </div>
 </div>
