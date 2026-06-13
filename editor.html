@@ -1375,11 +1375,11 @@
         </article>`;
 
       // Insert at top of grid (after opening <div class="articles-grid" id="articlesGrid">)
-      const gridMarker = '<div class="articles-grid" id="articlesGrid">';
-      const gridPos = indexHtml.indexOf(gridMarker);
-      if (gridPos === -1) throw new Error('No se encontró el grid de artículos en index.html');
-
-      const insertPos = gridPos + gridMarker.length;
+      const gridMarkerRegex = /<div\s+class=["']articles-grid["']\s+id=["']articlesGrid["']>/i;
+      const gridMatch = indexHtml.match(gridMarkerRegex);
+      if (!gridMatch) throw new Error('No se encontró el grid de artículos en index.html');
+      const gridPos = gridMatch.index;
+      const insertPos = gridPos + gridMatch[0].length;
       indexHtml = indexHtml.slice(0, insertPos) + '\n' + cardHtml + indexHtml.slice(insertPos);
 
       const indexContent = btoa(unescape(encodeURIComponent(indexHtml)));
