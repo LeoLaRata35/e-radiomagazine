@@ -411,8 +411,8 @@
   let activeTab = 'visual';
 
   function exec(cmd, value) {
-    document.execCommand(cmd, false, value || null);
     visual.focus();
+    document.execCommand(cmd, false, value || null);
     updateStatus();
   }
 
