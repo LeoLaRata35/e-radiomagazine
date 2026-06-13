@@ -147,11 +147,72 @@
     .img-float-toolbar .sep { width: 1px; height: 24px; background: rgba(255,255,255,0.1); margin: 0 4px; }
     #visualEditor a { color: var(--accent); }
 
-    /* Progress */
-    .progress-bar {
+    /* Floating media button */
+    .media-popup {
+      position: fixed; bottom: 100px; right: 30px; z-index: 998;
+      width: 320px; background: #1a1a2e; border: 1px solid var(--border);
+      border-radius: 16px; padding: 20px; display: none;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+    }
+    .media-popup.open { display: block; }
+    .media-popup h3 { font-size: 1rem; margin-bottom: 12px; color: var(--text-primary); display: flex; align-items: center; gap: 8px; }
+    .media-popup .tabs { display: flex; gap: 4px; margin-bottom: 12px; }
+    .media-popup .tabs button {
+      flex: 1; padding: 8px; border: 1px solid var(--border); border-radius: 8px;
+      background: transparent; color: var(--text-secondary); font-size: 0.8rem; cursor: pointer;
+      transition: all 0.2s;
+    }
+    .media-popup .tabs button.active { background: rgba(124,58,237,0.15); border-color: var(--accent); color: var(--text-primary); }
+    .media-popup .tab-content { display: none; }
+    .media-popup .tab-content.active { display: block; }
+    .media-popup input[type=text], .media-popup input[type=url] {
+      width: 100%; padding: 10px 12px; margin-bottom: 8px;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+      color: var(--text-primary); font-size: 0.85rem;
+    }
+    .media-popup button.primary {
+      background: var(--accent-gradient); color: #fff; border: none;
+      padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%;
+      transition: transform 0.15s;
+    }
+    .media-popup button.primary:hover { transform: scale(1.02); }
+    .media-popup .dropzone-sm {
+      border: 2px dashed var(--border); border-radius: 10px; padding: 16px;
+      text-align: center; cursor: pointer; transition: all 0.2s; margin-bottom: 8px;
+    }
+    .media-popup .dropzone-sm:hover { border-color: var(--accent); background: rgba(124,58,237,0.05); }
+    .media-popup .dropzone-sm p { color: var(--text-secondary); font-size: 0.8rem; }
+    .media-popup .hint { color: #666688; font-size: 0.75rem; margin-top: 4px; }
       height: 4px; background: var(--border); border-radius: 2px; margin-top: 8px; overflow: hidden; display: none;
     }
     .progress-bar div { height: 100%; background: var(--accent-gradient); width: 0%; border-radius: 2px; transition: width 0.3s; }
+
+    /* ===== YouTube Modal ===== */
+    .modal-overlay {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 999;
+      background: rgba(0,0,0,0.7); display: none;
+      align-items: center; justify-content: center;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      background: #1a1a2e; border: 1px solid var(--border); border-radius: 16px;
+      padding: 28px; width: 400px; max-width: 90vw;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+    }
+    .modal-box h3 { font-size: 1.1rem; margin: 0 0 16px; color: var(--text-primary); display: flex; align-items: center; gap: 8px; }
+    .modal-box label { display: block; color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 6px; }
+    .modal-box input[type=url] {
+      width: 100%; padding: 12px; margin-bottom: 16px;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+      color: var(--text-primary); font-size: 0.95rem;
+    }
+    .modal-actions { display: flex; gap: 8px; justify-content: flex-end; }
+    .modal-actions button {
+      padding: 10px 24px; border-radius: 10px; font-weight: 600; cursor: pointer; border: none;
+      font-size: 0.85rem;
+    }
+    .modal-actions .primary { background: var(--accent-gradient); color: #fff; }
+    .modal-actions .secondary { background: transparent; color: var(--text-secondary); border: 1px solid var(--border); }
 
     @media (max-width: 768px) {
       .panels { grid-template-columns: 1fr; }
@@ -280,16 +341,19 @@
       <div class="hint">Soporta: <strong>Natalie</strong> (texto completo), <strong>Oricon</strong> (Shift_JIS, metadatos), <strong>Famitsu</strong>. Requiere CORS proxy.</div>
     </div>
 
-    <!-- Image upload -->
+    <!-- Multimedia -->
     <div class="panel">
-      <h3><span>🖼️</span> Imágenes</h3>
-      <div class="dropzone" id="dropzone" ondragover="event.preventDefault();this.classList.add('dragover')" ondragleave="this.classList.remove('dragover')" ondrop="handleDrop(event)">
-        <p>Arrastra una imagen aquí, haz clic para seleccionar, o pega (Ctrl+V)</p>
-        <input type="file" id="fileInput" accept="image/*" style="display:none" onchange="handleFiles(this.files)">
-        <button class="secondary" style="margin-top:8px;" onclick="document.getElementById('fileInput').click()">Seleccionar archivo</button>
+      <h3><span>🖼️📹</span> Multimedia</h3>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="secondary" onclick="document.getElementById('fileInputImage').click()">🖼️ Subir imagen</button>
+        <button class="secondary" onclick="openYouTubePopup()">📺 Video YouTube</button>
+        <button class="secondary" onclick="document.getElementById('fileInputVideo').click()">📹 Subir video</button>
       </div>
-      <div id="imagePreview" style="display:flex;flex-wrap:wrap;gap:8px;"></div>
-      <div class="hint">Se subirá a GitHub automáticamente al publicar. Las imágenes se redimensionan haciendo clic en el editor.</div>
+      <input type="file" id="fileInputImage" accept="image/*" style="display:none" onchange="handleFiles(this.files)">
+      <input type="file" id="fileInputVideo" accept="video/*" style="display:none" onchange="handleVideoFiles(this.files)">
+      <div id="mediaPreview" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;"></div>
+      <div class="hint">Pega imágenes con Ctrl+V. Videos: se insertan como reproductor HTML5. Al publicar se suben a GitHub.</div>
+    </div>
     </div>
 
     <!-- Publish -->
@@ -425,7 +489,6 @@
 
   function handleDrop(e) {
     e.preventDefault();
-    document.getElementById('dropzone').classList.remove('dragover');
     if (e.dataTransfer.files.length) handleFiles(e.dataTransfer.files);
   }
 
@@ -439,6 +502,19 @@
         handleFiles([file]);
         return;
       }
+    }
+  });
+
+  // Drag & drop handler for the visual editor
+  visual.addEventListener('dragover', e => { e.preventDefault(); });
+  visual.addEventListener('drop', e => {
+    e.preventDefault();
+    if (e.dataTransfer.files.length) {
+      const files = Array.from(e.dataTransfer.files);
+      const images = files.filter(f => f.type.startsWith('image/'));
+      const videos = files.filter(f => f.type.startsWith('video/'));
+      if (images.length) handleFiles(images);
+      if (videos.length) handleVideoFiles(videos);
     }
   });
 
@@ -459,11 +535,11 @@
   }
 
   function addToPreview(dataUrl, name) {
-    const div = document.getElementById('imagePreview');
-    const img = document.createElement('div');
-    img.style.cssText = 'width:80px;height:80px;border-radius:8px;overflow:hidden;border:1px solid var(--border);position:relative;';
-    img.innerHTML = `<img src="${dataUrl}" style="width:100%;height:100%;object-fit:cover;"><div style="position:absolute;top:2px;right:2px;background:#e74c3c;color:#fff;border:none;border-radius:50%;width:18px;height:18px;font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;" onclick="this.parentElement.remove()">✕</div>`;
-    div.appendChild(img);
+    const div = document.getElementById('mediaPreview');
+    const el = document.createElement('div');
+    el.style.cssText = 'width:80px;height:80px;border-radius:8px;overflow:hidden;border:1px solid var(--border);position:relative;';
+    el.innerHTML = `<img src="${dataUrl}" style="width:100%;height:100%;object-fit:cover;"><div style="position:absolute;top:2px;right:2px;background:#e74c3c;color:#fff;border:none;border-radius:50%;width:18px;height:18px;font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;" onclick="this.parentElement.remove()">✕</div>`;
+    div.appendChild(el);
   }
 
   /* ===== Image Controls ===== */
@@ -492,14 +568,19 @@
     if (fig) fig.remove();
   }
 
-  /* ===== Floating Image Toolbar ===== */
+  /* ===== Floating Image/Video Toolbar ===== */
   let selectedImg = null;
+  let selectedIsVideo = false;
 
   visual.addEventListener('click', e => {
     const img = e.target.closest('img');
-    if (img && visual.contains(img)) {
+    const video = e.target.closest('video');
+    if (img && visual.contains(img) && !img.closest('.modal-box, .media-popup')) {
       e.stopPropagation();
       selectImage(img);
+    } else if (video && visual.contains(video) && !video.closest('.modal-box, .media-popup')) {
+      e.stopPropagation();
+      selectVideo(video);
     } else {
       deselectImage();
     }
@@ -511,8 +592,17 @@
   function selectImage(img) {
     deselectImage();
     selectedImg = img;
+    selectedIsVideo = false;
     img.classList.add('selected');
     showImgToolbar(img);
+  }
+
+  function selectVideo(video) {
+    deselectImage();
+    selectedImg = video;
+    selectedIsVideo = true;
+    video.classList.add('selected');
+    showImgToolbar(video);
   }
 
   function deselectImage() {
@@ -520,12 +610,13 @@
       selectedImg.classList.remove('selected');
       selectedImg = null;
     }
+    selectedIsVideo = false;
     document.getElementById('imgToolbar').style.display = 'none';
   }
 
-  function showImgToolbar(img) {
+  function showImgToolbar(el) {
     const toolbar = document.getElementById('imgToolbar');
-    const rect = img.getBoundingClientRect();
+    const rect = el.getBoundingClientRect();
     toolbar.style.display = 'flex';
     toolbar.style.top = (rect.top - 50 + window.scrollY) + 'px';
     toolbar.style.left = (rect.left + rect.width / 2 - 120 + window.scrollX) + 'px';
@@ -533,37 +624,40 @@
 
   function imgToolbarAction(action) {
     if (!selectedImg) return;
+    const el = selectedImg;
     if (action === 'resize+') {
-      const cur = parseFloat(selectedImg.style.width) || 100;
-      selectedImg.style.width = Math.min(100, cur + 10) + '%';
+      const cur = parseFloat(el.style.width) || 100;
+      el.style.width = Math.min(100, cur + 10) + '%';
     } else if (action === 'resize-') {
-      const cur = parseFloat(selectedImg.style.width) || 100;
-      selectedImg.style.width = Math.max(20, cur - 10) + '%';
+      const cur = parseFloat(el.style.width) || 100;
+      el.style.width = Math.max(20, cur - 10) + '%';
     } else if (action === 'align-left') {
-      selectedImg.style.display = 'block';
-      selectedImg.style.margin = '8px 16px 8px 0';
-      selectedImg.style.float = 'left';
+      el.style.display = 'block';
+      el.style.margin = '8px 16px 8px 0';
+      el.style.float = 'left';
     } else if (action === 'align-center') {
-      selectedImg.style.display = 'block';
-      selectedImg.style.margin = '12px auto';
-      selectedImg.style.float = 'none';
+      el.style.display = 'block';
+      el.style.margin = '12px auto';
+      el.style.float = 'none';
     } else if (action === 'align-right') {
-      selectedImg.style.display = 'block';
-      selectedImg.style.margin = '8px 0 8px 16px';
-      selectedImg.style.float = 'right';
+      el.style.display = 'block';
+      el.style.margin = '8px 0 8px 16px';
+      el.style.float = 'right';
     } else if (action === 'replace') {
+      if (selectedIsVideo) return;
       const input = document.createElement('input');
       input.type = 'file'; input.accept = 'image/*';
       input.onchange = () => {
         const file = input.files[0];
         if (!file) return;
         const reader = new FileReader();
-        reader.onload = e => { selectedImg.src = e.target.result; };
+        reader.onload = e => { el.src = e.target.result; };
         reader.readAsDataURL(file);
       };
       input.click();
     } else if (action === 'remove') {
-      selectedImg.remove();
+      const fig = el.closest('figure');
+      if (fig) fig.remove(); else el.remove();
       deselectImage();
     }
     // Keep toolbar visible after action
@@ -898,7 +992,104 @@
             sha: imgSha || undefined,
             branch: 'main'
           })
-        });
+  });
+
+  /* ===== YouTube & Video ===== */
+  function openYouTubePopup() {
+    const overlay = document.getElementById('youtubeOverlay');
+    overlay.classList.add('open');
+    document.getElementById('youtubeUrlInput').value = '';
+    document.getElementById('youtubeUrlInput').focus();
+  }
+
+  function closeYouTubePopup() {
+    document.getElementById('youtubeOverlay').classList.remove('open');
+  }
+
+  function insertYouTubeVideo() {
+    const url = document.getElementById('youtubeUrlInput').value.trim();
+    const id = extractYouTubeId(url);
+    if (!id) { setStatus('URL de YouTube inválida', 'error'); return; }
+    const thumbUrl = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+    const vid = 'vid-' + Date.now();
+    const embedUrl = `https://www.youtube.com/embed/${id}`;
+    exec('insertHTML', `<figure contenteditable="false" id="${vid}" style="display:inline-block;margin:12px 0;position:relative;cursor:pointer;" ondblclick="window.open('${embedUrl}','_blank')">
+      <a href="${embedUrl}" target="_blank" style="display:block;position:relative;">
+        <img src="${thumbUrl}" style="max-width:100%;border-radius:8px;display:block;" alt="YouTube video">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;background:rgba(0,0,0,0.7);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+          <div style="border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:4px;"></div>
+        </div>
+      </a>
+      <div style="text-align:center;font-size:0.75rem;color:#666;margin-top:4px;">
+        <button onclick="resizeFigure('${vid}',-0.1)" style="background:#eee;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;margin:0 4px;">−</button>
+        <span class="img-size-label">100%</span>
+        <button onclick="resizeFigure('${vid}',0.1)" style="background:#eee;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;margin:0 4px;">+</button>
+        <button onclick="alignFig('${vid}','left')" style="background:#eee;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;">◀</button>
+        <button onclick="alignFig('${vid}','center')" style="background:#eee;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;">●</button>
+        <button onclick="alignFig('${vid}','right')" style="background:#eee;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;">▶</button>
+        <button onclick="removeFigure('${vid}')" style="background:#e74c3c;color:white;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;">✕</button>
+      </div>
+    </figure>`);
+    closeYouTubePopup();
+    setStatus('Video insertado (doble clic para abrir YouTube)', 'success');
+  }
+
+  function extractYouTubeId(url) {
+    const m = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+    return m ? m[1] : null;
+  }
+
+  function handleVideoFiles(files) {
+    Array.from(files).forEach(file => {
+      if (!file.type.startsWith('video/')) return;
+      const reader = new FileReader();
+      reader.onload = e => {
+        const dataUrl = e.target.result;
+        insertVideoInEditor(dataUrl, file.name);
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  function insertVideoInEditor(dataUrl, name) {
+    const vid = 'vid-' + Date.now();
+    exec('insertHTML', `<figure contenteditable="false" id="${vid}" style="display:inline-block;margin:12px 0;position:relative;">
+      <video controls src="${dataUrl}" style="max-width:100%;border-radius:8px;display:block;" preload="metadata"></video>
+      <div style="text-align:center;font-size:0.75rem;color:#666;margin-top:4px;">
+        <button onclick="resizeFigure('${vid}',-0.1)" style="background:#eee;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;margin:0 4px;">−</button>
+        <span class="img-size-label">100%</span>
+        <button onclick="resizeFigure('${vid}',0.1)" style="background:#eee;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;margin:0 4px;">+</button>
+        <button onclick="alignFig('${vid}','left')" style="background:#eee;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;">◀</button>
+        <button onclick="alignFig('${vid}','center')" style="background:#eee;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;">●</button>
+        <button onclick="alignFig('${vid}','right')" style="background:#eee;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;">▶</button>
+        <button onclick="removeFigure('${vid}')" style="background:#e74c3c;color:white;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;">✕</button>
+      </div>
+    </figure>`);
+  }
+
+  /* ===== Shared figure resize/align/remove (for images and videos) ===== */
+  function resizeFigure(id, delta) {
+    const fig = document.getElementById(id);
+    if (!fig) return;
+    const media = fig.querySelector('img, video');
+    if (!media) return;
+    const cur = parseFloat(media.style.width) || 100;
+    const val = Math.max(20, Math.min(100, cur + delta * 100));
+    media.style.width = val + '%';
+    const label = fig.querySelector('.img-size-label');
+    if (label) label.textContent = Math.round(val) + '%';
+  }
+
+  function alignFig(id, align) {
+    const fig = document.getElementById(id);
+    if (!fig) return;
+    fig.style.display = align === 'center' ? 'block' : 'inline-block';
+    fig.style.textAlign = align === 'center' ? 'center' : '';
+    fig.style.float = align === 'center' ? 'none' : align;
+    fig.style.marginLeft = align === 'center' ? 'auto' : '';
+    fig.style.marginRight = align === 'center' ? 'auto' : '';
+  }
+
 
         if (!uploadResp.ok) {
           const err = await uploadResp.json();
@@ -1080,6 +1271,19 @@
     updateWordCount();
   });
 </script>
+
+<!-- YouTube Modal -->
+<div class="modal-overlay" id="youtubeOverlay" onclick="if(event.target===this)closeYouTubePopup()">
+  <div class="modal-box">
+    <h3><span>📺</span> Insertar video de YouTube</h3>
+    <label>URL del video</label>
+    <input type="url" id="youtubeUrlInput" placeholder="https://youtube.com/watch?v=..." onkeydown="if(event.key==='Enter')insertYouTubeVideo()">
+    <div class="modal-actions">
+      <button class="secondary" onclick="closeYouTubePopup()">Cancelar</button>
+      <button class="primary" onclick="insertYouTubeVideo()">Insertar</button>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
