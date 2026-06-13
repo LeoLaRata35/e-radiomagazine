@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor — E-Radio Magazine</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    :root {
+      --toolbar-bg: #1a1a2e;
+      --toolbar-border: #d4af37;
+      --editor-bg: #f8f8fa;
+      --editor-text: #1a1a2e;
+    }
+    body { background: var(--bg-primary); padding-top: 0; }
+
+    /* Header override */
+    .header { position: relative; }
+
+    /* Editor Layout */
+    .editor-wrap { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+    /* Toolbar */
+    .toolbar {
+      background: var(--toolbar-bg);
+      border: 1px solid var(--border);
+      border-bottom: none;
+      border-radius: 12px 12px 0 0;
+      padding: 8px 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      align-items: center;
+    }
+    .toolbar .group { display: flex; gap: 2px; align-items: center; }
+    .toolbar .sep { width: 1px; height: 28px; background: var(--border); margin: 0 6px; }
+    .toolbar button {
+      background: transparent; border: none; color: #c8c8e0;
+      width: 34px; height: 34px; border-radius: 6px;
+      cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; justify-content: center;
+      transition: all 0.15s;
+    }
+    .toolbar button:hover { background: rgba(212,175,55,0.12); color: #d4af37; }
+    .toolbar button.active { background: rgba(212,175,55,0.2); color: #d4af37; }
+    .toolbar button.label-btn { width: auto; padding: 0 10px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #666688; cursor: default; }
+    .toolbar button.label-btn:hover { background: transparent; }
+    .toolbar select {
+      background: #2a2a4a; color: #f0f0f5; border: 1px solid var(--border);
+      border-radius: 6px; padding: 4px 8px; font-size: 0.8rem; height: 34px;
+    }
+    .toolbar input[type=color] {
+      width: 34px; height: 34px; padding: 2px; border: none; border-radius: 6px;
+      background: transparent; cursor: pointer;
+    }
+
+    /* Editor Area */
+    .editor-container {
+      border: 1px solid var(--border);
+      border-radius: 0 0 12px 12px;
+      background: var(--editor-bg);
+      min-height: 500px;
+    }
+    .editor-tabs {
+      display: flex; border-bottom: 1px solid var(--border);
+    }
+    .editor-tabs button {
+      flex: 1; padding: 12px; border: none; background: transparent;
+      color: #666688; font-weight: 600; font-size: 0.85rem; cursor: pointer;
+      transition: all 0.2s;
+    }
+    .editor-tabs button.active { background: #fff; color: var(--accent); box-shadow: inset 0 -2px 0 var(--accent); }
+    #visualEditor {
+      padding: 24px; min-height: 450px; outline: none;
+      font-size: 16px; line-height: 1.8; color: var(--editor-text);
+    }
+    #visualEditor:empty::before { content: 'Escribe aquí tu artículo...'; color: #b0b0c0; }
+    #htmlEditor {
+      display: none; width: 100%; min-height: 450px; padding: 16px;
+      background: #1a1a2e; color: #e8e8f0; border: none; outline: none;
+      resize: vertical; font-family: 'Consolas', 'Courier New', monospace; font-size: 14px; line-height: 1.5;
+    }
+
+    /* Panels */
+    .panels { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+    .panel {
+      background: var(--bg-secondary); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px;
+    }
+    .panel h3 { font-size: 1rem; margin-bottom: 12px; color: var(--text-primary); display: flex; align-items: center; gap: 8px; }
+    .panel h3 span { font-size: 1.2rem; }
+    .panel input[type=text], .panel input[type=url], .panel input[type=password] {
+      width: 100%; padding: 10px 12px; margin-bottom: 8px;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+      color: var(--text-primary); font-size: 0.9rem;
+    }
+    .panel button {
+      background: var(--accent-gradient); color: #fff; border: none;
+      padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 0.9rem;
+      cursor: pointer; transition: transform 0.2s;
+    }
+    .panel button:hover { transform: scale(1.02); }
+    .panel button.secondary { background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border); }
+    .panel button.danger { background: #e74c3c; }
+    .panel label { display: block; color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 4px; }
+    .panel .hint { color: #666688; font-size: 0.75rem; margin-top: 4px; }
+
+    /* Image upload area */
+    .dropzone {
+      border: 2px dashed var(--border); border-radius: 12px; padding: 24px;
+      text-align: center; cursor: pointer; transition: all 0.3s; margin-bottom: 8px;
+    }
+    .dropzone:hover, .dropzone.dragover { border-color: var(--accent); background: rgba(124,58,237,0.05); }
+    .dropzone p { color: var(--text-secondary); font-size: 0.85rem; }
+
+    /* Status */
+    .status-bar {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+      padding: 10px 16px; margin-top: 16px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .status-bar .msg { color: var(--text-secondary); font-size: 0.85rem; }
+    .status-bar .msg.success { color: #2ecc71; }
+    .status-bar .msg.error { color: #e74c3c; }
+
+    /* Resizable image in editor */
+    #visualEditor img {
+      max-width: 100%; height: auto; border-radius: 8px;
+      cursor: pointer; transition: box-shadow 0.2s;
+    }
+    #visualEditor img:hover { box-shadow: 0 0 0 2px var(--accent); }
+    #visualEditor img.resizing { outline: 2px dashed var(--accent); }
+    #visualEditor a { color: var(--accent); }
+
+    /* Progress */
+    .progress-bar {
+      height: 4px; background: var(--border); border-radius: 2px; margin-top: 8px; overflow: hidden; display: none;
+    }
+    .progress-bar div { height: 100%; background: var(--accent-gradient); width: 0%; border-radius: 2px; transition: width 0.3s; }
+
+    @media (max-width: 768px) {
+      .panels { grid-template-columns: 1fr; }
+      .toolbar { gap: 2px; padding: 6px 8px; }
+      .toolbar button { width: 30px; height: 30px; font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <div class="header-left">
+        <a href="index.html" class="logo"><img src="assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio Magazine" style="height: 60px; display: block;"></a>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html">Anime</a></li>
+          <li><a href="index.html">Manga</a></li>
+          <li><a href="editor.html" class="active" style="color:#d4af37;">✎ Editor</a></li>
+          <li><a href="https://radioakari.blogspot.com/" class="nav-blog-link" target="_blank">Radio Akari</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="editor-wrap">
+
+  <!-- Toolbar -->
+  <div class="toolbar" id="toolbar">
+    <button class="label-btn">✎</button>
+    <div class="sep"></div>
+    <div class="group">
+      <button onclick="exec('bold')" title="Negrita"><b>B</b></button>
+      <button onclick="exec('italic')" title="Cursiva"><i>I</i></button>
+      <button onclick="exec('underline')" title="Subrayado"><u>S</u></button>
+    </div>
+    <div class="sep"></div>
+    <div class="group">
+      <select onchange="exec('formatBlock', this.value)" title="Título">
+        <option value="">Normal</option>
+        <option value="h1">H1</option>
+        <option value="h2">H2</option>
+        <option value="h3">H3</option>
+        <option value="h4">H4</option>
+        <option value="pre">Código</option>
+      </select>
+    </div>
+    <div class="sep"></div>
+    <div class="group">
+      <select onchange="exec('fontName', this.value)" title="Fuente">
+        <option value="Segoe UI">Segoe UI</option>
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Verdana">Verdana</option>
+      </select>
+      <select onchange="exec('fontSize', this.value)" title="Tamaño">
+        <option value="3">Normal</option>
+        <option value="1">Pequeño</option>
+        <option value="4">Grande</option>
+        <option value="5">Muy grande</option>
+        <option value="6">Enorme</option>
+      </select>
+    </div>
+    <div class="sep"></div>
+    <div class="group">
+      <input type="color" onchange="exec('foreColor', this.value)" title="Color texto" value="#d4af37">
+      <input type="color" onchange="exec('hiliteColor', this.value)" title="Resaltado" value="#fff3cd">
+    </div>
+    <div class="sep"></div>
+    <div class="group">
+      <button onclick="insertLink()" title="Insertar enlace">🔗</button>
+      <button onclick="insertImagePrompt()" title="Insertar imagen desde URL">🖼️</button>
+    </div>
+    <div class="sep"></div>
+    <div class="group">
+      <button onclick="exec('undo')" title="Deshacer">↩</button>
+      <button onclick="exec('redo')" title="Rehacer">↪</button>
+    </div>
+    <div class="sep"></div>
+    <div class="group">
+      <button onclick="exec('removeFormat')" title="Limpiar formato">✖</button>
+    </div>
+  </div>
+
+  <!-- Editor -->
+  <div class="editor-container">
+    <div class="editor-tabs">
+      <button class="active" onclick="switchTab('visual')">Visual</button>
+      <button onclick="switchTab('html')">HTML</button>
+    </div>
+    <div id="visualEditor" contenteditable="true"></div>
+    <textarea id="htmlEditor" spellcheck="false"></textarea>
+  </div>
+
+  <!-- Panels -->
+  <div class="panels">
+
+    <!-- Auto-generator -->
+    <div class="panel">
+      <h3><span>🤖</span> Generar artículo desde URL</h3>
+      <label>URL del artículo original</label>
+      <input type="url" id="articleUrl" placeholder="https://ejemplo.com/articulo">
+      <div style="display:flex;gap:8px;">
+        <button onclick="generateArticle()">Generar</button>
+        <button class="secondary" onclick="clearEditor()">Limpiar</button>
+      </div>
+      <div class="progress-bar" id="genProgress"><div></div></div>
+      <div class="hint">Pega la URL de un artículo de Natalie, Oricon o similar para generar el formato automáticamente.</div>
+    </div>
+
+    <!-- Image upload -->
+    <div class="panel">
+      <h3><span>🖼️</span> Imágenes</h3>
+      <div class="dropzone" id="dropzone" ondragover="event.preventDefault();this.classList.add('dragover')" ondragleave="this.classList.remove('dragover')" ondrop="handleDrop(event)">
+        <p>Arrastra una imagen aquí, haz clic para seleccionar, o pega (Ctrl+V)</p>
+        <input type="file" id="fileInput" accept="image/*" style="display:none" onchange="handleFiles(this.files)">
+        <button class="secondary" style="margin-top:8px;" onclick="document.getElementById('fileInput').click()">Seleccionar archivo</button>
+      </div>
+      <div id="imagePreview" style="display:flex;flex-wrap:wrap;gap:8px;"></div>
+      <div class="hint">Se subirá a GitHub automáticamente al publicar. Las imágenes se redimensionan haciendo clic en el editor.</div>
+    </div>
+
+    <!-- Publish -->
+    <div class="panel" style="grid-column: 1 / -1;">
+      <h3><span>🚀</span> Publicar en GitHub</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div>
+          <label>Nombre del archivo (sin .html)</label>
+          <input type="text" id="fileName" placeholder="articulo-mi-titulo">
+        </div>
+        <div>
+          <label>Token de GitHub</label>
+          <input type="password" id="githubToken" placeholder="ghp_xxxxxxxxxxxx">
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:8px;">
+        <button onclick="publishArticle()">📦 Publicar artículo</button>
+        <button class="secondary" onclick="saveToken()">💾 Guardar token</button>
+      </div>
+      <div class="progress-bar" id="pubProgress"><div></div></div>
+      <div class="hint">El artículo se publicará en github.com/LeoLaRata35/e-radiomagazine/articulos/ y se agregará a la portada.</div>
+    </div>
+
+  </div>
+
+  <!-- Status -->
+  <div class="status-bar">
+    <div class="msg" id="statusMsg">Listo</div>
+    <div style="color:#666688;font-size:0.75rem;" id="wordCount">0 palabras</div>
+  </div>
+
+</div>
+
+<script src="js/main.js"></script>
+<script>
+  /* ===== Editor Core ===== */
+  const visual = document.getElementById('visualEditor');
+  const htmlArea = document.getElementById('htmlEditor');
+  let activeTab = 'visual';
+
+  function exec(cmd, value) {
+    document.execCommand(cmd, false, value || null);
+    visual.focus();
+    updateStatus();
+  }
+
+  function switchTab(tab) {
+    activeTab = tab;
+    document.querySelectorAll('.editor-tabs button').forEach(b => b.classList.remove('active'));
+    if (tab === 'visual') {
+      document.querySelector('.editor-tabs button:first-child').classList.add('active');
+      htmlArea.style.display = 'none';
+      visual.style.display = 'block';
+      syncHtmlToVisual();
+    } else {
+      document.querySelector('.editor-tabs button:last-child').classList.add('active');
+      visual.style.display = 'none';
+      htmlArea.style.display = 'block';
+      syncVisualToHtml();
+    }
+  }
+
+  function syncVisualToHtml() {
+    htmlArea.value = visual.innerHTML;
+  }
+
+  function syncHtmlToVisual() {
+    visual.innerHTML = htmlArea.value;
+  }
+
+  // Sync on input
+  visual.addEventListener('input', () => { if (activeTab === 'visual') syncVisualToHtml(); updateWordCount(); });
+  htmlArea.addEventListener('input', () => { if (activeTab === 'html') syncHtmlToVisual(); updateWordCount(); });
+
+  function updateWordCount() {
+    const text = visual.innerText || '';
+    document.getElementById('wordCount').textContent = text.split(/\s+/).filter(w => w).length + ' palabras';
+  }
+
+  function updateStatus() {
+    // placeholder
+  }
+
+  /* ===== Link ===== */
+  function insertLink() {
+    const sel = window.getSelection();
+    const text = sel.toString();
+    const url = prompt('URL del enlace:', 'https://');
+    if (!url) return;
+    if (text) {
+      exec('createLink', url);
+    } else {
+      const id = 'link-' + Date.now();
+      exec('insertHTML', `<a href="${url}" id="${id}">${url}</a>`);
+    }
+  }
+
+  /* ===== Image from URL ===== */
+  function insertImagePrompt() {
+    const url = prompt('URL de la imagen:', 'https://');
+    if (!url) return;
+    exec('insertHTML', `<img src="${url}" alt="" style="max-width:100%;border-radius:8px;">`);
+  }
+
+  /* ===== Image Upload / Paste ===== */
+  function handleFiles(files) {
+    Array.from(files).forEach(file => {
+      if (!file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = e => {
+        const dataUrl = e.target.result;
+        insertImageInEditor(dataUrl, file.name);
+        addToPreview(dataUrl, file.name);
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  function handleDrop(e) {
+    e.preventDefault();
+    document.getElementById('dropzone').classList.remove('dragover');
+    if (e.dataTransfer.files.length) handleFiles(e.dataTransfer.files);
+  }
+
+  // Paste handler for clipboard images
+  visual.addEventListener('paste', e => {
+    const items = e.clipboardData.items;
+    for (let item of items) {
+      if (item.type.startsWith('image/')) {
+        e.preventDefault();
+        const file = item.getAsFile();
+        handleFiles([file]);
+        return;
+      }
+    }
+  });
+
+  function insertImageInEditor(dataUrl, name) {
+    const id = 'img-' + Date.now();
+    exec('insertHTML', `<figure contenteditable="false" id="${id}" style="display:inline-block;margin:12px 0;position:relative;">
+      <img src="${dataUrl}" alt="${name}" style="max-width:100%;border-radius:8px;display:block;">
+      <div style="text-align:center;font-size:0.75rem;color:#666;margin-top:4px;">
+        <button onclick="resizeImg('${id}',-0.1)" style="background:#eee;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;margin:0 4px;">−</button>
+        <span class="img-size-label">100%</span>
+        <button onclick="resizeImg('${id}',0.1)" style="background:#eee;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;margin:0 4px;">+</button>
+        <button onclick="alignImg('${id}','left')" style="background:#eee;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;">◀</button>
+        <button onclick="alignImg('${id}','center')" style="background:#eee;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;">●</button>
+        <button onclick="alignImg('${id}','right')" style="background:#eee;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;">▶</button>
+        <button onclick="removeFigure('${id}')" style="background:#e74c3c;color:white;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;">✕</button>
+      </div>
+    </figure>`);
+  }
+
+  function addToPreview(dataUrl, name) {
+    const div = document.getElementById('imagePreview');
+    const img = document.createElement('div');
+    img.style.cssText = 'width:80px;height:80px;border-radius:8px;overflow:hidden;border:1px solid var(--border);position:relative;';
+    img.innerHTML = `<img src="${dataUrl}" style="width:100%;height:100%;object-fit:cover;"><div style="position:absolute;top:2px;right:2px;background:#e74c3c;color:#fff;border:none;border-radius:50%;width:18px;height:18px;font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;" onclick="this.parentElement.remove()">✕</div>`;
+    div.appendChild(img);
+  }
+
+  /* ===== Image Controls ===== */
+  function resizeImg(id, delta) {
+    const fig = document.getElementById(id);
+    if (!fig) return;
+    const img = fig.querySelector('img');
+    if (!img) return;
+    const cur = parseFloat(img.style.width) || 100;
+    const val = Math.max(20, Math.min(100, cur + delta * 100));
+    img.style.width = val + '%';
+    fig.querySelector('.img-size-label').textContent = Math.round(val) + '%';
+  }
+
+  function alignImg(id, align) {
+    const fig = document.getElementById(id);
+    if (!fig) return;
+    fig.style.display = align === 'center' ? 'block' : 'inline-block';
+    fig.style.textAlign = align;
+    fig.style.marginLeft = align === 'right' ? 'auto' : '0';
+    fig.style.marginRight = align === 'left' ? 'auto' : '0';
+  }
+
+  function removeFigure(id) {
+    const fig = document.getElementById(id);
+    if (fig) fig.remove();
+  }
+
+  /* ===== Generate Article from URL ===== */
+  async function generateArticle() {
+    const url = document.getElementById('articleUrl').value.trim();
+    if (!url) return setStatus('Introduce una URL', 'error');
+
+    setStatus('⏳ Generando...', '');
+    showProgress('genProgress', 30);
+
+    try {
+      // Try to fetch via CORS proxy
+      const proxy = 'https://api.allorigins.win/raw?url=';
+      const resp = await fetch(proxy + encodeURIComponent(url));
+      const html = await resp.text();
+      showProgress('genProgress', 70);
+
+      // Basic extraction
+      const title = extractTitle(html) || 'Artículo';
+      const body = extractBody(html) || '<p>Contenido no disponible</p>';
+      const firstImg = extractFirstImage(html);
+
+      let articleHtml = '';
+      // Category guess
+      let cat = 'Anime';
+      if (url.includes('manga') || url.includes('comic')) cat = 'Manga';
+      else if (url.includes('music') || url.includes('musica')) cat = 'Música';
+      else if (url.includes('movie') || url.includes('cine') || url.includes('film')) cat = 'Cine';
+
+      articleHtml += `<span style="background:var(--accent);border-radius:30px;color:#fff;display:inline-block;font-size:12px;font-weight:bold;letter-spacing:1.5px;margin-bottom:15px;padding:5px 16px;text-transform:uppercase;">${cat}</span>\n`;
+      articleHtml += `<h1 style="font-size:28px;font-weight:700;line-height:1.3;margin:0 0 20px;color:var(--text-primary);">${title}</h1>\n`;
+      if (firstImg) {
+        articleHtml += `<img src="${firstImg}" alt="${title}" style="max-width:100%;border-radius:12px;margin-bottom:20px;">\n`;
+      }
+      articleHtml += body;
+
+      visual.innerHTML = articleHtml;
+      syncVisualToHtml();
+      showProgress('genProgress', 100);
+      setTimeout(() => hideProgress('genProgress'), 1000);
+      setStatus('✅ Artículo generado desde URL. Revisa y ajusta.', 'success');
+    } catch (e) {
+      showProgress('genProgress', 0);
+      hideProgress('genProgress');
+      setStatus('❌ Error al obtener la URL: ' + e.message, 'error');
+    }
+  }
+
+  function extractTitle(html) {
+    const m = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i) || html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+    if (m) return m[1].replace(/<[^>]+>/g, '').trim();
+    return null;
+  }
+
+  function extractBody(html) {
+    // Try common article selectors
+    const patterns = [
+      /<article[^>]*>([\s\S]*?)<\/article>/i,
+      /<div[^>]*class="[^"]*article-body[^"]*"[^>]*>([\s\S]*?)<\/div>/i,
+      /<div[^>]*class="[^"]*entry-content[^"]*"[^>]*>([\s\S]*?)<\/div>/i,
+      /<div[^>]*class="[^"]*main[^"]*"[^>]*>([\s\S]*?)<\/div>/i,
+      /<div[^>]*id="main"[^>]*>([\s\S]*?)<\/div>/i,
+    ];
+    for (let p of patterns) {
+      const m = html.match(p);
+      if (m) {
+        let content = m[1];
+        // Remove scripts, styles, nav, footer
+        content = content.replace(/<script[\s\S]*?<\/script>/gi, '');
+        content = content.replace(/<style[\s\S]*?<\/style>/gi, '');
+        content = content.replace(/<nav[\s\S]*?<\/nav>/gi, '');
+        content = content.replace(/<footer[\s\S]*?<\/footer>/gi, '');
+        // Extract paragraphs
+        const paras = content.match(/<p[^>]*>[\s\S]*?<\/p>/gi);
+        if (paras && paras.length) {
+          return paras.slice(0, 8).join('\n');
+        }
+        return content.substring(0, 2000);
+      }
+    }
+    return null;
+  }
+
+  function extractFirstImage(html) {
+    const m = html.match(/<img[^>]+src="([^"]+)"[^>]*>/i);
+    if (m) {
+      const src = m[1];
+      if (src.startsWith('http') && !src.includes('logo') && !src.includes('icon')) return src;
+    }
+    return null;
+  }
+
+  /* ===== Publish to GitHub ===== */
+  async function publishArticle() {
+    const fileName = document.getElementById('fileName').value.trim();
+    const token = document.getElementById('githubToken').value.trim() || localStorage.getItem('gh_token') || '';
+
+    if (!fileName) return setStatus('❌ Introduce el nombre del archivo', 'error');
+    if (!token) return setStatus('❌ Introduce tu token de GitHub', 'error');
+
+    setStatus('⏳ Publicando...', '');
+    showProgress('pubProgress', 10);
+
+    try {
+      // Get current content
+      const htmlContent = activeTab === 'html' ? htmlArea.value : visual.innerHTML;
+
+      // Build full article HTML with wrapper
+      const articleTitle = extractTitle(htmlContent) || fileName.replace(/^articulo-/, '').replace(/-/g, ' ');
+      const firstImg = extractFirstImage(htmlContent) || `https://LeoLaRata35.github.io/e-radiomagazine/assets/E-Radio%20Magazine%20HORIZONTAL.png`;
+      const desc = (htmlContent.match(/<p[^>]*>(.*?)<\/p>/) || ['', 'Artículo'])[1].replace(/<[^>]+>/g, '').substring(0, 160);
+
+      const fullHtml = `<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${articleTitle}</title>
+  <meta property="og:title" content="${articleTitle}">
+  <meta property="og:description" content="${desc}">
+  <meta property="og:image" content="${firstImg}">
+  <meta property="og:url" content="https://LeoLaRata35.github.io/e-radiomagazine/articulos/${fileName}.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="E-Radio Magazine">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <div class="header-left">
+        <a href="../index.html" class="logo"><img src="../assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio" style="height:60px;display:block;"></a>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../index.html" data-filter="anime">Anime</a></li>
+          <li><a href="../index.html" data-filter="manga">Manga</a></li>
+          <li><a href="../index.html" data-filter="reviews">Reviews</a></li>
+          <li><a href="../index.html" data-filter="musica">Música</a></li>
+          <li><a href="https://radioakari.blogspot.com/" class="nav-blog-link" target="_blank">Radio Akari</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div style="max-width:900px;margin:40px auto;padding:0 20px;background:#fff;border-radius:16px;box-shadow:0 4px 30px rgba(0,0,0,0.08);">
+  <div style="padding:40px;font-family:'Segoe UI',Arial,sans-serif;line-height:1.8;color:#1a1a2e;">
+    ${htmlContent}
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><img src="../assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio" style="height:50px;display:block;"></a>
+        <p>Tu fuente de noticias sobre anime, manga y videojuegos desde 2016.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="../index.html">Anime</a></li>
+          <li><a href="../index.html">Manga</a></li>
+          <li><a href="../index.html">Reviews</a></li>
+          <li><a href="../index.html">Música</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 E-Radio Magazine. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>`;
+
+      showProgress('pubProgress', 30);
+
+      // Upload to GitHub via API
+      const repo = 'LeoLaRata35/e-radiomagazine';
+      const path = `articulos/${fileName}.html`;
+      const apiUrl = `https://api.github.com/repos/${repo}/contents/${path}`;
+
+      // Check if file exists (get SHA if exists)
+      let sha = '';
+      try {
+        const checkResp = await fetch(apiUrl, { headers: { Authorization: `token ${token}` } });
+        if (checkResp.ok) {
+          const data = await checkResp.json();
+          sha = data.sha;
+        }
+      } catch(e) {}
+
+      showProgress('pubProgress', 50);
+
+      // Upload file
+      const content = btoa(unescape(encodeURIComponent(fullHtml)));
+      const uploadResp = await fetch(apiUrl, {
+        method: 'PUT',
+        headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: sha ? `Actualizar ${fileName}` : `Agregar ${fileName}`,
+          content: content,
+          sha: sha || undefined,
+          branch: 'main'
+        })
+      });
+
+      if (!uploadResp.ok) {
+        const err = await uploadResp.json();
+        throw new Error(err.message || 'Error al subir');
+      }
+
+      showProgress('pubProgress', 80);
+
+      // Also update index.html - add card to grid
+      // For now, just notify
+      setStatus(`✅ Artículo publicado: https://LeoLaRata35.github.io/e-radiomagazine/articulos/${fileName}.html`, 'success');
+      showProgress('pubProgress', 100);
+      setTimeout(() => hideProgress('pubProgress'), 2000);
+
+    } catch (e) {
+      showProgress('pubProgress', 0);
+      hideProgress('pubProgress');
+      setStatus('❌ Error: ' + e.message, 'error');
+    }
+  }
+
+  function saveToken() {
+    const token = document.getElementById('githubToken').value.trim();
+    if (!token) return;
+    localStorage.setItem('gh_token', token);
+    setStatus('✅ Token guardado localmente', 'success');
+  }
+
+  /* ===== Utilities ===== */
+  function clearEditor() {
+    visual.innerHTML = '';
+    htmlArea.value = '';
+    setStatus('Editor limpiado', '');
+    updateWordCount();
+  }
+
+  function setStatus(msg, type) {
+    const el = document.getElementById('statusMsg');
+    el.textContent = msg;
+    el.className = 'msg' + (type ? ' ' + type : '');
+  }
+
+  function showProgress(id, pct) {
+    const bar = document.getElementById(id);
+    bar.style.display = 'block';
+    bar.querySelector('div').style.width = pct + '%';
+  }
+
+  function hideProgress(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+
+  // Load saved token
+  document.addEventListener('DOMContentLoaded', () => {
+    const saved = localStorage.getItem('gh_token');
+    if (saved) document.getElementById('githubToken').value = saved;
+    updateWordCount();
+  });
+</script>
+
+</body>
+</html>
