@@ -651,8 +651,7 @@
       let indexHtml = await idxRawResp.text();
 
       // Build card
-      const cardHtml = `
-        <article class="article-card" data-category="${category}">
+      const cardHtml = `<article class="article-card" data-category="${category}">
           <div class="article-img" style="background-image: url('${firstImg}');">
             <span class="article-date">${dateStr}</span>
           </div>
@@ -664,12 +663,31 @@
           </div>
         </article>`;
 
-      // Insert at top of grid
-      const gridMarkerRegex = /<div\s+class=["']articles-grid["']\s+id=["']articlesGrid["']>/i;
-      const gridMatch = indexHtml.match(gridMarkerRegex);
-      if (!gridMatch) throw new Error('No se encontró el grid de artículos en index.html');
-      const gridPos = gridMatch.index;
-      const insertPos = gridPos + gridMatch[0].length;
+      // Insert at top of grid - with multiple fallback patterns
+      let gridMatch = null;
+      let insertPos = -1;
+      
+      // Try different regex patterns for flexibility
+      const patterns = [
+        /<div\s+class=["']articles-grid["']\s+id=["']articlesGrid["']>/i,
+        /<div\s+id=["']articlesGrid["']\s+class=["']articles-grid["']>/i,
+        /<div[^>]*id=["']articlesGrid["'][^>]*>/i,
+        /<div[^>]*class=["']articles-grid["'][^>]*>/i
+      ];
+      
+      for (const pattern of patterns) {
+        gridMatch = indexHtml.match(pattern);
+        if (gridMatch) {
+          const gridPos = gridMatch.index;
+          insertPos = gridPos + gridMatch[0].length;
+          break;
+        }
+      }
+      
+      if (insertPos === -1) {
+        throw new Error('No se encontró el grid de artículos en index.html. Patrones buscados: articles-grid, articlesGrid');
+      }
+      
       indexHtml = indexHtml.slice(0, insertPos) + '\n' + cardHtml + indexHtml.slice(insertPos);
 
       const indexContent = btoa(unescape(encodeURIComponent(indexHtml)));
@@ -685,7 +703,8 @@
       });
       if (!indexResp.ok) {
         const errData = await indexResp.json().catch(() => ({}));
-        throw new Error('Error al actualizar portada: ' + (errData.message || indexResp.status));
+        console.error('GitHub API Error:', errData);
+        throw new Error('Error al actualizar portada: ' + (errData.message || indexResp.statusText || indexResp.status));
       }
 
       showProgress('pubProgress', 100);
