@@ -250,7 +250,7 @@
         <button class="secondary" onclick="clearEditor()">Limpiar</button>
       </div>
       <div class="progress-bar" id="genProgress"><div></div></div>
-      <div class="hint">Pega la URL de un artículo de Natalie, Oricon o similar para generar el formato automáticamente.</div>
+      <div class="hint">Soporta: <strong>Natalie</strong> (texto completo), <strong>Oricon</strong> (Shift_JIS, metadatos), <strong>Famitsu</strong>. Requiere CORS proxy.</div>
     </div>
 
     <!-- Image upload -->
@@ -465,13 +465,200 @@
     if (fig) fig.remove();
   }
 
+  /* ===== Source Detection ===== */
+  function detectSource(url) {
+    if (url.includes('oricon.co.jp')) return 'oricon';
+    if (url.includes('natalie.mu')) return 'natalie';
+    if (url.includes('famitsu.com')) return 'famitsu';
+    if (url.includes('animenewsnetwork.com')) return 'ann';
+    return 'generic';
+  }
+
+  function extractMetaContent(html, property) {
+    const patterns = [
+      new RegExp(`<meta[^>]+property="og:${property}"[^>]+content="([^"]*)"`, 'i'),
+      new RegExp(`<meta[^>]+name="twitter:${property}"[^>]+content="([^"]*)"`, 'i'),
+      new RegExp(`<meta[^>]+name="description"[^>]+content="([^"]*)"`, 'i'),
+      new RegExp(`<meta[^>]+itemprop="${property}"[^>]+content="([^"]*)"`, 'i'),
+    ];
+    for (const p of patterns) {
+      const m = html.match(p);
+      if (m) return m[1].replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').trim();
+    }
+    return null;
+  }
+
+  function stripTags(str) {
+    return str.replace(/<[^>]+>/g, '').trim();
+  }
+
+  /* ===== Natalie Parser ===== */
+  function parseNatalie(html) {
+    // Title
+    let title = extractMetaContent(html, 'title') || '';
+    if (!title) {
+      const m = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+      if (m) title = stripTags(m[1]);
+    }
+
+    // Body: Natalie uses .article_body
+    let bodyHtml = '';
+    const bodyMatch = html.match(/<div[^>]*class="[^"]*article_body[^"]*"[^>]*>([\s\S]*?)<\/div>\s*<\/div>/i);
+    if (bodyMatch) {
+      let content = bodyMatch[1];
+      content = content.replace(/<script[\s\S]*?<\/script>/gi, '');
+      content = content.replace(/<style[\s\S]*?<\/style>/gi, '');
+      // Convert images to E-Radio format
+      content = content.replace(/<img[^>]+src="([^"]+)"[^>]*>/gi, (m, src) => {
+        if (src.startsWith('http') && !src.includes('logo') && !src.includes('icon') && !src.includes('impolicy')) {
+          return `<img src="${src}" style="max-width:100%;border-radius:8px;margin:20px 0;display:block;">`;
+        }
+        return '';
+      });
+      // Keep only paragraphs
+      const paras = content.match(/<p[^>]*>[\s\S]*?<\/p>/gi);
+      if (paras && paras.length) {
+        bodyHtml = paras.map(p => {
+          // Clean up Natalie-specific stuff
+          let clean = p.replace(/<a[^>]+class="[^"]*nablp[^"]*"[^>]*>[\s\S]*?<\/a>/gi, '');
+          return clean;
+        }).filter(p => p.length > 20).slice(0, 10).join('\n');
+      }
+    }
+    if (!bodyHtml) {
+      // Fallback: generic paragraph extraction
+      const paras = html.match(/<p[^>]*>[\s\S]*?<\/p>/gi);
+      if (paras) bodyHtml = paras.filter(p => stripTags(p).length > 40).slice(0, 8).join('\n');
+    }
+
+    // First image from og:image or twitter:image
+    let firstImg = extractMetaContent(html, 'image') || '';
+    if (!firstImg) {
+      const imgMatch = html.match(/<figure[^>]*>[\s\S]*?<img[^>]+src="([^"]+)"[^>]*>/i);
+      if (imgMatch) firstImg = imgMatch[1];
+    }
+
+    return { title, bodyHtml, firstImg };
+  }
+
+  /* ===== Oricon Parser ===== */
+  function parseOricon(html) {
+    // Oricon uses Shift_JIS; body text is garbled. Use meta tags.
+    let title = extractMetaContent(html, 'title') || '';
+    if (!title) {
+      const m = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+      if (m) title = stripTags(m[1]).replace(/\s*\|\s*ORICON NEWS.*/, '').trim();
+    }
+
+    let description = extractMetaContent(html, 'description') || '';
+
+    // For Oricon, build body from description + note about encoding
+    let bodyHtml = '';
+    if (description) {
+      bodyHtml = `<p>${description}</p>`;
+      bodyHtml += `<p style="color:#888;font-style:italic;font-size:0.85rem;">(El texto completo del artículo no pudo ser extraído automáticamente debido a la codificación Shift_JIS de Oricon. Edita manualmente el contenido.)</p>`;
+    }
+
+    // Images: look for twitter:image, og:image, or upimg pattern
+    let firstImg = '';
+    // Try twitter:image:src first (Oricon specific)
+    const twImgMatch = html.match(/<meta[^>]+name="twitter:image:src"[^>]+content="([^"]+)"/i);
+    if (twImgMatch) firstImg = twImgMatch[1];
+    if (!firstImg) firstImg = extractMetaContent(html, 'image') || '';
+    if (!firstImg) {
+      const oriconImgMatch = html.match(/https:\/\/contents\.oricon\.co\.jp\/upimg\/news\/\d+\/\d+\/\d+_[a-z]_[a-z]_[^"']+/i);
+      if (oriconImgMatch) firstImg = oriconImgMatch[0];
+    }
+
+    return { title, bodyHtml, firstImg };
+  }
+
+  /* ===== Famitsu Parser ===== */
+  function parseFamitsu(html) {
+    let title = extractMetaContent(html, 'title') || '';
+    if (!title) {
+      const m = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+      if (m) title = stripTags(m[1]).replace(/\s*\|\s*.*/, '').trim();
+    }
+
+    let bodyHtml = '';
+    // Famitsu uses .article-body or similar
+    const bodyMatch = html.match(/<div[^>]*class="[^"]*article-body[^"]*"[^>]*>([\s\S]*?)<\/div>/i);
+    if (bodyMatch) {
+      let content = bodyMatch[1];
+      content = content.replace(/<script[\s\S]*?<\/script>/gi, '');
+      content = content.replace(/<style[\s\S]*?<\/style>/gi, '');
+      const paras = content.match(/<p[^>]*>[\s\S]*?<\/p>/gi);
+      if (paras && paras.length) {
+        bodyHtml = paras.slice(0, 10).join('\n');
+      }
+    }
+    if (!bodyHtml) {
+      const paras = html.match(/<p[^>]*>[\s\S]*?<\/p>/gi);
+      if (paras) bodyHtml = paras.filter(p => stripTags(p).length > 40).slice(0, 8).join('\n');
+    }
+
+    let firstImg = extractMetaContent(html, 'image') || '';
+    if (!firstImg) {
+      const m = html.match(/<figure[^>]*>[\s\S]*?<img[^>]+src="([^"]+)"[^>]*>/i);
+      if (m) firstImg = m[1];
+    }
+
+    return { title, bodyHtml, firstImg };
+  }
+
+  /* ===== Generic Parser ===== */
+  function parseGeneric(html) {
+    let title = extractMetaContent(html, 'title') || '';
+    if (!title) {
+      const m = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+      if (m) title = stripTags(m[1]);
+    }
+
+    let bodyHtml = '';
+    const patterns = [
+      /<article[^>]*>([\s\S]*?)<\/article>/i,
+      /<div[^>]*class="[^"]*article-body[^"]*"[^>]*>([\s\S]*?)<\/div>/i,
+      /<div[^>]*class="[^"]*entry-content[^"]*"[^>]*>([\s\S]*?)<\/div>/i,
+      /<div[^>]*class="[^"]*main[^"]*"[^>]*>([\s\S]*?)<\/div>/i,
+      /<div[^>]*id="main"[^>]*>([\s\S]*?)<\/div>/i,
+    ];
+    for (const p of patterns) {
+      const m = html.match(p);
+      if (m) {
+        let content = m[1];
+        content = content.replace(/<script[\s\S]*?<\/script>/gi, '');
+        content = content.replace(/<style[\s\S]*?<\/style>/gi, '');
+        content = content.replace(/<nav[\s\S]*?<\/nav>/gi, '');
+        content = content.replace(/<footer[\s\S]*?<\/footer>/gi, '');
+        const paras = content.match(/<p[^>]*>[\s\S]*?<\/p>/gi);
+        if (paras && paras.length) {
+          bodyHtml = paras.slice(0, 8).join('\n');
+          break;
+        }
+      }
+    }
+    if (!bodyHtml) {
+      const paras = html.match(/<p[^>]*>[\s\S]*?<\/p>/gi);
+      if (paras) bodyHtml = paras.filter(p => stripTags(p).length > 40).slice(0, 8).join('\n');
+    }
+
+    let firstImg = extractMetaContent(html, 'image') || '';
+    if (!firstImg) {
+      const m = html.match(/<img[^>]+src="(https?:\/\/[^"]+)"[^>]*>/i);
+      if (m && !m[1].includes('logo') && !m[1].includes('icon')) firstImg = m[1];
+    }
+
+    return { title, bodyHtml, firstImg };
+  }
+
   /* ===== Generate Article from URL ===== */
   async function generateArticle() {
     const url = document.getElementById('articleUrl').value.trim();
     if (!url) return setStatus('Introduce una URL', 'error');
 
-    setStatus('⏳ Generando...', '');
-    showProgress('genProgress', 30);
+    setStatus('⏳ Obteniendo contenido...', '');
+    showProgress('genProgress', 20);
 
     try {
       // Try multiple CORS proxies
@@ -483,86 +670,72 @@
       let html = '';
       for (const proxy of proxies) {
         try {
-          const resp = await fetch(proxy + encodeURIComponent(url), { signal: AbortSignal.timeout(8000) });
+          const resp = await fetch(proxy + encodeURIComponent(url), { signal: AbortSignal.timeout(10000) });
           if (resp.ok) { html = await resp.text(); break; }
         } catch(e) { continue; }
       }
       if (!html) throw new Error('No se pudo obtener la URL desde ningún proxy');
-      showProgress('genProgress', 70);
+      showProgress('genProgress', 60);
 
-      // Basic extraction
-      const title = extractTitle(html) || 'Artículo';
-      const body = extractBody(html) || '<p>Contenido no disponible</p>';
-      const firstImg = extractFirstImage(html);
+      const source = detectSource(url);
+      let data;
 
-      let articleHtml = '';
+      switch (source) {
+        case 'oricon': data = parseOricon(html); break;
+        case 'natalie': data = parseNatalie(html); break;
+        case 'famitsu': data = parseFamitsu(html); break;
+        default: data = parseGeneric(html); break;
+      }
+
+      if (!data.title) data.title = 'Artículo';
+      if (!data.bodyHtml) data.bodyHtml = '<p>No se pudo extraer el contenido automáticamente. Escribe el artículo manualmente.</p>';
+
       // Category guess
       let cat = 'Anime';
-      if (url.includes('manga') || url.includes('comic')) cat = 'Manga';
-      else if (url.includes('music') || url.includes('musica')) cat = 'Música';
-      else if (url.includes('movie') || url.includes('cine') || url.includes('film')) cat = 'Cine';
+      const lc = url.toLowerCase();
+      if (lc.includes('manga') || lc.includes('comic')) cat = 'Manga';
+      else if (lc.includes('music') || lc.includes('musica')) cat = 'Música';
+      else if (lc.includes('movie') || lc.includes('cine') || lc.includes('film')) cat = 'Cine';
+      else if (lc.includes('game') || lc.includes('juego')) cat = 'Game';
 
-      articleHtml += `<span style="background:var(--accent);border-radius:30px;color:#fff;display:inline-block;font-size:12px;font-weight:bold;letter-spacing:1.5px;margin-bottom:15px;padding:5px 16px;text-transform:uppercase;">${cat}</span>\n`;
-      articleHtml += `<h1 style="font-size:28px;font-weight:700;line-height:1.3;margin:0 0 20px;color:var(--text-primary);">${title}</h1>\n`;
-      if (firstImg) {
-        articleHtml += `<img src="${firstImg}" alt="${title}" style="max-width:100%;border-radius:12px;margin-bottom:20px;">\n`;
+      // Build article HTML in E-Radio format
+      let articleHtml = '';
+      // Gradient header with image
+      articleHtml += `<div style="background:linear-gradient(135deg,#ffc800 0%,#c83232 100%);border-bottom:4px solid #ffc800;padding:30px 20px;text-align:center;">\n`;
+      articleHtml += `  <div class="separator" style="clear:both;text-align:center;">\n`;
+      if (data.firstImg) {
+        articleHtml += `    <img src="${data.firstImg}" alt="${data.title}" style="max-width:100%;height:auto;width:100%;border-radius:8px;">\n`;
       }
-      articleHtml += body;
+      articleHtml += `  </div>\n`;
+      articleHtml += `</div>\n\n`;
+
+      // Category badge + Title
+      articleHtml += `<div style="background:linear-gradient(135deg,#ffc800 0%,#c83232 100%);color:white;padding:30px 20px 25px;">\n`;
+      articleHtml += `  <span style="background:#ffffc8;border-radius:30px;color:#c83232;display:inline-block;font-size:12px;font-weight:bold;letter-spacing:1.5px;margin-bottom:15px;padding:5px 16px;text-transform:uppercase;">${cat}</span>\n`;
+      articleHtml += `  <h1 style="color:#ffffff;font-size:28px;font-weight:700;line-height:1.3;margin:0;">${data.title}</h1>\n`;
+      articleHtml += `</div>\n\n`;
+
+      // Body
+      articleHtml += `<div style="font-size:16px;padding:25px 20px 30px;color:#1a1a1a;">\n`;
+      // Lead paragraph with source credit
+      articleHtml += `  <p style="margin-bottom:20px;text-align:justify;"><strong>${source.toUpperCase()}</strong> report\u00f3 el siguiente contenido. A continuaci\u00f3n, los detalles.</p>\n`;
+      articleHtml += `  ${data.bodyHtml}\n`;
+      // Source line
+      articleHtml += `  <p style="font-size:13px;color:#888;margin-top:30px;text-align:left;">\n`;
+      articleHtml += `    <strong>Fuente:</strong> <a href="${url}" target="_blank" style="color:#c83232;">${url}</a>.\n`;
+      articleHtml += `  </p>\n`;
+      articleHtml += `</div>\n`;
 
       visual.innerHTML = articleHtml;
       syncVisualToHtml();
       showProgress('genProgress', 100);
       setTimeout(() => hideProgress('genProgress'), 1000);
-      setStatus('✅ Artículo generado desde URL. Revisa y ajusta.', 'success');
+      setStatus(`✅ Artículo generado desde ${source}. Revisa, ajusta y completa la ficha técnica.`, 'success');
     } catch (e) {
       showProgress('genProgress', 0);
       hideProgress('genProgress');
       setStatus('❌ Error al obtener la URL: ' + e.message, 'error');
     }
-  }
-
-  function extractTitle(html) {
-    const m = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i) || html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
-    if (m) return m[1].replace(/<[^>]+>/g, '').trim();
-    return null;
-  }
-
-  function extractBody(html) {
-    // Try common article selectors
-    const patterns = [
-      /<article[^>]*>([\s\S]*?)<\/article>/i,
-      /<div[^>]*class="[^"]*article-body[^"]*"[^>]*>([\s\S]*?)<\/div>/i,
-      /<div[^>]*class="[^"]*entry-content[^"]*"[^>]*>([\s\S]*?)<\/div>/i,
-      /<div[^>]*class="[^"]*main[^"]*"[^>]*>([\s\S]*?)<\/div>/i,
-      /<div[^>]*id="main"[^>]*>([\s\S]*?)<\/div>/i,
-    ];
-    for (let p of patterns) {
-      const m = html.match(p);
-      if (m) {
-        let content = m[1];
-        // Remove scripts, styles, nav, footer
-        content = content.replace(/<script[\s\S]*?<\/script>/gi, '');
-        content = content.replace(/<style[\s\S]*?<\/style>/gi, '');
-        content = content.replace(/<nav[\s\S]*?<\/nav>/gi, '');
-        content = content.replace(/<footer[\s\S]*?<\/footer>/gi, '');
-        // Extract paragraphs
-        const paras = content.match(/<p[^>]*>[\s\S]*?<\/p>/gi);
-        if (paras && paras.length) {
-          return paras.slice(0, 8).join('\n');
-        }
-        return content.substring(0, 2000);
-      }
-    }
-    return null;
-  }
-
-  function extractFirstImage(html) {
-    const m = html.match(/<img[^>]+src="([^"]+)"[^>]*>/i);
-    if (m) {
-      const src = m[1];
-      if (src.startsWith('http') && !src.includes('logo') && !src.includes('icon')) return src;
-    }
-    return null;
   }
 
   /* ===== Publish to GitHub ===== */
