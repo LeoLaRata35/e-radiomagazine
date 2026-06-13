@@ -673,16 +673,15 @@
           </div>
         </article>`;
 
-      // Insert at top of grid - buscar el primer artículo y insertar antes
-      // Esto es más robusto que buscar el contenedor
-      const firstArticleMatch = indexHtml.match(/<article\s+class=["']article-card["']/i);
+      // Insert at top of grid - buscar el marcador ARCHIVE_START
+      const anchorMatch = indexHtml.match(/<!-- ARCHIVE_START -->/i);
       
-      if (!firstArticleMatch) {
-        throw new Error('No se encontró ningún artículo en index.html. Verifica que el archivo tenga la estructura correcta.');
+      if (!anchorMatch) {
+        throw new Error('No se encontró el marcador ARCHIVE_START en index.html. Por favor, contacta al administrador.');
       }
       
-      const insertPos = firstArticleMatch.index;
-      indexHtml = indexHtml.slice(0, insertPos) + cardHtml + '\n' + indexHtml.slice(insertPos);
+      const insertPos = anchorMatch.index + anchorMatch[0].length;
+      indexHtml = indexHtml.slice(0, insertPos) + '\n' + cardHtml + indexHtml.slice(insertPos);
 
       const indexContent = btoa(unescape(encodeURIComponent(indexHtml)));
       const indexResp = await fetch(indexApiUrl, {
@@ -698,6 +697,7 @@
       if (!indexResp.ok) {
         const errData = await indexResp.json().catch(() => ({}));
         console.error('GitHub API Error:', errData);
+        console.error('Index HTML enviado:', indexContent.substring(0, 500));
         throw new Error('Error al actualizar portada: ' + (errData.message || indexResp.statusText || indexResp.status));
       }
 
