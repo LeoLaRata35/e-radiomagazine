@@ -128,7 +128,23 @@
       cursor: pointer; transition: box-shadow 0.2s;
     }
     #visualEditor img:hover { box-shadow: 0 0 0 2px var(--accent); }
-    #visualEditor img.resizing { outline: 2px dashed var(--accent); }
+    #visualEditor img.selected { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+    /* Floating image toolbar */
+    .img-float-toolbar {
+      position: absolute; z-index: 999;
+      background: #1a1a2e; border: 1px solid #d4af37; border-radius: 10px;
+      padding: 6px 10px; display: none; align-items: center; gap: 4px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    .img-float-toolbar button {
+      background: rgba(255,255,255,0.06); border: none; color: #e8e8f0;
+      width: 32px; height: 32px; border-radius: 6px; cursor: pointer;
+      font-size: 0.85rem; display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s;
+    }
+    .img-float-toolbar button:hover { background: rgba(212,175,55,0.2); color: #d4af37; }
+    .img-float-toolbar .sep { width: 1px; height: 24px; background: rgba(255,255,255,0.1); margin: 0 4px; }
     #visualEditor a { color: var(--accent); }
 
     /* Progress */
@@ -234,6 +250,17 @@
       <button onclick="switchTab('html')">HTML</button>
     </div>
     <div id="visualEditor" contenteditable="true"></div>
+    <div class="img-float-toolbar" id="imgToolbar">
+      <button onclick="imgToolbarAction('resize-')" title="Reducir">−</button>
+      <button onclick="imgToolbarAction('resize+')" title="Agrandar">+</button>
+      <div class="sep"></div>
+      <button onclick="imgToolbarAction('align-left')" title="Izquierda">◀</button>
+      <button onclick="imgToolbarAction('align-center')" title="Centro">●</button>
+      <button onclick="imgToolbarAction('align-right')" title="Derecha">▶</button>
+      <div class="sep"></div>
+      <button onclick="imgToolbarAction('replace')" title="Reemplazar">🔄</button>
+      <button onclick="imgToolbarAction('remove')" title="Eliminar">✕</button>
+    </div>
     <textarea id="htmlEditor" spellcheck="false"></textarea>
   </div>
 
@@ -463,6 +490,84 @@
   function removeFigure(id) {
     const fig = document.getElementById(id);
     if (fig) fig.remove();
+  }
+
+  /* ===== Floating Image Toolbar ===== */
+  let selectedImg = null;
+
+  visual.addEventListener('click', e => {
+    const img = e.target.closest('img');
+    if (img && visual.contains(img)) {
+      e.stopPropagation();
+      selectImage(img);
+    } else {
+      deselectImage();
+    }
+  });
+
+  // Also deselect on Escape
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') deselectImage(); });
+
+  function selectImage(img) {
+    deselectImage();
+    selectedImg = img;
+    img.classList.add('selected');
+    showImgToolbar(img);
+  }
+
+  function deselectImage() {
+    if (selectedImg) {
+      selectedImg.classList.remove('selected');
+      selectedImg = null;
+    }
+    document.getElementById('imgToolbar').style.display = 'none';
+  }
+
+  function showImgToolbar(img) {
+    const toolbar = document.getElementById('imgToolbar');
+    const rect = img.getBoundingClientRect();
+    toolbar.style.display = 'flex';
+    toolbar.style.top = (rect.top - 50 + window.scrollY) + 'px';
+    toolbar.style.left = (rect.left + rect.width / 2 - 120 + window.scrollX) + 'px';
+  }
+
+  function imgToolbarAction(action) {
+    if (!selectedImg) return;
+    if (action === 'resize+') {
+      const cur = parseFloat(selectedImg.style.width) || 100;
+      selectedImg.style.width = Math.min(100, cur + 10) + '%';
+    } else if (action === 'resize-') {
+      const cur = parseFloat(selectedImg.style.width) || 100;
+      selectedImg.style.width = Math.max(20, cur - 10) + '%';
+    } else if (action === 'align-left') {
+      selectedImg.style.display = 'block';
+      selectedImg.style.margin = '8px 16px 8px 0';
+      selectedImg.style.float = 'left';
+    } else if (action === 'align-center') {
+      selectedImg.style.display = 'block';
+      selectedImg.style.margin = '12px auto';
+      selectedImg.style.float = 'none';
+    } else if (action === 'align-right') {
+      selectedImg.style.display = 'block';
+      selectedImg.style.margin = '8px 0 8px 16px';
+      selectedImg.style.float = 'right';
+    } else if (action === 'replace') {
+      const input = document.createElement('input');
+      input.type = 'file'; input.accept = 'image/*';
+      input.onchange = () => {
+        const file = input.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = e => { selectedImg.src = e.target.result; };
+        reader.readAsDataURL(file);
+      };
+      input.click();
+    } else if (action === 'remove') {
+      selectedImg.remove();
+      deselectImage();
+    }
+    // Keep toolbar visible after action
+    if (selectedImg) showImgToolbar(selectedImg);
   }
 
   /* ===== Source Detection ===== */
