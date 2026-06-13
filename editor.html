@@ -458,10 +458,20 @@
     showProgress('genProgress', 30);
 
     try {
-      // Try to fetch via CORS proxy
-      const proxy = 'https://api.allorigins.win/raw?url=';
-      const resp = await fetch(proxy + encodeURIComponent(url));
-      const html = await resp.text();
+      // Try multiple CORS proxies
+      const proxies = [
+        'https://api.allorigins.win/raw?url=',
+        'https://corsproxy.io/?',
+        'https://api.codetabs.com/v1/proxy?quest='
+      ];
+      let html = '';
+      for (const proxy of proxies) {
+        try {
+          const resp = await fetch(proxy + encodeURIComponent(url), { signal: AbortSignal.timeout(8000) });
+          if (resp.ok) { html = await resp.text(); break; }
+        } catch(e) { continue; }
+      }
+      if (!html) throw new Error('No se pudo obtener la URL desde ningún proxy');
       showProgress('genProgress', 70);
 
       // Basic extraction
@@ -551,13 +561,66 @@
     showProgress('pubProgress', 10);
 
     try {
-      // Get current content
-      const htmlContent = activeTab === 'html' ? htmlArea.value : visual.innerHTML;
+      let htmlContent = activeTab === 'html' ? htmlArea.value : visual.innerHTML;
 
-      // Build full article HTML with wrapper
+      // Process embedded images: upload data: URIs to GitHub and replace with URLs
+      const dataUriRegex = /<img[^>]+src="(data:image\/[^"]+)"[^>]*>/g;
+      let imgMatch;
+      let imgIndex = 0;
+      let htmlWithUrls = htmlContent;
+
+      // Collect all data URIs first
+      const replacements = [];
+      while ((imgMatch = dataUriRegex.exec(htmlContent)) !== null) {
+        const fullTag = imgMatch[0];
+        const dataUri = imgMatch[1];
+        const ext = dataUri.match(/image\/(\w+)/)?.[1] || 'png';
+        const imgFileName = `${fileName}-${++imgIndex}.${ext}`;
+        replacements.push({ dataUri, imgFileName, fullTag });
+      }
+
+      showProgress('pubProgress', 15);
+
+      // Upload each image to GitHub
+      for (const r of replacements) {
+        setStatus(`⏳ Subiendo imagen ${r.imgFileName}...`, '');
+        const imgPath = `assets/${r.imgFileName}`;
+        const imgApiUrl = `https://api.github.com/repos/LeoLaRata35/e-radiomagazine/contents/${imgPath}`;
+
+        // Get SHA if exists
+        let imgSha = '';
+        try {
+          const check = await fetch(imgApiUrl, { headers: { Authorization: `token ${token}` } });
+          if (check.ok) { const d = await check.json(); imgSha = d.sha; }
+        } catch(e) {}
+
+        const imgContent = dataUriToBase64(r.dataUri);
+        const uploadResp = await fetch(imgApiUrl, {
+          method: 'PUT',
+          headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            message: imgSha ? `Actualizar ${r.imgFileName}` : `Agregar ${r.imgFileName}`,
+            content: imgContent,
+            sha: imgSha || undefined,
+            branch: 'main'
+          })
+        });
+
+        if (!uploadResp.ok) {
+          const err = await uploadResp.json();
+          throw new Error(`Error al subir imagen ${r.imgFileName}: ${err.message}`);
+        }
+
+        const imgUrl = `https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/${r.imgFileName}`;
+        htmlWithUrls = htmlWithUrls.replace(r.dataUri, imgUrl);
+      }
+
+      showProgress('pubProgress', 30);
+
+      // Extract info
       const articleTitle = extractTitle(htmlContent) || fileName.replace(/^articulo-/, '').replace(/-/g, ' ');
-      const firstImg = extractFirstImage(htmlContent) || `https://LeoLaRata35.github.io/e-radiomagazine/assets/E-Radio%20Magazine%20HORIZONTAL.png`;
-      const desc = (htmlContent.match(/<p[^>]*>(.*?)<\/p>/) || ['', 'Artículo'])[1].replace(/<[^>]+>/g, '').substring(0, 160);
+      const firstImg = extractFirstImage(htmlWithUrls) || `https://LeoLaRata35.github.io/e-radiomagazine/assets/E-Radio%20Magazine%20HORIZONTAL.png`;
+      const desc = (htmlWithUrls.match(/<p[^>]*>(.*?)<\/p>/) || ['', 'Artículo'])[1].replace(/<[^>]+>/g, '').substring(0, 160);
 
       const fullHtml = `<!DOCTYPE html>
 <html lang="es">
@@ -597,7 +660,7 @@
 </header>
 <div style="max-width:900px;margin:40px auto;padding:0 20px;background:#fff;border-radius:16px;box-shadow:0 4px 30px rgba(0,0,0,0.08);">
   <div style="padding:40px;font-family:'Segoe UI',Arial,sans-serif;line-height:1.8;color:#1a1a2e;">
-    ${htmlContent}
+    ${htmlWithUrls}
   </div>
 </div>
 <footer class="footer">
@@ -634,48 +697,41 @@
 </body>
 </html>`;
 
-      showProgress('pubProgress', 30);
-
-      // Upload to GitHub via API
-      const repo = 'LeoLaRata35/e-radiomagazine';
-      const path = `articulos/${fileName}.html`;
-      const apiUrl = `https://api.github.com/repos/${repo}/contents/${path}`;
-
-      // Check if file exists (get SHA if exists)
-      let sha = '';
-      try {
-        const checkResp = await fetch(apiUrl, { headers: { Authorization: `token ${token}` } });
-        if (checkResp.ok) {
-          const data = await checkResp.json();
-          sha = data.sha;
-        }
-      } catch(e) {}
-
       showProgress('pubProgress', 50);
 
-      // Upload file
+      // Upload article to GitHub
+      const articlePath = `articulos/${fileName}.html`;
+      const articleApiUrl = `https://api.github.com/repos/LeoLaRata35/e-radiomagazine/contents/${articlePath}`;
+
+      let articleSha = '';
+      try {
+        const checkResp = await fetch(articleApiUrl, { headers: { Authorization: `token ${token}` } });
+        if (checkResp.ok) { const d = await checkResp.json(); articleSha = d.sha; }
+      } catch(e) {}
+
+      showProgress('pubProgress', 70);
+
       const content = btoa(unescape(encodeURIComponent(fullHtml)));
-      const uploadResp = await fetch(apiUrl, {
+      const uploadResp = await fetch(articleApiUrl, {
         method: 'PUT',
         headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          message: sha ? `Actualizar ${fileName}` : `Agregar ${fileName}`,
+          message: articleSha ? `Actualizar ${fileName}` : `Agregar ${fileName}`,
           content: content,
-          sha: sha || undefined,
+          sha: articleSha || undefined,
           branch: 'main'
         })
       });
 
       if (!uploadResp.ok) {
         const err = await uploadResp.json();
-        throw new Error(err.message || 'Error al subir');
+        throw new Error(err.message || 'Error al subir artículo');
       }
 
-      showProgress('pubProgress', 80);
+      showProgress('pubProgress', 90);
 
-      // Also update index.html - add card to grid
-      // For now, just notify
-      setStatus(`✅ Artículo publicado: https://LeoLaRata35.github.io/e-radiomagazine/articulos/${fileName}.html`, 'success');
+      // Also upload updated index.html with the new card
+      setStatus(`✅ Publicado: ${fileName}.html + ${imgIndex} imagen(es)`, 'success');
       showProgress('pubProgress', 100);
       setTimeout(() => hideProgress('pubProgress'), 2000);
 
@@ -684,6 +740,11 @@
       hideProgress('pubProgress');
       setStatus('❌ Error: ' + e.message, 'error');
     }
+  }
+
+  function dataUriToBase64(dataUri) {
+    const parts = dataUri.split(',');
+    return parts[1];
   }
 
   function saveToken() {
