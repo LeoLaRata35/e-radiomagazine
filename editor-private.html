@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Editor — E-Radio Magazine</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    :root {
+      --toolbar-bg: #1a1a2e;
+      --toolbar-border: #d4af37;
+      --editor-bg: #f8f8fa;
+      --editor-text: #1a1a2e;
+    }
+    body { background: var(--bg-primary); padding-top: 0; }
+
+    /* Header override */
+    .header { position: relative; }
+
+    /* Login Modal */
+    .login-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+    }
+    .login-modal.hidden { display: none; }
+    .login-box {
+      background: #1a1a2e;
+      border: 1px solid #d4af37;
+      border-radius: 16px;
+      padding: 40px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.8);
+    }
+    .login-box h2 {
+      color: #d4af37;
+      margin-bottom: 24px;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    .login-box .form-group {
+      margin-bottom: 16px;
+    }
+    .login-box label {
+      display: block;
+      color: #c8c8e0;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+    .login-box input {
+      width: 100%;
+      padding: 12px;
+      background: #2a2a4a;
+      border: 1px solid #d4af37;
+      border-radius: 8px;
+      color: #f0f0f5;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    .login-box input:focus {
+      outline: none;
+      border-color: #ffed4e;
+      box-shadow: 0 0 8px rgba(212,175,55,0.3);
+    }
+    .login-box .btn-login {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #d4af37, #ffed4e);
+      border: none;
+      border-radius: 8px;
+      color: #1a1a2e;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s;
+      margin-top: 8px;
+    }
+    .login-box .btn-login:hover { transform: scale(1.02); }
+    .login-box .error { color: #e74c3c; font-size: 0.85rem; margin-top: 8px; text-align: center; }
+
+    /* Editor Layout */
+    .editor-wrap { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+    /* Toolbar */
+    .toolbar {
+      background: var(--toolbar-bg);
+      border: 1px solid var(--border);
+      border-bottom: none;
+      border-radius: 12px 12px 0 0;
+      padding: 8px 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      align-items: center;
+    }
+    .toolbar .group { display: flex; gap: 2px; align-items: center; }
+    .toolbar .sep { width: 1px; height: 28px; background: var(--border); margin: 0 6px; }
+    .toolbar button {
+      background: transparent; border: none; color: #c8c8e0;
+      width: 34px; height: 34px; border-radius: 6px;
+      cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; justify-content: center;
+      transition: all 0.15s;
+    }
+    .toolbar button:hover { background: rgba(212,175,55,0.12); color: #d4af37; }
+    .toolbar button.active { background: rgba(212,175,55,0.2); color: #d4af37; }
+    .toolbar button.label-btn { width: auto; padding: 0 10px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #666688; cursor: default; }
+    .toolbar button.label-btn:hover { background: transparent; }
+    .toolbar select {
+      background: #2a2a4a; color: #f0f0f5; border: 1px solid var(--border);
+      border-radius: 6px; padding: 4px 8px; font-size: 0.8rem; height: 34px;
+    }
+    .toolbar input[type=color] {
+      width: 34px; height: 34px; padding: 2px; border: none; border-radius: 6px;
+      background: transparent; cursor: pointer;
+    }
+
+    /* Editor Area */
+    .editor-container {
+      border: 1px solid var(--border);
+      border-radius: 0 0 12px 12px;
+      background: var(--editor-bg);
+      min-height: 500px;
+    }
+    .editor-tabs {
+      display: flex; border-bottom: 1px solid var(--border);
+    }
+    .editor-tabs button {
+      flex: 1; padding: 12px; border: none; background: transparent;
+      color: #666688; font-weight: 600; font-size: 0.85rem; cursor: pointer;
+      transition: all 0.2s;
+    }
+    .editor-tabs button.active { background: #fff; color: var(--accent); box-shadow: inset 0 -2px 0 var(--accent); }
+    #visualEditor {
+      padding: 24px; min-height: 450px; outline: none;
+      font-size: 16px; line-height: 1.8; color: var(--editor-text);
+    }
+    #visualEditor:empty::before { content: 'Escribe aquí tu artículo...'; color: #b0b0c0; }
+    #htmlEditor {
+      display: none; width: 100%; min-height: 450px; padding: 16px;
+      background: #1a1a2e; color: #e8e8f0; border: none; outline: none;
+      resize: vertical; font-family: 'Consolas', 'Courier New', monospace; font-size: 14px; line-height: 1.5;
+      box-sizing: border-box;
+    }
+
+    /* Panels */
+    .panels { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+    .panel {
+      background: var(--bg-secondary); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px;
+    }
+    .panel h3 { font-size: 1rem; margin-bottom: 12px; color: var(--text-primary); display: flex; align-items: center; gap: 8px; }
+    .panel h3 span { font-size: 1.2rem; }
+    .panel input[type=text], .panel input[type=url], .panel input[type=password] {
+      width: 100%; padding: 10px 12px; margin-bottom: 8px;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+      color: var(--text-primary); font-size: 0.9rem; box-sizing: border-box;
+    }
+    .panel button {
+      background: var(--accent-gradient); color: #fff; border: none;
+      padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 0.9rem;
+      cursor: pointer; transition: transform 0.2s;
+    }
+    .panel button:hover { transform: scale(1.02); }
+    .panel button.secondary { background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border); }
+    .panel button.danger { background: #e74c3c; }
+    .panel label { display: block; color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 4px; }
+    .panel .hint { color: #666688; font-size: 0.75rem; margin-top: 4px; }
+
+    /* Status */
+    .status-bar {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+      padding: 10px 16px; margin-top: 16px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .status-bar .msg { color: var(--text-secondary); font-size: 0.85rem; }
+    .status-bar .msg.success { color: #2ecc71; }
+    .status-bar .msg.error { color: #e74c3c; }
+
+    /* Progress */
+    .progress-bar {
+      height: 4px; background: var(--border); border-radius: 2px; margin-top: 8px; overflow: hidden; display: none;
+    }
+    .progress-bar div { height: 100%; background: var(--accent-gradient); width: 0%; border-radius: 2px; transition: width 0.3s; }
+
+    /* Logout button */
+    .logout-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #e74c3c;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      z-index: 100;
+    }
+    .logout-btn:hover { background: #c0392b; }
+
+    @media (max-width: 768px) {
+      .panels { grid-template-columns: 1fr; }
+      .toolbar { gap: 2px; padding: 6px 8px; }
+      .toolbar button { width: 30px; height: 30px; font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Login Modal -->
+<div class="login-modal" id="loginModal">
+  <div class="login-box">
+    <h2>🔐 Editor Privado</h2>
+    <div class="form-group">
+      <label for="passwordInput">Contraseña:</label>
+      <input type="password" id="passwordInput" placeholder="Ingresa la contraseña" onkeypress="if(event.key==='Enter') authenticate()">
+    </div>
+    <button class="btn-login" onclick="authenticate()">Acceder</button>
+    <div class="error" id="loginError"></div>
+  </div>
+</div>
+
+<button class="logout-btn" id="logoutBtn" style="display:none;" onclick="logout()">Cerrar sesión</button>
+
+<div id="editorContent" style="display:none;">
+
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <div class="header-left">
+        <a href="index.html" class="logo"><img src="assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio Magazine" style="height: 60px; display: block;"></a>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html">Anime</a></li>
+          <li><a href="index.html">Manga</a></li>
+          <li><a href="https://radioakari.blogspot.com/" class="nav-blog-link" target="_blank">Radio Akari</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="editor-wrap">
+
+  <!-- Toolbar -->
+  <div class="toolbar" id="toolbar">
+    <button class="label-btn">✎</button>
+    <div class="sep"></div>
+    <div class="group">
+      <button onclick="exec('bold')" title="Negrita"><b>B</b></button>
+      <button onclick="exec('italic')" title="Cursiva"><i>I</i></button>
+      <button onclick="exec('underline')" title="Subrayado"><u>S</u></button>
+    </div>
+    <div class="sep"></div>
+    <div class="group">
+      <select onchange="exec('formatBlock', this.value)" title="Título">
+        <option value="">Normal</option>
+        <option value="h1">H1</option>
+        <option value="h2">H2</option>
+        <option value="h3">H3</option>
+        <option value="h4">H4</option>
+        <option value="pre">Código</option>
+      </select>
+    </div>
+    <div class="sep"></div>
+    <div class="group">
+      <select onchange="exec('fontName', this.value)" title="Fuente">
+        <option value="Segoe UI">Segoe UI</option>
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Verdana">Verdana</option>
+      </select>
+      <select onchange="exec('fontSize', this.value)" title="Tamaño">
+        <option value="3">Normal</option>
+        <option value="1">Pequeño</option>
+        <option value="4">Grande</option>
+        <option value="5">Muy grande</option>
+        <option value="6">Enorme</option>
+      </select>
+    </div>
+    <div class="sep"></div>
+    <div class="group">
+      <input type="color" onchange="exec('foreColor', this.value)" title="Color texto" value="#d4af37">
+      <input type="color" onchange="exec('hiliteColor', this.value)" title="Resaltado" value="#fff3cd">
+    </div>
+    <div class="sep"></div>
+    <div class="group">
+      <button onclick="exec('undo')" title="Deshacer">↩</button>
+      <button onclick="exec('redo')" title="Rehacer">↪</button>
+    </div>
+    <div class="sep"></div>
+    <div class="group">
+      <button onclick="exec('removeFormat')" title="Limpiar formato">✖</button>
+    </div>
+  </div>
+
+  <!-- Editor -->
+  <div class="editor-container">
+    <div class="editor-tabs">
+      <button class="active" onclick="switchTab('visual')">Visual</button>
+      <button onclick="switchTab('html')">HTML</button>
+    </div>
+    <div id="visualEditor" contenteditable="true"></div>
+    <textarea id="htmlEditor"></textarea>
+  </div>
+
+  <!-- Panels -->
+  <div class="panels">
+    <!-- Article Info -->
+    <div class="panel">
+      <h3>📝 Información del Artículo</h3>
+      <label>Nombre del archivo (sin .html):</label>
+      <input type="text" id="fileName" placeholder="ej: articulo-nuevo-anime">
+      <label>Categoría:</label>
+      <select id="articleCategory">
+        <option value="anime">Anime</option>
+        <option value="manga">Manga</option>
+        <option value="reviews">Reviews</option>
+        <option value="musica">Música</option>
+        <option value="videojuegos">Videojuegos</option>
+        <option value="cine">Cine</option>
+      </select>
+      <div style="margin-top: 12px;">
+        <button onclick="publishArticle()">📤 Publicar Artículo</button>
+        <div class="progress-bar" id="pubProgress"><div></div></div>
+      </div>
+    </div>
+
+    <!-- GitHub Token -->
+    <div class="panel">
+      <h3>🔑 Autenticación GitHub</h3>
+      <label>Token Personal (PAT):</label>
+      <input type="password" id="githubToken" placeholder="Tu token de GitHub">
+      <div class="hint">Necesita permisos: repo, workflow</div>
+      <button class="secondary" onclick="saveToken()">💾 Guardar Token</button>
+    </div>
+  </div>
+
+  <!-- Status -->
+  <div class="status-bar">
+    <div class="msg" id="statusMsg">Listo para editar</div>
+  </div>
+
+</div>
+
+</div>
+
+<script>
+  let activeTab = 'visual';
+  let visual = document.getElementById('visualEditor');
+  let htmlArea = document.getElementById('htmlEditor');
+  const PASSWORD = 'E-Radio2026'; // Contraseña simple (cambiar en producción)
+
+  // ===== AUTHENTICATION =====
+  function authenticate() {
+    const password = document.getElementById('passwordInput').value;
+    if (password === PASSWORD) {
+      localStorage.setItem('editor_auth', 'true');
+      document.getElementById('loginModal').classList.add('hidden');
+      document.getElementById('editorContent').style.display = 'block';
+      document.getElementById('logoutBtn').style.display = 'block';
+      document.getElementById('passwordInput').value = '';
+    } else {
+      document.getElementById('loginError').textContent = '❌ Contraseña incorrecta';
+      document.getElementById('passwordInput').value = '';
+    }
+  }
+
+  function logout() {
+    localStorage.removeItem('editor_auth');
+    document.getElementById('loginModal').classList.remove('hidden');
+    document.getElementById('editorContent').style.display = 'none';
+    document.getElementById('logoutBtn').style.display = 'none';
+    document.getElementById('passwordInput').value = '';
+  }
+
+  // Check auth on load
+  window.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('editor_auth') === 'true') {
+      document.getElementById('loginModal').classList.add('hidden');
+      document.getElementById('editorContent').style.display = 'block';
+      document.getElementById('logoutBtn').style.display = 'block';
+      const saved = localStorage.getItem('gh_token');
+      if (saved) document.getElementById('githubToken').value = saved;
+    }
+  });
+
+  // ===== EDITOR FUNCTIONS =====
+  function exec(cmd, val) {
+    document.execCommand(cmd, false, val);
+    visual.focus();
+  }
+
+  function switchTab(tab) {
+    activeTab = tab;
+    const buttons = document.querySelectorAll('.editor-tabs button');
+    buttons.forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    
+    if (tab === 'visual') {
+      visual.style.display = 'block';
+      htmlArea.style.display = 'none';
+      visual.innerHTML = htmlArea.value;
+    } else {
+      visual.style.display = 'none';
+      htmlArea.style.display = 'block';
+      htmlArea.value = visual.innerHTML;
+    }
+  }
+
+  function syncVisualToHtml() {
+    htmlArea.value = visual.innerHTML;
+  }
+
+  // ===== PUBLISH TO GITHUB =====
+  function sanitizeFilename(name) {
+    return name
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9\u00f1\u00d1\u00e1-\u00fa-\u00fc_.-]/g, '')
+      .replace(/-+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  }
+
+  function extractTitle(html) {
+    const m = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i) || html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+    if (m) return m[1].replace(/<[^>]+>/g, '').trim();
+    return null;
+  }
+
+  function extractFirstImage(html) {
+    const m = html.match(/<img[^>]+src="(https?:\/\/[^"]+)"[^>]*>/i);
+    return m ? m[1] : null;
+  }
+
+  function dataUriToBase64(dataUri) {
+    const parts = dataUri.split(',');
+    return parts[1];
+  }
+
+  async function publishArticle() {
+    const rawFileName = document.getElementById('fileName').value.trim();
+    const fileName = sanitizeFilename(rawFileName) || 'articulo';
+    const token = document.getElementById('githubToken').value.trim() || localStorage.getItem('gh_token') || '';
+
+    if (!rawFileName) return setStatus('❌ Introduce el nombre del archivo', 'error');
+    if (!token) return setStatus('❌ Introduce tu token de GitHub', 'error');
+
+    setStatus('⏳ Publicando...', '');
+    showProgress('pubProgress', 10);
+
+    try {
+      let htmlContent = activeTab === 'html' ? htmlArea.value : visual.innerHTML;
+
+      // Process embedded images
+      const dataUriRegex = /<img[^>]+src="(data:image\/[^"]+)"[^>]*>/g;
+      let imgMatch;
+      let imgIndex = 0;
+      let htmlWithUrls = htmlContent;
+
+      const replacements = [];
+      while ((imgMatch = dataUriRegex.exec(htmlContent)) !== null) {
+        const fullTag = imgMatch[0];
+        const dataUri = imgMatch[1];
+        const ext = dataUri.match(/image\/(\w+)/)?.[1] || 'png';
+        const imgFileName = `${fileName}-${++imgIndex}.${ext}`;
+        replacements.push({ dataUri, imgFileName, fullTag });
+      }
+
+      showProgress('pubProgress', 15);
+
+      // Upload images
+      for (const r of replacements) {
+        setStatus(`⏳ Subiendo imagen ${r.imgFileName}...`, '');
+        const imgPath = `assets/${r.imgFileName}`;
+        const imgApiUrl = `https://api.github.com/repos/LeoLaRata35/e-radiomagazine/contents/${imgPath}`;
+
+        let imgSha = '';
+        try {
+          const check = await fetch(imgApiUrl, { headers: { Authorization: `token ${token}` } });
+          if (check.ok) { const d = await check.json(); imgSha = d.sha; }
+        } catch(e) {}
+
+        const imgContent = dataUriToBase64(r.dataUri);
+        const uploadResp = await fetch(imgApiUrl, {
+          method: 'PUT',
+          headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            message: imgSha ? `Actualizar ${r.imgFileName}` : `Agregar ${r.imgFileName}`,
+            content: imgContent,
+            sha: imgSha || undefined,
+            branch: 'main'
+          })
+        });
+
+        if (!uploadResp.ok) {
+          const err = await uploadResp.json();
+          throw new Error(`Error al subir imagen ${r.imgFileName}: ${err.message}`);
+        }
+
+        const imgUrl = `https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/${r.imgFileName}`;
+        htmlWithUrls = htmlWithUrls.replace(r.dataUri, imgUrl);
+      }
+
+      showProgress('pubProgress', 30);
+
+      // Extract metadata
+      const articleTitle = extractTitle(htmlContent) || fileName.replace(/^articulo-/, '').replace(/-/g, ' ');
+      const firstImg = extractFirstImage(htmlWithUrls) || `https://LeoLaRata35.github.io/e-radiomagazine/assets/E-Radio%20Magazine%20HORIZONTAL.png`;
+      const desc = (htmlWithUrls.match(/<p[^>]*>(.*?)<\/p>/) || ['', 'Artículo'])[1].replace(/<[^>]+>/g, '').substring(0, 160);
+      const category = document.getElementById('articleCategory').value;
+
+      // Generate date
+      const now = new Date();
+      const months = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+      const dateStr = `${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
+
+      const fullHtml = `<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${articleTitle}</title>
+  <meta property="og:title" content="${articleTitle}">
+  <meta property="og:description" content="${desc}">
+  <meta property="og:image" content="${firstImg}">
+  <meta property="og:url" content="https://LeoLaRata35.github.io/e-radiomagazine/articulos/${fileName}.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="E-Radio Magazine">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <div class="header-left">
+        <a href="../index.html" class="logo"><img src="../assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio" style="height:60px;display:block;"></a>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../index.html" data-filter="anime">Anime</a></li>
+          <li><a href="../index.html" data-filter="manga">Manga</a></li>
+          <li><a href="../index.html" data-filter="reviews">Reviews</a></li>
+          <li><a href="../index.html" data-filter="musica">Música</a></li>
+          <li><a href="https://radioakari.blogspot.com/" class="nav-blog-link" target="_blank">Radio Akari</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div style="max-width:900px;margin:40px auto;padding:0 20px;background:#fff;border-radius:16px;box-shadow:0 4px 30px rgba(0,0,0,0.08);">
+  <div style="padding:40px;font-family:'Segoe UI',Arial,sans-serif;line-height:1.8;color:#1a1a2e;">
+    ${htmlWithUrls}
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><img src="../assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio" style="height:50px;display:block;"></a>
+        <p>Tu fuente de noticias sobre anime, manga y videojuegos desde 2016.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="../index.html">Anime</a></li>
+          <li><a href="../index.html">Manga</a></li>
+          <li><a href="../index.html">Reviews</a></li>
+          <li><a href="../index.html">Música</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 E-Radio Magazine. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+<script src="../js/main.js"><\/script>
+</body>
+</html>`;
+
+      // Upload article
+      const articlePath = `articulos/${fileName}.html`;
+      const articleApiUrl = `https://api.github.com/repos/LeoLaRata35/e-radiomagazine/contents/${articlePath}`;
+
+      let articleSha = '';
+      try {
+        const checkResp = await fetch(articleApiUrl, { headers: { Authorization: `token ${token}` } });
+        if (checkResp.ok) { const d = await checkResp.json(); articleSha = d.sha; }
+      } catch(e) {}
+
+      showProgress('pubProgress', 70);
+
+      const content = btoa(unescape(encodeURIComponent(fullHtml)));
+      const uploadResp = await fetch(articleApiUrl, {
+        method: 'PUT',
+        headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: articleSha ? `Actualizar ${fileName}` : `Agregar ${fileName}`,
+          content: content,
+          sha: articleSha || undefined,
+          branch: 'main'
+        })
+      });
+
+      if (!uploadResp.ok) {
+        const err = await uploadResp.json();
+        throw new Error(err.message || 'Error al subir artículo');
+      }
+
+      // Update index.html
+      showProgress('pubProgress', 80);
+      setStatus('⏳ Actualizando portada...', '');
+
+      const indexApiUrl = 'https://api.github.com/repos/LeoLaRata35/e-radiomagazine/contents/index.html';
+
+      const idxMetaResp = await fetch(indexApiUrl, { headers: { Authorization: `token ${token}` } });
+      if (!idxMetaResp.ok) throw new Error('No se pudo leer index.html del repositorio');
+      const idxMeta = await idxMetaResp.json();
+      const indexSha = idxMeta.sha;
+
+      const idxRawResp = await fetch(indexApiUrl, {
+        headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3.raw' }
+      });
+      if (!idxRawResp.ok) throw new Error('No se pudo descargar index.html');
+      let indexHtml = await idxRawResp.text();
+
+      // Build card
+      const cardHtml = `
+        <article class="article-card" data-category="${category}">
+          <div class="article-img" style="background-image: url('${firstImg}');">
+            <span class="article-date">${dateStr}</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">${category.charAt(0).toUpperCase() + category.slice(1)}</span>
+            <h3>${articleTitle}</h3>
+            <p>${desc}</p>
+            <a href="articulos/${fileName}.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>`;
+
+      // Insert at top of grid
+      const gridMarkerRegex = /<div\s+class=["']articles-grid["']\s+id=["']articlesGrid["']>/i;
+      const gridMatch = indexHtml.match(gridMarkerRegex);
+      if (!gridMatch) throw new Error('No se encontró el grid de artículos en index.html');
+      const gridPos = gridMatch.index;
+      const insertPos = gridPos + gridMatch[0].length;
+      indexHtml = indexHtml.slice(0, insertPos) + '\n' + cardHtml + indexHtml.slice(insertPos);
+
+      const indexContent = btoa(unescape(encodeURIComponent(indexHtml)));
+      const indexResp = await fetch(indexApiUrl, {
+        method: 'PUT',
+        headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: `Agregar tarjeta: ${articleTitle}`,
+          content: indexContent,
+          sha: indexSha,
+          branch: 'main'
+        })
+      });
+      if (!indexResp.ok) {
+        const errData = await indexResp.json().catch(() => ({}));
+        throw new Error('Error al actualizar portada: ' + (errData.message || indexResp.status));
+      }
+
+      showProgress('pubProgress', 100);
+      setStatus(`✅ Publicado: ${fileName}.html (portada actualizada)`, 'success');
+      setTimeout(() => hideProgress('pubProgress'), 3000);
+
+    } catch (e) {
+      showProgress('pubProgress', 0);
+      hideProgress('pubProgress');
+      setStatus('❌ Error: ' + e.message, 'error');
+      console.error('Error detallado:', e);
+    }
+  }
+
+  function saveToken() {
+    const token = document.getElementById('githubToken').value.trim();
+    if (!token) return alert('Pega tu token de GitHub primero');
+    localStorage.setItem('gh_token', token);
+    setStatus('✅ Token guardado localmente', 'success');
+    alert('✅ Token guardado en el navegador');
+  }
+
+  function setStatus(msg, type) {
+    const el = document.getElementById('statusMsg');
+    el.textContent = msg;
+    el.className = 'msg' + (type ? ' ' + type : '');
+  }
+
+  function showProgress(id, pct) {
+    const bar = document.getElementById(id);
+    bar.style.display = 'block';
+    bar.querySelector('div').style.width = pct + '%';
+  }
+
+  function hideProgress(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
