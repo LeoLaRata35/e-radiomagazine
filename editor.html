@@ -1002,10 +1002,12 @@
   let savedRange = null;
 
   function saveSelection() {
-    const sel = window.getSelection();
-    if (sel && sel.rangeCount > 0 && visual.contains(sel.anchorNode)) {
-      savedRange = sel.getRangeAt(0);
-    }
+    try {
+      const sel = window.getSelection();
+      if (sel && sel.rangeCount > 0 && sel.anchorNode && visual && visual.contains(sel.anchorNode)) {
+        savedRange = sel.getRangeAt(0);
+      }
+    } catch(e) {}
   }
 
   function restoreSelection() {
@@ -1019,20 +1021,8 @@
 
   function openYouTubePopup() {
     saveSelection();
-    const overlay = document.getElementById('youtubeOverlay');
-    if (!overlay) { setStatus('Error: no se encontró el panel YouTube', 'error'); return; }
-    overlay.classList.add('open');
-    document.getElementById('youtubeUrlInput').value = '';
-    setTimeout(() => document.getElementById('youtubeUrlInput').focus(), 100);
-  }
-
-  function closeYouTubePopup() {
-    const overlay = document.getElementById('youtubeOverlay');
-    if (overlay) overlay.classList.remove('open');
-  }
-
-  function insertYouTubeVideo() {
-    const url = document.getElementById('youtubeUrlInput').value.trim();
+    const url = prompt('Pega la URL del video de YouTube:');
+    if (!url) return;
     const id = extractYouTubeId(url);
     if (!id) { setStatus('URL de YouTube inválida', 'error'); return; }
     restoreSelection();
@@ -1056,8 +1046,10 @@
         <button onclick="removeFigure('${vid}')" style="background:#e74c3c;color:white;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;">✕</button>
       </div>
     </figure>`);
-    closeYouTubePopup();
     setStatus('Video de YouTube insertado', 'success');
+  }
+
+  function closeYouTubePopup() {
   }
 
   function extractYouTubeId(url) {
@@ -1204,8 +1196,7 @@
     </div>
   </div>
 </footer>
-<script src="../js/main.js">${'</'}script>
-</body>
+<script src="../js/main.js">${'</'}script></body>
 </html>`;
 
       showProgress('pubProgress', 50);
@@ -1297,19 +1288,6 @@
     updateWordCount();
   });
 </script>
-
-<!-- YouTube Modal -->
-<div class="modal-overlay" id="youtubeOverlay" onclick="if(event.target===this)closeYouTubePopup()">
-  <div class="modal-box">
-    <h3><span>📺</span> Insertar video de YouTube</h3>
-    <label>URL del video</label>
-    <input type="url" id="youtubeUrlInput" placeholder="https://youtube.com/watch?v=dQw4w9WgXcQ" onkeydown="if(event.key==='Enter')insertYouTubeVideo()">
-    <div class="modal-actions">
-      <button type="button" class="secondary" onclick="closeYouTubePopup()">Cancelar</button>
-      <button type="button" class="primary" onclick="insertYouTubeVideo()">Insertar</button>
-    </div>
-  </div>
-</div>
 
 </body>
 </html>
