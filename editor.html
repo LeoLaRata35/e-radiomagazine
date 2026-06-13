@@ -399,17 +399,15 @@
 
 <script>
   /* ===== Access gate ===== */
-  var _ok = false;
   (function() {
     var pass = localStorage.getItem('editor_pass');
     if (!pass) pass = prompt('Contraseña del editor:');
-    _ok = (pass === 'eradi02026');
-    if (_ok) localStorage.setItem('editor_pass', 'eradi02026');
+    if (pass !== 'eradi02026') {
+      document.write('<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#0d0d1a;color:#e8e8f0;font-family:sans-serif;flex-direction:column;gap:16px;"><h1 style="color:#e74c3c;">Acceso denegado</h1><p>No tienes permiso.</p></div>');
+      return;
+    }
+    localStorage.setItem('editor_pass', 'eradi02026');
   })();
-  if (!_ok) {
-    document.write('<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#0d0d1a;color:#e8e8f0;font-family:sans-serif;flex-direction:column;gap:16px;"><h1 style="color:#e74c3c;">Acceso denegado</h1><p>No tienes permiso.</p></div>');
-    throw new Error('Acceso denegado');
-  }
 
   /* ===== Test feedback ===== */
   (function() {
