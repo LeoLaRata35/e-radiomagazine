@@ -161,6 +161,7 @@
           <li><a href="https://radioakari.blogspot.com/" class="nav-blog-link" target="_blank">Radio Akari</a></li>
         </ul>
       </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menú"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
@@ -295,8 +296,16 @@
 
 </div>
 
-<script src="js/main.js"></script>
 <script>
+  /* ===== Menu Toggle for mobile ===== */
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('menuToggle');
+    const nav = document.querySelector('.nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => nav.classList.toggle('open'));
+    }
+  });
+
   /* ===== Editor Core ===== */
   const visual = document.getElementById('visualEditor');
   const htmlArea = document.getElementById('htmlEditor');
