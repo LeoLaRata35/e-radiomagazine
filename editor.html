@@ -281,6 +281,7 @@
       <div style="display:flex;gap:8px;margin-top:8px;">
         <button onclick="publishArticle()">📦 Publicar artículo</button>
         <button class="secondary" onclick="saveToken()">💾 Guardar token</button>
+        <button class="secondary" onclick="alert('Test OK')" style="border:2px solid #d4af37;">🔧 Test</button>
       </div>
       <div class="progress-bar" id="pubProgress"><div></div></div>
       <div class="hint">El artículo se publicará en github.com/LeoLaRata35/e-radiomagazine/articulos/ y se agregará a la portada.</div>
@@ -297,6 +298,12 @@
 </div>
 
 <script>
+  /* ===== Test feedback ===== */
+  (function() {
+    var el = document.getElementById('statusMsg');
+    if (el) el.textContent = '✓ Editor listo';
+  })();
+
   /* ===== Menu Toggle for mobile ===== */
   document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.getElementById('menuToggle');
@@ -702,7 +709,7 @@
     </div>
   </div>
 </footer>
-<script src="../js/main.js"></script>
+<script src="../js/main.js">${'</'}script>
 </body>
 </html>`;
 
@@ -758,9 +765,10 @@
 
   function saveToken() {
     const token = document.getElementById('githubToken').value.trim();
-    if (!token) return;
+    if (!token) return alert('Pega tu token de GitHub primero');
     localStorage.setItem('gh_token', token);
     setStatus('✅ Token guardado localmente', 'success');
+    alert('✅ Token guardado en el navegador');
   }
 
   /* ===== Utilities ===== */
