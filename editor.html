@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Editor — E-Radio Magazine</title>
   <link rel="stylesheet" href="css/styles.css">
   <style>
@@ -313,6 +314,11 @@
     <div class="editor-tabs">
       <button class="active" onclick="switchTab('visual')">Visual</button>
       <button onclick="switchTab('html')">HTML</button>
+    </div>
+    <div id="youtubeInline" style="display:none;padding:10px 14px;border:1px solid var(--border);border-radius:10px;margin-bottom:8px;background:var(--bg-card);align-items:center;gap:8px;">
+      <input type="text" id="youtubeInlineUrl" placeholder="https://youtube.com/watch?v=..." style="flex:1;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:8px 12px;color:var(--text-primary);font-size:0.85rem;">
+      <button class="primary" onclick="insertYouTubeInline()" style="padding:8px 16px;background:var(--accent-gradient);color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:600;">Insertar</button>
+      <button onclick="document.getElementById('youtubeInline').style.display='none'" style="padding:8px 12px;background:transparent;border:1px solid var(--border);border-radius:6px;cursor:pointer;color:var(--text-secondary);">✕</button>
     </div>
     <div id="visualEditor" contenteditable="true"></div>
     <div class="img-float-toolbar" id="imgToolbar">
@@ -1021,12 +1027,19 @@
 
   function openYouTubePopup() {
     saveSelection();
-    const url = prompt('Pega la URL del video de YouTube:');
-    if (!url) return;
+    const panel = document.getElementById('youtubeInline');
+    panel.style.display = 'flex';
+    const input = document.getElementById('youtubeInlineUrl');
+    input.value = '';
+    setTimeout(() => input.focus(), 50);
+  }
+
+  function insertYouTubeInline() {
+    const url = document.getElementById('youtubeInlineUrl').value.trim();
     const id = extractYouTubeId(url);
     if (!id) { setStatus('URL de YouTube inválida', 'error'); return; }
     restoreSelection();
-    const thumbUrl = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+    const thumbUrl = `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
     const vid = 'vid-' + Date.now();
     const embedUrl = `https://www.youtube.com/embed/${id}`;
     exec('insertHTML', `<figure contenteditable="false" id="${vid}" style="display:inline-block;margin:12px 0;position:relative;cursor:pointer;" ondblclick="window.open('${embedUrl}','_blank')">
@@ -1046,6 +1059,7 @@
         <button onclick="removeFigure('${vid}')" style="background:#e74c3c;color:white;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;">✕</button>
       </div>
     </figure>`);
+    document.getElementById('youtubeInline').style.display = 'none';
     setStatus('Video de YouTube insertado', 'success');
   }
 
