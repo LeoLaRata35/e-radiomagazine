@@ -368,10 +368,21 @@
     <!-- Publish -->
     <div class="panel" style="grid-column: 1 / -1;">
       <h3><span>🚀</span> Publicar en GitHub</h3>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
         <div>
           <label>Nombre del archivo (sin .html)</label>
           <input type="text" id="fileName" placeholder="articulo-mi-titulo">
+        </div>
+        <div>
+          <label>Categoría</label>
+          <select id="articleCategory">
+            <option value="anime">Anime</option>
+            <option value="manga">Manga</option>
+            <option value="reviews">Reviews</option>
+            <option value="musica">Música</option>
+            <option value="videojuegos">Videojuegos</option>
+            <option value="cine">Cine</option>
+          </select>
         </div>
         <div>
           <label>Token de GitHub</label>
@@ -1169,6 +1180,12 @@
       const articleTitle = extractTitle(htmlContent) || fileName.replace(/^articulo-/, '').replace(/-/g, ' ');
       const firstImg = extractFirstImage(htmlWithUrls) || `https://LeoLaRata35.github.io/e-radiomagazine/assets/E-Radio%20Magazine%20HORIZONTAL.png`;
       const desc = (htmlWithUrls.match(/<p[^>]*>(.*?)<\/p>/) || ['', 'Artículo'])[1].replace(/<[^>]+>/g, '').substring(0, 160);
+      const category = document.getElementById('articleCategory').value;
+
+      // Generate date in Spanish format: "13 Jun 2026"
+      const now = new Date();
+      const months = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+      const dateStr = `${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
 
       const fullHtml = `<!DOCTYPE html>
 <html lang="es">
@@ -1275,12 +1292,62 @@
         throw new Error(err.message || 'Error al subir artículo');
       }
 
-      showProgress('pubProgress', 90);
+      // Update index.html: add card to grid
+      showProgress('pubProgress', 80);
+      setStatus('⏳ Actualizando portada...', '');
 
-      // Also upload updated index.html with the new card
-      setStatus(`✅ Publicado: ${fileName}.html + ${imgIndex} imagen(es)`, 'success');
+      const indexApiUrl = 'https://api.github.com/repos/LeoLaRata35/e-radiomagazine/contents/index.html';
+      let indexSha = '';
+      try {
+        const idxCheck = await fetch(indexApiUrl, { headers: { Authorization: `token ${token}` } });
+        if (idxCheck.ok) { const d = await idxCheck.json(); indexSha = d.sha; }
+      } catch(e) {}
+
+      if (indexSha) {
+        // Fetch current index.html content
+        const idxResp = await fetch(indexApiUrl, {
+          headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3.raw' }
+        });
+        let indexHtml = await idxResp.text();
+
+        // Build card HTML
+        const cardHtml = `
+        <article class="article-card" data-category="${category}">
+          <div class="article-img" style="background-image: url('${firstImg}');">
+            <span class="article-date">${dateStr}</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">${category.charAt(0).toUpperCase() + category.slice(1)}</span>
+            <h3>${articleTitle}</h3>
+            <p>${desc}</p>
+            <a href="articulos/${fileName}.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>`;
+
+        // Insert after the first <article class="article-card" (newest first)
+        const gridMarker = '<div class="articles-grid" id="articlesGrid">';
+        const gridPos = indexHtml.indexOf(gridMarker);
+        if (gridPos !== -1) {
+          const insertPos = gridPos + gridMarker.length;
+          indexHtml = indexHtml.slice(0, insertPos) + '\n' + cardHtml + indexHtml.slice(insertPos);
+
+          const indexContent = btoa(unescape(encodeURIComponent(indexHtml)));
+          await fetch(indexApiUrl, {
+            method: 'PUT',
+            headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              message: `Agregar tarjeta: ${articleTitle}`,
+              content: indexContent,
+              sha: indexSha,
+              branch: 'main'
+            })
+          });
+        }
+      }
+
       showProgress('pubProgress', 100);
-      setTimeout(() => hideProgress('pubProgress'), 2000);
+      setStatus(`✅ Publicado: ${fileName}.html (portada actualizada)`, 'success');
+      setTimeout(() => hideProgress('pubProgress'), 3000);
 
     } catch (e) {
       showProgress('pubProgress', 0);
