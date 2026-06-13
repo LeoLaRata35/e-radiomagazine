@@ -947,63 +947,6 @@
     }
   }
 
-  /* ===== Publish to GitHub ===== */
-  async function publishArticle() {
-    const fileName = document.getElementById('fileName').value.trim();
-    const token = document.getElementById('githubToken').value.trim() || localStorage.getItem('gh_token') || '';
-
-    if (!fileName) return setStatus('❌ Introduce el nombre del archivo', 'error');
-    if (!token) return setStatus('❌ Introduce tu token de GitHub', 'error');
-
-    setStatus('⏳ Publicando...', '');
-    showProgress('pubProgress', 10);
-
-    try {
-      let htmlContent = activeTab === 'html' ? htmlArea.value : visual.innerHTML;
-
-      // Process embedded images: upload data: URIs to GitHub and replace with URLs
-      const dataUriRegex = /<img[^>]+src="(data:image\/[^"]+)"[^>]*>/g;
-      let imgMatch;
-      let imgIndex = 0;
-      let htmlWithUrls = htmlContent;
-
-      // Collect all data URIs first
-      const replacements = [];
-      while ((imgMatch = dataUriRegex.exec(htmlContent)) !== null) {
-        const fullTag = imgMatch[0];
-        const dataUri = imgMatch[1];
-        const ext = dataUri.match(/image\/(\w+)/)?.[1] || 'png';
-        const imgFileName = `${fileName}-${++imgIndex}.${ext}`;
-        replacements.push({ dataUri, imgFileName, fullTag });
-      }
-
-      showProgress('pubProgress', 15);
-
-      // Upload each image to GitHub
-      for (const r of replacements) {
-        setStatus(`⏳ Subiendo imagen ${r.imgFileName}...`, '');
-        const imgPath = `assets/${r.imgFileName}`;
-        const imgApiUrl = `https://api.github.com/repos/LeoLaRata35/e-radiomagazine/contents/${imgPath}`;
-
-        // Get SHA if exists
-        let imgSha = '';
-        try {
-          const check = await fetch(imgApiUrl, { headers: { Authorization: `token ${token}` } });
-          if (check.ok) { const d = await check.json(); imgSha = d.sha; }
-        } catch(e) {}
-
-        const imgContent = dataUriToBase64(r.dataUri);
-        const uploadResp = await fetch(imgApiUrl, {
-          method: 'PUT',
-          headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            message: imgSha ? `Actualizar ${r.imgFileName}` : `Agregar ${r.imgFileName}`,
-            content: imgContent,
-            sha: imgSha || undefined,
-            branch: 'main'
-          })
-  });
-
   /* ===== YouTube & Video ===== */
   let savedRange = null;
 
@@ -1121,6 +1064,63 @@
     fig.style.marginLeft = align === 'center' ? 'auto' : '';
     fig.style.marginRight = align === 'center' ? 'auto' : '';
   }
+
+  /* ===== Publish to GitHub ===== */
+  async function publishArticle() {
+    const fileName = document.getElementById('fileName').value.trim();
+    const token = document.getElementById('githubToken').value.trim() || localStorage.getItem('gh_token') || '';
+
+    if (!fileName) return setStatus('❌ Introduce el nombre del archivo', 'error');
+    if (!token) return setStatus('❌ Introduce tu token de GitHub', 'error');
+
+    setStatus('⏳ Publicando...', '');
+    showProgress('pubProgress', 10);
+
+    try {
+      let htmlContent = activeTab === 'html' ? htmlArea.value : visual.innerHTML;
+
+      // Process embedded images: upload data: URIs to GitHub and replace with URLs
+      const dataUriRegex = /<img[^>]+src="(data:image\/[^"]+)"[^>]*>/g;
+      let imgMatch;
+      let imgIndex = 0;
+      let htmlWithUrls = htmlContent;
+
+      // Collect all data URIs first
+      const replacements = [];
+      while ((imgMatch = dataUriRegex.exec(htmlContent)) !== null) {
+        const fullTag = imgMatch[0];
+        const dataUri = imgMatch[1];
+        const ext = dataUri.match(/image\/(\w+)/)?.[1] || 'png';
+        const imgFileName = `${fileName}-${++imgIndex}.${ext}`;
+        replacements.push({ dataUri, imgFileName, fullTag });
+      }
+
+      showProgress('pubProgress', 15);
+
+      // Upload each image to GitHub
+      for (const r of replacements) {
+        setStatus(`⏳ Subiendo imagen ${r.imgFileName}...`, '');
+        const imgPath = `assets/${r.imgFileName}`;
+        const imgApiUrl = `https://api.github.com/repos/LeoLaRata35/e-radiomagazine/contents/${imgPath}`;
+
+        // Get SHA if exists
+        let imgSha = '';
+        try {
+          const check = await fetch(imgApiUrl, { headers: { Authorization: `token ${token}` } });
+          if (check.ok) { const d = await check.json(); imgSha = d.sha; }
+        } catch(e) {}
+
+        const imgContent = dataUriToBase64(r.dataUri);
+        const uploadResp = await fetch(imgApiUrl, {
+          method: 'PUT',
+          headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            message: imgSha ? `Actualizar ${r.imgFileName}` : `Agregar ${r.imgFileName}`,
+            content: imgContent,
+            sha: imgSha || undefined,
+            branch: 'main'
+          })
+  });
 
 
         if (!uploadResp.ok) {
