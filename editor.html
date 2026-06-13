@@ -1420,40 +1420,83 @@
   }
 
   /* ===== Social Kit ===== */
+  function extractKeyEntities(html) {
+    var bolds = [];
+    var boldRe = /<(?:strong|b)>([^<]+)<\/(?:strong|b)>/gi;
+    var m;
+    while ((m = boldRe.exec(html)) !== null) {
+      var t = m[1].trim();
+      if (t.length > 2 && bolds.indexOf(t) === -1) bolds.push(t);
+    }
+    var dateMatch = html.match(/(\d{1,2})\s+de\s+(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)(\s+de\s+(\d{4}))?/gi);
+    return { bolds: bolds.slice(0, 8), dates: dateMatch || [] };
+  }
+
   function generateSocialKit() {
-    const htmlContent = activeTab === 'html' ? htmlArea.value : visual.innerHTML;
-    const category = document.getElementById('articleCategory').value;
-    const title = extractTitle(htmlContent) || document.getElementById('fileName').value.trim().replace(/-/g, ' ') || 'Artículo';
-    const firstP = (htmlContent.match(/<p[^>]*>(.*?)<\/p>/) || ['', ''])[1].replace(/<[^>]+>/g, '').trim();
+    var htmlContent = activeTab === 'html' ? htmlArea.value : visual.innerHTML;
+    var category = document.getElementById('articleCategory').value;
+    var title = extractTitle(htmlContent) || document.getElementById('fileName').value.trim().replace(/-/g, ' ') || 'Artículo';
+    var paragraphs = htmlContent.match(/<p[^>]*>([\s\S]*?)<\/p>/gi) || [];
+    var cleanPs = paragraphs.map(function(p) { return p.replace(/<[^>]+>/g, '').trim(); }).filter(function(p) { return p.length > 20; });
+    var firstP = cleanPs[0] || '';
+    var secondP = cleanPs[1] || '';
+    var entities = extractKeyEntities(htmlContent);
+    var siteUrl = 'https://LeoLaRata35.github.io/e-radiomagazine';
+    var articleFile = document.getElementById('fileName').value.trim() || sanitizeFilename(title);
+    var articleUrl = siteUrl + '/articulos/' + articleFile + '.html';
 
-    const catLabel = category.charAt(0).toUpperCase() + category.slice(1);
-    const siteUrl = 'https://LeoLaRata35.github.io/e-radiomagazine';
-    const articleFile = document.getElementById('fileName').value.trim() || sanitizeFilename(title);
-    const articleUrl = `${siteUrl}/articulos/${articleFile}.html`;
+    // Build a concise detail snippet from first 2 paragraphs (max 300 chars)
+    var detailText = (firstP + ' ' + secondP).replace(/\s+/g, ' ').trim();
+    if (detailText.length > 350) detailText = detailText.substring(0, 347) + '...';
 
-    // Generate SEO (max 140 chars)
-    let seo = firstP ? firstP.substring(0, 137) + '...' : `${title} — Toda la información en E-Radio Magazine.`;
+    // Try to find a shorter hook from the first sentence
+    var firstSentence = (firstP.match(/^[^.!?]*[.!?]/) || [firstP.substring(0, 120)])[0];
+
+    // Build key facts string from bold entities
+    var keyFacts = entities.bolds.join(', ');
+    if (keyFacts.length > 120) keyFacts = keyFacts.substring(0, 117) + '...';
+
+    // Choose emoji based on category
+    var emojiMap = { anime: '🎪', manga: '📖', reviews: '⭐', musica: '🎵', videojuegos: '🎮', cine: '🎬' };
+    var emoji = emojiMap[category] || '📰';
+
+    // SEO (max 140 chars)
+    var seo = title + '. ' + (keyFacts ? keyFacts + '. ' : '') + (entities.dates[0] || '') + '.';
     if (seo.length > 140) seo = seo.substring(0, 137) + '...';
 
-    // Hashtags base
-    const categoryHashtags = {
-      anime: '#Anime #AnimeNews',
-      manga: '#Manga #MangaNews',
-      reviews: '#Review #Critica',
-      musica: '#Musica #MusicNews',
-      videojuegos: '#Videojuegos #Gaming',
-      cine: '#Cine #Peliculas'
-    };
-    const baseTags = categoryHashtags[category] || '#Noticias';
-    const titleTag = '#' + title.replace(/[^a-zA-Z0-9]/g, '');
+    // ---- Copies ----
+    // Copy 1: emoji + key fact headline + article detail + link + hashtags
+    var copy1 = emoji + ' ¡' + title + '! ' + detailText.substring(0, 250) + '\n\n' + articleUrl + '\n\n';
 
-    // FB copies
-    const copy1 = `📰 ¡${title}! ${firstP.substring(0, 200)}\n\n${articleUrl}\n\n${baseTags} ${titleTag}`;
-    const copy2 = `🎯 ${title} — Ya disponible en E-Radio Magazine.\n${firstP.substring(0, 180)}\n\n📎 ${articleUrl}\n\n${baseTags}`;
-    const copy3 = `📢 ${title}\n\nNo te pierdas todos los detalles. Leé la nota completa en E-Radio Magazine.\n\n🔗 ${articleUrl}\n\n${baseTags} ${titleTag}`;
+    // Copy 2: different angle using second paragraph or entities
+    var copy2Body = secondP ? secondP.substring(0, 250) : (entities.bolds.length > 2 ? entities.bolds.slice(0, 4).join(', ') : firstSentence);
+    var copy2 = emoji + ' ' + title + ' — ' + copy2Body + '\n\n' + articleUrl + '\n\n';
+
+    // Copy 3: short & punchy
+    var copy3 = emoji + ' ' + title + '. ' + firstSentence + '\n\n' + articleUrl + '\n\n';
 
     // Poster summary
-    const poster = `${title}. ${firstP.substring(0, 120)}`;
+    var poster = title + '. ' + (keyFacts ? keyFacts + '. ' : '') + (entities.dates[0] || '');
+    if (poster.length > 200) poster = poster.substring(0, 197) + '...';
+
+    // Hashtags: title tag + key entities + category tags
+    var titleTag = '#' + title.replace(/[^a-zA-Z0-9]/g, '');
+    var entityTags = entities.bolds.slice(0, 3).map(function(e) {
+      return '#' + e.replace(/[^a-zA-Z0-9]/g, '');
+    }).join(' ');
+    var dateTag = '';
+    if (entities.dates[0]) {
+      var dParts = entities.dates[0].match(/(\d{1,2})\s+de\s+(\w+)/);
+      if (dParts) dateTag = '#' + dParts[2].charAt(0).toUpperCase() + dParts[2].slice(1) + dParts[1];
+    }
+    var categoryTags = { anime: '#Anime #AnimeNews', manga: '#Manga #MangaNews', reviews: '#Review', musica: '#Musica', videojuegos: '#Videojuegos', cine: '#Cine' };
+    var baseTags = categoryTags[category] || '#Noticias';
+    var allTags = [titleTag, entityTags, dateTag, baseTags].filter(Boolean).join(' ');
+
+    // Append hashtags to copies
+    copy1 += allTags;
+    copy2 += allTags;
+    copy3 += allTags;
 
     // Show output
     document.getElementById('socialKitOutput').style.display = 'block';
@@ -1462,7 +1505,7 @@
     document.getElementById('kitCopy2').value = copy2;
     document.getElementById('kitCopy3').value = copy3;
     document.getElementById('kitPoster').value = poster;
-    document.getElementById('kitHashtags').value = `${baseTags} ${titleTag}`;
+    document.getElementById('kitHashtags').value = allTags;
     setStatus('✅ Kit para redes generado', 'success');
   }
 
