@@ -1445,58 +1445,73 @@
     var articleFile = document.getElementById('fileName').value.trim() || sanitizeFilename(title);
     var articleUrl = siteUrl + '/articulos/' + articleFile + '.html';
 
-    // Build a concise detail snippet from first 2 paragraphs (max 300 chars)
+    // Build detail text from first 2 paragraphs
     var detailText = (firstP + ' ' + secondP).replace(/\s+/g, ' ').trim();
-    if (detailText.length > 350) detailText = detailText.substring(0, 347) + '...';
+    if (detailText.length > 300) detailText = detailText.substring(0, 297) + '...';
 
-    // Try to find a shorter hook from the first sentence
-    var firstSentence = (firstP.match(/^[^.!?]*[.!?]/) || [firstP.substring(0, 120)])[0];
+    // First sentence as hook
+    var firstSentence = (firstP.match(/^[^.!?]*[.!?]/) || [firstP.substring(0, 100)])[0];
 
-    // Build key facts string from bold entities
-    var keyFacts = entities.bolds.join(', ');
-    if (keyFacts.length > 120) keyFacts = keyFacts.substring(0, 117) + '...';
+    // Bold entities as key facts
+    var bolds = entities.bolds;
 
-    // Choose emoji based on category
+    // Date string
+    var dateStr = entities.dates[0] || '';
+
+    // Category emoji
     var emojiMap = { anime: '🎪', manga: '📖', reviews: '⭐', musica: '🎵', videojuegos: '🎮', cine: '🎬' };
     var emoji = emojiMap[category] || '📰';
 
-    // SEO (max 140 chars)
-    var seo = title + '. ' + (keyFacts ? keyFacts + '. ' : '') + (entities.dates[0] || '') + '.';
+    // Category tags
+    var categoryTags = {
+      anime: '#Anime #NoticiasAnime',
+      manga: '#Manga #NoticiasManga',
+      reviews: '#Review',
+      musica: '#Musica',
+      videojuegos: '#Videojuegos',
+      cine: '#Cine'
+    };
+    var baseTags = categoryTags[category] || '#Noticias';
+
+    // Hashtags: key entities (max 4) + category
+    var entityHashtags = bolds.slice(0, 4)
+      .map(function(e) { return '#' + e.replace(/[^a-zA-Z0-9]/g, ''); })
+      .filter(function(h) { return h.length > 2; })
+      .join(' ');
+    var allTags = (entityHashtags + ' ' + baseTags).replace(/\s+/g, ' ').trim();
+
+    // --- SEO (max 140 caracteres) ---
+    var seo = title;
+    var seoBolds = bolds.slice(0, 2).join(', ');
+    if (seoBolds) seo += '. ' + seoBolds;
+    if (dateStr) seo += '. ' + dateStr;
     if (seo.length > 140) seo = seo.substring(0, 137) + '...';
 
-    // ---- Copies ----
-    // Copy 1: emoji + key fact headline + article detail + link + hashtags
-    var copy1 = emoji + ' ¡' + title + '! ' + detailText.substring(0, 250) + '\n\n' + articleUrl + '\n\n';
+    // --- Copy 1: Hook + details + URL + hashtags ---
+    var hook1 = detailText.length > 180 ? detailText.substring(0, 177) + '...' : detailText;
+    var copy1 = emoji + ' ' + title + '. ' + hook1 + '\n\n' + articleUrl + '\n\n' + allTags;
 
-    // Copy 2: different angle using second paragraph or entities
-    var copy2Body = secondP ? secondP.substring(0, 250) : (entities.bolds.length > 2 ? entities.bolds.slice(0, 4).join(', ') : firstSentence);
-    var copy2 = emoji + ' ' + title + ' — ' + copy2Body + '\n\n' + articleUrl + '\n\n';
-
-    // Copy 3: short & punchy
-    var copy3 = emoji + ' ' + title + '. ' + firstSentence + '\n\n' + articleUrl + '\n\n';
-
-    // Poster summary
-    var poster = title + '. ' + (keyFacts ? keyFacts + '. ' : '') + (entities.dates[0] || '');
-    if (poster.length > 200) poster = poster.substring(0, 197) + '...';
-
-    // Hashtags: title tag + key entities + category tags
-    var titleTag = '#' + title.replace(/[^a-zA-Z0-9]/g, '');
-    var entityTags = entities.bolds.slice(0, 3).map(function(e) {
-      return '#' + e.replace(/[^a-zA-Z0-9]/g, '');
-    }).join(' ');
-    var dateTag = '';
-    if (entities.dates[0]) {
-      var dParts = entities.dates[0].match(/(\d{1,2})\s+de\s+(\w+)/);
-      if (dParts) dateTag = '#' + dParts[2].charAt(0).toUpperCase() + dParts[2].slice(1) + dParts[1];
+    // --- Copy 2: Different angle (secondary facts) ---
+    var angle2 = '';
+    if (bolds.length > 3) {
+      angle2 = 'Además, ' + bolds.slice(2, 5).join(', ') + '.';
+    } else if (secondP) {
+      angle2 = secondP.length > 200 ? secondP.substring(0, 197) + '...' : secondP;
+    } else {
+      angle2 = firstSentence;
     }
-    var categoryTags = { anime: '#Anime #AnimeNews', manga: '#Manga #MangaNews', reviews: '#Review', musica: '#Musica', videojuegos: '#Videojuegos', cine: '#Cine' };
-    var baseTags = categoryTags[category] || '#Noticias';
-    var allTags = [titleTag, entityTags, dateTag, baseTags].filter(Boolean).join(' ');
+    var copy2 = emoji + ' ' + title + ' — ' + angle2 + '\n\n' + articleUrl + '\n\n' + allTags;
 
-    // Append hashtags to copies
-    copy1 += allTags;
-    copy2 += allTags;
-    copy3 += allTags;
+    // --- Copy 3: Short & punchy ---
+    var hook3 = firstSentence.length > 150 ? firstSentence.substring(0, 147) + '...' : firstSentence;
+    var copy3 = emoji + ' ' + title + '. ' + hook3 + ' No te lo pierdas. 🎯\n\n' + articleUrl + '\n\n' + allTags;
+
+    // --- Resumen afiche ---
+    var poster = title;
+    var posterBolds = bolds.slice(0, 3).join(', ');
+    if (posterBolds) poster += '. ' + posterBolds;
+    if (dateStr) poster += '. ' + dateStr;
+    if (poster.length > 200) poster = poster.substring(0, 197) + '...';
 
     // Show output
     document.getElementById('socialKitOutput').style.display = 'block';
