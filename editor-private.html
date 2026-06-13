@@ -639,16 +639,26 @@
 
       const indexApiUrl = 'https://api.github.com/repos/LeoLaRata35/e-radiomagazine/contents/index.html';
 
-      const idxMetaResp = await fetch(indexApiUrl, { headers: { Authorization: `token ${token}` } });
-      if (!idxMetaResp.ok) throw new Error('No se pudo leer index.html del repositorio');
-      const idxMeta = await idxMetaResp.json();
-      const indexSha = idxMeta.sha;
+      let idxMetaResp, idxMeta, indexSha, idxRawResp, indexHtml;
+      
+      try {
+        idxMetaResp = await fetch(indexApiUrl, { headers: { Authorization: `token ${token}` } });
+        if (!idxMetaResp.ok) throw new Error('Status: ' + idxMetaResp.status);
+        idxMeta = await idxMetaResp.json();
+        indexSha = idxMeta.sha;
+      } catch(e) {
+        throw new Error('Error al obtener SHA de index.html: ' + e.message);
+      }
 
-      const idxRawResp = await fetch(indexApiUrl, {
-        headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3.raw' }
-      });
-      if (!idxRawResp.ok) throw new Error('No se pudo descargar index.html');
-      let indexHtml = await idxRawResp.text();
+      try {
+        idxRawResp = await fetch(indexApiUrl, {
+          headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3.raw' }
+        });
+        if (!idxRawResp.ok) throw new Error('Status: ' + idxRawResp.status);
+        indexHtml = await idxRawResp.text();
+      } catch(e) {
+        throw new Error('Error al descargar index.html: ' + e.message);
+      }
 
       // Build card
       const cardHtml = `<article class="article-card" data-category="${category}">
@@ -663,32 +673,16 @@
           </div>
         </article>`;
 
-      // Insert at top of grid - with multiple fallback patterns
-      let gridMatch = null;
-      let insertPos = -1;
+      // Insert at top of grid - buscar el primer artículo y insertar antes
+      // Esto es más robusto que buscar el contenedor
+      const firstArticleMatch = indexHtml.match(/<article\s+class=["']article-card["']/i);
       
-      // Try different regex patterns for flexibility
-      const patterns = [
-        /<div\s+class=["']articles-grid["']\s+id=["']articlesGrid["']>/i,
-        /<div\s+id=["']articlesGrid["']\s+class=["']articles-grid["']>/i,
-        /<div[^>]*id=["']articlesGrid["'][^>]*>/i,
-        /<div[^>]*class=["']articles-grid["'][^>]*>/i
-      ];
-      
-      for (const pattern of patterns) {
-        gridMatch = indexHtml.match(pattern);
-        if (gridMatch) {
-          const gridPos = gridMatch.index;
-          insertPos = gridPos + gridMatch[0].length;
-          break;
-        }
+      if (!firstArticleMatch) {
+        throw new Error('No se encontró ningún artículo en index.html. Verifica que el archivo tenga la estructura correcta.');
       }
       
-      if (insertPos === -1) {
-        throw new Error('No se encontró el grid de artículos en index.html. Patrones buscados: articles-grid, articlesGrid');
-      }
-      
-      indexHtml = indexHtml.slice(0, insertPos) + '\n' + cardHtml + indexHtml.slice(insertPos);
+      const insertPos = firstArticleMatch.index;
+      indexHtml = indexHtml.slice(0, insertPos) + cardHtml + '\n' + indexHtml.slice(insertPos);
 
       const indexContent = btoa(unescape(encodeURIComponent(indexHtml)));
       const indexResp = await fetch(indexApiUrl, {
