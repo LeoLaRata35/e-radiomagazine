@@ -1087,11 +1087,21 @@
   }
 
   /* ===== Publish to GitHub ===== */
+  function sanitizeFilename(name) {
+    return name
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9\u00f1\u00d1\u00e1-\u00fa-\u00fc_.-]/g, '')
+      .replace(/-+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  }
+
   async function publishArticle() {
-    const fileName = document.getElementById('fileName').value.trim();
+    const rawFileName = document.getElementById('fileName').value.trim();
+    const fileName = sanitizeFilename(rawFileName) || 'articulo';
     const token = document.getElementById('githubToken').value.trim() || localStorage.getItem('gh_token') || '';
 
-    if (!fileName) return setStatus('❌ Introduce el nombre del archivo', 'error');
+    if (!rawFileName) return setStatus('❌ Introduce el nombre del archivo', 'error');
     if (!token) return setStatus('❌ Introduce tu token de GitHub', 'error');
 
     setStatus('⏳ Publicando...', '');
