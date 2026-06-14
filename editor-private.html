@@ -687,7 +687,7 @@
       if (!desc) {
         const ps = htmlWithUrls.match(/<p[^>]*>([\s\S]*?)<\/p>/gi) || [];
         const cleanPs = ps.map(p => p.replace(/<[^>]+>/g, '').trim()).filter(p => p.length > 20);
-        desc = (cleanPs[0] || 'Artículo').substring(0, 160);
+        desc = cleanPs[0] || 'Artículo';
       }
       const category = document.getElementById('articleCategory').value;
 
@@ -703,7 +703,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${articleTitle}</title>
   <meta property="og:title" content="${articleTitle}">
-  <meta property="og:description" content="${desc}">
+  <meta property="og:description" content="${desc.length > 160 ? desc.substring(0, 157) + '...' : desc}">
   <meta property="og:image" content="${firstImg}">
   <meta property="og:url" content="https://LeoLaRata35.github.io/e-radiomagazine/articulos/${fileName}.html">
   <meta property="og:type" content="article">
@@ -1143,7 +1143,7 @@
     var ps = htmlContent.match(/<p[^>]*>([\s\S]*?)<\/p>/gi) || [];
     var cleanPs = ps.map(function(p) { return p.replace(/<[^>]+>/g, '').trim(); }).filter(function(p) { return p.length > 30; });
     var desc = cleanPs[0] || '';
-    if (desc.length > 160) desc = desc.substring(0, 157) + '...';
+    if (desc.length > 300) desc = desc.substring(0, 297) + '...';
     document.getElementById('cardDescription').value = desc;
     setStatus('✅ Descripción para tarjeta generada', 'success');
   }
