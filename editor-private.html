@@ -191,6 +191,22 @@
     }
     .progress-bar div { height: 100%; background: var(--accent-gradient); width: 0%; border-radius: 2px; transition: width 0.3s; }
 
+    /* Floating media toolbar */
+    .media-toolbar {
+      position: absolute; display: none; background: #fff; border: 1px solid #ddd;
+      border-radius: 8px; padding: 4px 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      z-index: 100; gap: 4px; align-items: center; white-space: nowrap;
+    }
+    .media-toolbar.show { display: inline-flex; }
+    .media-toolbar button {
+      background: #f0f0f0; border: none; border-radius: 4px; padding: 2px 8px;
+      cursor: pointer; font-size: 13px; line-height: 1.6;
+    }
+    .media-toolbar button:hover { background: #e0e0e0; }
+    .media-toolbar .sep { width: 1px; height: 20px; background: #ddd; margin: 0 4px; display: inline-block; }
+    #visualEditor img, #visualEditor video { cursor: pointer; }
+    #visualEditor figure { display: inline-block; margin: 12px 0; position: relative; }
+
     /* Logout button */
     .logout-btn {
       position: absolute;
@@ -348,6 +364,88 @@
       <div class="hint">Necesita permisos: repo, workflow</div>
       <button class="secondary" onclick="saveToken()">💾 Guardar Token</button>
     </div>
+
+    <!-- Multimedia -->
+    <div class="panel">
+      <h3>🖼️ Multimedia</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+        <button class="secondary" onclick="document.getElementById('fileInputImage').click()">🖼️ Imagen</button>
+        <button class="secondary" onclick="insertYouTube()">📺 YouTube</button>
+        <button class="secondary" onclick="document.getElementById('fileInputVideo').click()">📹 Video</button>
+      </div>
+      <input type="file" id="fileInputImage" accept="image/*" style="display:none" onchange="handleImageFiles(this.files)">
+      <input type="file" id="fileInputVideo" accept="video/*" style="display:none" onchange="handleVideoFiles(this.files)">
+      <div id="youtubeInput" style="display:none;margin-top:8px;">
+        <label>URL de YouTube:</label>
+        <div style="display:flex;gap:4px;">
+          <input type="text" id="youtubeUrl" placeholder="https://youtu.be/..." style="flex:1;">
+          <button onclick="addYouTubeVideo()">Insertar</button>
+        </div>
+      </div>
+      <div class="hint">Pegá imágenes con Ctrl+V. Al publicar se suben a GitHub.</div>
+    </div>
+
+    <!-- Kit para Redes -->
+    <div class="panel">
+      <h3>🎯 Kit para Redes</h3>
+      <button onclick="generateSocialKit()">🎯 Generar kit</button>
+      <div id="socialKitOutput" style="display:none;margin-top:12px;">
+        <div style="margin-bottom:10px;">
+          <label style="font-weight:600;font-size:0.75rem;">SEO (140 caracteres)</label>
+          <div style="display:flex;gap:4px;">
+            <textarea id="kitSeo" rows="2" style="flex:1;font-size:0.8rem;padding:4px;" readonly></textarea>
+            <button class="secondary" onclick="copyKit('kitSeo')" title="Copiar">📋</button>
+          </div>
+        </div>
+        <div style="margin-bottom:10px;">
+          <label style="font-weight:600;font-size:0.75rem;">Copy 1</label>
+          <div style="display:flex;gap:4px;">
+            <textarea id="kitCopy1" rows="3" style="flex:1;font-size:0.8rem;padding:4px;" readonly></textarea>
+            <button class="secondary" onclick="copyKit('kitCopy1')" title="Copiar">📋</button>
+          </div>
+        </div>
+        <div style="margin-bottom:10px;">
+          <label style="font-weight:600;font-size:0.75rem;">Copy 2</label>
+          <div style="display:flex;gap:4px;">
+            <textarea id="kitCopy2" rows="3" style="flex:1;font-size:0.8rem;padding:4px;" readonly></textarea>
+            <button class="secondary" onclick="copyKit('kitCopy2')" title="Copiar">📋</button>
+          </div>
+        </div>
+        <div style="margin-bottom:10px;">
+          <label style="font-weight:600;font-size:0.75rem;">Copy 3</label>
+          <div style="display:flex;gap:4px;">
+            <textarea id="kitCopy3" rows="3" style="flex:1;font-size:0.8rem;padding:4px;" readonly></textarea>
+            <button class="secondary" onclick="copyKit('kitCopy3')" title="Copiar">📋</button>
+          </div>
+        </div>
+        <div style="margin-bottom:10px;">
+          <label style="font-weight:600;font-size:0.75rem;">Resumen afiche</label>
+          <div style="display:flex;gap:4px;">
+            <textarea id="kitPoster" rows="2" style="flex:1;font-size:0.8rem;padding:4px;" readonly></textarea>
+            <button class="secondary" onclick="copyKit('kitPoster')" title="Copiar">📋</button>
+          </div>
+        </div>
+        <div>
+          <label style="font-weight:600;font-size:0.75rem;">Hashtags</label>
+          <div style="display:flex;gap:4px;">
+            <textarea id="kitHashtags" rows="2" style="flex:1;font-size:0.8rem;padding:4px;" readonly></textarea>
+            <button class="secondary" onclick="copyKit('kitHashtags')" title="Copiar">📋</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating toolbar for media -->
+  <div class="media-toolbar" id="mediaToolbar">
+    <button onclick="mediaAction('resize',-0.1)" title="Reducir">−</button>
+    <button onclick="mediaAction('resize',0.1)" title="Agrandar">+</button>
+    <span class="sep"></span>
+    <button onclick="mediaAction('align','left')" title="Izquierda">◀</button>
+    <button onclick="mediaAction('align','center')" title="Centro">●</button>
+    <button onclick="mediaAction('align','right')" title="Derecha">▶</button>
+    <span class="sep"></span>
+    <button onclick="mediaAction('remove')" title="Eliminar" style="color:#e74c3c;">✕</button>
   </div>
 
   <!-- Status -->
@@ -731,6 +829,303 @@
 
   function hideProgress(id) {
     document.getElementById(id).style.display = 'none';
+  }
+
+  /* ===== Media Tools ===== */
+  let activeMedia = null;
+
+  visual.addEventListener('click', function(e) {
+    var el = e.target;
+    if (el.tagName === 'IMG' || el.tagName === 'VIDEO') {
+      activeMedia = el;
+      showMediaToolbar(el);
+    } else if (el.closest('figure')) {
+      activeMedia = el.closest('figure').querySelector('img, video') || el.closest('figure');
+      showMediaToolbar(activeMedia);
+    } else {
+      hideMediaToolbar();
+    }
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.media-toolbar') && !e.target.closest('#visualEditor img') && !e.target.closest('#visualEditor figure') && !e.target.closest('#visualEditor video')) {
+      hideMediaToolbar();
+    }
+  });
+
+  function showMediaToolbar(el) {
+    var tb = document.getElementById('mediaToolbar');
+    var rect = el.getBoundingClientRect();
+    var editorRect = visual.getBoundingClientRect();
+    tb.style.top = (rect.top - editorRect.top - 40) + 'px';
+    tb.style.left = Math.max(0, rect.left - editorRect.left + (rect.width / 2) - 80) + 'px';
+    tb.classList.add('show');
+  }
+
+  function hideMediaToolbar() {
+    document.getElementById('mediaToolbar').classList.remove('show');
+    activeMedia = null;
+  }
+
+  function mediaAction(action, val) {
+    if (!activeMedia) return;
+    if (action === 'resize') {
+      var p = activeMedia.tagName === 'FIGURE' ? 1 : (parseFloat(activeMedia.style.width) || 100) / 100;
+      p = Math.max(0.1, Math.min(3, p + val));
+      if (activeMedia.tagName === 'FIGURE') {
+        activeMedia.style.width = (p * 100) + '%';
+      } else {
+        activeMedia.style.width = (p * 100) + '%';
+        activeMedia.style.height = 'auto';
+      }
+      updateSizeLabel();
+    } else if (action === 'align') {
+      if (activeMedia.tagName === 'FIGURE') {
+        activeMedia.style.display = val === 'center' ? 'block' : 'inline-block';
+        activeMedia.style.textAlign = val === 'center' ? 'center' : '';
+        activeMedia.style.marginLeft = val === 'right' ? 'auto' : '';
+        activeMedia.style.marginRight = val === 'left' ? 'auto' : '';
+      } else {
+        activeMedia.style.display = val === 'center' ? 'block' : 'inline-block';
+        activeMedia.style.marginLeft = val === 'right' ? 'auto' : (val === 'center' ? 'auto' : '');
+        activeMedia.style.marginRight = val === 'left' ? 'auto' : (val === 'center' ? 'auto' : '');
+      }
+      activeMedia.setAttribute('data-align', val);
+    } else if (action === 'remove') {
+      var fig = activeMedia.closest('figure');
+      if (fig) fig.remove(); else activeMedia.remove();
+      hideMediaToolbar();
+    }
+  }
+
+  function updateSizeLabel() {
+    var tb = document.getElementById('mediaToolbar');
+    var pct = activeMedia ? Math.round((parseFloat(activeMedia.style.width) || 100)) + '%' : '100%';
+  }
+
+  /* Image upload */
+  function handleImageFiles(files) {
+    for (var i = 0; i < files.length; i++) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        var img = document.createElement('img');
+        img.src = e.target.result;
+        img.style.maxWidth = '100%';
+        insertMediaNode(img);
+      };
+      reader.readAsDataURL(files[i]);
+    }
+  }
+
+  /* Video upload */
+  function handleVideoFiles(files) {
+    for (var i = 0; i < files.length; i++) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        var vid = document.createElement('video');
+        vid.src = e.target.result;
+        vid.controls = true;
+        vid.style.maxWidth = '100%';
+        insertMediaNode(vid);
+      };
+      reader.readAsDataURL(files[i]);
+    }
+  }
+
+  function insertMediaNode(node) {
+    var fig = document.createElement('figure');
+    fig.contentEditable = false;
+    fig.style.display = 'inline-block';
+    fig.style.margin = '12px 0';
+    fig.style.position = 'relative';
+    fig.appendChild(node);
+    visual.focus();
+    var sel = window.getSelection();
+    if (sel.rangeCount > 0) {
+      var range = sel.getRangeAt(0);
+      range.insertNode(fig);
+      range.setStartAfter(fig);
+      range.collapse(true);
+      sel.removeAllRanges();
+      sel.addRange(range);
+    } else {
+      visual.appendChild(fig);
+      visual.appendChild(document.createElement('br'));
+    }
+    syncVisualToHtml();
+  }
+
+  /* YouTube */
+  function insertYouTube() {
+    var panel = document.getElementById('youtubeInput');
+    panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+    if (panel.style.display === 'block') document.getElementById('youtubeUrl').focus();
+  }
+
+  function addYouTubeVideo() {
+    var url = document.getElementById('youtubeUrl').value.trim();
+    document.getElementById('youtubeUrl').value = '';
+    document.getElementById('youtubeInput').style.display = 'none';
+
+    var match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/);
+    if (!match) return setStatus('❌ URL de YouTube no válida', 'error');
+
+    var id = match[1];
+    var container = document.createElement('figure');
+    container.contentEditable = false;
+    container.style.display = 'inline-block';
+    container.style.margin = '12px 0';
+    container.style.position = 'relative';
+    container.style.cursor = 'pointer';
+    container.ondblclick = function() { window.open('https://www.youtube.com/embed/' + id, '_blank'); };
+
+    var link = document.createElement('a');
+    link.href = 'https://www.youtube.com/embed/' + id;
+    link.target = '_blank';
+    link.style.display = 'block';
+    link.style.position = 'relative';
+
+    var img = document.createElement('img');
+    img.src = 'https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg';
+    img.alt = 'YouTube video';
+    img.style.display = 'block';
+    img.style.width = '100%';
+
+    var overlay = document.createElement('div');
+    overlay.style.cssText = 'position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;background:rgba(0,0,0,0.7);border-radius:50%;display:flex;align-items:center;justify-content:center;';
+
+    var play = document.createElement('div');
+    play.style.cssText = 'border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:4px;';
+
+    overlay.appendChild(play);
+    link.appendChild(img);
+    link.appendChild(overlay);
+    container.appendChild(link);
+
+    visual.focus();
+    var sel = window.getSelection();
+    if (sel.rangeCount > 0) {
+      var range = sel.getRangeAt(0);
+      range.insertNode(container);
+      range.setStartAfter(container);
+      range.collapse(true);
+      sel.removeAllRanges();
+      sel.addRange(range);
+    } else {
+      visual.appendChild(container);
+      visual.appendChild(document.createElement('br'));
+    }
+    syncVisualToHtml();
+    setStatus('✅ Video de YouTube insertado', 'success');
+  }
+
+  /* Paste handler for images */
+  visual.addEventListener('paste', function(e) {
+    var items = e.clipboardData.items;
+    var hasImage = false;
+    for (var i = 0; i < items.length; i++) {
+      if (items[i].type.indexOf('image') === 0) {
+        hasImage = true;
+        e.preventDefault();
+        var file = items[i].getAsFile();
+        if (file) {
+          var reader = new FileReader();
+          reader.onload = function(ev) {
+            var img = document.createElement('img');
+            img.src = ev.target.result;
+            img.style.maxWidth = '100%';
+            insertMediaNode(img);
+          };
+          reader.readAsDataURL(file);
+        }
+      }
+    }
+    if (hasImage) setStatus('✅ Imagen pegada', 'success');
+  });
+
+  /* ===== Social Kit ===== */
+  function extractKeyEntities(html) {
+    var bolds = [];
+    var boldRe = /<(?:strong|b)>([^<]+)<\/(?:strong|b)>/gi;
+    var m;
+    while ((m = boldRe.exec(html)) !== null) {
+      var t = m[1].trim();
+      if (t.length > 2 && bolds.indexOf(t) === -1) bolds.push(t);
+    }
+    var dateMatch = html.match(/(\d{1,2})\s+de\s+(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)(\s+de\s+(\d{4}))?/gi);
+    return { bolds: bolds.slice(0, 8), dates: dateMatch || [] };
+  }
+
+  function generateSocialKit() {
+    var htmlContent = activeTab === 'html' ? htmlArea.value : visual.innerHTML;
+    var category = document.getElementById('articleCategory').value;
+    var title = extractTitle(htmlContent) || document.getElementById('fileName').value.trim().replace(/-/g, ' ') || 'Artículo';
+    var paragraphs = htmlContent.match(/<p[^>]*>([\s\S]*?)<\/p>/gi) || [];
+    var cleanPs = paragraphs.map(function(p) { return p.replace(/<[^>]+>/g, '').trim(); }).filter(function(p) { return p.length > 20; });
+    var firstP = cleanPs[0] || '';
+    var secondP = cleanPs[1] || '';
+    var entities = extractKeyEntities(htmlContent);
+    var siteUrl = 'https://LeoLaRata35.github.io/e-radiomagazine';
+    var articleFile = document.getElementById('fileName').value.trim() || sanitizeFilename(title);
+    var articleUrl = siteUrl + '/articulos/' + articleFile + '.html';
+
+    var detailText = (firstP + ' ' + secondP).replace(/\s+/g, ' ').trim();
+    if (detailText.length > 350) detailText = detailText.substring(0, 347) + '...';
+    var firstSentence = (firstP.match(/^[^.!?]*[.!?]/) || [firstP.substring(0, 120)])[0];
+    var keyFacts = entities.bolds.join(', ');
+    if (keyFacts.length > 120) keyFacts = keyFacts.substring(0, 117) + '...';
+
+    var emojiMap = { anime: '🎪', manga: '📖', reviews: '⭐', musica: '🎵', videojuegos: '🎮', cine: '🎬' };
+    var emoji = emojiMap[category] || '📰';
+
+    var seo = title + '. ' + (keyFacts ? keyFacts + '. ' : '') + (entities.dates[0] || '') + '.';
+    if (seo.length > 140) seo = seo.substring(0, 137) + '...';
+
+    var copy1 = emoji + ' ¡' + title + '! ' + detailText.substring(0, 250) + '\n\n' + articleUrl + '\n\n';
+    var copy2Body = secondP ? secondP.substring(0, 250) : (entities.bolds.length > 2 ? entities.bolds.slice(0, 4).join(', ') : firstSentence);
+    var copy2 = emoji + ' ' + title + ' — ' + copy2Body + '\n\n' + articleUrl + '\n\n';
+    var copy3 = emoji + ' ' + title + '. ' + firstSentence + '\n\n' + articleUrl + '\n\n';
+
+    var poster = title + '. ' + (keyFacts ? keyFacts + '. ' : '') + (entities.dates[0] || '');
+    if (poster.length > 200) poster = poster.substring(0, 197) + '...';
+
+    var titleTag = '#' + title.replace(/[^a-zA-Z0-9]/g, '');
+    var entityTags = entities.bolds.slice(0, 3).map(function(e) {
+      return '#' + e.replace(/[^a-zA-Z0-9]/g, '');
+    }).join(' ');
+    var dateTag = '';
+    if (entities.dates[0]) {
+      var dParts = entities.dates[0].match(/(\d{1,2})\s+de\s+(\w+)/);
+      if (dParts) dateTag = '#' + dParts[2].charAt(0).toUpperCase() + dParts[2].slice(1) + dParts[1];
+    }
+    var categoryTags = { anime: '#Anime #AnimeNews', manga: '#Manga #MangaNews', reviews: '#Review', musica: '#Musica', videojuegos: '#Videojuegos', cine: '#Cine' };
+    var baseTags = categoryTags[category] || '#Noticias';
+    var allTags = [titleTag, entityTags, dateTag, baseTags].filter(Boolean).join(' ');
+
+    copy1 += allTags;
+    copy2 += allTags;
+    copy3 += allTags;
+
+    document.getElementById('kitSeo').value = seo;
+    document.getElementById('kitCopy1').value = copy1;
+    document.getElementById('kitCopy2').value = copy2;
+    document.getElementById('kitCopy3').value = copy3;
+    document.getElementById('kitPoster').value = poster;
+    document.getElementById('kitHashtags').value = allTags;
+    document.getElementById('socialKitOutput').style.display = 'block';
+    setStatus('✅ Kit para redes generado', 'success');
+  }
+
+  function copyKit(id) {
+    var ta = document.getElementById(id);
+    ta.select();
+    ta.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(ta.value).then(function() {
+      setStatus('✅ "' + id + '" copiado al portapapeles', 'success');
+    }).catch(function() {
+      document.execCommand('copy');
+      setStatus('✅ "' + id + '" copiado', 'success');
+    });
   }
 </script>
 
