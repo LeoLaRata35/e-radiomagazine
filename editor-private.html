@@ -639,25 +639,17 @@
 
       const indexApiUrl = 'https://api.github.com/repos/LeoLaRata35/e-radiomagazine/contents/index.html';
 
-      let idxMetaResp, idxMeta, indexSha, idxRawResp, indexHtml;
+      let idxMetaResp, idxMeta, indexSha, indexHtml;
       
       try {
         idxMetaResp = await fetch(indexApiUrl, { headers: { Authorization: `token ${token}` } });
         if (!idxMetaResp.ok) throw new Error('Status: ' + idxMetaResp.status);
         idxMeta = await idxMetaResp.json();
         indexSha = idxMeta.sha;
+        // Decodificar contenido desde base64
+        indexHtml = decodeURIComponent(escape(atob(idxMeta.content)));
       } catch(e) {
-        throw new Error('Error al obtener SHA de index.html: ' + e.message);
-      }
-
-      try {
-        idxRawResp = await fetch(indexApiUrl, {
-          headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3.raw' }
-        });
-        if (!idxRawResp.ok) throw new Error('Status: ' + idxRawResp.status);
-        indexHtml = await idxRawResp.text();
-      } catch(e) {
-        throw new Error('Error al descargar index.html: ' + e.message);
+        throw new Error('Error al obtener index.html: ' + e.message);
       }
 
       // Build card
@@ -673,16 +665,19 @@
           </div>
         </article>`;
 
-      // Insert at top of grid - buscar después de la apertura del grid
-      const gridRegex = /<div\s+class=["']articles-grid["'](?:\s+id=["']articlesGrid["'])?>/i;
-      const gridMatch = indexHtml.match(gridRegex);
+      // Insert at top of grid - buscar la primera tarjeta existente
+      const cardRegex = /<article\s+class=["']article-card["']/i;
+      const cardMatch = indexHtml.match(cardRegex);
       
-      if (!gridMatch) {
-        throw new Error('No se encontró el contenedor de artículos en index.html');
+      if (!cardMatch) {
+        // Debug: mostrar primeros caracteres para diagnosticar
+        console.log('indexHtml primeros 500 chars:', indexHtml.substring(0, 500));
+        console.log('indexHtml length:', indexHtml.length);
+        throw new Error('No se encontró la primera tarjeta de artículo en index.html. Revisá la consola (F12) para más detalles.');
       }
       
-      const insertPos = gridMatch.index + gridMatch[0].length;
-      indexHtml = indexHtml.slice(0, insertPos) + '\n' + cardHtml + indexHtml.slice(insertPos);
+      const insertPos = cardMatch.index;
+      indexHtml = indexHtml.slice(0, insertPos) + cardHtml + '\n' + indexHtml.slice(insertPos);
 
       const indexContent = btoa(unescape(encodeURIComponent(indexHtml)));
       const indexResp = await fetch(indexApiUrl, {
