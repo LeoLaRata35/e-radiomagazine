@@ -373,6 +373,8 @@
       <h3>📝 Información del Artículo</h3>
       <label>Nombre del archivo (sin .html):</label>
       <input type="text" id="fileName" placeholder="ej: articulo-nuevo-anime">
+      <input type="hidden" id="articleSha" value="">
+      <input type="hidden" id="originalFileName" value="">
       <label>Categoría:</label>
       <select id="articleCategory">
         <option value="anime">Anime</option>
@@ -775,11 +777,20 @@
       const articlePath = `articulos/${fileName}.html`;
       const articleApiUrl = `https://api.github.com/repos/LeoLaRata35/e-radiomagazine/contents/${articlePath}`;
 
-      let articleSha = '';
-      try {
-        const checkResp = await fetch(articleApiUrl, { headers: { Authorization: `token ${token}` } });
-        if (checkResp.ok) { const d = await checkResp.json(); articleSha = d.sha; }
-      } catch(e) {}
+      // Clear SHA if file name changed (user is creating new article, not updating existing)
+      var origName = document.getElementById('originalFileName').value.trim();
+      if (origName && origName !== fileName) {
+        document.getElementById('articleSha').value = '';
+        document.getElementById('originalFileName').value = '';
+      }
+
+      let articleSha = document.getElementById('articleSha').value.trim();
+      if (!articleSha) {
+        try {
+          const checkResp = await fetch(articleApiUrl, { headers: { Authorization: `token ${token}` } });
+          if (checkResp.ok) { const d = await checkResp.json(); articleSha = d.sha; }
+        } catch(e) {}
+      }
 
       showProgress('pubProgress', 70);
 
@@ -1353,6 +1364,8 @@
 
       // Set form values
       document.getElementById('fileName').value = fileName.replace('.html', '');
+      document.getElementById('originalFileName').value = fileName.replace('.html', '');
+      document.getElementById('articleSha').value = data.sha;
 
       // Try to detect category from the article badge
       var catMatch = decoded.match(/<span[^>]*style="[^"]*background:[^;]*#[^;]*c83232[^"]*"[^>]*>(\w+)<\/span>/i);
