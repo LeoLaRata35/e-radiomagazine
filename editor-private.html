@@ -1280,12 +1280,19 @@
     wrapper.innerHTML = '';
 
     try {
-      var resp = await fetch('https://api.github.com/repos/LeoLaRata35/e-radiomagazine/contents/articulos', {
-        headers: { Authorization: 'token ' + token }
-      });
-      if (!resp.ok) throw new Error('Error al listar archivos: ' + resp.status);
-      var files = await resp.json();
+      // Fetch file list and index.html in parallel
+      var [filesResp, idxResp] = await Promise.all([
+        fetch('https://api.github.com/repos/LeoLaRata35/e-radiomagazine/contents/articulos', {
+          headers: { Authorization: 'token ' + token }
+        }),
+        fetch('https://api.github.com/repos/LeoLaRata35/e-radiomagazine/contents/index.html', {
+          headers: { Authorization: 'token ' + token }
+        })
+      ]);
 
+      if (!filesResp.ok) throw new Error('Error al listar archivos: ' + filesResp.status);
+
+      var files = await filesResp.json();
       var htmlFiles = files.filter(function(f) { return f.name.endsWith('.html') && f.type === 'file'; });
 
       if (htmlFiles.length === 0) {
@@ -1293,29 +1300,61 @@
         return;
       }
 
+      // Build date lookup from index.html
+      var dateMap = {};
+      if (idxResp.ok) {
+        var idxData = await idxResp.json();
+        var idxHtml = decodeURIComponent(escape(atob(idxData.content)));
+        // Match article cards: extract href and date from each card
+        var cardRegex = /<article[^>]*class="article-card"[^>]*>[\s\S]*?<span class="article-date">([^<]+)<\/span>[\s\S]*?href="articulos\/([^"]+)"[\s\S]*?<\/article>/gi;
+        var cardMatch;
+        while ((cardMatch = cardRegex.exec(idxHtml)) !== null) {
+          dateMap[cardMatch[2]] = cardMatch[1].trim();
+        }
+      }
+
+      // Parse date string to sortable value
+      function parseDate(str) {
+        var months = { 'Ene':0,'Feb':1,'Mar':2,'Abr':3,'May':4,'Jun':5,'Jul':6,'Ago':7,'Sep':8,'Oct':9,'Nov':10,'Dic':11 };
+        var parts = str.split(' ');
+        if (parts.length >= 3) {
+          var d = parseInt(parts[0], 10);
+          var m = months[parts[1]];
+          var y = parseInt(parts[2], 10);
+          if (!isNaN(d) && m !== undefined && !isNaN(y)) return new Date(y, m, d).getTime();
+        }
+        return 0;
+      }
+
       var articles = await Promise.all(htmlFiles.map(async function(file) {
         try {
           var contentResp = await fetch(file.url, {
             headers: { Authorization: 'token ' + token }
           });
-          if (!contentResp.ok) return { name: file.name, title: file.name, sha: file.sha, path: file.path };
+          if (!contentResp.ok) return { name: file.name, title: file.name, date: dateMap[file.name] || '', dateTs: parseDate(dateMap[file.name] || ''), sha: file.sha, path: file.path };
           var data = await contentResp.json();
           var decoded = decodeURIComponent(escape(atob(data.content)));
           var titleMatch = decoded.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
           var title = titleMatch ? titleMatch[1].replace(/<[^>]+>/g, '').trim() : file.name.replace('.html', '');
-          return { name: file.name, title: title, sha: data.sha, path: file.path, downloadUrl: file.download_url };
+          return { name: file.name, title: title, date: dateMap[file.name] || '', dateTs: parseDate(dateMap[file.name] || ''), sha: data.sha, path: file.path, downloadUrl: file.download_url };
         } catch(e) {
-          return { name: file.name, title: file.name, sha: file.sha, path: file.path };
+          return { name: file.name, title: file.name, date: dateMap[file.name] || '', dateTs: parseDate(dateMap[file.name] || ''), sha: file.sha, path: file.path };
         }
       }));
 
+      // Sort by date descending (newest first), then by name
+      articles.sort(function(a, b) {
+        if (a.dateTs !== b.dateTs) return b.dateTs - a.dateTs;
+        return a.name.localeCompare(b.name);
+      });
+
       loading.style.display = 'none';
 
-      var html = '<table><thead><tr><th>Título</th><th>Archivo</th><th>Acciones</th></tr></thead><tbody>';
+      var html = '<table><thead><tr><th>Título</th><th>Fecha</th><th>Acciones</th></tr></thead><tbody>';
       articles.forEach(function(a) {
         html += '<tr>' +
-          '<td><span class="file-title">' + escapeHtml(a.title) + '</span></td>' +
-          '<td><span class="file-name">' + escapeHtml(a.name) + '</span></td>' +
+          '<td><span class="file-title">' + escapeHtml(a.title) + '</span><br><span class="file-name">' + escapeHtml(a.name) + '</span></td>' +
+          '<td style="white-space:nowrap;font-size:0.8rem;">' + escapeHtml(a.date) + '</td>' +
           '<td class="actions">' +
             '<button onclick="previewArticle(\'' + a.name.replace(/'/g, "\\'") + '\')" title="Vista previa">👁</button>' +
             '<button onclick="editArticle(\'' + a.name.replace(/'/g, "\\'") + '\')" title="Editar">✏️</button>' +
@@ -1324,7 +1363,7 @@
       });
       html += '</tbody></table>';
       wrapper.innerHTML = html;
-      setStatus('✅ ' + articles.length + ' artículos cargados', 'success');
+      setStatus('✅ ' + articles.length + ' artículos cargados (del más nuevo al más antiguo)', 'success');
 
     } catch(e) {
       loading.style.display = 'none';
