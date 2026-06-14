@@ -578,6 +578,16 @@
     try {
       let htmlContent = activeTab === 'html' ? htmlArea.value : visual.innerHTML;
 
+      // Strip editor-only markup before publishing
+      htmlContent = htmlContent
+        .replace(/\s+contenteditable="false"/gi, '')
+        .replace(/\s+onclick="[^"]*"/gi, '')
+        .replace(/\s+ondblclick="[^"]*"/gi, '')
+        .replace(/\s+id="(?:img|vid)-\d+"/gi, '')
+        .replace(/ bis_[a-zA-Z_]+="[^"]*"/gi, '')
+        .replace(/<div style="font-size: 0\.75rem;[^"]*"[^>]*>[\s\S]*?<\/div>/gi, '')
+        .replace(/<div style="text-align:center;font-size:0\.75rem;[^"]*"[^>]*>[\s\S]*?<\/div>/gi, '');
+
       // Process embedded images
       const dataUriRegex = /<img[^>]+src="(data:image\/[^"]+)"[^>]*>/g;
       let imgMatch;
@@ -863,6 +873,7 @@
   });
 
   visual.addEventListener('click', function(e) {
+    if (e.target.closest('.media-toolbar')) return;
     var el = e.target;
     if (el.tagName === 'IMG' || el.tagName === 'VIDEO') {
       activeMedia = el;
@@ -934,8 +945,12 @@
     if (url) {
       var img = document.createElement('img');
       img.src = url;
-      img.style.maxWidth = '100%';
-      insertMediaNode(img);
+      img.style.cssText = 'max-width:100%;display:block;';
+      var fig = document.createElement('figure');
+      fig.contentEditable = false;
+      fig.style.cssText = 'display:inline-block;margin:12px 0;position:relative;max-width:100%;';
+      fig.appendChild(img);
+      insertAtCursor(fig);
     }
   }
 
@@ -1064,11 +1079,11 @@
             var img = document.createElement('img');
             img.src = ev.target.result;
             img.style.maxWidth = '100%';
-            var fig = document.createElement('figure');
-            fig.contentEditable = false;
-            fig.style.cssText = 'display:inline-block;margin:12px 0;position:relative;';
-            fig.appendChild(img);
-            insertAtCursor(fig);
+          var fig = document.createElement('figure');
+          fig.contentEditable = false;
+          fig.style.cssText = 'display:inline-block;margin:12px 0;position:relative;max-width:100%;';
+          fig.appendChild(img);
+          insertAtCursor(fig);
           };
           reader.readAsDataURL(file);
         })(items[i].getAsFile());
