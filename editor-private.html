@@ -320,6 +320,20 @@
     </div>
     <div class="sep"></div>
     <div class="group">
+      <button onclick="exec('undo')" title="Deshacer">↩</button>
+      <button onclick="exec('redo')" title="Rehacer">↪</button>
+    </div>
+    <div class="sep"></div>
+    <div class="group">
+      <button onclick="insertLink()" title="Insertar enlace">🔗</button>
+      <button onclick="exec('unlink')" title="Quitar enlace">🚫</button>
+    </div>
+    <div class="sep"></div>
+    <div class="group">
+      <button onclick="insertImageUrl()" title="Imagen desde URL">🖼️</button>
+    </div>
+    <div class="sep"></div>
+    <div class="group">
       <button onclick="exec('removeFormat')" title="Limpiar formato">✖</button>
     </div>
   </div>
@@ -833,6 +847,20 @@
 
   /* ===== Media Tools ===== */
   let activeMedia = null;
+  let lastVisualRange = null;
+
+  // Save cursor position when visual editor loses focus
+  visual.addEventListener('blur', function() {
+    var sel = window.getSelection();
+    if (sel.rangeCount > 0 && sel.getRangeAt(0).startContainer && visual.contains(sel.getRangeAt(0).startContainer)) {
+      lastVisualRange = sel.getRangeAt(0).cloneRange();
+    }
+  });
+
+  // Restore cursor when clicking back into editor
+  visual.addEventListener('mousedown', function() {
+    lastVisualRange = null;
+  });
 
   visual.addEventListener('click', function(e) {
     var el = e.target;
@@ -872,13 +900,8 @@
     if (action === 'resize') {
       var p = activeMedia.tagName === 'FIGURE' ? 1 : (parseFloat(activeMedia.style.width) || 100) / 100;
       p = Math.max(0.1, Math.min(3, p + val));
-      if (activeMedia.tagName === 'FIGURE') {
-        activeMedia.style.width = (p * 100) + '%';
-      } else {
-        activeMedia.style.width = (p * 100) + '%';
-        activeMedia.style.height = 'auto';
-      }
-      updateSizeLabel();
+      activeMedia.style.width = (p * 100) + '%';
+      if (activeMedia.tagName !== 'FIGURE') activeMedia.style.height = 'auto';
     } else if (action === 'align') {
       if (activeMedia.tagName === 'FIGURE') {
         activeMedia.style.display = val === 'center' ? 'block' : 'inline-block';
@@ -896,66 +919,101 @@
       if (fig) fig.remove(); else activeMedia.remove();
       hideMediaToolbar();
     }
+    syncVisualToHtml();
   }
 
-  function updateSizeLabel() {
-    var tb = document.getElementById('mediaToolbar');
-    var pct = activeMedia ? Math.round((parseFloat(activeMedia.style.width) || 100)) + '%' : '100%';
+  /* Toolbar: Link */
+  function insertLink() {
+    var url = prompt('URL del enlace:', 'https://');
+    if (url) exec('createLink', url);
+  }
+
+  /* Toolbar: Image from URL */
+  function insertImageUrl() {
+    var url = prompt('URL de la imagen:', 'https://');
+    if (url) {
+      var img = document.createElement('img');
+      img.src = url;
+      img.style.maxWidth = '100%';
+      insertMediaNode(img);
+    }
+  }
+
+  /* Insert media at saved cursor position */
+  function insertAtCursor(node) {
+    visual.focus();
+    var sel = window.getSelection();
+    var range;
+
+    if (lastVisualRange) {
+      range = lastVisualRange;
+      lastVisualRange = null;
+      sel.removeAllRanges();
+      sel.addRange(range);
+    } else if (sel.rangeCount > 0) {
+      range = sel.getRangeAt(0);
+    } else {
+      visual.appendChild(node);
+      visual.appendChild(document.createElement('br'));
+      syncVisualToHtml();
+      return;
+    }
+
+    range.deleteContents();
+    range.insertNode(node);
+    range.setStartAfter(node);
+    range.collapse(true);
+    sel.removeAllRanges();
+    sel.addRange(range);
+    syncVisualToHtml();
   }
 
   /* Image upload */
   function handleImageFiles(files) {
     for (var i = 0; i < files.length; i++) {
-      var reader = new FileReader();
-      reader.onload = function(e) {
-        var img = document.createElement('img');
-        img.src = e.target.result;
-        img.style.maxWidth = '100%';
-        insertMediaNode(img);
-      };
-      reader.readAsDataURL(files[i]);
+      (function(file) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          var img = document.createElement('img');
+          img.src = e.target.result;
+          img.style.maxWidth = '100%';
+          var fig = document.createElement('figure');
+          fig.contentEditable = false;
+          fig.style.display = 'inline-block';
+          fig.style.margin = '12px 0';
+          fig.style.position = 'relative';
+          fig.appendChild(img);
+          insertAtCursor(fig);
+        };
+        reader.readAsDataURL(file);
+      })(files[i]);
     }
   }
 
   /* Video upload */
   function handleVideoFiles(files) {
     for (var i = 0; i < files.length; i++) {
-      var reader = new FileReader();
-      reader.onload = function(e) {
-        var vid = document.createElement('video');
-        vid.src = e.target.result;
-        vid.controls = true;
-        vid.style.maxWidth = '100%';
-        insertMediaNode(vid);
-      };
-      reader.readAsDataURL(files[i]);
+      (function(file) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          var vid = document.createElement('video');
+          vid.src = e.target.result;
+          vid.controls = true;
+          vid.style.maxWidth = '100%';
+          var fig = document.createElement('figure');
+          fig.contentEditable = false;
+          fig.style.display = 'inline-block';
+          fig.style.margin = '12px 0';
+          fig.style.position = 'relative';
+          fig.appendChild(vid);
+          insertAtCursor(fig);
+        };
+        reader.readAsDataURL(file);
+      })(files[i]);
     }
   }
 
-  function insertMediaNode(node) {
-    var fig = document.createElement('figure');
-    fig.contentEditable = false;
-    fig.style.display = 'inline-block';
-    fig.style.margin = '12px 0';
-    fig.style.position = 'relative';
-    fig.appendChild(node);
-    visual.focus();
-    var sel = window.getSelection();
-    if (sel.rangeCount > 0) {
-      var range = sel.getRangeAt(0);
-      range.insertNode(fig);
-      range.setStartAfter(fig);
-      range.collapse(true);
-      sel.removeAllRanges();
-      sel.addRange(range);
-    } else {
-      visual.appendChild(fig);
-      visual.appendChild(document.createElement('br'));
-    }
-    syncVisualToHtml();
-  }
-
-  /* YouTube */
+  /* YouTube - iframe embed */
   function insertYouTube() {
     var panel = document.getElementById('youtubeInput');
     panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
@@ -971,51 +1029,24 @@
     if (!match) return setStatus('❌ URL de YouTube no válida', 'error');
 
     var id = match[1];
-    var container = document.createElement('figure');
-    container.contentEditable = false;
-    container.style.display = 'inline-block';
-    container.style.margin = '12px 0';
-    container.style.position = 'relative';
-    container.style.cursor = 'pointer';
-    container.ondblclick = function() { window.open('https://www.youtube.com/embed/' + id, '_blank'); };
 
-    var link = document.createElement('a');
-    link.href = 'https://www.youtube.com/embed/' + id;
-    link.target = '_blank';
-    link.style.display = 'block';
-    link.style.position = 'relative';
+    var fig = document.createElement('figure');
+    fig.contentEditable = false;
+    fig.style.cssText = 'display:inline-block;margin:12px 0;position:relative;width:100%;max-width:720px;';
 
-    var img = document.createElement('img');
-    img.src = 'https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg';
-    img.alt = 'YouTube video';
-    img.style.display = 'block';
-    img.style.width = '100%';
+    var wrapper = document.createElement('div');
+    wrapper.style.cssText = 'position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;';
 
-    var overlay = document.createElement('div');
-    overlay.style.cssText = 'position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;background:rgba(0,0,0,0.7);border-radius:50%;display:flex;align-items:center;justify-content:center;';
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + id;
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;';
 
-    var play = document.createElement('div');
-    play.style.cssText = 'border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:4px;';
+    wrapper.appendChild(iframe);
+    fig.appendChild(wrapper);
+    insertAtCursor(fig);
 
-    overlay.appendChild(play);
-    link.appendChild(img);
-    link.appendChild(overlay);
-    container.appendChild(link);
-
-    visual.focus();
-    var sel = window.getSelection();
-    if (sel.rangeCount > 0) {
-      var range = sel.getRangeAt(0);
-      range.insertNode(container);
-      range.setStartAfter(container);
-      range.collapse(true);
-      sel.removeAllRanges();
-      sel.addRange(range);
-    } else {
-      visual.appendChild(container);
-      visual.appendChild(document.createElement('br'));
-    }
-    syncVisualToHtml();
     setStatus('✅ Video de YouTube insertado', 'success');
   }
 
@@ -1027,17 +1058,20 @@
       if (items[i].type.indexOf('image') === 0) {
         hasImage = true;
         e.preventDefault();
-        var file = items[i].getAsFile();
-        if (file) {
+        (function(file) {
           var reader = new FileReader();
           reader.onload = function(ev) {
             var img = document.createElement('img');
             img.src = ev.target.result;
             img.style.maxWidth = '100%';
-            insertMediaNode(img);
+            var fig = document.createElement('figure');
+            fig.contentEditable = false;
+            fig.style.cssText = 'display:inline-block;margin:12px 0;position:relative;';
+            fig.appendChild(img);
+            insertAtCursor(fig);
           };
           reader.readAsDataURL(file);
-        }
+        })(items[i].getAsFile());
       }
     }
     if (hasImage) setStatus('✅ Imagen pegada', 'success');
