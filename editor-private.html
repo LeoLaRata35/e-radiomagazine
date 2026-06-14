@@ -843,19 +843,26 @@
           </div>
         </article>`;
 
-      // Insert at top of grid - buscar la primera tarjeta existente
-      const cardRegex = /<article\s+class=["']article-card["']/i;
-      const cardMatch = indexHtml.match(cardRegex);
-      
-      if (!cardMatch) {
-        // Debug: mostrar primeros caracteres para diagnosticar
-        console.log('indexHtml primeros 500 chars:', indexHtml.substring(0, 500));
-        console.log('indexHtml length:', indexHtml.length);
-        throw new Error('No se encontró la primera tarjeta de artículo en index.html. Revisá la consola (F12) para más detalles.');
+      // Check if card already exists (update mode) or need to insert (new article)
+      const articleHref = `articulos/${fileName}.html`;
+      const existingCardRegex = new RegExp('<article[^>]*class="article-card"[^>]*data-category="[^"]*"[^>]*>[\\s\\S]*?href="' + articleHref.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '"[\\s\\S]*?<\\/article>', 'i');
+      const existingMatch = indexHtml.match(existingCardRegex);
+
+      if (existingMatch) {
+        // Replace existing card (update)
+        indexHtml = indexHtml.replace(existingMatch[0], cardHtml);
+      } else {
+        // Insert at top of grid - buscar la primera tarjeta existente
+        const firstCardRegex = /<article\s+class=["']article-card["']/i;
+        const firstMatch = indexHtml.match(firstCardRegex);
+        if (!firstMatch) {
+          console.log('indexHtml primeros 500 chars:', indexHtml.substring(0, 500));
+          console.log('indexHtml length:', indexHtml.length);
+          throw new Error('No se encontró la primera tarjeta de artículo en index.html.');
+        }
+        const insertPos = firstMatch.index;
+        indexHtml = indexHtml.slice(0, insertPos) + cardHtml + '\n' + indexHtml.slice(insertPos);
       }
-      
-      const insertPos = cardMatch.index;
-      indexHtml = indexHtml.slice(0, insertPos) + cardHtml + '\n' + indexHtml.slice(insertPos);
 
       const indexContent = btoa(unescape(encodeURIComponent(indexHtml)));
       const indexResp = await fetch(indexApiUrl, {
