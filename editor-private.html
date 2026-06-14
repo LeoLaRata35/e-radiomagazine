@@ -159,7 +159,7 @@
     }
     .panel h3 { font-size: 1rem; margin-bottom: 12px; color: var(--text-primary); display: flex; align-items: center; gap: 8px; }
     .panel h3 span { font-size: 1.2rem; }
-    .panel input[type=text], .panel input[type=url], .panel input[type=password] {
+    .panel input[type=text], .panel input[type=url], .panel input[type=password], .panel textarea {
       width: 100%; padding: 10px 12px; margin-bottom: 8px;
       background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
       color: var(--text-primary); font-size: 0.9rem; box-sizing: border-box;
@@ -382,7 +382,13 @@
         <option value="videojuegos">Videojuegos</option>
         <option value="cine">Cine</option>
       </select>
-      <div style="margin-top: 12px;">
+      <label style="margin-top:10px;display:block;">Descripción para tarjeta (portada):</label>
+      <textarea id="cardDescription" rows="3" placeholder="Auto-generada al publicar si se deja vacío" style="resize:vertical;"></textarea>
+      <div style="display:flex;gap:4px;margin-bottom:12px;">
+        <button class="secondary" onclick="generateCardDescription()" style="flex:1;">🔄 Generar</button>
+        <button class="secondary" onclick="document.getElementById('cardDescription').value=''" title="Limpiar">✕</button>
+      </div>
+      <div>
         <button onclick="publishArticle()">📤 Publicar Artículo</button>
         <div class="progress-bar" id="pubProgress"><div></div></div>
       </div>
@@ -455,6 +461,7 @@
           <div style="display:flex;gap:4px;">
             <textarea id="kitPoster" rows="2" style="flex:1;font-size:0.8rem;padding:4px;" readonly></textarea>
             <button class="secondary" onclick="copyKit('kitPoster')" title="Copiar">📋</button>
+            <button class="secondary" onclick="useAsCardDescription('kitPoster')" title="Usar como descripción de tarjeta">📇</button>
           </div>
         </div>
         <div>
@@ -676,7 +683,12 @@
       // Extract metadata
       const articleTitle = extractTitle(htmlContent) || fileName.replace(/^articulo-/, '').replace(/-/g, ' ');
       const firstImg = extractFirstImage(htmlWithUrls) || `https://LeoLaRata35.github.io/e-radiomagazine/assets/E-Radio%20Magazine%20HORIZONTAL.png`;
-      const desc = (htmlWithUrls.match(/<p[^>]*>(.*?)<\/p>/) || ['', 'Artículo'])[1].replace(/<[^>]+>/g, '').substring(0, 160);
+      let desc = document.getElementById('cardDescription').value.trim();
+      if (!desc) {
+        const ps = htmlWithUrls.match(/<p[^>]*>([\s\S]*?)<\/p>/gi) || [];
+        const cleanPs = ps.map(p => p.replace(/<[^>]+>/g, '').trim()).filter(p => p.length > 20);
+        desc = (cleanPs[0] || 'Artículo').substring(0, 160);
+      }
       const category = document.getElementById('articleCategory').value;
 
       // Generate date
@@ -1125,6 +1137,24 @@
     if (hasImage) setStatus('✅ Imagen pegada', 'success');
   });
 
+  /* ===== Card Description ===== */
+  function generateCardDescription() {
+    var htmlContent = activeTab === 'html' ? htmlArea.value : visual.innerHTML;
+    var ps = htmlContent.match(/<p[^>]*>([\s\S]*?)<\/p>/gi) || [];
+    var cleanPs = ps.map(function(p) { return p.replace(/<[^>]+>/g, '').trim(); }).filter(function(p) { return p.length > 30; });
+    var desc = cleanPs[0] || '';
+    if (desc.length > 160) desc = desc.substring(0, 157) + '...';
+    document.getElementById('cardDescription').value = desc;
+    setStatus('✅ Descripción para tarjeta generada', 'success');
+  }
+
+  function useAsCardDescription(sourceId) {
+    var val = document.getElementById(sourceId).value.trim();
+    if (!val) return setStatus('❌ El campo de origen está vacío', 'error');
+    document.getElementById('cardDescription').value = val;
+    setStatus('✅ Copiado como descripción de tarjeta', 'success');
+  }
+
   /* ===== Social Kit ===== */
   function extractKeyEntities(html) {
     var bolds = [];
@@ -1146,16 +1176,17 @@
     var cleanPs = paragraphs.map(function(p) { return p.replace(/<[^>]+>/g, '').trim(); }).filter(function(p) { return p.length > 20; });
     var firstP = cleanPs[0] || '';
     var secondP = cleanPs[1] || '';
+    var thirdP = cleanPs[2] || '';
     var entities = extractKeyEntities(htmlContent);
     var siteUrl = 'https://LeoLaRata35.github.io/e-radiomagazine';
     var articleFile = document.getElementById('fileName').value.trim() || sanitizeFilename(title);
     var articleUrl = siteUrl + '/articulos/' + articleFile + '.html';
 
-    var detailText = (firstP + ' ' + secondP).replace(/\s+/g, ' ').trim();
-    if (detailText.length > 350) detailText = detailText.substring(0, 347) + '...';
+    var detailText = (firstP + ' ' + secondP + ' ' + thirdP).replace(/\s+/g, ' ').trim();
+    if (detailText.length > 400) detailText = detailText.substring(0, 397) + '...';
     var firstSentence = (firstP.match(/^[^.!?]*[.!?]/) || [firstP.substring(0, 120)])[0];
     var keyFacts = entities.bolds.join(', ');
-    if (keyFacts.length > 120) keyFacts = keyFacts.substring(0, 117) + '...';
+    if (keyFacts.length > 150) keyFacts = keyFacts.substring(0, 147) + '...';
 
     var emojiMap = { anime: '🎪', manga: '📖', reviews: '⭐', musica: '🎵', videojuegos: '🎮', cine: '🎬' };
     var emoji = emojiMap[category] || '📰';
@@ -1163,10 +1194,10 @@
     var seo = title + '. ' + (keyFacts ? keyFacts + '. ' : '') + (entities.dates[0] || '') + '.';
     if (seo.length > 140) seo = seo.substring(0, 137) + '...';
 
-    var copy1 = emoji + ' ¡' + title + '! ' + detailText.substring(0, 250) + '\n\n' + articleUrl + '\n\n';
-    var copy2Body = secondP ? secondP.substring(0, 250) : (entities.bolds.length > 2 ? entities.bolds.slice(0, 4).join(', ') : firstSentence);
-    var copy2 = emoji + ' ' + title + ' — ' + copy2Body + '\n\n' + articleUrl + '\n\n';
-    var copy3 = emoji + ' ' + title + '. ' + firstSentence + '\n\n' + articleUrl + '\n\n';
+    var copy1 = emoji + ' ¡' + title + '! ' + detailText.substring(0, 350) + '\n\n📌 ' + articleUrl + '\n━━━━━━━━━━━━━━━━━━\n';
+    var copy2Body = secondP ? secondP.substring(0, 300) : (keyFacts ? keyFacts : firstSentence);
+    var copy2 = emoji + ' ' + title + '\n\n' + copy2Body + '\n\n🔗 ' + articleUrl + '\n━━━━━━━━━━━━━━━━━━\n';
+    var copy3 = emoji + ' ' + title + '. ' + firstSentence + '\n\n📍 ' + articleUrl + '\n━━━━━━━━━━━━━━━━━━\n';
 
     var poster = title + '. ' + (keyFacts ? keyFacts + '. ' : '') + (entities.dates[0] || '');
     if (poster.length > 200) poster = poster.substring(0, 197) + '...';
@@ -1180,7 +1211,7 @@
       var dParts = entities.dates[0].match(/(\d{1,2})\s+de\s+(\w+)/);
       if (dParts) dateTag = '#' + dParts[2].charAt(0).toUpperCase() + dParts[2].slice(1) + dParts[1];
     }
-    var categoryTags = { anime: '#Anime #AnimeNews', manga: '#Manga #MangaNews', reviews: '#Review', musica: '#Musica', videojuegos: '#Videojuegos', cine: '#Cine' };
+    var categoryTags = { anime: '#Anime #AnimeNews', manga: '#Manga #MangaNews', reviews: '#Review', musica: '#Musica 🎵', videojuegos: '#Videojuegos 🎮', cine: '#Cine 🎬' };
     var baseTags = categoryTags[category] || '#Noticias';
     var allTags = [titleTag, entityTags, dateTag, baseTags].filter(Boolean).join(' ');
 
@@ -1188,12 +1219,19 @@
     copy2 += allTags;
     copy3 += allTags;
 
+    // Clear and set all fields (regenerates fully)
     document.getElementById('kitSeo').value = seo;
     document.getElementById('kitCopy1').value = copy1;
     document.getElementById('kitCopy2').value = copy2;
     document.getElementById('kitCopy3').value = copy3;
     document.getElementById('kitPoster').value = poster;
     document.getElementById('kitHashtags').value = allTags;
+
+    // Also auto-generate card description if empty
+    if (!document.getElementById('cardDescription').value.trim()) {
+      generateCardDescription();
+    }
+
     document.getElementById('socialKitOutput').style.display = 'block';
     setStatus('✅ Kit para redes generado', 'success');
   }
