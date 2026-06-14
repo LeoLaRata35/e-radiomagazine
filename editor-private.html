@@ -673,14 +673,15 @@
           </div>
         </article>`;
 
-      // Insert at top of grid - buscar el marcador ARCHIVE_START
-      const anchorMatch = indexHtml.match(/<!-- ARCHIVE_START -->/i);
+      // Insert at top of grid - buscar después de la apertura del grid
+      const gridRegex = /<div\s+class=["']articles-grid["'](?:\s+id=["']articlesGrid["'])?>/i;
+      const gridMatch = indexHtml.match(gridRegex);
       
-      if (!anchorMatch) {
-        throw new Error('No se encontró el marcador ARCHIVE_START en index.html. Por favor, contacta al administrador.');
+      if (!gridMatch) {
+        throw new Error('No se encontró el contenedor de artículos en index.html');
       }
       
-      const insertPos = anchorMatch.index + anchorMatch[0].length;
+      const insertPos = gridMatch.index + gridMatch[0].length;
       indexHtml = indexHtml.slice(0, insertPos) + '\n' + cardHtml + indexHtml.slice(insertPos);
 
       const indexContent = btoa(unescape(encodeURIComponent(indexHtml)));
