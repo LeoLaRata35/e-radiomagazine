@@ -1324,16 +1324,18 @@
     if (urls.length === 0) return;
     closeCarouselDialog();
 
+    var id = 'ec-' + Date.now();
     var fig = document.createElement('figure');
     fig.className = 'e-carousel';
+    fig.id = id;
+    fig.setAttribute('data-total', urls.length);
     fig.contentEditable = false;
     fig.style.cssText = 'display:block;margin:16px auto;position:relative;max-width:100%;border-radius:12px;overflow:hidden;background:#111;';
 
     var track = document.createElement('div');
     track.className = 'e-carousel-track';
+    track.id = id + '-track';
     track.style.cssText = 'display:flex;transition:transform 0.3s ease;width:100%;';
-
-    var currentIndex = 0;
 
     urls.forEach(function(url, i) {
       var slide = document.createElement('div');
@@ -1375,42 +1377,25 @@
     var prevBtn = document.createElement('button');
     prevBtn.className = 'e-carousel-btn e-carousel-prev';
     prevBtn.innerHTML = '‹';
-    prevBtn.onclick = function() {
-      currentIndex = Math.max(0, currentIndex - 1);
-      updateCarousel();
-    };
+    prevBtn.setAttribute('onclick', "ecPrev('" + id + "')");
 
     var nextBtn = document.createElement('button');
     nextBtn.className = 'e-carousel-btn e-carousel-next';
     nextBtn.innerHTML = '›';
-    nextBtn.onclick = function() {
-      currentIndex = Math.min(urls.length - 1, currentIndex + 1);
-      updateCarousel();
-    };
+    nextBtn.setAttribute('onclick', "ecNext('" + id + "')");
 
     var dotsDiv = document.createElement('div');
     dotsDiv.className = 'e-carousel-dots';
+    dotsDiv.id = id + '-dots';
     dotsDiv.style.cssText = 'display:flex;justify-content:center;gap:6px;padding:10px 0;';
-
-    function updateCarousel() {
-      track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
-      var dots = dotsDiv.querySelectorAll('.e-carousel-dot');
-      dots.forEach(function(d, idx) {
-        d.classList.toggle('active', idx === currentIndex);
-      });
-    }
 
     urls.forEach(function(url, i) {
       var dot = document.createElement('button');
       dot.className = 'e-carousel-dot' + (i === 0 ? ' active' : '');
       dot.setAttribute('aria-label', 'Slide ' + (i + 1));
-      dot.onclick = function() { currentIndex = i; updateCarousel(); };
+      dot.setAttribute('onclick', "ecGo('" + id + "'," + i + ")");
       dotsDiv.appendChild(dot);
     });
-
-    var counter = document.createElement('div');
-    counter.className = 'e-carousel-counter';
-    counter.style.cssText = 'text-align:center;font-size:12px;color:#888;padding:0 0 6px;';
 
     fig.appendChild(viewport);
     fig.appendChild(prevBtn);
