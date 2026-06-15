@@ -94,6 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ===== CAROUSEL STATE =====
+  var currentSlide = 0;
+  var slideInterval = null;
+
   // ===== MOST READ + VIEW COUNTS =====
   loadMostRead();
 
@@ -210,9 +214,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===== CAROUSEL =====
-  let currentSlide = 0;
-  let slideInterval = null;
-
   function initCarousel() {
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.dot');
