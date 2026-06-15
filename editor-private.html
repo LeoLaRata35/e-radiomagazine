@@ -246,6 +246,32 @@
       .toolbar { gap: 2px; padding: 6px 8px; }
       .toolbar button { width: 30px; height: 30px; font-size: 0.8rem; }
     }
+
+    /* Shortcuts Modal */
+    .shortcuts-modal {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7); display: none;
+      align-items: center; justify-content: center; z-index: 10001;
+    }
+    .shortcuts-modal.show { display: flex; }
+    .shortcuts-box {
+      background: #1a1a2e; border: 1px solid #d4af37; border-radius: 16px;
+      padding: 32px; max-width: 480px; width: 90%; max-height: 80vh; overflow-y: auto;
+    }
+    .shortcuts-box h3 { color: #d4af37; margin-bottom: 20px; font-size: 1.2rem; text-align: center; }
+    .shortcuts-box table { width: 100%; border-collapse: collapse; }
+    .shortcuts-box td { padding: 6px 8px; color: #c8c8e0; font-size: 0.85rem; border-bottom: 1px solid #2a2a4a; }
+    .shortcuts-box td:first-child { white-space: nowrap; text-align: right; color: #d4af37; font-weight: 600; }
+    .shortcuts-box kbd {
+      background: #2a2a4a; border: 1px solid #d4af37; border-radius: 4px;
+      padding: 2px 6px; font-size: 0.75rem; font-family: inherit;
+    }
+    .btn-close-shortcuts {
+      display: block; margin: 20px auto 0;
+      background: linear-gradient(135deg, #d4af37, #ffed4e); color: #1a1a2e;
+      border: none; padding: 10px 24px; border-radius: 8px; font-weight: 700; cursor: pointer;
+    }
+    .btn-close-shortcuts:hover { transform: scale(1.02); }
   </style>
 </head>
 <body>
@@ -310,6 +336,13 @@
     </div>
     <div class="sep"></div>
     <div class="group">
+      <button onclick="exec('justifyLeft')" title="Alinear izquierda (Ctrl+Shift+L)">◀</button>
+      <button onclick="exec('justifyCenter')" title="Centrar (Ctrl+Shift+E)">◉</button>
+      <button onclick="exec('justifyRight')" title="Alinear derecha (Ctrl+Shift+R)">▶</button>
+      <button onclick="exec('justifyFull')" title="Justificar (Ctrl+Shift+J)">↔</button>
+    </div>
+    <div class="sep"></div>
+    <div class="group">
       <select onchange="exec('fontName', this.value)" title="Fuente">
         <option value="Segoe UI">Segoe UI</option>
         <option value="Arial">Arial</option>
@@ -353,6 +386,32 @@
     <div class="sep"></div>
     <div class="group">
       <button onclick="exec('removeFormat')" title="Limpiar formato">✖</button>
+    </div>
+    <div class="sep"></div>
+    <div class="group">
+      <button onclick="toggleShortcuts()" title="Atajos de teclado (?)">?</button>
+    </div>
+  </div>
+
+  <!-- Shortcuts Modal -->
+  <div class="shortcuts-modal" id="shortcutsModal">
+    <div class="shortcuts-box">
+      <h3>⌨ Atajos de teclado</h3>
+      <table>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>B</kbd></td><td>Negrita</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>I</kbd></td><td>Cursiva</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>U</kbd></td><td>Subrayado</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>K</kbd></td><td>Insertar enlace (texto seleccionado)</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>Z</kbd></td><td>Deshacer</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>Y</kbd></td><td>Rehacer</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd></td><td>Alinear izquierda</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd></td><td>Centrar</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd></td><td>Alinear derecha</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>J</kbd></td><td>Justificar</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>C</kbd></td><td>Copiar</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>V</kbd></td><td>Pegar (también imágenes)</td></tr>
+      </table>
+      <button class="btn-close-shortcuts" onclick="toggleShortcuts()">Cerrar</button>
     </div>
   </div>
 
@@ -547,6 +606,18 @@
       const saved = localStorage.getItem('gh_token');
       if (saved) document.getElementById('githubToken').value = saved;
     }
+  });
+
+  // ===== SHORTCUTS HELP =====
+  function toggleShortcuts() {
+    document.getElementById('shortcutsModal').classList.toggle('show');
+  }
+  // Close shortcuts modal on Escape or click outside
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('shortcutsModal').classList.remove('show');
+  });
+  document.getElementById('shortcutsModal').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('show');
   });
 
   // ===== EDITOR FUNCTIONS =====
@@ -999,7 +1070,10 @@
 
   /* Toolbar: Link */
   function insertLink() {
-    var url = prompt('URL del enlace:', 'https://');
+    var sel = window.getSelection();
+    var hasText = sel && sel.toString().trim().length > 0;
+    var msg = hasText ? 'URL del enlace para "' + sel.toString().trim().substring(0, 40) + '":' : 'URL del enlace:';
+    var url = prompt(msg, 'https://');
     if (url) exec('createLink', url);
   }
 
@@ -1130,6 +1204,24 @@
   }
 
   /* Paste handler for images */
+  // ===== KEYBOARD SHORTCUTS =====
+  visual.addEventListener('keydown', function(e) {
+    var ctrl = e.ctrlKey || e.metaKey;
+    var shift = e.shiftKey;
+    if (!ctrl) return;
+    if (shift) {
+      switch (e.key.toLowerCase()) {
+        case 'l': e.preventDefault(); exec('justifyLeft'); return;
+        case 'e': e.preventDefault(); exec('justifyCenter'); return;
+        case 'r': e.preventDefault(); exec('justifyRight'); return;
+        case 'j': e.preventDefault(); exec('justifyFull'); return;
+      }
+    }
+    switch (e.key.toLowerCase()) {
+      case 'k': e.preventDefault(); insertLink(); return;
+    }
+  });
+
   visual.addEventListener('paste', function(e) {
     var items = e.clipboardData.items;
     var hasImage = false;
