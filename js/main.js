@@ -97,30 +97,30 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== MOST READ + VIEW COUNTS =====
   loadMostRead();
 
-  async function loadMostRead() {
-    const cards = document.querySelectorAll('.article-card');
+  function loadMostRead() {
+    var cards = document.querySelectorAll('.article-card');
     if (!cards.length) return;
 
-    const articles = [];
-    cards.forEach(card => {
-      const imgDiv = card.querySelector('.article-img');
-      const link = card.querySelector('.read-more');
-      const href = link ? link.getAttribute('href') : '';
-      const filename = href.replace('articulos/', '').replace('.html', '');
-      const bgStyle = imgDiv ? imgDiv.getAttribute('style') || '' : '';
-      const imgMatch = bgStyle.match(/url\(['"]?(.*?)['"]?\)/);
-      const img = imgMatch ? imgMatch[1] : '';
-      const title = card.querySelector('h3')?.textContent || '';
-      const catEl = card.querySelector('.article-category');
-      const category = catEl ? catEl.textContent : '';
-      const dateEl = imgDiv ? imgDiv.querySelector('.article-date') : null;
-      const date = dateEl ? dateEl.textContent : '';
-      articles.push({ filename, img, title, category, href, date, card, imgDiv, count: 0 });
+    var articles = [];
+    cards.forEach(function(card) {
+      var imgDiv = card.querySelector('.article-img');
+      var link = card.querySelector('.read-more');
+      var href = link ? link.getAttribute('href') : '';
+      var filename = href.replace('articulos/', '').replace('.html', '');
+      var bgStyle = imgDiv ? imgDiv.getAttribute('style') || '' : '';
+      var imgMatch = bgStyle.match(/url\(['"]?(.*?)['"]?\)/);
+      var img = imgMatch ? imgMatch[1] : '';
+      var title = card.querySelector('h3') ? card.querySelector('h3').textContent : '';
+      var catEl = card.querySelector('.article-category');
+      var category = catEl ? catEl.textContent : '';
+      var dateEl = imgDiv ? imgDiv.querySelector('.article-date') : null;
+      var date = dateEl ? dateEl.textContent : '';
+      articles.push({ filename: filename, img: img, title: title, category: category, href: href, date: date, card: card, imgDiv: imgDiv, count: 0 });
     });
 
-    articles.forEach(a => {
+    articles.forEach(function(a) {
       if (!a.imgDiv) return;
-      const vc = document.createElement('span');
+      var vc = document.createElement('span');
       vc.className = 'view-count';
       vc.innerHTML = '<span class="eye-icon">&#x1F441;</span> 0';
       a.imgDiv.appendChild(vc);
@@ -129,21 +129,25 @@ document.addEventListener('DOMContentLoaded', () => {
     buildCarousel(articles);
     initCarousel();
 
-    const controller = new AbortController();
-    const timeout = setTimeout(function() { controller.abort(); }, 4000);
+    var controller = new AbortController();
+    var timedOut = false;
+    var timeoutId = setTimeout(function() {
+      controller.abort();
+      timedOut = true;
+    }, 4000);
 
-    try {
-      const countPromises = articles.map(function(a) {
-        return fetch('https://api.countapi.xyz/get/eradiomagazine/' + a.filename, { signal: controller.signal })
-          .then(function(r) { return r.json(); })
-          .then(function(d) { a.count = d.value || 0; return a; })
-          .catch(function() { a.count = 0; return a; });
-      });
-      var results = await Promise.all(countPromises);
-      clearTimeout(timeout);
-      results.sort(function(a, b) { return b.count - a.count; });
+    var fetchPromises = articles.map(function(a) {
+      return fetch('https://api.countapi.xyz/get/eradiomagazine/' + a.filename, { signal: controller.signal })
+        .then(function(r) { return r.json(); })
+        .then(function(d) { a.count = d.value || 0; return a; })
+        .catch(function() { a.count = 0; return a; });
+    });
 
-      results.forEach(function(a) {
+    Promise.allSettled(fetchPromises).then(function() {
+      clearTimeout(timeoutId);
+      if (timedOut) return;
+      var sorted = articles.slice().sort(function(a, b) { return b.count - a.count; });
+      sorted.forEach(function(a) {
         if (!a.imgDiv) return;
         var existing = a.imgDiv.querySelector('.view-count');
         if (existing) existing.remove();
@@ -152,12 +156,9 @@ document.addEventListener('DOMContentLoaded', () => {
         vc.innerHTML = '<span class="eye-icon">&#x1F441;</span> ' + a.count;
         a.imgDiv.appendChild(vc);
       });
-
-      buildCarousel(results);
+      buildCarousel(sorted);
       initCarousel();
-    } catch(e) {
-      clearTimeout(timeout);
-    }
+    }).catch(function() {});
   }
 
   function buildCarousel(articles) {
