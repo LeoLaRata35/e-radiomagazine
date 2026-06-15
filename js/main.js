@@ -113,46 +113,66 @@ document.addEventListener('DOMContentLoaded', () => {
       const title = card.querySelector('h3')?.textContent || '';
       const catEl = card.querySelector('.article-category');
       const category = catEl ? catEl.textContent : '';
-      const categoryLower = card.dataset.category || '';
       const dateEl = imgDiv ? imgDiv.querySelector('.article-date') : null;
       const date = dateEl ? dateEl.textContent : '';
-
-      articles.push({ filename, img, title, category, categoryLower, href, date, card, imgDiv });
+      articles.push({ filename, img, title, category, href, date, card, imgDiv, count: 0 });
     });
 
-    const countPromises = articles.map(a =>
-      fetch('https://api.countapi.xyz/get/eradiomagazine/' + a.filename)
-        .then(r => r.json())
-        .then(d => { a.count = d.value || 0; return a; })
-        .catch(() => { a.count = 0; return a; })
-    );
-
-    const results = await Promise.all(countPromises);
-    results.sort((a, b) => b.count - a.count);
-
-    results.forEach(a => {
+    articles.forEach(a => {
       if (!a.imgDiv) return;
-      const existing = a.imgDiv.querySelector('.view-count');
-      if (existing) existing.remove();
-
       const vc = document.createElement('span');
       vc.className = 'view-count';
-      vc.innerHTML = '<span class="eye-icon">&#x1F441;</span> ' + a.count;
+      vc.innerHTML = '<span class="eye-icon">&#x1F441;</span> 0';
       a.imgDiv.appendChild(vc);
     });
 
-    const heroCarousel = document.getElementById('heroCarousel');
-    const heroSide = document.getElementById('heroSide');
-    const dotsContainer = document.getElementById('carouselDots');
-    if (!heroCarousel || results.length === 0) return;
+    buildCarousel(articles);
+    initCarousel();
 
-    const top5 = results.slice(0, 5);
-    const next3 = results.slice(5, 8);
+    const controller = new AbortController();
+    const timeout = setTimeout(function() { controller.abort(); }, 4000);
 
-    heroCarousel.querySelectorAll('.hero-slide').forEach(el => el.remove());
+    try {
+      const countPromises = articles.map(function(a) {
+        return fetch('https://api.countapi.xyz/get/eradiomagazine/' + a.filename, { signal: controller.signal })
+          .then(function(r) { return r.json(); })
+          .then(function(d) { a.count = d.value || 0; return a; })
+          .catch(function() { a.count = 0; return a; });
+      });
+      var results = await Promise.all(countPromises);
+      clearTimeout(timeout);
+      results.sort(function(a, b) { return b.count - a.count; });
 
-    top5.forEach((a, i) => {
-      const slide = document.createElement('div');
+      results.forEach(function(a) {
+        if (!a.imgDiv) return;
+        var existing = a.imgDiv.querySelector('.view-count');
+        if (existing) existing.remove();
+        var vc = document.createElement('span');
+        vc.className = 'view-count';
+        vc.innerHTML = '<span class="eye-icon">&#x1F441;</span> ' + a.count;
+        a.imgDiv.appendChild(vc);
+      });
+
+      buildCarousel(results);
+      initCarousel();
+    } catch(e) {
+      clearTimeout(timeout);
+    }
+  }
+
+  function buildCarousel(articles) {
+    var heroCarousel = document.getElementById('heroCarousel');
+    var heroSide = document.getElementById('heroSide');
+    var dotsContainer = document.getElementById('carouselDots');
+    if (!heroCarousel || articles.length === 0) return;
+
+    var top5 = articles.slice(0, 5);
+    var next3 = articles.slice(5, 8);
+
+    heroCarousel.querySelectorAll('.hero-slide').forEach(function(el) { el.remove(); });
+
+    top5.forEach(function(a, i) {
+      var slide = document.createElement('div');
       slide.className = 'hero-slide' + (i === 0 ? ' active' : '');
       slide.dataset.slide = i;
       slide.style.cssText = "background-image: linear-gradient(180deg, rgba(15,15,19,0.5) 0%, rgba(15,15,19,0.8) 100%), url('" + a.img + "'); background-size: cover; background-position: center;";
@@ -165,8 +185,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (dotsContainer) {
       dotsContainer.innerHTML = '';
-      top5.forEach((a, i) => {
-        const dot = document.createElement('span');
+      top5.forEach(function(a, i) {
+        var dot = document.createElement('span');
         dot.className = 'dot' + (i === 0 ? ' active' : '');
         dot.dataset.slide = i;
         dotsContainer.appendChild(dot);
@@ -175,8 +195,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (heroSide) {
       heroSide.innerHTML = '';
-      next3.forEach(a => {
-        const item = document.createElement('a');
+      next3.forEach(function(a) {
+        var item = document.createElement('a');
         item.href = a.href;
         item.className = 'hero-item';
         item.style.cssText = "background-image: linear-gradient(180deg, rgba(15,15,19,0.7), rgba(15,15,19,0.9)), url('" + a.img + "'); background-size: cover; background-position: center; text-decoration: none; color: inherit;";
@@ -186,8 +206,6 @@ document.addEventListener('DOMContentLoaded', () => {
         heroSide.appendChild(item);
       });
     }
-
-    initCarousel();
   }
 
   // ===== CAROUSEL =====
