@@ -6,6 +6,8 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Editor — E-Radio Magazine</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9HCBF8HCM"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-X9HCBF8HCM');</script>
   <style>
     :root {
       --toolbar-bg: #1a1a2e;
@@ -424,11 +426,6 @@
     <div class="group">
       <input type="color" onchange="exec('foreColor', this.value)" title="Color texto" value="#d4af37">
       <input type="color" onchange="exec('hiliteColor', this.value)" title="Resaltado" value="#fff3cd">
-    </div>
-    <div class="sep"></div>
-    <div class="group">
-      <button onclick="exec('undo')" title="Deshacer">↩</button>
-      <button onclick="exec('redo')" title="Rehacer">↪</button>
     </div>
     <div class="sep"></div>
     <div class="group">
@@ -865,6 +862,8 @@
   <meta property="og:site_name" content="E-Radio Magazine">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="../css/styles.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9HCBF8HCM"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-X9HCBF8HCM');</script>
 </head>
 <body>
 <header class="header">
@@ -924,6 +923,7 @@
   </div>
 </footer>
 <script src="../js/main.js"><\/script>
+<script>fetch('https://api.countapi.xyz/hit/eradiomagazine/'+location.pathname.split('/').pop().replace('.html',''));<\/script>
 </body>
 </html>`;
 

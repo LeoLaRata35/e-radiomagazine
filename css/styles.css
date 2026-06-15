@@ -375,6 +375,28 @@ body {
   font-weight: 500;
 }
 
+.view-count {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  color: #ffd700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 2;
+  line-height: 1;
+}
+
+.view-count .eye-icon {
+  font-size: 0.85rem;
+}
+
 .article-content {
   padding: 20px;
 }
