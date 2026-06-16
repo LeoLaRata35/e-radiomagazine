@@ -12,8 +12,8 @@
   <meta property="og:site_name" content="E-Radio Magazine">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="../css/styles.css">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9HCBF8HCM"><\/script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-X9HCBF8HCM');<\/script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9HCBF8HCM"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-X9HCBF8HCM');</script>
 </head>
 <body>
 <header class="header">
@@ -63,7 +63,7 @@
 
   <!-- FICHA TECNICA -->
   <div style="page-break-before: always; break-before: page; background: #f9f9f7; border-radius: 20px; border: 1px solid #e0d6c0; margin: 40px 0px; padding: 20px 24px;">
-    <h2 style="border-bottom: 3px solid #ffc800; color: #c83232; font-size: 24px; font-weight: 700; margin: 0px 0px 20px; padding-bottom: 8px;"></p><figure style="display: inline-block; margin: 12px 0px; position: relative; max-width: 100%;"><img src="https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/seishunbutayarou-2.png" style="max-width: 100%; width: 40%; height: auto; display: block; margin-left: auto; margin-right: auto;" data-align="center"></figure><br></h2><h2 style="border-bottom: 3px solid #ffc800; color: #c83232; font-size: 24px; font-weight: 700; margin: 0px 0px 20px; padding-bottom: 8px;">Ficha: Seishun Buta Yarou</h2>
+    <h2 style="border-bottom: 3px solid #ffc800; color: #c83232; font-size: 24px; font-weight: 700; margin: 0px 0px 20px; padding-bottom: 8px;"><p></p><figure style="display: inline-block; margin: 12px 0px; position: relative; max-width: 100%;"><img src="https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/seishunbutayarou-2.png" style="max-width: 100%; width: 40%; height: auto; display: block; margin-left: auto; margin-right: auto;" data-align="center"></figure><br></h2><h2 style="border-bottom: 3px solid #ffc800; color: #c83232; font-size: 24px; font-weight: 700; margin: 0px 0px 20px; padding-bottom: 8px;">Ficha: Seishun Buta Yarou</h2>
     <div style="border-bottom: 1px dashed #ddd; margin-bottom: 12px; padding-bottom: 8px;">
       <strong style="display: inline-block; min-width: 220px;">Título:</strong>
       <span>Seishun Buta Yarou wa Dear Friend no Yume wo Minai</span>
@@ -119,7 +119,11 @@
     </div>
   </div>
 </footer>
-<script src="../js/main.js"><\/script>
-<script>fetch('https://api.countapi.xyz/hit/eradiomagazine/'+location.pathname.split('/').pop().replace('.html','')).catch(function(){});<\/script>
-<\/body>
-<\/html>
+<script src="../js/main.js"></script>
+<script>fetch('https://api.countapi.xyz/hit/eradiomagazine/'+location.pathname.split('/').pop().replace('.html','')).catch(function(){});</script>
+<script>
+// Carrusel embebido para compatibilidad
+(function(){var S={};window.ecPrev=function(i){S[i]=Math.max(0,(S[i]||0)-1);ecU(i)};window.ecNext=function(i){var t=parseInt(document.getElementById(i).dataset.total,10);S[i]=Math.min(t-1,(S[i]||0)+1);ecU(i)};window.ecGo=function(i,n){S[i]=n;ecU(i)};function ecU(i){var n=S[i]||0,tr=document.getElementById(i+'-track');if(tr)tr.style.transform='translateX(-'+(n*100)+'%)';document.querySelectorAll('#'+i+'-dots .e-carousel-dot').forEach(function(d,j){d.classList.toggle('active',j===n)})}
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.e-carousel').forEach(function(f){var p=f.querySelector('.e-carousel-prev'),n=f.querySelector('.e-carousel-next');if(p){p.removeAttribute('onclick');p.addEventListener('click',function(){ecPrev(f.id)})}if(n){n.removeAttribute('onclick');n.addEventListener('click',function(){ecNext(f.id)})}f.querySelectorAll('.e-carousel-dot').forEach(function(d,i){d.removeAttribute('onclick');d.addEventListener('click',function(){ecGo(f.id,i)})});ecU(f.id)})})})();</script>
+</body>
+</html>
