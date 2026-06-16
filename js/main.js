@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const btn = newsletterForm.querySelector('button');
       const originalText = btn.textContent;
 
-      btn.textContent = 'Â¡Suscrito!';
+      btn.textContent = '¡Suscrito!';
       btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
       input.value = '';
 
@@ -122,47 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
       articles.push({ filename: filename, img: img, title: title, category: category, href: href, date: date, card: card, imgDiv: imgDiv, count: 0 });
     });
 
-    articles.forEach(function(a) {
-      if (!a.imgDiv) return;
-      var vc = document.createElement('span');
-      vc.className = 'view-count';
-      vc.innerHTML = '<span class="eye-icon">&#x1F441;</span> 0';
-      a.imgDiv.appendChild(vc);
-    });
-
     buildCarousel(articles);
     initCarousel();
-
-    var controller = new AbortController();
-    var timedOut = false;
-    var timeoutId = setTimeout(function() {
-      controller.abort();
-      timedOut = true;
-    }, 4000);
-
-    var fetchPromises = articles.map(function(a) {
-      return fetch('https://api.countapi.xyz/get/eradiomagazine/' + a.filename, { signal: controller.signal })
-        .then(function(r) { return r.json(); })
-        .then(function(d) { a.count = d.value || 0; return a; })
-        .catch(function() { a.count = 0; return a; });
-    });
-
-    Promise.allSettled(fetchPromises).then(function() {
-      clearTimeout(timeoutId);
-      if (timedOut) return;
-      var sorted = articles.slice().sort(function(a, b) { return b.count - a.count; });
-      sorted.forEach(function(a) {
-        if (!a.imgDiv) return;
-        var existing = a.imgDiv.querySelector('.view-count');
-        if (existing) existing.remove();
-        var vc = document.createElement('span');
-        vc.className = 'view-count';
-        vc.innerHTML = '<span class="eye-icon">&#x1F441;</span> ' + a.count;
-        a.imgDiv.appendChild(vc);
-      });
-      buildCarousel(sorted);
-      initCarousel();
-    }).catch(function() {});
   }
 
   function buildCarousel(articles) {
