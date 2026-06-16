@@ -22,6 +22,7 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 .container {
@@ -649,10 +650,18 @@ body {
 }
 
 @media (max-width: 768px) {
+  .header-content {
+    height: 56px;
+  }
+
+  .logo img {
+    height: 36px !important;
+  }
+
   .nav {
     display: none;
     position: absolute;
-    top: 70px;
+    top: 56px;
     left: 0;
     right: 0;
     background: var(--bg-secondary);
