@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const btn = newsletterForm.querySelector('button');
       const originalText = btn.textContent;
 
-      btn.textContent = '¡Suscrito!';
+      btn.textContent = 'Â¡Suscrito!';
       btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
       input.value = '';
 
@@ -302,23 +302,15 @@ document.addEventListener('DOMContentLoaded', () => {
     var ecFigs = document.querySelectorAll('.e-carousel');
     var ecIndex = 0;
     ecFigs.forEach(function(fig) {
-      if (fig.id && fig.id.indexOf('ec-') === 0) return;
-      var id = 'ec-auto-' + (ecIndex++);
-      fig.id = id;
-      fig.setAttribute('data-total', fig.querySelectorAll('.e-carousel-slide').length);
-      var track = fig.querySelector('.e-carousel-track');
-      if (track) track.id = id + '-track';
-      var dotsDiv = fig.querySelector('.e-carousel-dots');
-      if (dotsDiv) dotsDiv.id = id + '-dots';
       var prevBtn = fig.querySelector('.e-carousel-prev');
       var nextBtn = fig.querySelector('.e-carousel-next');
-      if (prevBtn) { prevBtn.removeAttribute('onclick'); prevBtn.addEventListener('click', function() { ecPrev(id); }); }
-      if (nextBtn) { nextBtn.removeAttribute('onclick'); nextBtn.addEventListener('click', function() { ecNext(id); }); }
+      if (prevBtn) { prevBtn.removeAttribute('onclick'); prevBtn.addEventListener('click', function() { ecPrev(fig.id); }); }
+      if (nextBtn) { nextBtn.removeAttribute('onclick'); nextBtn.addEventListener('click', function() { ecNext(fig.id); }); }
       fig.querySelectorAll('.e-carousel-dot').forEach(function(dot, i) {
         dot.removeAttribute('onclick');
-        dot.addEventListener('click', function() { ecGo(id, i); });
+        dot.addEventListener('click', function() { ecGo(fig.id, i); });
       });
-      ecUpdate(id);
+      ecUpdate(fig.id);
     });
   });
 })();
