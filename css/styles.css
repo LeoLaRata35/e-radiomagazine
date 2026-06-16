@@ -524,6 +524,72 @@ body {
   opacity: 0.9;
 }
 
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 40px 0;
+  flex-wrap: wrap;
+}
+
+.pagination a,
+.pagination .page-num.active {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.pagination a {
+  color: var(--text-primary);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+
+.pagination a:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.pagination a.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.pagination .page-numbers {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.pagination .page-num.active {
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid var(--accent);
+}
+
+@media (max-width: 480px) {
+  .pagination {
+    gap: 8px;
+  }
+  .pagination a,
+  .pagination .page-num.active {
+    min-width: 36px;
+    height: 36px;
+    font-size: 0.8rem;
+  }
+}
+
 /* Footer */
 .footer {
   padding: 64px 0 32px;
