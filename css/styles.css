@@ -82,6 +82,11 @@ body {
   filter: drop-shadow(0 0 8px rgba(124, 58, 237, 0.5));
 }
 
+.logo img {
+  height: 60px;
+  display: block;
+}
+
 .nav-blog-link {
   background: var(--accent-gradient);
   color: #fff !important;
@@ -536,6 +541,11 @@ body {
   margin-bottom: 16px;
 }
 
+.footer-brand .logo img {
+  height: 50px;
+  display: block;
+}
+
 .footer-brand p {
   color: var(--text-secondary);
   font-size: 0.9rem;
@@ -655,7 +665,11 @@ body {
   }
 
   .logo img {
-    height: 36px !important;
+    height: 36px;
+  }
+
+  .footer-brand .logo img {
+    height: 40px;
   }
 
   .nav {
