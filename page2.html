@@ -1,189 +1,135 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-Radio Magazine – Anime & Gaming</title>
-  <meta property="og:title" content="E-Radio Magazine – Anime & Gaming">
-  <meta property="og:description" content="Tu fuente de noticias sobre anime, manga y videojuegos. Actualidad, reviews y análisis desde 2016.">
-  <meta property="og:image" content="https://LeoLaRata35.github.io/e-radiomagazine/assets/E-Radio%20Magazine%20HORIZONTAL.png">
-  <meta property="og:url" content="https://LeoLaRata35.github.io/e-radiomagazine/">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="css/styles.css">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9HCBF8HCM"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-X9HCBF8HCM');</script>
-</head>
-<body>
-  <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <div class="header-left">
-          <a href="#" class="logo"><img src="assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio Magazine"></a>
-        </div>
-        <nav class="nav">
-          <ul>
-            <li><a href="#" class="active" data-filter="all">Inicio</a></li>
-            <li><a href="#" data-filter="anime">Anime</a></li>
-            <li><a href="#" data-filter="manga">Manga</a></li>
-            <li><a href="#" data-filter="reviews">Reviews</a></li>
-            <li><a href="#" data-filter="musica">Música</a></li>
-            <li><a href="https://radioakari.blogspot.com/" class="nav-blog-link" target="_blank" rel="noopener">Radio Akari</a></li>
-          </ul>
-        </nav>
-        <button class="menu-toggle" id="menuToggle" aria-label="Menú">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <section class="event-banner">
-    <div class="container">
-      <a href="https://www.youtube.com/@Luchitosama4" target="_blank" rel="noopener">
-        <img src="assets/direct1.png" alt="Splatoon Raiders Direct - 30 de junio 2026" style="width:100%;max-width:1200px;display:block;margin:0 auto;">
-      </a>
-    </div>
-  </section>
-
-  <section class="hero" id="most-read-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Más leídas</h2>
-      </div>
-      <div class="hero-grid">
-        <div class="hero-featured" id="heroCarousel">
-          <div class="carousel-dots" id="carouselDots"></div>
-        </div>
-        <div class="hero-side" id="heroSide"></div>
-      </div>
-    </div>
-  </section>
-
-  <main class="main">
-    <div class="container">
-      <div class="section-header">
-        <h2>últimas noticias</h2>
-        <div class="filter-tabs" id="filterTabs">
-          <button class="filter-btn active" data-filter="all">Todo</button>
-          <button class="filter-btn" data-filter="anime">Anime</button>
-          <button class="filter-btn" data-filter="manga">Manga</button>
-          <button class="filter-btn" data-filter="reviews">Reviews</button>
-          <button class="filter-btn" data-filter="musica">Música</button>
-          <button class="filter-btn" data-filter="videojuegos">Videojuegos</button>
-          <button class="filter-btn" data-filter="cine">Cine</button>
-        </div>
-      </div>
-
-      <div class="articles-grid" id="articlesGrid">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Radio Magazine – Anime & Gaming</title>
+  <meta property="og:title" content="E-Radio Magazine – Anime & Gaming">
+  <meta property="og:description" content="Tu fuente de noticias sobre anime, manga y videojuegos. Actualidad, reviews y análisis desde 2016.">
+  <meta property="og:image" content="https://LeoLaRata35.github.io/e-radiomagazine/assets/E-Radio%20Magazine%20HORIZONTAL.png">
+  <meta property="og:url" content="https://LeoLaRata35.github.io/e-radiomagazine/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="css/styles.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9HCBF8HCM"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-X9HCBF8HCM');</script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="header-left">
+          <a href="#" class="logo"><img src="assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio Magazine"></a>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#" class="active" data-filter="all">Inicio</a></li>
+            <li><a href="#" data-filter="anime">Anime</a></li>
+            <li><a href="#" data-filter="manga">Manga</a></li>
+            <li><a href="#" data-filter="reviews">Reviews</a></li>
+            <li><a href="#" data-filter="musica">Música</a></li>
+            <li><a href="https://radioakari.blogspot.com/" class="nav-blog-link" target="_blank" rel="noopener">Radio Akari</a></li>
+          </ul>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="event-banner">
+    <div class="container">
+      <a href="https://www.youtube.com/@Nintendo" target="_blank" rel="noopener">
+        <img src="assets/direct1.png" alt="Splatoon Raiders Direct - 30 de junio 2026" style="width:100%;max-width:1200px;display:block;margin:0 auto;">
+      </a>
+    </div>
+  </section>
+
+  <section class="hero" id="most-read-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Más leídas</h2>
+      </div>
+      <div class="hero-grid">
+        <div class="hero-featured" id="heroCarousel">
+          <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+        <div class="hero-side" id="heroSide"></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="container">
+      <div class="section-header">
+        <h2>últimas noticias</h2>
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-btn active" data-filter="all">Todo</button>
+          <button class="filter-btn" data-filter="anime">Anime</button>
+          <button class="filter-btn" data-filter="manga">Manga</button>
+          <button class="filter-btn" data-filter="reviews">Reviews</button>
+          <button class="filter-btn" data-filter="musica">Música</button>
+          <button class="filter-btn" data-filter="videojuegos">Videojuegos</button>
+          <button class="filter-btn" data-filter="cine">Cine</button>
+        </div>
+      </div>
+
+      <div class="articles-grid" id="articlesGrid">
         <!-- ARCHIVE_START -->
-<article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ghostintheshell1-1.png');">
-            <span class="article-date">16 Jun 2026</span>
-          </div>
-          <div class="article-content">
-            <span class="article-category">Anime</span>
-            <h3>La nueva serie animada de Ghost in the Shell se estrenará en julio por Prime Video</h3>
-            <p>Prime Video anuncia el estreno global de Ghost in the Shell: The Ghost in the Shell, producida por Science SARU, para este 7 de julio.</p>
-            <a href="articulos/ghostintheshell1.html" class="read-more">Seguir leyendo</a>
-          </div>
+<article class="article-card" data-category="videojuegos">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/godzilla1-1.png');">
+            <span class="article-date">14 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Videojuegos</span>
+            <h3>Atari apuesta por Godzilla para enfrentar a GTA 6</h3>
+            <p>Con el lanzamiento de Grand Theft Auto VI programado para el 19 de noviembre de 2026, la mayoría de las editoras han evitado esa ventana de estreno. Sin embargo, Atari decidió plantar cara con un contraprograma inesperado: el regreso de Godzilla: Destroy All Monsters Melee Remastered.</p>
+            <a href="articulos/godzilla1.html" class="read-more">Seguir leyendo</a>
+          </div>
         </article>
-<article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/inukami1-1.png');">
-            <span class="article-date">15 Jun 2026</span>
-          </div>
-          <div class="article-content">
-            <span class="article-category">Anime</span>
-            <h3>Inukami!: Liberan gratis todos sus episodios y estrenan su música en plataformas</h3>
-            <p>La mítica adaptación animada de la comedia romántica y fantasía Inukami! (Deidades perro), basada en la popular serie de novelas ligeras escritas por Arisawa Mamizu e ilustradas por Wakatsuki Kannana, celebra su vigésimo aniversario de transmisión televisiva. Con motivo de este hito, la distribuidora King Records ha anunciado que todos los episodios de la serie de televisión de la década de 2000 estarán disponibles para ver de forma gratuita en su plataforma de YouTube, sumando además la llegada oficial de su banda sonora y álbumes vocales a los principales servicios de distribución musical por suscripción a nivel mundial.</p>
-            <a href="articulos/inukami1.html" class="read-more">Seguir leyendo</a>
-          </div>
-        </article>
-<article class="article-card" data-category="reviews">
-          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/charamix1-1.png');">
-            <span class="article-date">15 Jun 2026</span>
-          </div>
-          <div class="article-content">
-            <span class="article-category">Reviews</span>
-            <h3>Charamix: Yabuki Kentaro diseña personajes para innovador proyecto interactivo</h3>
-            <p>La compañía japonesa de tecnología y entretenimiento Remore ha anunciado el lanzamiento de Charamix (Kyaramikusu), un innovador proyecto interactivo que busca integrar la cultura del anime con el bienestar personal. Esta ambiciosa propuesta cuenta con la participación estelar del reconocido manga...</p>
-            <a href="articulos/charamix1.html" class="read-more">Seguir leyendo</a>
-          </div>
-        </article>
-<article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/bleach1-1.png');">
-            <span class="article-date">15 Jun 2026</span>
-          </div>
-          <div class="article-content">
-            <span class="article-category">Anime</span>
-            <h3>BLEACH: Revelan nuevo arte y anuncian maratón gratuito en YouTube</h3>
-            <p>La producción de la exitosa adaptación animada BLEACH: Thousand-Year Blood War (BLEACH: Sennen Kessen-hen), basada en la legendaria obra de acción y fantasía escrita e ilustrada por el autor Kubo Tite, ha presentado un nuevo e importante arte promocional. Este lanzamiento forma parte de las actividades previas al esperado estreno de la cuarta y última entrega de la serie, titulada BLEACH: Thousand-Year Blood War - The Calamity (BLEACH: Sennen Kessen-hen - Kashintan), cuyo estreno oficial en televisión japonesa está programado para el próximo mes de julio de 2026.</p>
-            <a href="articulos/bleach1.html" class="read-more">Seguir leyendo</a>
-          </div>
-        </article>
-<article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/blackclover1-1.png');">
-            <span class="article-date">15 Jun 2026</span>
-          </div>
-          <div class="article-content">
-            <span class="article-category">Anime</span>
-            <h3>Black Clover Temporada 2 ya tiene fecha: octubre 2026 con nuevo director y un video resumen de 10 minutos</h3>
-            <p>Cinco años y medio después de que el último episodio de la primera temporada viera la luz, Black Clover regresa. La segunda temporada del anime basado en el manga de Yūki Tabata comenzará a emitirse en octubre de 2026 a través de TV Tokyo y sus cadenas afiliadas, según confirmó este lunes el sitio oficial de la serie.</p>
-            <a href="articulos/blackclover1.html" class="read-more">Seguir leyendo</a>
-          </div>
-        </article>
-<article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/sasaki1-1.png');">
-            <span class="article-date">15 Jun 2026</span>
-          </div>
-          <div class="article-content">
-            <span class="article-category">Anime</span>
-            <h3>Sasaki and Peeps: Confirman segunda temporada para octubre y revelan avance</h3>
-            <p>La producción de la divertida serie de fantasía y comedia Sasaki and Peeps (Sasaki to Pii-chan) ha confirmado de manera oficial que su segunda temporada se estrenará en la televisión japonesa a partir del próximo mes de octubre de 2026.</p>
-            <a href="articulos/sasaki1.html" class="read-more">Seguir leyendo</a>
-          </div>
-        </article>
-<article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tsuihou1-1.png');">
-            <span class="article-date">15 Jun 2026</span>
-          </div>
-          <div class="article-content">
-            <span class="article-category">Anime</span>
-            <h3>Tsuihou sareta Tensei Juukishi: Estrenan avance de su anime y revelan temas musicales</h3>
-            <p>La producción de la esperada adaptación animada de la novela de fantasía y aventura Tsuihou sareta Tensei Juukishi wa Game Chishiki de Musou suru (El caballero pesado reencarnado y exiliado domina el mundo con su conocimiento del juego) ha publicado su segundo avance oficial en video.</p>
-            <a href="articulos/tsuihou1.html" class="read-more">Seguir leyendo</a>
-          </div>
-        </article>
-<article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kuroneko1-1.png');">
-            <span class="article-date">14 Jun 2026</span>
-          </div>
-          <div class="article-content">
-            <span class="article-category">Anime</span>
-            <h3>The Classroom of a Black Cat and a Witch: Revelan nuevo visual de antagonistas</h3>
-            <p>La producción de la adaptación animada de The Classroom of a Black Cat and a Witch (Kuroneko to Majo no Kyoushitsu), basada en la popular obra escrita e ilustrada por el autor Kaneda Yosuke, ha revelado un nuevo arte promocional secundario que destaca a los antagonistas de la historia.</p>
-            <a href="articulos/kuroneko1.html" class="read-more">Seguir leyendo</a>
-          </div>
+<article class="article-card" data-category="videojuegos">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tribeca1-1.png');">
+            <span class="article-date">14 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Videojuegos</span>
+            <h3>Tribeca Festival 2026 confirma tres juegos independientes como favoritos</h3>
+            <p>Mientras el Summer Game Fest acaparaba titulares, el Tribeca Festival de Nueva York volvió a demostrar por qué se ha convertido en un trampolín para los videojuegos independientes.</p>
+            <a href="articulos/tribeca1.html" class="read-more">Seguir leyendo</a>
+          </div>
         </article>
 <article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/lovelive1-1.png');">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kyotoanimation1-1.png');">
             <span class="article-date">14 Jun 2026</span>
           </div>
           <div class="article-content">
             <span class="article-category">Anime</span>
-            <h3>Love Live! Nijigasaki: visual del capítulo final revelado</h3>
-            <p>La franquicia Love Live! Nijigasaki Gakuen School Idol Doukoukai presentó el visual oficial de su capítulo final cinematográfico, previsto para estrenarse en invierno de 2026. La imagen muestra a las 12 integrantes avanzando hacia un arco iris, mientras Takasaki Yuu observa sus pasos, simbolizando el cierre de la historia.</p>
-            <a href="articulos/lovelive1.html" class="read-more">Seguir leyendo</a>
+            <h3>Kyoto Animation presenta fecha de estreno y PV de nuevo anime</h3>
+            <p>El nuevo proyecto de Kyoto Animation, Nijusseiki Denki Mokuroku – Eureka Evrika, presentó su tercer visual clave y un PV previo al estreno.</p>
+            <a href="articulos/kyotoanimation1.html" class="read-more">Seguir leyendo</a>
+          </div>
         </article>
 <article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tokyorevengers1-1.png');">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kimetsu1-1.png');">
             <span class="article-date">14 Jun 2026</span>
           </div>
           <div class="article-content">
             <span class="article-category">Anime</span>
-            <h3>Tokyo Revengers: Disney+ tendrá exclusiva del arco Santen Sensou</h3>
-            <p>El anime Tokyo Revengers: Santen Sensou-hen (Arco de la Guerra de los Tres Dioses), basado en el manga de Wakui Ken, confirmó su fecha de estreno para el 2 de octubre de 2026.</p>
-            <a href="articulos/tokyorevengers1.html" class="read-more">Seguir leyendo</a>
+            <h3>Kimetsu no Yaiba: sexta obra teatral inicia funciones en Tokio</h3>
+            <p>El 13 de junio de 2026 se estrenó en Tokio la sexta entrega de la saga teatral Kimetsu no Yaiba, titulada “Pilar Training / Ingreso al Castillo Infinito”. La obra se presenta en el MoN Takanawa: The Museum of Narratives Box1000 hasta el 28 de junio, y marca el inicio de la fase final de la historia.</p>
+            <a href="articulos/kimetsu1.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hanayome1-1.png');">
+            <span class="article-date">14 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Oni no Hanayome: revela su PV principal y visual oficial</h3>
+            <p>El anime Oni no Hanayome, adaptación de la novela de Kureha, presentó su PV principal y el visual oficial, además de anunciar los temas musicales.</p>
+            <a href="articulos/hanayome1.html" class="read-more">Seguir leyendo</a>
           </div>
         </article>
 <article class="article-card" data-category="anime">
@@ -198,51 +144,127 @@
           </div>
         </article>
 <article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hanayome1-1.png');">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tokyorevengers1-1.png');">
             <span class="article-date">14 Jun 2026</span>
           </div>
           <div class="article-content">
             <span class="article-category">Anime</span>
-            <h3>Oni no Hanayome: revela su PV principal y visual oficial</h3>
-            <p>El anime Oni no Hanayome, adaptación de la novela de Kureha, presentó su PV principal y el visual oficial, además de anunciar los temas musicales.</p>
-            <a href="articulos/hanayome1.html" class="read-more">Seguir leyendo</a>
+            <h3>Tokyo Revengers: Disney+ tendrá exclusiva del arco Santen Sensou</h3>
+            <p>El anime Tokyo Revengers: Santen Sensou-hen (Arco de la Guerra de los Tres Dioses), basado en el manga de Wakui Ken, confirmó su fecha de estreno para el 2 de octubre de 2026.</p>
+            <a href="articulos/tokyorevengers1.html" class="read-more">Seguir leyendo</a>
           </div>
         </article>
-
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/lovelive1-1.png');">
+            <span class="article-date">14 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Love Live! Nijigasaki: visual del capítulo final revelado</h3>
+            <p>La franquicia Love Live! Nijigasaki Gakuen School Idol Doukoukai presentó el visual oficial de su capítulo final cinematográfico, previsto para estrenarse en invierno de 2026. La imagen muestra a las 12 integrantes avanzando hacia un arco iris, mientras Takasaki Yuu observa sus pasos, simbolizando el cierre de la historia.</p>
+            <a href="articulos/lovelive1.html" class="read-more">Seguir leyendo</a>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tomb-1.png');">
+            <span class="article-date">13 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Tomb Raider King: revela nuevo visual, PV y llegada de Kaida Yuuko</h3>
+            <p>El anime Tomb Raider King confirma su estreno el 8 de julio de 2026 con nuevo visual, segundo PV y la incorporación de Kaida Yuuko al reparto.</p>
+            <a href="articulos/tomb.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('assets/grow-up-show-1.png');">
+            <span class="article-date">13 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Grow Up Show: estreno confirmado con nuevos videos</h3>
+            <p>El anime original de A-1 Pictures y Psyde Kick Studio inicia transmisión el 4 de julio. Dos nuevos PVs y temas musicales revelados.</p>
+            <a href="articulos/articulo-grow-up-show.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://ogre.natalie.mu/media/news/comic/2026/0423/keroro_movie_bamen_01.jpg?imwidth=900');">
+            <span class="article-date">11 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>'Keroro Gunsou' reunirá a sus actores de voz en visionado conjunto del 19 de junio</h3>
+            <p>A días del estreno de la nueva película de Keroro el 26 de junio, Bandai Channel transmitirá un evento de visionado gratuito el 19 de junio con las voces originales.</p>
+            <a href="articulos/articulo-keroro-movie.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://ogre.natalie.mu/media/news/comic/2026/0612/kekkaishi_kv.jpg?impolicy=twitter_card_face_crop');">
+            <span class="article-date">12 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Kekkaishi no Ichirinka: Kito Akari y Totani Kikunosuke lideran el reparto</h3>
+            <p>La fantasía romántica de Kureha llega al anime en enero 2027 con producción de TROYCA. Teaser visual y video ya disponibles.</p>
+            <a href="articulos/articulo-kekkaishi-ichirinka-anime.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
 
     <div class="pagination">
       <a href="page1.html">&laquo; Anterior</a>
       <div class="page-numbers">
-        <a href="index.html" class="page-num">1</a><span class="page-num active">2</span><a href="page3.html" class="page-num">3</a><a href="page4.html" class="page-num">4</a><a href="page5.html" class="page-num">5</a>
+        <a href="index.html" class="page-num">1</a><span class="page-num active">2</span><a href="page3.html" class="page-num">3</a><a href="page4.html" class="page-num">4</a>
       </div>
       <a href="page3.html">Siguiente &raquo;</a>
     </div>
-<footer class="main-footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-brand">
-        <img src="assets/logo.png" alt="E-Radio Magazine" class="logo">
-        <p>&copy; 2026 E-Radio Magazine. Todos los derechos reservados.</p>
-      </div>
-      <div class="footer-social">
-        <h3>Seguinos</h3>
-        <div class="social-links">
-          <a href="https://www.youtube.com/@Luchitosama4" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-          <a href="https://x.com/ERadioMagazine" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-          <a href="https://www.instagram.com/e.radiomagazine/" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
-        </div>
+
+  </main>
+
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-content">
+        <h2>No te pierdas nada</h2>
+        <p>Recibe las últimas noticias de anime y videojuegos directamente en tu correo.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Tu correo electrónico" required>
+          <button type="submit">Suscribirse</button>
+        </form>
       </div>
     </div>
-  </div>
-</footer>
+  </section>
 
-<script src="js/main.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    initFilters();
-    buildCarousel(articles);
-    initCarousel();
-  });
-</script>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo"><img src="assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio Magazine"></a>
+          <p>Tu fuente de noticias sobre anime, manga y videojuegos. Actualidad, reviews y análisis desde 2016.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Secciones</h4>
+          <ul>
+            <li><a href="#">Anime</a></li>
+            <li><a href="#">Videojuegos</a></li>
+            <li><a href="#">Manga</a></li>
+            <li><a href="#">Reviews</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Aviso legal</a></li>
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 E-Radio Magazine. Todos los derechos reservados.</p>
+        <p style="margin-top:8px;font-size:0.75rem;"><img src="https://visitor-badge.laobi.icu/badge?page_id=LeoLaRata35.e-radiomagazine&left_text=Visitas&left_color=1a1a2e&right_color=d4af37" alt="Visitor Count" style="display:inline-block;vertical-align:middle;"></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
