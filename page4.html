@@ -1,249 +1,172 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-Radio Magazine – Anime & Gaming</title>
-  <meta property="og:title" content="E-Radio Magazine – Anime & Gaming">
-  <meta property="og:description" content="Tu fuente de noticias sobre anime, manga y videojuegos. Actualidad, reviews y análisis desde 2016.">
-  <meta property="og:image" content="https://LeoLaRata35.github.io/e-radiomagazine/assets/E-Radio%20Magazine%20HORIZONTAL.png">
-  <meta property="og:url" content="https://LeoLaRata35.github.io/e-radiomagazine/">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="css/styles.css">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9HCBF8HCM"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-X9HCBF8HCM');</script>
-</head>
-<body>
-  <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <div class="header-left">
-          <a href="#" class="logo"><img src="assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio Magazine"></a>
-        </div>
-        <nav class="nav">
-          <ul>
-            <li><a href="#" class="active" data-filter="all">Inicio</a></li>
-            <li><a href="#" data-filter="anime">Anime</a></li>
-            <li><a href="#" data-filter="manga">Manga</a></li>
-            <li><a href="#" data-filter="reviews">Reviews</a></li>
-            <li><a href="#" data-filter="musica">Música</a></li>
-            <li><a href="https://radioakari.blogspot.com/" class="nav-blog-link" target="_blank" rel="noopener">Radio Akari</a></li>
-          </ul>
-        </nav>
-        <button class="menu-toggle" id="menuToggle" aria-label="Menú">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <section class="event-banner">
-    <div class="container">
-      <a href="https://www.youtube.com/@Luchitosama4" target="_blank" rel="noopener">
-        <img src="assets/direct1.png" alt="Splatoon Raiders Direct - 30 de junio 2026" style="width:100%;max-width:1200px;display:block;margin:0 auto;">
-      </a>
-    </div>
-  </section>
-
-  <section class="hero" id="most-read-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Más leídas</h2>
-      </div>
-      <div class="hero-grid">
-        <div class="hero-featured" id="heroCarousel">
-          <div class="carousel-dots" id="carouselDots"></div>
-        </div>
-        <div class="hero-side" id="heroSide"></div>
-      </div>
-    </div>
-  </section>
-
-  <main class="main">
-    <div class="container">
-      <div class="section-header">
-        <h2>últimas noticias</h2>
-        <div class="filter-tabs" id="filterTabs">
-          <button class="filter-btn active" data-filter="all">Todo</button>
-          <button class="filter-btn" data-filter="anime">Anime</button>
-          <button class="filter-btn" data-filter="manga">Manga</button>
-          <button class="filter-btn" data-filter="reviews">Reviews</button>
-          <button class="filter-btn" data-filter="musica">Música</button>
-          <button class="filter-btn" data-filter="videojuegos">Videojuegos</button>
-          <button class="filter-btn" data-filter="cine">Cine</button>
-        </div>
-      </div>
-
-      <div class="articles-grid" id="articlesGrid">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Radio Magazine – Anime & Gaming</title>
+  <meta property="og:title" content="E-Radio Magazine – Anime & Gaming">
+  <meta property="og:description" content="Tu fuente de noticias sobre anime, manga y videojuegos. Actualidad, reviews y análisis desde 2016.">
+  <meta property="og:image" content="https://LeoLaRata35.github.io/e-radiomagazine/assets/E-Radio%20Magazine%20HORIZONTAL.png">
+  <meta property="og:url" content="https://LeoLaRata35.github.io/e-radiomagazine/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="css/styles.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9HCBF8HCM"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-X9HCBF8HCM');</script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="header-left">
+          <a href="#" class="logo"><img src="assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio Magazine"></a>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#" class="active" data-filter="all">Inicio</a></li>
+            <li><a href="#" data-filter="anime">Anime</a></li>
+            <li><a href="#" data-filter="manga">Manga</a></li>
+            <li><a href="#" data-filter="reviews">Reviews</a></li>
+            <li><a href="#" data-filter="musica">Música</a></li>
+            <li><a href="https://radioakari.blogspot.com/" class="nav-blog-link" target="_blank" rel="noopener">Radio Akari</a></li>
+          </ul>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="event-banner">
+    <div class="container">
+      <a href="https://www.youtube.com/@Nintendo" target="_blank" rel="noopener">
+        <img src="assets/direct1.png" alt="Splatoon Raiders Direct - 30 de junio 2026" style="width:100%;max-width:1200px;display:block;margin:0 auto;">
+      </a>
+    </div>
+  </section>
+
+  <section class="hero" id="most-read-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Más leídas</h2>
+      </div>
+      <div class="hero-grid">
+        <div class="hero-featured" id="heroCarousel">
+          <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+        <div class="hero-side" id="heroSide"></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="container">
+      <div class="section-header">
+        <h2>últimas noticias</h2>
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-btn active" data-filter="all">Todo</button>
+          <button class="filter-btn" data-filter="anime">Anime</button>
+          <button class="filter-btn" data-filter="manga">Manga</button>
+          <button class="filter-btn" data-filter="reviews">Reviews</button>
+          <button class="filter-btn" data-filter="musica">Música</button>
+          <button class="filter-btn" data-filter="videojuegos">Videojuegos</button>
+          <button class="filter-btn" data-filter="cine">Cine</button>
+        </div>
+      </div>
+
+      <div class="articles-grid" id="articlesGrid">
         <!-- ARCHIVE_START -->
 <article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://ogre.natalie.mu/media/news/comic/2026/0611/tedukaosamubunkasho_30_00026re.jpg?imwidth=1280&imdensity=1');">
-            <span class="article-date">11 Jun 2026</span>
+          <div class="article-img" style="background-image: url('https://ogre.natalie.mu/media/news/comic/2026/0610/saokyomahoushi_pv_01.jpg?imwidth=900');">
+            <span class="article-date">10 Jun 2025</span>
           </div>
           <div class="article-content">
             <span class="article-category">Anime</span>
-            <h3>Premio Cultural Tezuka 2026: "Hon nara Uru hodo" gana el gran galard&oacute;n</h3>
-            <p>La 30&ordf; edici&oacute;n del Premio Cultural Osamu Tezuka, organizada por el peri&oacute;dico Asahi Shimbun, celebr&oacute; su ceremonia de premiaci&oacute;n el 11 de junio de 2026 en el Yurakucho A...</p>
-            <a href="articulos/articulo-tezuka-prize-30.html" class="read-more">Seguir leyendo</a>
+            <h3>'Saikyo Mahoushi no Ininton Keikaku' tendrá anime en 2027</h3>
+            <p>La popular serie de novelas ligeras sobre un mago de élite recibirá una adaptación al anime.</p>
+            <a href="articulos/articulo-saikyo-mahoushi.html" class="read-more">Seguir leyendo</a>
           </div>
         </article>
 <article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://ogre.natalie.mu/media/news/comic/2026/0423/keroro_movie_bamen_01.jpg?imwidth=900');">
-            <span class="article-date">11 Jun 2026</span>
+          <div class="article-img" style="background-image: url('https://ogre.natalie.mu/media/news/comic/2026/0610/ossankensei2_cm_cut1.jpg?imwidth=900');">
+            <span class="article-date">10 Jun 2025</span>
           </div>
           <div class="article-content">
             <span class="article-category">Anime</span>
-            <h3>'Keroro Gunsou' reunirá a sus actores de voz en visionado conjunto del 19 de junio</h3>
-            <p>A días del estreno de la nueva película de Keroro el 26 de junio, Bandai Channel transmitirá un evento de visionado gratuito el 19 de junio con las voces originales.</p>
-            <a href="articulos/articulo-keroro-movie.html" class="read-more">Seguir leyendo</a>
+            <h3>'Ossan Kensei' temporada 2 revela CM y ending de BLUE ENCOUNT</h3>
+            <p>La segunda temporada del anime de espadas muestra un nuevo comercial con el ending a cargo de la banda BLUE ENCOUNT.</p>
+            <a href="articulos/articulo-ossankensei2.html" class="read-more">Seguir leyendo</a>
           </div>
         </article>
-<article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://ogre.natalie.mu/media/news/comic/2026/0610/onigiri01.jpg?imwidth=640&amp;imdensity=1');">
-            <span class="article-date">10 Jun 2026</span>
+<article class="article-card" data-category="musica">
+          <div class="article-img" style="background-image: url('https://www.animationmagazine.net/wordpress/wp-content/uploads/Kochikame_Landscape_re.jpg');">
+            <span class="article-date">10 Jun 2025</span>
           </div>
           <div class="article-content">
-            <span class="article-category">Anime</span>
-            <h3></h3>
-            <p>La aclamada mangaka Kawahara Kazune —autora de éxitos como Koukou Debut (High School Debut), Aozora Yell (Blue Sky Yell) y Ore Monogatari!! (My Love Story!!)— ha dado un giro entrañable a su carrera c...</p>
-            <a href="articulos/articulo-onigiri-kaasan.html" class="read-more">Seguir leyendo</a>
+            <span class="article-category">Música</span>
+            <h3>'Katsushika Rhapsody' de Kochikame llega por primera vez en vinilo 7 pulgadas</h3>
+            <p>El icónico tema de Kochikame se lanza en formato vinilo por primera vez.</p>
+            <a href="articulos/articulo-kochikame-vinilo.html" class="read-more">Seguir leyendo</a>
           </div>
         </article>
-<article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://blogger.googleusercontent.com/img/a/AVvXsEhTLd61iIwCo8qm8p2X5mlhIkPlHq4Vc5_gI3D-_nHAsgQ1aPKcM2RpE4OG9lhi70U1PUGYbEWa1T1I3jh8jVrq2GwVGbF7i78-l2AZWjbLKyibOI3zQYgBDjn-z-gGLKDRsdhYQZTcjTsTBzz7_uRziZuMkP-uJH8R6dQuqZHpsJEzMEhU3n6tFSoWfOY=w604-h339');">
-            <span class="article-date">5 Ene 2026</span>
-          </div>
-          <div class="article-content">
-            <span class="article-category">Anime</span>
-            <h3></h3>
-            <p>El universo de My Hero Academia sigue expandiéndose. La segunda temporada del spin-off oficial Vigilante - Boku no Hero Academia ILLEGALS - (My Hero Academia: Vigilantes) ya tiene fecha firme de estre...</p>
-            <a href="articulos/articulo-vigilante-s2.html" class="read-more">Seguir leyendo</a>
-          </div>
-        </article>
-<article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('assets/Shin-Chan.png');">
-            <span class="article-date">11 Jun 2025</span>
-          </div>
-          <div class="article-content">
-            <span class="article-category">Anime</span>
-            <h3>Shin-chan: Ai Suotome regresa a los 25 en live-action de Coca-Cola</h3>
-            <p>La actriz que dio vida a Ai Suotome vuelve 25 años después para un comercial especial de Coca-Cola.</p>
-            <a href="articulos/articulo-shinchan-liveaction.html" class="read-more">Seguir leyendo</a>
-          </div>
-        </article>
-<article class="article-card" data-category="reviews">
-          <div class="article-img" style="background-image: url('https://images.somoskudasai.com/2026/06/uma-musume-arte-refact-2.jpg');">
-            <span class="article-date">11 Jun 2025</span>
-          </div>
-          <div class="article-content">
-            <span class="article-category">Reviews</span>
-            <h3>Arte Refact colapsa: todos sus creadores renuncian tras escándalo</h3>
-            <p>El estudio de producción musical detrás de Umamusume y D4DJ sufre una crisis total. Todos los detalles del colapso.</p>
-            <a href="articulos/articulo-arte-refact.html" class="read-more">Seguir leyendo</a>
-          </div>
-        </article>
-<article class="article-card" data-category="manga">
-          <div class="article-img" style="background-image: url('assets/Anime 2D.jpeg');">
-            <span class="article-date">11 Jun 2025</span>
-          </div>
-          <div class="article-content">
-            <span class="article-category">Manga</span>
-            <h3>Koisero Mayakashi Tenshi-domo: el manga rom-com llega al anime en 2027</h3>
-            <p>El popular manga de romance y comedia sobrenatural tendrá adaptación al anime. Los detalles del anuncio.</p>
-            <a href="articulos/articulo-koisero-tenshi.html" class="read-more">Seguir leyendo</a>
-          </div>
-        </article>
-<article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://ogre.natalie.mu/media/news/comic/2026/0611/kagekisyoujyo0507_FIX.jpg?impolicy=twitter_card_face_crop');">
-            <span class="article-date">11 Jun 2025</span>
-          </div>
-          <div class="article-content">
-            <span class="article-category">Anime</span>
-            <h3>Kageki Shojo!!: reading theater del 5° aniversario con todo su elenco</h3>
-            <p>El anime celebrará su quinto aniversario con un reading theater especial con las nueve actrices de voz originales de la serie.</p>
-            <a href="articulos/articulo-kageki-shojo-5th.html" class="read-more">Seguir leyendo</a>
-          </div>
-        </article>
-<article class="article-card" data-category="cine">
-          <div class="article-img" style="background-image: url('https://ogre.natalie.mu/media/news/comic/2026/0611/osomatsu_mukai.jpg?impolicy=twitter_card_face_crop');">
-            <span class="article-date">11 Jun 2025</span>
-          </div>
-          <div class="article-content">
-            <span class="article-category">Cine</span>
-            <h3>Osomatsu-san: Snow Man Koji Mukai regresa como el Viejo Osomatsu en la secuela</h3>
-            <p>La secuela live-action de Osomatsu-san llegó a los cines japoneses con el regreso de Koji Mukai (Snow Man) como el Viejo Osomatsu.</p>
-            <a href="articulos/articulo-osomatsu-mukai.html" class="read-more">Seguir leyendo</a>
-          </div>
-        </article>
-<article class="article-card" data-category="cine">
-          <div class="article-img" style="background-image: url('https://contents.oricon.co.jp/upimg/news/2461000/2460622/20260611_233721_p_o_27842483.jpg');">
-            <span class="article-date">11 Jun 2025</span>
-          </div>
-          <div class="article-content">
-            <span class="article-category">Cine</span>
-            <h3>Kokurō-jō: el visual colaborativo con Touken Ranbu ONLINE muestra a Atagigiri</h3>
-            <p>La película Kokurō-jō revela un visual colaborativo con Touken Ranbu ONLINE dibujado por Oyo, mostrando a Atagigiri.</p>
-            <a href="articulos/articulo-kokurojo-tourabu.html" class="read-more">Seguir leyendo</a>
-          </div>
-        </article>
-<article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://nami.news/wordpress/wp-content/uploads/2026/03/Suterare-Seijo-no-Isekai-Gohan-Tabi-anime-visual-1-e1773838785393.jpeg');">
-            <span class="article-date">11 Jun 2025</span>
-          </div>
-          <div class="article-content">
-            <span class="article-category">Anime</span>
-            <h3>La santa abandonada: el anime gastronómico se estrena el 6 de julio con Yukari Tamura</h3>
-            <p>La adaptación animada de la novela ligera gastronómica isekai ya tiene fecha de estreno y revela nuevo reparto.</p>
-            <a href="articulos/articulo-santa-abandonada.html" class="read-more">Seguir leyendo</a>
-          </div>
-        </article>
-<article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('../assets/E-Radio%20Magazine%20HORIZONTAL.png');">
-            <span class="article-date">14 Jun 2011</span>
-          </div>
-          <div class="article-content">
-            <span class="article-category">Anime</span>
-            <h3>Chainsaw Man protagoniza el primer visual conmemorativo por los 15 años de MAPPA</h3>
-            <p>El prestigioso estudio de animación japonés MAPPA, fundado originalmente el 14 de junio de 2011, ha comenzado oficialmente las actividades de celebración por su decimoquinto aniversario. Como primer g...</p>
-            <a href="articulos/mappa1.html" class="read-more">Seguir leyendo</a>
-          </div>
-        </article>
-
 
     <div class="pagination">
       <a href="page3.html">&laquo; Anterior</a>
       <div class="page-numbers">
-        <a href="index.html" class="page-num">1</a><a href="page2.html" class="page-num">2</a><a href="page3.html" class="page-num">3</a><span class="page-num active">4</span><a href="page5.html" class="page-num">5</a>
+        <a href="index.html" class="page-num">1</a><a href="page2.html" class="page-num">2</a><a href="page3.html" class="page-num">3</a><span class="page-num active">4</span>
       </div>
-      <a href="page5.html">Siguiente &raquo;</a>
+      <a class="disabled">Siguiente &raquo;</a>
     </div>
-<footer class="main-footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-brand">
-        <img src="assets/logo.png" alt="E-Radio Magazine" class="logo">
-        <p>&copy; 2026 E-Radio Magazine. Todos los derechos reservados.</p>
+
+  </main>
+
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-content">
+        <h2>No te pierdas nada</h2>
+        <p>Recibe las últimas noticias de anime y videojuegos directamente en tu correo.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Tu correo electrónico" required>
+          <button type="submit">Suscribirse</button>
+        </form>
       </div>
-      <div class="footer-social">
-        <h3>Seguinos</h3>
-        <div class="social-links">
-          <a href="https://www.youtube.com/@Luchitosama4" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-          <a href="https://x.com/ERadioMagazine" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-          <a href="https://www.instagram.com/e.radiomagazine/" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo"><img src="assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio Magazine"></a>
+          <p>Tu fuente de noticias sobre anime, manga y videojuegos. Actualidad, reviews y análisis desde 2016.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Secciones</h4>
+          <ul>
+            <li><a href="#">Anime</a></li>
+            <li><a href="#">Videojuegos</a></li>
+            <li><a href="#">Manga</a></li>
+            <li><a href="#">Reviews</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Aviso legal</a></li>
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
         </div>
       </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 E-Radio Magazine. Todos los derechos reservados.</p>
+        <p style="margin-top:8px;font-size:0.75rem;"><img src="https://visitor-badge.laobi.icu/badge?page_id=LeoLaRata35.e-radiomagazine&left_text=Visitas&left_color=1a1a2e&right_color=d4af37" alt="Visitor Count" style="display:inline-block;vertical-align:middle;"></p>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<script src="js/main.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    initFilters();
-    buildCarousel(articles);
-    initCarousel();
-  });
-</script>
+  <script src="js/main.js"></script>
 </body>
 </html>
