@@ -14,66 +14,120 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const navLinks = document.querySelectorAll('.nav a[data-filter]');
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      navLinks.forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
-      if (nav) nav.classList.remove('open');
-
-      const filter = link.dataset.filter;
-      applyFilter(filter);
-
-      const main = document.querySelector('.main');
-      if (main) main.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
-
+  // ===== CROSS-PAGE CATEGORY FILTER =====
   const filterTabs = document.getElementById('filterTabs');
   const articlesGrid = document.getElementById('articlesGrid');
-  const articles = articlesGrid?.querySelectorAll('.article-card');
+  const pagination = document.querySelector('.pagination');
+  let originalGridHTML = articlesGrid ? articlesGrid.innerHTML : '';
+  let allArticlesCache = null;
 
-  if (filterTabs && articles) {
-    filterTabs.addEventListener('click', (e) => {
-      const btn = e.target.closest('.filter-btn');
-      if (!btn) return;
+  const allPageNames = ['index.html', 'page2.html', 'page3.html', 'page4.html'];
 
-      filterTabs.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+  function currentPageName() {
+    return window.location.pathname.split('/').pop() || 'index.html';
+  }
 
-      const filter = btn.dataset.filter;
+  function extractArticleData(html) {
+    var div = document.createElement('div');
+    div.innerHTML = html;
+    return Array.from(div.querySelectorAll('.article-card')).map(function(card) {
+      return { html: card.outerHTML, category: card.dataset.category };
+    });
+  }
 
-      articles.forEach(card => {
-        if (filter === 'all' || card.dataset.category === filter) {
-          card.style.display = '';
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(12px)';
-          requestAnimationFrame(() => {
-            card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          });
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(12px)';
-          setTimeout(() => {
-            card.style.display = 'none';
-          }, 300);
+  async function fetchAllArticles() {
+    if (allArticlesCache) return allArticlesCache;
+
+    var current = extractArticleData(document.documentElement.outerHTML);
+    var currentName = currentPageName();
+
+    var otherPromises = allPageNames
+      .filter(function(p) { return p !== currentName; })
+      .map(async function(p) {
+        try {
+          var resp = await fetch(p);
+          if (!resp.ok) return [];
+          return extractArticleData(await resp.text());
+        } catch(e) {
+          return [];
         }
+      });
+
+    var others = await Promise.all(otherPromises);
+    allArticlesCache = current;
+    others.forEach(function(arr) {
+      allArticlesCache = allArticlesCache.concat(arr);
+    });
+    return allArticlesCache;
+  }
+
+  function animateCards(container) {
+    var cards = container.querySelectorAll('.article-card');
+    cards.forEach(function(card) {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(12px)';
+      requestAnimationFrame(function() {
+        card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
       });
     });
   }
 
+  function filterGridByCategory(filter) {
+    if (!articlesGrid) return;
+
+    if (filter === 'all') {
+      articlesGrid.innerHTML = originalGridHTML;
+      if (pagination) pagination.style.display = '';
+      animateCards(articlesGrid);
+      return;
+    }
+
+    fetchAllArticles().then(function(all) {
+      var matching = all.filter(function(a) { return a.category === filter; });
+      if (matching.length > 0) {
+        articlesGrid.innerHTML = matching.map(function(a) { return a.html; }).join('\n');
+        animateCards(articlesGrid);
+        if (pagination) pagination.style.display = 'none';
+      } else {
+        articlesGrid.innerHTML = '<p class="no-results">No hay artículos en esta categoría.</p>';
+        if (pagination) pagination.style.display = 'none';
+      }
+    });
+  }
+
+  if (filterTabs && articlesGrid) {
+    filterTabs.addEventListener('click', function(e) {
+      var btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+
+      filterTabs.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      filterGridByCategory(btn.dataset.filter);
+    });
+  }
+
   function applyFilter(filter) {
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const targetBtn = Array.from(filterBtns).find(b => b.dataset.filter === filter);
+    var targetBtn = filterTabs ? Array.from(filterTabs.querySelectorAll('.filter-btn')).find(function(b) { return b.dataset.filter === filter; }) : null;
     if (targetBtn) {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      targetBtn.classList.add('active');
       targetBtn.click();
     }
   }
+
+  const navLinks = document.querySelectorAll('.nav a[data-filter]');
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      navLinks.forEach(function(l) { l.classList.remove('active'); });
+      link.classList.add('active');
+      if (nav) nav.classList.remove('open');
+      applyFilter(link.dataset.filter);
+      var main = document.querySelector('.main');
+      if (main) main.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
 
   const newsletterForm = document.getElementById('newsletterForm');
   if (newsletterForm) {
