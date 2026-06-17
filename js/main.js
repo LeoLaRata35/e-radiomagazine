@@ -20,8 +20,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const pagination = document.querySelector('.pagination');
   let originalGridHTML = articlesGrid ? articlesGrid.innerHTML : '';
   let allArticlesCache = null;
+  let allPageNames = null;
 
-  const allPageNames = ['index.html', 'page2.html', 'page3.html', 'page4.html'];
+  async function discoverPages() {
+    if (allPageNames) return allPageNames;
+    var names = ['index.html'];
+    for (var i = 2; ; i++) {
+      var name = 'page' + i + '.html';
+      try {
+        var resp = await fetch(name, { method: 'HEAD' });
+        if (!resp.ok) break;
+        names.push(name);
+      } catch(e) {
+        break;
+      }
+    }
+    allPageNames = names;
+    return names;
+  }
 
   function currentPageName() {
     return window.location.pathname.split('/').pop() || 'index.html';
@@ -38,10 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
   async function fetchAllArticles() {
     if (allArticlesCache) return allArticlesCache;
 
+    var pages = await discoverPages();
     var current = extractArticleData(document.documentElement.outerHTML);
     var currentName = currentPageName();
 
-    var otherPromises = allPageNames
+    var otherPromises = pages
       .filter(function(p) { return p !== currentName; })
       .map(async function(p) {
         try {
