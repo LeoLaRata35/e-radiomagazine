@@ -807,11 +807,3 @@ body {
     gap: 32px;
   }
 }
-
-/* DEBUG: show card widths */
-.article-card {
-  outline: 1px solid red;
-}
-.articles-grid {
-  outline: 2px solid blue;
-}
