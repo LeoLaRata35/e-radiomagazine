@@ -372,6 +372,7 @@ body {
   transition: transform 0.2s, border-color 0.2s;
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 .article-card .article-img {
   height: 180px;
@@ -386,6 +387,7 @@ body {
   flex-direction: column;
   padding: 20px;
   width: 100%;
+  min-width: 0;
 }
 .article-card .article-content h3 {
   flex-shrink: 0;
