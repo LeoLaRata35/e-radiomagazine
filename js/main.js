@@ -165,6 +165,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ===== BANNER CAROUSEL =====
+  (function initBannerCarousel() {
+    var track = document.getElementById('bannerTrack');
+    var dots = document.querySelectorAll('.banner-dot');
+    if (!track || !dots.length) return;
+
+    var current = 0;
+
+    function goToSlide(idx) {
+      current = idx;
+      track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+      dots.forEach(function(d, i) {
+        d.classList.toggle('active', i === idx);
+      });
+    }
+
+    dots.forEach(function(dot) {
+      dot.addEventListener('click', function() {
+        goToSlide(parseInt(dot.dataset.slide));
+      });
+    });
+
+    setInterval(function() {
+      goToSlide((current + 1) % dots.length);
+    }, 5000);
+  })();
+
   // ===== CAROUSEL STATE =====
   var currentSlide = 0;
   var slideInterval = null;
