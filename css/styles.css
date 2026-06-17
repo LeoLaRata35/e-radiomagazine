@@ -46,22 +46,58 @@ body {
   padding: 0 20px;
 }
 
-.event-banner {
+/* Banner Carousel */
+.banner-carousel {
   background: var(--bg-secondary);
   padding: 20px 0;
   border-bottom: 2px solid var(--accent);
   text-align: center;
+  overflow: hidden;
 }
 
-.event-banner img {
+.banner-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.banner-slide {
+  min-width: 100%;
+  display: block;
+}
+
+.banner-slide img {
+  width: 100%;
+  max-width: 1200px;
+  display: block;
+  margin: 0 auto;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.event-banner a:hover img {
+.banner-slide:hover img {
   transform: scale(1.02);
   box-shadow: 0 6px 30px rgba(124, 58, 237, 0.5);
+}
+
+.banner-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.banner-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.banner-dot.active {
+  background: var(--accent);
 }
 
 /* Header */
