@@ -370,6 +370,27 @@ body {
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.article-card .article-img {
+  height: 180px;
+  flex-shrink: 0;
+}
+.article-card .article-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.article-card .article-content h3 {
+  flex-shrink: 0;
+}
+.article-card .article-content p {
+  flex: 1;
+}
+.article-card .read-more {
+  margin-top: auto;
 }
 
 .article-card:hover {
@@ -399,9 +420,6 @@ body {
   font-weight: 500;
 }
 
-.article-content {
-  padding: 20px;
-}
 
 .article-category {
   display: inline-block;
