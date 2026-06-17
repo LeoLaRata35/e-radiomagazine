@@ -50,7 +50,6 @@ body {
 .banner-carousel {
   background: var(--bg-secondary);
   padding: 20px 0;
-  border-bottom: 2px solid var(--accent);
   overflow: hidden;
 }
 
@@ -61,14 +60,14 @@ body {
 
 .banner-slide {
   flex: 0 0 100%;
-  display: flex;
-  justify-content: center;
+  display: block;
 }
 
 .banner-slide img {
+  display: block;
   width: 100%;
   max-width: 1200px;
-  display: block;
+  margin: 0 auto;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
