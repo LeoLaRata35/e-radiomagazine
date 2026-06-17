@@ -172,6 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!track || !dots.length) return;
 
     var current = 0;
+    track.style.transform = 'translateX(0%)';
 
     function goToSlide(idx) {
       current = idx;
