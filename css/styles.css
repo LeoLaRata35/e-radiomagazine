@@ -381,6 +381,14 @@ body {
   gap: 24px;
 }
 
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
 .article-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
