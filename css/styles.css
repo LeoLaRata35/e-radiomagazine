@@ -378,18 +378,24 @@ body {
   flex-shrink: 0;
   background-size: cover;
   background-position: center;
+  width: 100%;
 }
 .article-card .article-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   padding: 20px;
+  width: 100%;
 }
 .article-card .article-content h3 {
   flex-shrink: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 .article-card .article-content p {
   flex: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 .article-card .read-more {
   margin-top: auto;
