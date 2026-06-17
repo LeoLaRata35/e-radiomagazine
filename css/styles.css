@@ -608,6 +608,16 @@ body {
   align-items: center;
 }
 
+.pagination .page-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
 .pagination .page-num.active {
   background: var(--accent);
   color: #fff;
