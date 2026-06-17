@@ -61,7 +61,10 @@ body {
 .banner-slide {
   flex: 0 0 100%;
   display: block;
+  text-decoration: none;
   outline: none;
+  border: none;
+  box-shadow: none;
 }
 
 .banner-slide img {
