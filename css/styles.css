@@ -376,6 +376,8 @@ body {
 .article-card .article-img {
   height: 180px;
   flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
 }
 .article-card .article-content {
   flex: 1;
