@@ -61,7 +61,7 @@ body {
 }
 
 .banner-slide {
-  min-width: 100%;
+  flex: 0 0 100%;
   display: block;
 }
 
