@@ -14,6 +14,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ===== NAV DROPDOWNS =====
+  document.querySelectorAll('.nav-dropdown-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      var li = this.closest('.nav-dropdown');
+      if (li) {
+        li.classList.toggle('open');
+      }
+    });
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown.open').forEach(function(d) {
+        d.classList.remove('open');
+      });
+    }
+  });
+
   // ===== CROSS-PAGE CATEGORY FILTER =====
   const filterTabs = document.getElementById('filterTabs');
   const articlesGrid = document.getElementById('articlesGrid');
