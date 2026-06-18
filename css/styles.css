@@ -209,7 +209,7 @@ body {
 }
 
 .nav-dropdown-menu {
-  display: none;
+  display: none !important;
   position: absolute;
   top: 100%;
   left: 50%;
@@ -225,7 +225,7 @@ body {
 }
 
 .nav-dropdown.open .nav-dropdown-menu {
-  display: block;
+  display: block !important;
 }
 
 .nav-dropdown-menu li {
@@ -243,6 +243,26 @@ body {
 .nav-dropdown-menu a:hover {
   background: rgba(197, 160, 40, 0.1);
   color: var(--header-yellow-hover);
+}
+
+.nav-live-menu a {
+  background: var(--header-yellow);
+  color: #1a3a2a;
+  border-radius: 20px;
+  margin: 4px 8px;
+  padding: 6px 16px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  font-family: 'FrankGHI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.nav-live-menu a:hover {
+  background: var(--header-yellow-hover);
+  color: #1a3a2a;
+  transform: scale(1.05);
+  box-shadow: 0 0 14px rgba(197, 160, 40, 0.5);
 }
 
 @media (max-width: 768px) {

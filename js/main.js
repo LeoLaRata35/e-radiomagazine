@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===== NAV DROPDOWNS =====
+  document.querySelectorAll('.nav-dropdown-menu').forEach(function(m) {
+    m.style.display = 'none';
+  });
+
   document.querySelectorAll('.nav-dropdown-toggle').forEach(function(toggle) {
     toggle.addEventListener('click', function(e) {
       e.preventDefault();
