@@ -59,9 +59,16 @@
         </ul>
       </nav>
       <button class="menu-toggle" id="menuToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+        <button class="search-toggle" id="searchToggle" aria-label="Buscar">🔍</button>
     </div>
   </div>
-</header>
+    <div class="search-panel" id="searchPanel">
+      <div class="container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Buscar artículos..." autocomplete="off">
+        <div class="search-results" id="searchResults"></div>
+      </div>
+    </div>
+  </header>
 <div style="max-width:900px;margin:40px auto;padding:0 20px;background:#fff;border-radius:16px;box-shadow:0 4px 30px rgba(0,0,0,0.08);">
   <div style="padding:40px;font-family:'Segoe UI',Arial,sans-serif;line-height:1.8;color:#1a1a2e;">
     <div style="background: rgb(255, 255, 255); line-height: 1.7; margin: 0px auto; max-width: 900px;">
