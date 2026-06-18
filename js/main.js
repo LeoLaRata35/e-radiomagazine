@@ -18,19 +18,24 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.nav-dropdown-toggle').forEach(function(toggle) {
     toggle.addEventListener('click', function(e) {
       e.preventDefault();
+      e.stopPropagation();
       var li = this.closest('.nav-dropdown');
       if (li) {
-        li.classList.toggle('open');
+        var isOpen = li.classList.contains('open');
+        document.querySelectorAll('.nav-dropdown.open').forEach(function(d) {
+          d.classList.remove('open');
+        });
+        if (!isOpen) {
+          li.classList.add('open');
+        }
       }
     });
   });
 
   document.addEventListener('click', function(e) {
-    if (!e.target.closest('.nav-dropdown')) {
-      document.querySelectorAll('.nav-dropdown.open').forEach(function(d) {
-        d.classList.remove('open');
-      });
-    }
+    document.querySelectorAll('.nav-dropdown.open').forEach(function(d) {
+      d.classList.remove('open');
+    });
   });
 
   // ===== CROSS-PAGE CATEGORY FILTER =====
@@ -159,6 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.forEach(function(l) { l.classList.remove('active'); });
       link.classList.add('active');
       if (nav) nav.classList.remove('open');
+      var parentDropdown = link.closest('.nav-dropdown');
+      if (parentDropdown) parentDropdown.classList.remove('open');
       applyFilter(link.dataset.filter);
       var main = document.querySelector('.main');
       if (main) main.scrollIntoView({ behavior: 'smooth', block: 'start' });
