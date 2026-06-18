@@ -18,16 +18,42 @@
   <div class="container">
     <div class="header-content">
       <div class="header-left">
-        <a href="../index.html" class="logo"><img src="../assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio" style="height:60px;display:block;"></a>
+        <a href="../index.html" class="logo"><img src="../assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio" style="display:block;"></a>
       </div>
-      <nav class="nav">
+            <nav class="nav">
         <ul>
           <li><a href="../index.html">Inicio</a></li>
-          <li><a href="../index.html" data-filter="anime">Anime</a></li>
-          <li><a href="../index.html" data-filter="manga">Manga</a></li>
-          <li><a href="../index.html" data-filter="reviews">Reviews</a></li>
-          <li><a href="../index.html" data-filter="musica">Música</a></li>
-          <li><a href="https://radioakari.blogspot.com/" class="nav-blog-link" target="_blank">Radio Akari</a></li>
+          <li class="nav-dropdown">
+            <a href="#" class="nav-dropdown-toggle">Cultura Otaku <span class="dropdown-arrow">▾</span></a>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../index.html" data-filter="anime">Anime</a></li>
+              <li><a href="../index.html" data-filter="manga">Manga</a></li>
+              <li><a href="../index.html" data-filter="reviews">Reviews</a></li>
+              <li><a href="../index.html" data-filter="cine">Cine</a></li>
+              <li><a href="../index.html" data-filter="musica">Música</a></li>
+            </ul>
+          </li>
+          <li class="nav-dropdown">
+            <a href="#" class="nav-dropdown-toggle">Cultura Geek <span class="dropdown-arrow">▾</span></a>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../index.html" data-filter="videojuegos">Videojuegos</a></li>
+            </ul>
+          </li>
+          <li class="nav-dropdown">
+            <a href="#" class="nav-dropdown-toggle">Eventos <span class="dropdown-arrow">▾</span></a>
+            <ul class="nav-dropdown-menu">
+              <li><a href="https://comicconparaguay.com/" target="_blank" rel="noopener">Comic Con PY</a></li>
+            </ul>
+          </li>
+          <li class="nav-dropdown">
+            <a href="#" class="nav-dropdown-toggle nav-blog-link" style="display:flex;align-items:center;gap:4px;">EN VIVO <span class="dropdown-arrow">▾</span></a>
+            <ul class="nav-dropdown-menu nav-live-menu">
+              <li><a href="https://radioakari.blogspot.com/" target="_blank" rel="noopener">Radio Akari</a></li>
+              <li><a href="https://www.radiofurcast.qzz.io/" target="_blank" rel="noopener">Radio Furcast</a></li>
+              <li><a href="https://radiogolatino.blogspot.com/" target="_blank" rel="noopener">Radio GO! Latino</a></li>
+              <li><a href="https://onlineradiobox.com/py/quieromas/?cs=py.quieromas&played=1" target="_blank" rel="noopener">Invasiva Radio</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <button class="menu-toggle" id="menuToggle" aria-label="Menú"><span></span><span></span><span></span></button>
