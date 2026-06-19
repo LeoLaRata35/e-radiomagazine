@@ -24,25 +24,69 @@
         <nav class="nav">
           <ul>
             <li><a href="#" class="active" data-filter="all">Inicio</a></li>
-            <li><a href="#" data-filter="anime">Anime</a></li>
-            <li><a href="#" data-filter="manga">Manga</a></li>
-            <li><a href="#" data-filter="reviews">Reviews</a></li>
-            <li><a href="#" data-filter="musica">Música</a></li>
-            <li><a href="https://radioakari.blogspot.com/" class="nav-blog-link" target="_blank" rel="noopener">Radio Akari</a></li>
+            <li class="nav-dropdown">
+              <a href="#" class="nav-dropdown-toggle">Cultura Otaku <span class="dropdown-arrow">▾</span></a>
+              <ul class="nav-dropdown-menu">
+                <li><a href="#" data-filter="anime">Anime</a></li>
+                <li><a href="#" data-filter="manga">Manga</a></li>
+                <li><a href="#" data-filter="reviews">Reviews</a></li>
+                <li><a href="#" data-filter="cine">Cine</a></li>
+                <li><a href="#" data-filter="musica">Música</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#" class="nav-dropdown-toggle">Cultura Geek <span class="dropdown-arrow">▾</span></a>
+              <ul class="nav-dropdown-menu">
+                <li><a href="#" data-filter="videojuegos">Videojuegos</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#" class="nav-dropdown-toggle">Eventos <span class="dropdown-arrow">▾</span></a>
+              <ul class="nav-dropdown-menu">
+                <li><a href="https://comicconparaguay.com/" target="_blank" rel="noopener">Comic Con PY</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#" class="nav-dropdown-toggle nav-blog-link" style="display:flex;align-items:center;gap:4px;">EN VIVO <span class="dropdown-arrow">▾</span></a>
+              <ul class="nav-dropdown-menu nav-live-menu">
+                <li><a href="https://radioakari.blogspot.com/" target="_blank" rel="noopener">Radio Akari</a></li>
+                <li><a href="https://www.radiofurcast.qzz.io/" target="_blank" rel="noopener">Radio Furcast</a></li>
+                <li><a href="https://radiogolatino.blogspot.com/" target="_blank" rel="noopener">Radio GO! Latino</a></li>
+                <li><a href="https://onlineradiobox.com/py/quieromas/?cs=py.quieromas&played=1" target="_blank" rel="noopener">Invasiva Radio</a></li>
+              </ul>
+            </li>
           </ul>
         </nav>
         <button class="menu-toggle" id="menuToggle" aria-label="Menú">
           <span></span><span></span><span></span>
         </button>
+        <button class="search-toggle" id="searchToggle" aria-label="Buscar">🔍</button>
+      </div>
+    </div>
+    <div class="search-panel" id="searchPanel">
+      <div class="container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Buscar artículos..." autocomplete="off">
+        <div class="search-results" id="searchResults"></div>
       </div>
     </div>
   </header>
 
-  <section class="event-banner">
-    <div class="container">
-      <a href="https://www.youtube.com/@Nintendo" target="_blank" rel="noopener">
-        <img src="assets/direct1.png" alt="Splatoon Raiders Direct - 30 de junio 2026" style="width:100%;max-width:1200px;display:block;margin:0 auto;">
-      </a>
+        <section class="banner-carousel">
+    <div class="banner-track" id="bannerTrack">
+      <div class="banner-slide">
+        <a href="https://www.youtube.com/@Luchitosama4" target="_blank" rel="noopener">
+          <img src="assets/direct1.png" alt="Splatoon Raiders Direct - 30 de junio 2026">
+        </a>
+      </div>
+      <div class="banner-slide">
+        <a href="https://qr.me-qr.com/es/link-list/9mH1wqkg/show" target="_blank" rel="noopener">
+          <img src="assets/banner1.png" alt="Banner 1">
+        </a>
+      </div>
+    </div>
+    <div class="banner-dots" id="bannerDots">
+      <span class="banner-dot active" data-slide="0"></span>
+      <span class="banner-dot" data-slide="1"></span>
     </div>
   </section>
 
@@ -76,160 +120,153 @@
       </div>
 
       <div class="articles-grid" id="articlesGrid">
-        <!-- ARCHIVE_START -->
 <article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tomb-1.png');">
-            <span class="article-date">13 Jun 2026</span>
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/charamix1-1.png');">
+            <span class="article-date">15 Jun 2026</span>
           </div>
           <div class="article-content">
             <span class="article-category">Anime</span>
-            <h3>Tomb Raider King: revela nuevo visual, PV y llegada de Kaida Yuuko</h3>
-            <p>El anime Tomb Raider King confirma su estreno el 8 de julio de 2026 con nuevo visual, segundo PV y la incorporación de Kaida Yuuko al reparto.</p>
-            <a href="articulos/tomb.html" class="read-more">Seguir leyendo</a>
+            <h3>Charamix: Yabuki Kentaro diseña personajes para innovador proyecto interactivo</h3>
+            <p>La compañía japonesa de tecnología y entretenimiento Remore ha anunciado el lanzamiento de Charamix (Kyaramikusu), un innovador proyecto interactivo que busc...</p>
+            <a href="articulos/charamix1.html" class="read-more">Seguir leyendo</a>
           </div>
         </article>
 <article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('assets/grow-up-show-1.png');">
-            <span class="article-date">13 Jun 2026</span>
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/inukami1-1.png');">
+            <span class="article-date">15 Jun 2026</span>
           </div>
           <div class="article-content">
             <span class="article-category">Anime</span>
-            <h3>Grow Up Show: estreno confirmado con nuevos videos</h3>
-            <p>El anime original de A-1 Pictures y Psyde Kick Studio inicia transmisión el 4 de julio. Dos nuevos PVs y temas musicales revelados.</p>
-            <a href="articulos/articulo-grow-up-show.html" class="read-more">Seguir leyendo</a>
+            <h3>Inukami!: Liberan gratis todos sus episodios y estrenan su música en plataformas</h3>
+            <p>La mítica adaptación animada de la comedia romántica y fantasía Inukami! (Deidades perro), basada en la popular serie de novelas ligeras escritas por Arisawa...</p>
+            <a href="articulos/inukami1.html" class="read-more">Seguir leyendo</a>
           </div>
         </article>
 <article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://ogre.natalie.mu/media/news/comic/2026/0423/keroro_movie_bamen_01.jpg?imwidth=900');">
-            <span class="article-date">11 Jun 2026</span>
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kuroneko1-1.png');">
+            <span class="article-date">15 Jun 2026</span>
           </div>
           <div class="article-content">
             <span class="article-category">Anime</span>
-            <h3>'Keroro Gunsou' reunirá a sus actores de voz en visionado conjunto del 19 de junio</h3>
-            <p>A días del estreno de la nueva película de Keroro el 26 de junio, Bandai Channel transmitirá un evento de visionado gratuito el 19 de junio con las voces originales.</p>
-            <a href="articulos/articulo-keroro-movie.html" class="read-more">Seguir leyendo</a>
+            <h3>The Classroom of a Black Cat and a Witch: Revelan nuevo visual de antagonistas</h3>
+            <p>La producción de la adaptación animada de The Classroom of a Black Cat and a Witch (Kuroneko to Majo no Kyoushitsu), basada en la popular obra escrita e ilus...</p>
+            <a href="articulos/kuroneko1.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="videojuegos">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tribeca1-1.png');">
+            <span class="article-date">15 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Videojuegos</span>
+            <h3>Tribeca Festival 2026 confirma tres juegos independientes como favoritos</h3>
+            <p>Mientras el Summer Game Fest acaparaba titulares, el Tribeca Festival de Nueva York volvió a demostrar por qué se ha convertido en un trampolín para los vide...</p>
+            <a href="articulos/tribeca1.html" class="read-more">Seguir leyendo</a>
           </div>
         </article>
 <article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://ogre.natalie.mu/media/news/comic/2026/0612/kekkaishi_kv.jpg?impolicy=twitter_card_face_crop');">
-            <span class="article-date">12 Jun 2026</span>
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tsuihou1-1.png');">
+            <span class="article-date">15 Jun 2026</span>
           </div>
           <div class="article-content">
             <span class="article-category">Anime</span>
-            <h3>Kekkaishi no Ichirinka: Kito Akari y Totani Kikunosuke lideran el reparto</h3>
-            <p>La fantasía romántica de Kureha llega al anime en enero 2027 con producción de TROYCA. Teaser visual y video ya disponibles.</p>
-            <a href="articulos/articulo-kekkaishi-ichirinka-anime.html" class="read-more">Seguir leyendo</a>
+            <h3>Tsuihou sareta Tensei Juukishi: Estrenan avance de su anime y revelan temas musicales</h3>
+            <p>La producción de la esperada adaptación animada de la novela de fantasía y aventura Tsuihou sareta Tensei Juukishi wa Game Chishiki de Musou suru (El caballe...</p>
+            <a href="articulos/tsuihou1.html" class="read-more">Seguir leyendo</a>
           </div>
         </article>
 <article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://ogre.natalie.mu/media/news/comic/2026/0612/01_miya_teru.jpg?imwidth=1280');">
-            <span class="article-date">12 Jun 2026</span>
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/witchhatatelier1-1.png');">
+            <span class="article-date">15 Jun 2026</span>
           </div>
           <div class="article-content">
             <span class="article-category">Anime</span>
-            <h3>Ibikko Konai Gibo to Gibane: nuevo PV revela más reparto y temas musicales</h3>
-            <p>El anime del manga de Otsuji revela elenco adicional, temas musicales y fecha de estreno para el 8 de julio.</p>
-            <a href="articulos/articulo-ibikko-gibo-anime.html" class="read-more">Seguir leyendo</a>
-          </div>
-        </article>
-<article class="article-card" data-category="manga">
-          <div class="article-img" style="background-image: url('https://ogre.natalie.mu/media/pp/bunch-25th/pc_heade11.jpg?impolicy=pp_image');">
-            <span class="article-date">12 Jun 2026</span>
-          </div>
-          <div class="article-content">
-            <span class="article-category">Manga</span>
-            <h3>Bunch 25 años: Inoue y Kanzaki recuerdan el legado de BTOOOM! y Uroboros</h3>
-            <p>Conversación aniversario entre los creadores de BTOOOM! y Uroboros sobre la historia de Comic Bunch, su evolución digital y el futuro del manga.</p>
-            <a href="articulos/articulo-bunch25-aniversario.html" class="read-more">Seguir leyendo</a>
-          </div>
-        </article>
-<article class="article-card" data-category="manga">
-          <div class="article-img" style="background-image: url('https://ogre.natalie.mu/media/news/comic/2026/0612/BCS_2026_13.jpg?impolicy=twitter_card_face_crop');">
-            <span class="article-date">12 Jun 2026</span>
-          </div>
-          <div class="article-content">
-            <span class="article-category">Manga</span>
-            <h3>Vista da Gigantessa: nuevo manga de Aoki y LAB sobre viajes por Japón</h3>
-            <p>El autor de "Nabe ni Dangan wo Ukenagara" y un artista italiano se unen en un ensayo de viaje donde todos son bellas jōvenes.</p>
-            <a href="articulos/articulo-vista-gigantessa.html" class="read-more">Seguir leyendo</a>
+            <h3>Witch Hat Atelier: Lanzan campaña con emoji de Fudemushi en redes</h3>
+            <p>La producción de la adaptación animada de Witch Hat Atelier (Tongari Boushi no Atelier), basada en la aclamada obra escrita e ilustrada por la autora Shiraha...</p>
+            <a href="articulos/witchhatatelier1.html" class="read-more">Seguir leyendo</a>
           </div>
         </article>
 <article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://nami.news/wordpress/wp-content/uploads/2026/03/Suterare-Seijo-no-Isekai-Gohan-Tabi-anime-visual-1-e1773838785393.jpeg');">
-            <span class="article-date">11 Jun 2025</span>
+          <div class="article-img" style="background-image: url('https://images.somoskudasai.com/2026/06/uma-musume-arte-refact-2.jpg');">
+            <span class="article-date">14 Jun 2026</span>
           </div>
           <div class="article-content">
             <span class="article-category">Anime</span>
-            <h3>La santa abandonada: el anime gastronómico se estrena el 6 de julio con Yukari Tamura</h3>
-            <p>La adaptación animada de la novela ligera gastronómica isekai ya tiene fecha de estreno y revela nuevo reparto.</p>
-            <a href="articulos/articulo-santa-abandonada.html" class="read-more">Seguir leyendo</a>
-          </div>
-        </article>
-<article class="article-card" data-category="cine">
-          <div class="article-img" style="background-image: url('https://contents.oricon.co.jp/upimg/news/2461000/2460622/20260611_233721_p_o_27842483.jpg');">
-            <span class="article-date">11 Jun 2025</span>
-          </div>
-          <div class="article-content">
-            <span class="article-category">Cine</span>
-            <h3>Kokurō-jō: el visual colaborativo con Touken Ranbu ONLINE muestra a Atagigiri</h3>
-            <p>La película Kokurō-jō revela un visual colaborativo con Touken Ranbu ONLINE dibujado por Oyo, mostrando a Atagigiri.</p>
-            <a href="articulos/articulo-kokurojo-tourabu.html" class="read-more">Seguir leyendo</a>
-          </div>
-        </article>
-<article class="article-card" data-category="cine">
-          <div class="article-img" style="background-image: url('https://ogre.natalie.mu/media/news/comic/2026/0611/osomatsu_mukai.jpg?impolicy=twitter_card_face_crop');">
-            <span class="article-date">11 Jun 2025</span>
-          </div>
-          <div class="article-content">
-            <span class="article-category">Cine</span>
-            <h3>Osomatsu-san: Snow Man Koji Mukai regresa como el Viejo Osomatsu en la secuela</h3>
-            <p>La secuela live-action de Osomatsu-san llegó a los cines japoneses con el regreso de Koji Mukai (Snow Man) como el Viejo Osomatsu.</p>
-            <a href="articulos/articulo-osomatsu-mukai.html" class="read-more">Seguir leyendo</a>
+            <h3>Arte Refact colapsa: todos sus creadores renuncian tras esc&aacute;ndalo</h3>
+            <p>El sello musical Arte Refact, responsable de incontables canciones para franquicias como Love Live!, Uma Musume, Idolmaster y Ensemble Stars!, est&amp;aacute...</p>
+            <a href="articulos/articulo-arte-refact.html" class="read-more">Seguir leyendo</a>
           </div>
         </article>
 <article class="article-card" data-category="anime">
-          <div class="article-img" style="background-image: url('https://ogre.natalie.mu/media/news/comic/2026/0611/kagekisyoujyo0507_FIX.jpg?impolicy=twitter_card_face_crop');">
-            <span class="article-date">11 Jun 2025</span>
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/bleach1-1.png');">
+            <span class="article-date">14 Jun 2026</span>
           </div>
           <div class="article-content">
             <span class="article-category">Anime</span>
-            <h3>Kageki Shojo!!: reading theater del 5° aniversario con todo su elenco</h3>
-            <p>El anime celebrará su quinto aniversario con un reading theater especial con las nueve actrices de voz originales de la serie.</p>
-            <a href="articulos/articulo-kageki-shojo-5th.html" class="read-more">Seguir leyendo</a>
+            <h3>BLEACH: Revelan nuevo arte y anuncian maratón gratuito en YouTube</h3>
+            <p>La producción de la exitosa adaptación animada BLEACH: Thousand-Year Blood War (BLEACH: Sennen Kessen-hen), basada en la legendaria obra de acción y fantasía...</p>
+            <a href="articulos/bleach1.html" class="read-more">Seguir leyendo</a>
           </div>
         </article>
-<article class="article-card" data-category="manga">
-          <div class="article-img" style="background-image: url('assets/Anime 2D.jpeg');">
-            <span class="article-date">11 Jun 2025</span>
+<article class="article-card" data-category="videojuegos">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/godzilla1-1.png');">
+            <span class="article-date">14 Jun 2026</span>
           </div>
           <div class="article-content">
-            <span class="article-category">Manga</span>
-            <h3>Koisero Mayakashi Tenshi-domo: el manga rom-com llega al anime en 2027</h3>
-            <p>El popular manga de romance y comedia sobrenatural tendrá adaptación al anime. Los detalles del anuncio.</p>
-            <a href="articulos/articulo-koisero-tenshi.html" class="read-more">Seguir leyendo</a>
+            <span class="article-category">Videojuegos</span>
+            <h3>Atari apuesta por Godzilla para enfrentar a GTA 6</h3>
+            <p>Con el lanzamiento de Grand Theft Auto VI programado para el 19 de noviembre de 2026, la mayoría de las editoras han evitado esa ventana de estreno. Sin emba...</p>
+            <a href="articulos/godzilla1.html" class="read-more">Seguir leyendo</a>
           </div>
         </article>
-
-
-
-
-
-    
-      <div class="pagination">
-        <a href="index.html" title="Primera">&laquo;</a>
-        <a href="page2.html">Anterior &laquo;</a>
-        <div class="page-numbers">
-          <a href="index.html" class="page-num">1</a>
-          <a href="page2.html" class="page-num">2</a>
-          <a href="page3.html" class="page-num active">3</a>
-          <a href="page4.html" class="page-num">4</a>
-          <a href="page5.html" class="page-num">5</a>
-        </div>
-        <a href="page4.html">Siguiente &raquo;</a>
-        <a href="page5.html" title="Última">&raquo;</a>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hanayome1-1.png');">
+            <span class="article-date">14 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Oni no Hanayome: revela su PV principal y visual oficial</h3>
+            <p>El anime Oni no Hanayome, adaptación de la novela de Kureha, presentó su PV principal y el visual oficial, además de anunciar los temas musicales. El opening...</p>
+            <a href="articulos/hanayome1.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/irumakun-1.png');">
+            <span class="article-date">14 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Iruma-kun: temporada 4 presenta PV con batallas y idols</h3>
+            <p>La cuarta temporada de Mairimashita! Iruma-kun (*¡Bienvenido al demonio! Iruma-kun*), basada en el manga de Nishi Osamu, continúa su emisión en NHK E-Tele de...</p>
+            <a href="articulos/irumakun.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kimetsu1-1.png');">
+            <span class="article-date">14 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Kimetsu no Yaiba: sexta obra teatral inicia funciones en Tokio</h3>
+            <p>El 13 de junio de 2026 se estrenó en Tokio la sexta entrega de la saga teatral Kimetsu no Yaiba, titulada “Pilar Training / Ingreso al Castillo Infinito”. La...</p>
+            <a href="articulos/kimetsu1.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<div class="pagination">
+      <a href="page2.html">&laquo;</a>
+      <a href="page2.html">&laquo; Anterior</a>
+      <div class="page-numbers">
+        <a href="index.html" class="page-num">1</a>
+        <a href="page2.html" class="page-num">2</a>
+        <a href="page3.html" class="page-num active">3</a>
+        <a href="page4.html" class="page-num">4</a>
+        <a href="page5.html" class="page-num">5</a>
+        <a href="page6.html" class="page-num">6</a>
       </div>
+      <a href="page4.html">Siguiente &raquo;</a>
+      <a href="page6.html" title="Última">&raquo;</a>
     </div>
-<footer class="footer">
+  <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
