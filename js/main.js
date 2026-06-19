@@ -14,6 +14,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ===== NAV DROPDOWN TOGGLE =====
+  const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
+  dropdownToggles.forEach(function(toggle) {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var parent = toggle.closest('.nav-dropdown');
+      if (!parent) return;
+      var isOpen = parent.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown.open').forEach(function(d) {
+        d.classList.remove('open');
+      });
+      if (!isOpen) parent.classList.add('open');
+    });
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown.open').forEach(function(d) {
+        d.classList.remove('open');
+      });
+    }
+  });
+
   // ===== CROSS-PAGE CATEGORY FILTER =====
   const filterTabs = document.getElementById('filterTabs');
   const articlesGrid = document.getElementById('articlesGrid');
