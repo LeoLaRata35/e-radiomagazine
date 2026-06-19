@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MAPPA celebra 15 años de historia con nuevas producciones, películas y exposiciones</title>
-  <meta property="og:title" content="MAPPA celebra 15 años de historia con nuevas producciones, películas y exposiciones">
-  <meta property="og:description" content="El estudio de animación MAPPA celebra su 15 aniversario anunciando los animes de BEAT & MOTION y Koi seyo Mayakashi Tenshi-domo.">
+  <title>Chainsaw Man protagoniza el primer visual conmemorativo por los 15 a├▒os de MAPPA</title>
+  <meta property="og:title" content="Chainsaw Man protagoniza el primer visual conmemorativo por los 15 a├▒os de MAPPA">
+  <meta property="og:description" content="El prestigioso estudio de animaci├│n japon├®s MAPPA, fundado originalmente el 14 de junio de 2011, ha comenzado oficialmente las actividades de celebraci├│n por...">
   <meta property="og:image" content="https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mappa1-1.png">
   <meta property="og:url" content="https://leolarata35.github.io/e-radiomagazine/articulos/mappa1.html">
   <meta property="og:type" content="article">
@@ -20,22 +20,55 @@
   <div class="container">
     <div class="header-content">
       <div class="header-left">
-        <a href="../index.html" class="logo"><img src="../assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio" style="height:60px;display:block;"></a>
+        <a href="../index.html" class="logo"><img src="../assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio" style="display:block;"></a>
       </div>
-      <nav class="nav">
+            <nav class="nav">
         <ul>
           <li><a href="../index.html">Inicio</a></li>
-          <li><a href="../index.html" data-filter="anime">Anime</a></li>
-          <li><a href="../index.html" data-filter="manga">Manga</a></li>
-          <li><a href="../index.html" data-filter="reviews">Reviews</a></li>
-          <li><a href="../index.html" data-filter="musica">Música</a></li>
-          <li><a href="https://radioakari.blogspot.com/" class="nav-blog-link" target="_blank">Radio Akari</a></li>
+          <li class="nav-dropdown">
+            <a href="#" class="nav-dropdown-toggle">Cultura Otaku <span class="dropdown-arrow">Ôû¥</span></a>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../index.html" data-filter="anime">Anime</a></li>
+              <li><a href="../index.html" data-filter="manga">Manga</a></li>
+              <li><a href="../index.html" data-filter="reviews">Reviews</a></li>
+              <li><a href="../index.html" data-filter="cine">Cine</a></li>
+              <li><a href="../index.html" data-filter="musica">M├║sica</a></li>
+            </ul>
+          </li>
+          <li class="nav-dropdown">
+            <a href="#" class="nav-dropdown-toggle">Cultura Geek <span class="dropdown-arrow">Ôû¥</span></a>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../index.html" data-filter="videojuegos">Videojuegos</a></li>
+            </ul>
+          </li>
+          <li class="nav-dropdown">
+            <a href="#" class="nav-dropdown-toggle">Eventos <span class="dropdown-arrow">Ôû¥</span></a>
+            <ul class="nav-dropdown-menu">
+              <li><a href="https://comicconparaguay.com/" target="_blank" rel="noopener">Comic Con PY</a></li>
+            </ul>
+          </li>
+          <li class="nav-dropdown">
+            <a href="#" class="nav-dropdown-toggle nav-blog-link" style="display:flex;align-items:center;gap:4px;">EN VIVO <span class="dropdown-arrow">Ôû¥</span></a>
+            <ul class="nav-dropdown-menu nav-live-menu">
+              <li><a href="https://radioakari.blogspot.com/" target="_blank" rel="noopener">Radio Akari</a></li>
+              <li><a href="https://www.radiofurcast.qzz.io/" target="_blank" rel="noopener">Radio Furcast</a></li>
+              <li><a href="https://radiogolatino.blogspot.com/" target="_blank" rel="noopener">Radio GO! Latino</a></li>
+              <li><a href="https://onlineradiobox.com/py/quieromas/?cs=py.quieromas&played=1" target="_blank" rel="noopener">Invasiva Radio</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Men├║"><span></span><span></span><span></span></button>
+        <button class="search-toggle" id="searchToggle" aria-label="Buscar">­ƒöì</button>
     </div>
   </div>
-</header>
+    <div class="search-panel" id="searchPanel">
+      <div class="container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Buscar art├¡culos..." autocomplete="off">
+        <div class="search-results" id="searchResults"></div>
+      </div>
+    </div>
+  </header>
 <div style="max-width:900px;margin:40px auto;padding:0 20px;background:#fff;border-radius:16px;box-shadow:0 4px 30px rgba(0,0,0,0.08);">
   <div style="padding:40px;font-family:'Segoe UI',Arial,sans-serif;line-height:1.8;color:#1a1a2e;">
     <div style="font-family: 'Segoe UI', Arial, Helvetica, sans-serif; line-height: 1.7; margin: 0px auto; max-width: 900px; background: #ffffff;">
@@ -49,77 +82,56 @@
     <!-- BADGE + TITULO -->
     <div style="background: linear-gradient(135deg, #ffc800 0%, #c83232 100%); color: white; padding: 30px 20px 25px;">
       <span style="background: #ffffc8; border-radius: 30px; color: #c83232; display: inline-block; font-size: 12px; font-weight: bold; letter-spacing: 1.5px; margin-bottom: 15px; padding: 5px 16px; text-transform: uppercase;">Anime</span>
-      <h1 style="color: #ffffff; font-size: 28px; font-weight: 700; line-height: 1.3; margin: 0;">MAPPA celebra 15 años de historia con nuevas producciones, películas y exposiciones</h1>
+      <h1 style="color: #ffffff; font-size: 28px; font-weight: 700; line-height: 1.3; margin: 0;">Chainsaw Man protagoniza el primer visual conmemorativo por los 15 a├▒os de MAPPA</h1>
     </div>
 
     <!-- CUERPO -->
     <div style="font-size: 16px; padding: 25px 20px 30px; color: #1a1a1a;">
-      <p style="margin-bottom: 20px; text-align: justify;">La prestigiosa firma de animación japonesa <strong>MAPPA</strong> se encuentra celebrando su decimoquinto aniversario por todo lo alto. Durante la transmisión oficial de su evento de anuncios «MAPPA Lineup Presentation», la productora de éxitos internacionales ha desatado el entusiasmo de sus seguidores al revelar nuevas adaptaciones animadas de mangas de renombre, un emotivo documental de producción, su próxima gran exposición interactiva y una serie de destacadas ilustraciones conmemorativas de sus títulos más célebres.</p>
+      <p style="margin-bottom: 20px; text-align: justify;">El prestigioso estudio de animaci├│n japon├®s <strong>MAPPA</strong>, fundado originalmente el 14 de junio de 2011, ha comenzado oficialmente las actividades de celebraci├│n por su decimoquinto aniversario. Como primer gran anuncio de esta campa├▒a conmemorativa, la compa├▒├¡a ha revelado este martes 16 de junio de 2026 una ilustraci├│n exclusiva inspirada en su largometraje cinematogr├ífico <strong>Chainsaw Man (El hombre motosierra) - The Movie: Reze Arc</strong>, sirviendo como punto de partida para una serie de lanzamientos gr├íficos y un evento digital programado para esta misma semana.</p>
       
-      <h2 style="border-bottom: 3px solid #ffc800; color: #c83232; font-size: 26px; font-weight: 700; margin: 40px 0px 20px; padding-bottom: 8px;">Nuevos proyectos animados para televisión y plataformas digitales</h2>
-      <p style="margin-bottom: 20px; text-align: justify;">Entre las grandes revelaciones del estudio destaca el anuncio de la adaptación animada de <strong>BEAT &amp; MOTION</strong>, el galardonado manga creado por <strong>Naoki Fujita</strong> tras consagrarse como el ganador del concurso de talentos «MILLION TAG» de la editorial Shueisha. Producida bajo la dirección técnica de <strong>MAPPA</strong>, la serie es un emotivo drama de superación que narra el encuentro fortuito entre Tatsuhiko Hirayama, un joven que abandonó su sueño de dedicarse a la animación, y Niko Kashiwagi, una talentosa música independiente. El proyecto, que contará con las actuaciones de <strong>Shuichiro Umeda</strong> y <strong>Aya Gomatsuru</strong> en los papeles protagónicos, se estrenará de manera exclusiva a nivel mundial a través de la plataforma de transmisión <strong>Netflix</strong> en el transcurso del año 2027.</p><p style="margin-bottom: 20px; text-align: justify;"><figure class="e-carousel" id="ec-1781876395688" data-total="9" style="display: block; margin: 16px auto; position: relative; max-width: 100%; border-radius: 12px; overflow: hidden; background: rgb(17, 17, 17);"><div class="e-carousel-viewport" style="position: relative; overflow: hidden; width: 100%; height: 483.75px;"><div class="e-carousel-track" id="ec-1781876395688-track" style="display: flex; transition: transform 0.3s; width: 100%; transform: translateX(-800%);"><div class="e-carousel-slide" style="flex: 0 0 100%; min-width: 0px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; aspect-ratio: 16 / 9; height: 483.75px;"><img src="https://ogre.natalie.mu/media/news/comic/2026/0619/beatandmotion-anime_teaser.jpg?imwidth=1460&amp;imdensity=1&amp;impolicy=hq" alt="Carrusel imagen 1" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block; cursor: pointer;"></div><div class="e-carousel-slide" style="flex: 0 0 100%; min-width: 0px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; aspect-ratio: 16 / 9; height: 483.75px;"><div class="e-carousel-youtube" style="position: relative; width: 100%; padding-bottom: 56.25%;"><iframe src="https://www.youtube.com/embed/NMSPJoELxw4?enablejsapi=0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen="" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; border-radius: 8px;"></iframe></div></div><div class="e-carousel-slide" style="flex: 0 0 100%; min-width: 0px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; aspect-ratio: 16 / 9; height: 483.75px;"><img src="https://ogre.natalie.mu/media/news/comic/2026/0619/01_setticket.jpg?imwidth=1460&amp;imdensity=1&amp;impolicy=hq" alt="Carrusel imagen 3" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block; cursor: pointer;"></div><div class="e-carousel-slide" style="flex: 0 0 100%; min-width: 0px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; aspect-ratio: 16 / 9; height: 483.75px;"><img src="https://ogre.natalie.mu/media/news/comic/2026/0619/02_setticket.jpg?imwidth=1460&amp;imdensity=1&amp;impolicy=hq" alt="Carrusel imagen 4" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block; cursor: pointer;"></div><div class="e-carousel-slide" style="flex: 0 0 100%; min-width: 0px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; aspect-ratio: 16 / 9; height: 483.75px;"><img src="https://ogre.natalie.mu/media/news/comic/2026/0619/03_setticket.jpg?imwidth=1460&amp;imdensity=1&amp;impolicy=hq" alt="Carrusel imagen 5" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block; cursor: pointer;"></div><div class="e-carousel-slide" style="flex: 0 0 100%; min-width: 0px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; aspect-ratio: 16 / 9; height: 483.75px;"><img src="https://ogre.natalie.mu/media/news/comic/2026/0619/MAPPA_15th_AnniversaryMovie_thumbnail.jpg?imwidth=1460&amp;imdensity=1&amp;impolicy=hq" alt="Carrusel imagen 6" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block; cursor: pointer;"></div><div class="e-carousel-slide" style="flex: 0 0 100%; min-width: 0px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; aspect-ratio: 16 / 9; height: 483.75px;"><div class="e-carousel-youtube" style="position: relative; width: 100%; padding-bottom: 56.25%;"><iframe src="https://www.youtube.com/embed/l_yujzqjp0M?enablejsapi=0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen="" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; border-radius: 8px;"></iframe></div></div><div class="e-carousel-slide" style="flex: 0 0 100%; min-width: 0px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; aspect-ratio: 16 / 9; height: 483.75px;"><img src="https://ogre.natalie.mu/media/news/comic/2026/0619/koidomo_teaser.jpg?imwidth=1460&amp;imdensity=1&amp;impolicy=hq" alt="Carrusel imagen 8" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block; cursor: pointer;"></div><div class="e-carousel-slide" style="flex: 0 0 100%; min-width: 0px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; aspect-ratio: 16 / 9; height: 483.75px;"><div class="e-carousel-youtube" style="position: relative; width: 100%; padding-bottom: 56.25%;"><iframe src="https://www.youtube.com/embed/3OCNfYqUNlQ?enablejsapi=0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen="" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; border-radius: 8px;"></iframe></div></div></div></div><button class="e-carousel-btn e-carousel-prev" onclick="ecPrev('ec-1781876395688')">‹</button><button class="e-carousel-btn e-carousel-next" onclick="ecNext('ec-1781876395688')">›</button><div class="e-carousel-dots" id="ec-1781876395688-dots" style="display: flex; justify-content: center; gap: 6px; padding: 10px 0px;"><button class="e-carousel-dot" aria-label="Slide 1" onclick="ecGo('ec-1781876395688',0)"></button><button class="e-carousel-dot" aria-label="Slide 2" onclick="ecGo('ec-1781876395688',1)"></button><button class="e-carousel-dot" aria-label="Slide 3" onclick="ecGo('ec-1781876395688',2)"></button><button class="e-carousel-dot" aria-label="Slide 4" onclick="ecGo('ec-1781876395688',3)"></button><button class="e-carousel-dot" aria-label="Slide 5" onclick="ecGo('ec-1781876395688',4)"></button><button class="e-carousel-dot" aria-label="Slide 6" onclick="ecGo('ec-1781876395688',5)"></button><button class="e-carousel-dot" aria-label="Slide 7" onclick="ecGo('ec-1781876395688',6)"></button><button class="e-carousel-dot" aria-label="Slide 8" onclick="ecGo('ec-1781876395688',7)"></button><button class="e-carousel-dot active" aria-label="Slide 9" onclick="ecGo('ec-1781876395688',8)"></button></div></figure><br></p>
-      <p style="margin-bottom: 20px; text-align: justify;">Asimismo, el estudio sorprendió al confirmar que asumirá la realización técnica del anime de televisión <strong>Koi seyo Mayakashi Tenshi-domo (Ángeles engañosos del amor)</strong>, la exitosa obra de romance y comedia escolar escrita e ilustrada por la autora <strong>Koko Uzuki</strong>. Con motivo de este anuncio, la producción liberó un primer avance en video que muestra los primeros vistazos estéticos de la animación y un arte promocional dedicado a la pareja protagónica de la historia.</p>
+      <h2 style="border-bottom: 3px solid #ffc800; color: #c83232; font-size: 26px; font-weight: 700; margin: 40px 0px 20px; padding-bottom: 8px;">Una caminata hacia la luz protagonizada por Reze</h2>
+      <p style="margin-bottom: 20px; text-align: justify;">La pieza de arte conmemorativa liberada por la casa de animaci├│n lleva por nombre oficial ┬½MAPPA 15th Anniversary Key Visual - Chainsaw Man: Reze Arc ver┬╗ y muestra a la enigm├ítica joven <strong>Reze</strong> caminando con un paso ├ígil e impulsivo desde un callej├│n sombr├¡o hacia un punto donde se proyecta la luz. Esta composici├│n visual cuenta con la participaci├│n de un destacado equipo t├®cnico de producci├│n, incluyendo el dibujo principal de dise├▒o a cargo del artista <strong>Shoichi</strong>, el coloreado digital de <strong>Nakano Misaki</strong>, el arte de fondos de <strong>Uchima Taichi</strong> y los efectos de composici├│n de imagen de <strong>Tannawa Yusuke</strong>.</p>
+      <p style="margin-bottom: 20px; text-align: justify;">De acuerdo con los portavoces de la firma, este lanzamiento representa la primera de tres ilustraciones especiales planificadas para conmemorar el aniversario de la compa├▒├¡a, por lo que las dos siguientes entregas tem├íticas se dar├ín a conocer de forma secuencial durante las pr├│ximas semanas en sus plataformas de comunicaci├│n oficial.</p><p style="margin-bottom: 20px; text-align: justify;"><figure style="display: inline-block; margin: 12px 0px; position: relative; max-width: 100%;"><img src="https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mappa1-2.png" style="max-width: 100%; width: 80%; height: auto; display: block; margin-left: auto; margin-right: auto;" data-align="center"></figure><br></p>
 
-      <h2 style="border-bottom: 3px solid #ffc800; color: #c83232; font-size: 26px; font-weight: 700; margin: 40px 0px 20px; padding-bottom: 8px;">Documental de aniversario, exposición masiva y artes conmemorativos</h2>
-      <p style="margin-bottom: 20px; text-align: justify;">Para documentar el esfuerzo humano detrás de sus aclamadas animaciones, se ha estrenado el metraje documental titulado <strong>MAPPA 15th Anniversary Movie</strong>. El video muestra escenas del interior de sus oficinas con los animadores realizando trazos, diseñando guiones gráficos y puliendo fotogramas clave. La banda sonora de este emotivo repaso histórico cuenta con la canción oficial de aniversario titulada «Seikatsu» (Vida), compuesta de forma exclusiva por la reconocida agrupación de pop alternativo <strong>PEOPLE 1</strong>.</p>
-      <p style="margin-bottom: 20px; text-align: justify;">Por otra parte, se ha confirmado la realización de la exposición masiva <strong>MAPPA EXPO 15th Anniversary</strong>, una feria temática que se llevará a cabo en el centro cultural YURAKUCHO MUSEUM de la ciudad de Tokio desde el 16 de septiembre hasta el 7 de diciembre de 2026. El evento estará dividido en dos etapas con renovaciones parciales de material inédito y ofrecerá a los asistentes la oportunidad de admirar bocetos originales de producción, maquetas de escenarios y mercancía oficial coleccionable de franquicias insignia como Jujutsu Kaisen, Attack on Titan y Chainsaw Man.</p>
-      <p style="margin-bottom: 20px; text-align: justify;">Finalmente, como parte de la campaña de cuenta regresiva, el estudio publicó una trilogía de ilustraciones de aniversario que causó un enorme impacto en las redes sociales. La primera de ellas rinde tributo a la próxima película cinematográfica de <strong>Chainsaw Man: El Arco de Reze (Chainsaw Man: Reze-hen)</strong>, mostrando al personaje de Reze emergiendo de un oscuro callejón hacia la luz; la segunda pieza conmemora a <strong>Attack on Titan: The Final Season (Shingeki no Kyojin: The Final Season)</strong> retratando a Mikasa Ackerman caminando con su icónica bufanda roja hacia el árbol de la colina; y el cierre de la trilogía está dedicado a <strong>Jujutsu Kaisen</strong>, mostrando a la estudiante de hechicería <strong>Nobara Kugisaki</strong> saliendo con paso firme de un túnel subterráneo en el distrito de Shibuya durante la noche.</p>
+      <h2 style="border-bottom: 3px solid #ffc800; color: #c83232; font-size: 26px; font-weight: 700; margin: 40px 0px 20px; padding-bottom: 8px;">Evento especial y anuncios de cartelera en camino</h2>
+      <p style="margin-bottom: 20px; text-align: justify;">La celebraci├│n continuar├í el pr├│ximo viernes 19 de junio de 2026 a las 20:00 en horario de Jap├│n con la transmisi├│n de la ┬½MAPPA 15th Anniversary Lineup Announcement┬╗, una presentaci├│n de novedades en formato premier que se emitir├í a trav├®s de su canal oficial de YouTube. En este espacio, el estudio revelar├í informaci├│n y adelantos de sus producciones en desarrollo, entre las que destacan actualizaciones de franquicias masivas como <strong>Chainsaw Man</strong>, <strong>Jujutsu Kaisen</strong>, <strong>Dorohedoro</strong> y la segunda temporada de <strong>Ranma 1/2</strong>.</p>
+      <p style="margin-bottom: 20px; text-align: justify;">Adicionalmente, la transmisi├│n en directo servir├í como escenario para presentar el tema musical conmemorativo por los 15 a├▒os del estudio, compuesto e interpretado de manera exclusiva por la popular banda de pop rock <strong>PEOPLE 1</strong>, el cual estar├í acompa├▒ado por un video musical animado de producci├│n original realizado por el propio equipo art├¡stico del estudio.</p>
 
       <!-- FICHA TECNICA -->
       <div style="page-break-before: always; break-before: page; background: #f9f9f7; border-radius: 20px; border: 1px solid #e0d6c0; margin: 40px 0px; padding: 20px 24px;">
-        <h2 style="border-bottom: 3px solid #ffc800; color: #c83232; font-size: 24px; font-weight: 700; margin: 0px 0px 20px; padding-bottom: 8px;"><figure style="display: inline-block; margin: 12px 0px; position: relative; max-width: 100%;"><img src="https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mappa1-2.png" style="max-width: 100%; width: 50%; height: auto; display: block; margin-left: auto; margin-right: auto;" data-align="center"></figure><br></h2><h2 style="border-bottom: 3px solid #ffc800; color: #c83232; font-size: 24px; font-weight: 700; margin: 0px 0px 20px; padding-bottom: 8px;">Ficha: Especial MAPPA 15.° Aniversario</h2>
+        <h2 style="border-bottom: 3px solid #ffc800; color: #c83232; font-size: 24px; font-weight: 700; margin: 0px 0px 20px; padding-bottom: 8px;"><figure style="display: inline-block; margin: 12px 0px; position: relative; max-width: 100%;"><img src="https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mappa1-3.png" style="max-width: 100%; width: 40%; height: auto; display: block; margin-left: auto; margin-right: auto;" data-align="center"></figure><br></h2><h2 style="border-bottom: 3px solid #ffc800; color: #c83232; font-size: 24px; font-weight: 700; margin: 0px 0px 20px; padding-bottom: 8px;">Ficha: Especial 15 A├▒os de MAPPA</h2>
         <div style="border-bottom: 1px dashed #ddd; margin-bottom: 12px; padding-bottom: 8px;">
           <strong style="display: inline-block; min-width: 220px;">Estudio organizador:</strong>
           <span>MAPPA</span>
         </div>
         <div style="border-bottom: 1px dashed #ddd; margin-bottom: 12px; padding-bottom: 8px;">
-          <strong style="display: inline-block; min-width: 220px;">Hito conmemorativo:</strong>
-          <span>15.° aniversario de fundación</span>
+          <strong style="display: inline-block; min-width: 220px;">Campa├▒a:</strong>
+          <span>MAPPA 15th Anniversary Campaign</span>
         </div>
         <div style="border-bottom: 1px dashed #ddd; margin-bottom: 12px; padding-bottom: 8px;">
-          <strong style="display: inline-block; min-width: 220px;">Exposición oficial:</strong>
-          <span>MAPPA EXPO 15th Anniversary (YURAKUCHO MUSEUM, Tokio)</span>
+          <strong style="display: inline-block; min-width: 220px;">Obra del primer visual:</strong>
+          <span>Chainsaw Man - The Movie: Reze Arc</span>
         </div>
         <div style="border-bottom: 1px dashed #ddd; margin-bottom: 12px; padding-bottom: 8px;">
-          <strong style="display: inline-block; min-width: 220px;">Fechas de la exposición:</strong>
-          <span>Del 16 de septiembre al 7 de diciembre de 2026</span>
+          <strong style="display: inline-block; min-width: 220px;">Autor del manga original:</strong>
+          <span>Fujimoto Tatsuki</span>
         </div>
         <div style="border-bottom: 1px dashed #ddd; margin-bottom: 12px; padding-bottom: 8px;">
-          <strong style="display: inline-block; min-width: 220px;">Anime revelado (Netflix):</strong>
-          <span>BEAT &amp; MOTION (Género: Drama, Recuentos de la vida, Música)</span>
+          <strong style="display: inline-block; min-width: 220px;">Equipo del arte promocional:</strong>
+          <span>Shoichi (Dise├▒o), Nakano Misaki (Color), Uchima Taichi (Fondos), Tannawa Yusuke (Composici├│n)</span>
         </div>
         <div style="border-bottom: 1px dashed #ddd; margin-bottom: 12px; padding-bottom: 8px;">
-          <strong style="display: inline-block; min-width: 220px;">Anime revelado (TV):</strong>
-          <span>Koi seyo Mayakashi Tenshi-domo (Género: Comedia romántica, Escolar)</span>
+          <strong style="display: inline-block; min-width: 220px;">Fecha de aniversario:</strong>
+          <span>14 de junio de 2026 (15 a├▒os)</span>
         </div>
         <div style="border-bottom: 1px dashed #ddd; margin-bottom: 12px; padding-bottom: 8px;">
-          <strong style="display: inline-block; min-width: 220px;">Tema oficial de aniversario:</strong>
-          <span>«Seikatsu» por PEOPLE 1</span>
-        </div>
-        <div style="border-bottom: 1px dashed #ddd; margin-bottom: 12px; padding-bottom: 8px;">
-          <strong style="display: inline-block; min-width: 220px;">Franquicias en ilustraciones:</strong>
-          <span>Chainsaw Man: El Arco de Reze, Attack on Titan, Jujutsu Kaisen</span>
-        </div>
-        <div>
-          <strong style="display: inline-block; min-width: 220px;">Fuentes:</strong>
-          <span>
-            <a href="https://natalie.mu/comic/news/677020" target="_blank" style="color: #c83232;">COMIC NATALIE (BEAT &amp; MOTION)</a> | 
-            <a href="https://natalie.mu/comic/news/676898" target="_blank" style="color: #c83232;">COMIC NATALIE (Mayakashi)</a> | 
-            <a href="https://natalie.mu/comic/news/676939" target="_blank" style="color: #c83232;">COMIC NATALIE (EXPO)</a> | 
-            <a href="https://natalie.mu/comic/news/676959" target="_blank" style="color: #c83232;">COMIC NATALIE (Movie)</a> | 
-            <a href="https://natalie.mu/comic/news/676791" target="_blank" style="color: #c83232;">COMIC NATALIE (Visual)</a>
-          </span>
-        </div>
+          <strong style="display: inline-block; min-width: 220px;">Fecha del evento virtual:</strong>
+          <span>19 de junio de 2026 (Transmisi├│n en YouTube)</span></div>
       </div>
 
       <!-- FUENTES -->
       <p style="font-size: 13px; color: #888; margin-top: 30px; text-align: left;">
-        <strong>Fuentes:</strong> 
-        <a href="https://natalie.mu/comic/news/677020" target="_blank" style="color: #c83232;">COMIC NATALIE (BEAT &amp; MOTION)</a>, 
-        <a href="https://natalie.mu/comic/news/676898" target="_blank" style="color: #c83232;">COMIC NATALIE (Mayakashi)</a>, 
-        <a href="https://natalie.mu/comic/news/676939" target="_blank" style="color: #c83232;">COMIC NATALIE (EXPO)</a>, 
-        <a href="https://natalie.mu/comic/news/676959" target="_blank" style="color: #c83232;">COMIC NATALIE (Movie)</a>, 
-        <a href="https://natalie.mu/comic/news/676791" target="_blank" style="color: #c83232;">COMIC NATALIE (Visual)</a>.
+        <strong>Fuentes:</strong> <a href="https://natalie.mu/comic/news/676432" target="_blank" style="color: #c83232;">COMIC NATALIE</a>.
       </p>
 
     </div>
@@ -140,7 +152,7 @@
           <li><a href="../index.html">Anime</a></li>
           <li><a href="../index.html">Manga</a></li>
           <li><a href="../index.html">Reviews</a></li>
-          <li><a href="../index.html">Música</a></li>
+          <li><a href="../index.html">M├║sica</a></li>
         </ul>
       </div>
       <div class="footer-links">
