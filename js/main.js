@@ -14,34 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ===== NAV DROPDOWNS =====
-  document.querySelectorAll('.nav-dropdown-menu').forEach(function(m) {
-    m.style.display = 'none';
-  });
-
-  document.querySelectorAll('.nav-dropdown-toggle').forEach(function(toggle) {
-    toggle.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      var li = this.closest('.nav-dropdown');
-      if (li) {
-        var isOpen = li.classList.contains('open');
-        document.querySelectorAll('.nav-dropdown.open').forEach(function(d) {
-          d.classList.remove('open');
-        });
-        if (!isOpen) {
-          li.classList.add('open');
-        }
-      }
-    });
-  });
-
-  document.addEventListener('click', function(e) {
-    document.querySelectorAll('.nav-dropdown.open').forEach(function(d) {
-      d.classList.remove('open');
-    });
-  });
-
   // ===== CROSS-PAGE CATEGORY FILTER =====
   const filterTabs = document.getElementById('filterTabs');
   const articlesGrid = document.getElementById('articlesGrid');
@@ -168,108 +140,11 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.forEach(function(l) { l.classList.remove('active'); });
       link.classList.add('active');
       if (nav) nav.classList.remove('open');
-      var parentDropdown = link.closest('.nav-dropdown');
-      if (parentDropdown) parentDropdown.classList.remove('open');
       applyFilter(link.dataset.filter);
       var main = document.querySelector('.main');
       if (main) main.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
-
-  // ===== SEARCH =====
-  const searchToggle = document.getElementById('searchToggle');
-  const searchPanel = document.getElementById('searchPanel');
-  const searchInput = document.getElementById('searchInput');
-  const searchResults = document.getElementById('searchResults');
-  let searchTimeout = null;
-
-  if (searchToggle && searchPanel) {
-    searchToggle.addEventListener('click', function(e) {
-      e.stopPropagation();
-      searchPanel.classList.toggle('open');
-      if (searchPanel.classList.contains('open')) {
-        setTimeout(function() { searchInput.focus(); }, 100);
-      } else {
-        searchResults.innerHTML = '';
-        searchInput.value = '';
-      }
-    });
-
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.search-panel') && !e.target.closest('#searchToggle')) {
-        searchPanel.classList.remove('open');
-        searchResults.innerHTML = '';
-        searchInput.value = '';
-      }
-    });
-  }
-
-  if (searchInput && searchResults) {
-    searchInput.addEventListener('input', function() {
-      clearTimeout(searchTimeout);
-      var q = this.value.trim().toLowerCase();
-      if (q.length < 2) {
-        searchResults.innerHTML = '';
-        return;
-      }
-      searchTimeout = setTimeout(function() {
-        doSearch(q);
-      }, 300);
-    });
-  }
-
-  function doSearch(query) {
-    if (!searchResults) return;
-    searchResults.innerHTML = '<p class="search-no-results">Buscando...</p>';
-
-    fetchAllArticles().then(function(all) {
-      var filtered = all.filter(function(a) {
-        var div = document.createElement('div');
-        div.innerHTML = a.html;
-        var card = div.querySelector('.article-card');
-        if (!card) return false;
-        var title = (card.querySelector('h3') || {}).textContent || '';
-        var desc = (card.querySelector('p') || {}).textContent || '';
-        var cat = (card.querySelector('.article-category') || {}).textContent || '';
-        return title.toLowerCase().indexOf(query) !== -1 ||
-               desc.toLowerCase().indexOf(query) !== -1 ||
-               cat.toLowerCase().indexOf(query) !== -1;
-      });
-
-      if (filtered.length === 0) {
-        searchResults.innerHTML = '<p class="search-no-results">No se encontraron artículos para "<strong>' + escapeHtml(searchInput.value) + '</strong>"</p>';
-        return;
-      }
-
-      searchResults.innerHTML = filtered.map(function(a) {
-        var div = document.createElement('div');
-        div.innerHTML = a.html;
-        var card = div.querySelector('.article-card');
-        if (!card) return '';
-        var title = (card.querySelector('h3') || {}).textContent || '';
-        var desc = (card.querySelector('p') || {}).textContent || '';
-        var cat = (card.querySelector('.article-category') || {}).textContent || '';
-        var href = (card.querySelector('.read-more') || {}).getAttribute('href') || '#';
-        var imgDiv = card.querySelector('.article-img');
-        var bgMatch = imgDiv ? (imgDiv.getAttribute('style') || '').match(/url\(['"]?(.*?)['"]?\)/) : null;
-        var img = bgMatch ? bgMatch[1] : '';
-
-        return '<a href="' + href + '" class="search-result-item">' +
-          (img ? '<img src="' + img + '" alt="" loading="lazy">' : '') +
-          '<div class="search-result-info">' +
-          '<h4>' + title + '</h4>' +
-          '<span>' + cat + '</span>' +
-          '<p>' + desc + '</p>' +
-          '</div></a>';
-      }).join('\n');
-    });
-  }
-
-  function escapeHtml(str) {
-    var div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  }
 
   const newsletterForm = document.getElementById('newsletterForm');
   if (newsletterForm) {
