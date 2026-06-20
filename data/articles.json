@@ -1,7 +1,7 @@
 [
   {
     "category": "manga",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kagurabachi111-1.png",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kagurabachi-1.png",
     "date": "20 Jun 2026",
     "categoryLabel": "Manga",
     "title": "Kagurabachi suma a Tomokazu Seki como el legendario herrero Kunishige",
@@ -379,7 +379,7 @@
   },
   {
     "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/articulo-kekkaishi-ichirinka-anime-1.png",
+    "img": "https://ogre.natalie.mu/media/news/comic/2026/0612/kekkaishi_kv.jpg",
     "date": "12 Jun 2026",
     "categoryLabel": "Anime",
     "title": "Kekkaishi no Ichirinka: Kito Akari y Totani Kikunosuke lideran el reparto",
@@ -394,6 +394,15 @@
     "title": "Vista da Gigantessa: nuevo manga de Aoki y LAB sobre viajes por Jap&oacute;n",
     "description": "El nuevo ensayo manga Vista da Gigantessa, con historia original de Aoki Juntaro (autor de Nabe ni Dangan wo Ukenagara) e ilustraciones del artista italiano ...",
     "href": "articulos/articulo-vista-gigantessa.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/akane-banashi-1.png",
+    "date": "10 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Anuncian segunda temporada y nuevas voces para el anime de Akane-banashi",
+    "description": "El anime de Akane-banashi confirma su segunda temporada para enero de 2027 y suma a Hochu Otsuka y Tomokazu Seki a su elenco de voces.",
+    "href": "articulos/akane-banashi.html"
   },
   {
     "category": "cine",
@@ -415,7 +424,7 @@
   },
   {
     "category": "anime",
-    "img": "https://leolarata35.github.io/e-radiomagazine/assets/E-Radio%20Magazine.png",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/Anime%202D.jpeg",
     "date": "11 Jun 2025",
     "categoryLabel": "Anime",
     "title": "Koisero Mayakashi Tenshi-domo: el manga rom-com llega al anime en 2027",
@@ -460,7 +469,7 @@
   },
   {
     "category": "cine",
-    "img": "https://leolarata35.github.io/e-radiomagazine/assets/E-Radio%20Magazine.png",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/Shin-Chan.png",
     "date": "11 Jun 2025",
     "categoryLabel": "Cine",
     "title": "Shin-chan: Ai Suotome regresa a los 25 en live-action de Coca-Cola",
