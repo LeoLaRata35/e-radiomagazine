@@ -4,8 +4,7 @@
   box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+/* Fonts loaded via <link> in index.html head */
 
 :root {
   --bg-primary: #0f0f13;

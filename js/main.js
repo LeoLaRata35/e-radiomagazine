@@ -439,4 +439,4 @@ document.addEventListener('DOMContentLoaded', () => {
       ecUpdate(fig.id);
     });
   });
-})();
+});
