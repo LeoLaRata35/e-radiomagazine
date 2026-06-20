@@ -38,12 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ===== CARGAR M&Aacute;S =====
+  // ===== CARGAR M&Aacute;S (sin reemplazar las cards est&aacute;ticas) =====
   const articlesGrid = document.getElementById('articlesGrid');
   const filterTabs = document.getElementById('filterTabs');
   const PER_PAGE = 12;
   let allArticlesCache = null;
-  let loadedCount = 0;
+  let loadedCount = 12; // partimos de las 12 cards est&aacute;ticas del HTML
   let currentFilter = 'all';
 
   async function loadAllArticles() {
@@ -98,11 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function showInitialArticles(articles) {
-    if (!articlesGrid) return;
-    loadedCount = Math.min(PER_PAGE, articles.length);
-    articlesGrid.innerHTML = articles.slice(0, loadedCount).map(articleCardHTML).join('\n');
-    animateCards(articlesGrid);
-    loadMoreBtn.style.display = loadedCount >= articles.length ? 'none' : 'block';
+    // No reemplazamos el grid — solo ocultamos/mostramos el bot&oacute;n
+    loadMoreBtn.style.display = articles.length <= PER_PAGE ? 'none' : 'block';
   }
 
   function loadMore() {
@@ -136,11 +133,17 @@ document.addEventListener('DOMContentLoaded', () => {
   function filterGridByCategory(filter) {
     if (!articlesGrid || !allArticlesCache) return;
     currentFilter = filter;
+    loadMoreBtn.style.display = 'none';
+    // Always re-build con cards de JSON para el filtro
     if (filter === 'all') {
-      showInitialArticles(allArticlesCache);
+      // Mostrar primeras 12 del JSON (pero mantener las estáticas visibles)
+      // Como las estáticas ya están, solo ocultamos las que no coinciden
+      var allCards = articlesGrid.querySelectorAll('.article-card');
+      allCards.forEach(function(c) { c.style.display = ''; });
+      loadedCount = allCards.length;
+      loadMoreBtn.style.display = allArticlesCache.length > loadedCount ? 'block' : 'none';
     } else {
       var matching = allArticlesCache.filter(function(a) { return a.category === filter; });
-      loadMoreBtn.style.display = 'none';
       if (matching.length > 0) {
         articlesGrid.innerHTML = matching.map(articleCardHTML).join('\n');
         animateCards(articlesGrid);
@@ -355,10 +358,13 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoplay();
   }
 
-  // ===== INIT: Load articles, show first 12, build hero =====
+  // ===== INIT: cargar artículos, contar estáticas, mostrar hero =====
   loadAllArticles().then(function(articles) {
     allArticlesCache = articles;
     if (articlesGrid) {
+      // Contar cuántas cards estáticas ya hay en el HTML
+      var staticCards = articlesGrid.querySelectorAll('.article-card');
+      loadedCount = staticCards.length;
       showInitialArticles(articles);
     }
     buildHero(articles);
