@@ -38,24 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ===== DYNAMIC PAGINATION =====
+  // ===== CARGAR M&Aacute;S =====
   const articlesGrid = document.getElementById('articlesGrid');
-  const paginationContainer = document.querySelector('.pagination') || document.getElementById('pagination');
   const filterTabs = document.getElementById('filterTabs');
   const PER_PAGE = 12;
   let allArticlesCache = null;
-  let currentPage = 1;
-
-  function getCurrentPageFromURL() {
-    var path = window.location.pathname.split('/').pop() || 'index.html';
-    if (path === 'index.html' || path === '') return 1;
-    var m = path.match(/^page(\d+)\.html$/);
-    return m ? parseInt(m[1], 10) : 1;
-  }
-
-  function pageName(n) {
-    return n === 1 ? 'index.html' : 'page' + n + '.html';
-  }
+  let loadedCount = 0;
+  let currentFilter = 'all';
 
   async function loadAllArticles() {
     if (allArticlesCache) return allArticlesCache;
@@ -95,46 +84,40 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   }
 
-  function renderPage(articles, page) {
+  // Ocultar paginaci&oacute;n est&aacute;tica
+  var oldPag = document.querySelector('.pagination');
+  if (oldPag) oldPag.style.display = 'none';
+
+  // Bot&oacute;n Cargar m&aacute;s
+  var loadMoreBtn = document.createElement('button');
+  loadMoreBtn.className = 'load-more-btn';
+  loadMoreBtn.textContent = 'Cargar m\u00e1s';
+  loadMoreBtn.style.cssText = 'display:block;margin:24px auto;padding:12px 32px;background:var(--accent);color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:1rem;';
+  if (articlesGrid && articlesGrid.parentNode) {
+    articlesGrid.parentNode.appendChild(loadMoreBtn);
+  }
+
+  function showInitialArticles(articles) {
     if (!articlesGrid) return;
-    var totalPages = Math.max(1, Math.ceil(articles.length / PER_PAGE));
-    if (page < 1) page = 1;
-    if (page > totalPages) page = totalPages;
-    currentPage = page;
-    var start = (page - 1) * PER_PAGE;
-    var end = start + PER_PAGE;
-    var slice = articles.slice(start, end);
-
-    articlesGrid.innerHTML = slice.length
-      ? slice.map(articleCardHTML).join('\n')
-      : '<p class="no-results">No hay artículos disponibles.</p>';
-
+    loadedCount = Math.min(PER_PAGE, articles.length);
+    articlesGrid.innerHTML = articles.slice(0, loadedCount).map(articleCardHTML).join('\n');
     animateCards(articlesGrid);
-
-    if (paginationContainer && articles.length > PER_PAGE) {
-      renderPagination(page, totalPages);
-    } else if (paginationContainer) {
-      paginationContainer.innerHTML = '';
-    }
+    loadMoreBtn.style.display = loadedCount >= articles.length ? 'none' : 'block';
   }
 
-  function renderPagination(page, totalPages) {
-    var html = '';
-    var prevPage = page > 1 ? pageName(page - 1) : null;
-    var nextPage = page < totalPages ? pageName(page + 1) : null;
-
-    html += '<a href="' + (prevPage || '#') + '"' + (prevPage ? '' : ' class="disabled"') + ' title="Primera">&laquo;</a>';
-    html += '<a href="' + (prevPage || '#') + '"' + (prevPage ? '' : ' class="disabled"') + '>&laquo; Anterior</a>';
-    html += '<div class="page-numbers">';
-    for (var i = 1; i <= totalPages; i++) {
-      html += '<a href="' + pageName(i) + '" class="page-num' + (i === page ? ' active' : '') + '">' + i + '</a>';
-    }
-    html += '</div>';
-    html += '<a href="' + (nextPage || '#') + '"' + (nextPage ? '' : ' class="disabled"') + '>Siguiente &raquo;</a>';
-    html += '<a href="' + pageName(totalPages) + '" title="Última">&raquo;</a>';
-
-    paginationContainer.innerHTML = html;
+  function loadMore() {
+    var articles = currentFilter === 'all' ? allArticlesCache
+      : (allArticlesCache || []).filter(function(a) { return a.category === currentFilter; });
+    if (!articles) return;
+    var next = Math.min(loadedCount + PER_PAGE, articles.length);
+    var html = articles.slice(loadedCount, next).map(articleCardHTML).join('\n');
+    articlesGrid.insertAdjacentHTML('beforeend', html);
+    loadedCount = next;
+    animateCards(articlesGrid);
+    if (loadedCount >= articles.length) loadMoreBtn.style.display = 'none';
   }
+
+  loadMoreBtn.addEventListener('click', loadMore);
 
   function animateCards(container) {
     var cards = container.querySelectorAll('.article-card');
@@ -151,20 +134,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ===== FILTER BY CATEGORY =====
   function filterGridByCategory(filter) {
-    if (!articlesGrid) return;
+    if (!articlesGrid || !allArticlesCache) return;
+    currentFilter = filter;
     if (filter === 'all') {
-      renderPage(allArticlesCache, getCurrentPageFromURL());
-      if (paginationContainer) paginationContainer.style.display = '';
-      return;
-    }
-    var matching = allArticlesCache.filter(function(a) { return a.category === filter; });
-    if (matching.length > 0) {
-      articlesGrid.innerHTML = matching.map(articleCardHTML).join('\n');
-      animateCards(articlesGrid);
-      if (paginationContainer) paginationContainer.style.display = 'none';
+      showInitialArticles(allArticlesCache);
     } else {
-      articlesGrid.innerHTML = '<p class="no-results">No hay artículos en esta categoría.</p>';
-      if (paginationContainer) paginationContainer.style.display = 'none';
+      var matching = allArticlesCache.filter(function(a) { return a.category === filter; });
+      loadMoreBtn.style.display = 'none';
+      if (matching.length > 0) {
+        articlesGrid.innerHTML = matching.map(articleCardHTML).join('\n');
+        animateCards(articlesGrid);
+      } else {
+        articlesGrid.innerHTML = '<p class="no-results">No hay artículos en esta categoría.</p>';
+      }
     }
   }
 
@@ -373,18 +355,11 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoplay();
   }
 
-  // ===== INIT: Load articles, render current page, build hero =====
+  // ===== INIT: Load articles, show first 12, build hero =====
   loadAllArticles().then(function(articles) {
     allArticlesCache = articles;
     if (articlesGrid) {
-      var page = getCurrentPageFromURL();
-      var totalPages = Math.max(1, Math.ceil(articles.length / PER_PAGE));
-      if (page > totalPages) {
-        // Page doesn't exist - redirect to last page
-        window.location.replace(pageName(totalPages));
-        return;
-      }
-      renderPage(articles, page);
+      showInitialArticles(articles);
     }
     buildHero(articles);
   });
