@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ===== DYNAMIC PAGINATION =====
   const articlesGrid = document.getElementById('articlesGrid');
-  const paginationContainer = document.getElementById('pagination');
+  const paginationContainer = document.querySelector('.pagination') || document.getElementById('pagination');
   const filterTabs = document.getElementById('filterTabs');
   const PER_PAGE = 12;
   let allArticlesCache = null;

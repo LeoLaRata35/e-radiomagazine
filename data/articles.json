@@ -1,261 +1,9 @@
 [
   {
-    "category": "anime",
-    "img": "https://images.somoskudasai.com/2026/06/uma-musume-arte-refact-2.jpg",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Arte Refact colapsa: todos sus creadores renuncian tras esc&aacute;ndalo",
-    "description": "El sello musical Arte Refact, responsable de incontables canciones para franquicias como Love Live!, Uma Musume, Idolmaster y Ensemble Stars!, est&amp;aacute...",
-    "href": "articulos/articulo-arte-refact.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://ogre.natalie.mu/media/pp/bunch-25th/pc_heade11.jpg?impolicy=pp_image",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Bunch 25 a&ntilde;os: Inoue y Kanzaki recuerdan el legado de BTOOOM! y Uroboros",
-    "description": "El sello Comic Bunch de Shinchosha celebr&oacute; su 25 aniversario en mayo de 2026, y para conmemorarlo, la revista reuni&oacute; a dos de sus autores m&aac...",
-    "href": "articulos/articulo-bunch25-aniversario.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://img.youtube.com/vi/ZPqIvoDeMT0/hqdefault.jpg",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "'El Pu&ntilde;o de la Estrella del Norte' spin-off estrena 2da temporada en julio",
-    "description": "El anime corto ",
-    "href": "articulos/articulo-elegia-esbirros.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/grow-up-show-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Grow Up Show: estreno confirmado con nuevos videos",
-    "description": "Artículo",
-    "href": "articulos/articulo-grow-up-show.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://ogre.natalie.mu/media/news/comic/2026/0612/01_miya_teru.jpg?imwidth=1280",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Ibikko Konai Gibo to Gibane: nuevo PV revela m&aacute;s reparto y temas musicales",
-    "description": "La adaptaci&oacute;n al anime del manga Ibikko Konai Gibo to Gibane (&laquo;La madrastra y hermanastra que no me maltratan&raquo;), de Otsuji, contin&uacute;...",
-    "href": "articulos/articulo-ibikko-gibo-anime.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://ogre.natalie.mu/media/news/comic/2026/0611/kagekisyoujyo0507_FIX.jpg?impolicy=twitter_card_face_crop",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Kageki Shojo!!: reading theater del 5&deg; aniversario con todo su elenco",
-    "description": "El anime Kageki Shojo!! celebrar&amp;aacute; su quinto aniversario con un reading theater especial titulado ",
-    "href": "articulos/articulo-kageki-shojo-5th.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/articulo-kekkaishi-ichirinka-anime-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Kekkaishi no Ichirinka: Kito Akari y Totani Kikunosuke lideran el reparto",
-    "description": "Kekkaishi no Ichirinka: Kito Akari y Totani Kikunosuke lideran el reparto",
-    "href": "articulos/articulo-kekkaishi-ichirinka-anime.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://www.animationmagazine.net/wordpress/wp-content/uploads/Kochikame_Landscape_re.jpg",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "'Katsushika Rhapsody' de Kochikame llega por primera vez en vinilo 7 pulgadas",
-    "description": "Uno de los openings mas iconicos del anime japones volvera a sonar, pero esta vez en vinilo. ",
-    "href": "articulos/articulo-kochikame-vinilo.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://leolarata35.github.io/e-radiomagazine/assets/E-Radio%20Magazine.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Koisero Mayakashi Tenshi-domo: el manga rom-com llega al anime en 2027",
-    "description": "El manga shojo de comedia rom&amp;aacute;ntica Koisero Mayakashi Tenshi-domo, de la autora Coco Uzuki, tendr&amp;aacute; una adaptaci&amp;oacute;n al anime q...",
-    "href": "articulos/articulo-koisero-tenshi.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://contents.oricon.co.jp/upimg/news/2461000/2460622/20260611_233721_p_o_27842483.jpg",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Kokur&omacr;-j&omacr;: el visual colaborativo con Touken Ranbu ONLINE muestra a Atagigiri dibujado por Oyo",
-    "description": "La pel&amp;iacute;cula Kokur&amp;omacr;-j&amp;omacr; (Black Prison), que se estrena el 19 de junio, ha revelado un visual colaborativo con el popular juego d...",
-    "href": "articulos/articulo-kokurojo-tourabu.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://contents.oricon.co.jp/upimg/news/2461000/2460026/20260609_193033_p_l_55642868.jpg",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "'Lupin III' celebra 55 a&ntilde;os con votaci&oacute;n de sus mejores episodios",
-    "description": "El ladr&amp;oacute;n m&amp;aacute;s carism&amp;aacute;tico de la animaci&amp;oacute;n japonesa est&amp;aacute; de fiesta. Lupin III cumple 55 a&amp;ntilde;os...",
-    "href": "articulos/articulo-lupin55.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://ogre.natalie.mu/media/news/comic/2026/0611/osomatsu_mukai.jpg?impolicy=twitter_card_face_crop",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Osomatsu-san: Snow Man Koji Mukai regresa como el Viejo Osomatsu en la secuela",
-    "description": "La secuela live-action de Osomatsu-san lleg&amp;oacute; hoy a los cines japoneses con una sorpresa para los fans: Koji Mukai, integrante del grupo Snow Man, ...",
-    "href": "articulos/articulo-osomatsu-mukai.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://ogre.natalie.mu/media/news/comic/2026/0610/ossankensei2_cm_cut1.jpg?imwidth=900",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "'Ossan Kensei' temporada 2 revela CM y ending de BLUE ENCOUNT",
-    "description": "La segunda temporada de ",
-    "href": "articulos/articulo-ossankensei2.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://ogre.natalie.mu/media/news/comic/2026/0610/saokyomahoushi_pv_01.jpg?imwidth=900",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "'Saikyo Mahoushi no Ininton Keikaku' tendr&aacute; anime en 2027",
-    "description": "La popular serie de novelas ligeras ",
-    "href": "articulos/articulo-saikyo-mahoushi.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://nami.news/wordpress/wp-content/uploads/2026/03/Suterare-Seijo-no-Isekai-Gohan-Tabi-anime-visual-1-e1773838785393.jpeg",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "La santa abandonada: el anime gastron&oacute;mico se estrena el 6 de julio con Yukari Tamura",
-    "description": "La adaptaci&amp;oacute;n animada de la novela ligera La santa abandonada y su viaje gastron&amp;oacute;mico en otro mundo: invoqu&amp;eacute; un campista con...",
-    "href": "articulos/articulo-santa-abandonada.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://leolarata35.github.io/e-radiomagazine/assets/E-Radio%20Magazine.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Shin-chan: Ai Suotome regresa a los 25 en live-action de Coca-Cola",
-    "description": "La colaboraci&amp;oacute;n entre Crayon Shin-chan y Coca-Cola Jap&amp;oacute;n a trav&amp;eacute;s de su marca ",
-    "href": "articulos/articulo-shinchan-liveaction.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://leolarata35.github.io/e-radiomagazine/assets/BCS_2026_13.jpg",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Vista da Gigantessa: nuevo manga de Aoki y LAB sobre viajes por Jap&oacute;n",
-    "description": "El nuevo ensayo manga Vista da Gigantessa, con historia original de Aoki Juntaro (autor de Nabe ni Dangan wo Ukenagara) e ilustraciones del artista italiano ...",
-    "href": "articulos/articulo-vista-gigantessa.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/blackclover1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Black Clover Temporada 2 ya tiene fecha: octubre 2026 con nuevo director y un video resumen de 10 minutos",
-    "description": "Cinco años y medio después de que el último episodio de la primera temporada viera la luz, Black Clover regresa. La segunda temporada del anime basado en el ...",
-    "href": "articulos/blackclover1.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/bleach1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "BLEACH: Revelan nuevo arte y anuncian maratón gratuito en YouTube",
-    "description": "La producción de la exitosa adaptación animada BLEACH: Thousand-Year Blood War (BLEACH: Sennen Kessen-hen), basada en la legendaria obra de acción y fantasía...",
-    "href": "articulos/bleach1.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/charamix1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Charamix: Yabuki Kentaro diseña personajes para innovador proyecto interactivo",
-    "description": "La compañía japonesa de tecnología y entretenimiento Remore ha anunciado el lanzamiento de Charamix (Kyaramikusu), un innovador proyecto interactivo que busc...",
-    "href": "articulos/charamix1.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/cyborg009_1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Confirmaron estreno y arte promocional del nuevo anime Cyborg 009 Nemesis",
-    "description": "El nuevo anime Cyborg 009 Nemesis confirma su estreno simultáneo para el 19 de julio de 2026 y revela un visual del choque de 9 contra 9.",
-    "href": "articulos/cyborg009_1.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/devilmycry1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "El anime de Netflix impulsa un histórico récord de ventas para Devil May Cry 5",
-    "description": "La gigante de la industria de los videojuegos Capcom ha revelado un espectacular e histórico resurgimiento comercial para uno de sus títulos más emblemáticos.",
-    "href": "articulos/devilmycry1.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ghostintheshell1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "La nueva serie animada de Ghost in the Shell se estrenará en julio por Prime Video",
-    "description": "Prime Video anuncia el estreno global de Ghost in the Shell: The Ghost in the Shell, producida por Science SARU, para este 7 de julio.",
-    "href": "articulos/ghostintheshell1.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/godzilla1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Atari apuesta por Godzilla para enfrentar a GTA 6",
-    "description": "Con el lanzamiento de Grand Theft Auto VI programado para el 19 de noviembre de 2026, la mayoría de las editoras han evitado esa ventana de estreno. Sin emba...",
-    "href": "articulos/godzilla1.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hanakimi1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Revelan avance visual de la segunda temporada para el anime de Hana-Kimi",
-    "description": "La segunda temporada del anime de Hana-Kimi revela su póster promocional y confirma su fecha de estreno en televisión para el 1 de julio.",
-    "href": "articulos/hanakimi1.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hanayome1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Oni no Hanayome: revela su PV principal y visual oficial",
-    "description": "El anime Oni no Hanayome, adaptación de la novela de Kureha, presentó su PV principal y el visual oficial, además de anunciar los temas musicales. El opening...",
-    "href": "articulos/hanayome1.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/inukami1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Inukami!: Liberan gratis todos sus episodios y estrenan su música en plataformas",
-    "description": "La mítica adaptación animada de la comedia romántica y fantasía Inukami! (Deidades perro), basada en la popular serie de novelas ligeras escritas por Arisawa...",
-    "href": "articulos/inukami1.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/irumakun-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Iruma-kun: temporada 4 presenta PV con batallas y idols",
-    "description": "La cuarta temporada de Mairimashita! Iruma-kun (*¡Bienvenido al demonio! Iruma-kun*), basada en el manga de Nishi Osamu, continúa su emisión en NHK E-Tele de...",
-    "href": "articulos/irumakun.html"
-  },
-  {
-    "category": "anime",
+    "category": "manga",
     "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kagurabachi111-1.png",
     "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
+    "categoryLabel": "Manga",
     "title": "Kagurabachi suma a Tomokazu Seki como el legendario herrero Kunishige",
     "description": "El anime de Kagurabachi suma a Tomokazu Seki como Kunishige, mientras el manga anuncia una pausa temporal de publicación hasta agosto.",
     "href": "articulos/kagurabachi(1).html"
@@ -263,7 +11,7 @@
   {
     "category": "anime",
     "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kagurabachi-1.png",
-    "date": "20 Jun 2026",
+    "date": "19 Jun 2026",
     "categoryLabel": "Anime",
     "title": "Kagurabachi suma a Tomokazu Seki como el legendario herrero Kunishige",
     "description": "Tomokazu Seki se une al elenco del anime Kagurabachi como la voz del herrero Kunishige Rokuhira. Conoce los detalles de su estreno en 2027.",
@@ -272,7 +20,7 @@
   {
     "category": "anime",
     "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kagurabachi111-1.png",
-    "date": "20 Jun 2026",
+    "date": "19 Jun 2026",
     "categoryLabel": "Anime",
     "title": "Kagurabachi suma a Tomokazu Seki como el legendario herrero Kunishige",
     "description": "Tomokazu Seki se une al elenco del anime Kagurabachi como la voz del herrero Kunishige Rokuhira. Conoce los detalles de su estreno en 2027.",
@@ -280,71 +28,8 @@
   },
   {
     "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/keroro1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Sargento Keroro: nueva película confirma estreno y MV de ano",
-    "description": "Artículo",
-    "href": "articulos/keroro1.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kimetsu1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Kimetsu no Yaiba: sexta obra teatral inicia funciones en Tokio",
-    "description": "El 13 de junio de 2026 se estrenó en Tokio la sexta entrega de la saga teatral Kimetsu no Yaiba, titulada “Pilar Training / Ingreso al Castillo Infinito”. La...",
-    "href": "articulos/kimetsu1.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kokoore1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Presentan avance principal y temas musicales para Koko Ore",
-    "description": "La adaptación al anime de Koko wa Ore ni Makasete Saki ni Ike to Itte kara 10-nen ga Tattara Densetsu ni Natteita (Dije que me dejaran esto a mí y se fueran,...",
-    "href": "articulos/kokoore1.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kuroneko1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "The Classroom of a Black Cat and a Witch: Revelan nuevo visual de antagonistas",
-    "description": "La producción de la adaptación animada de The Classroom of a Black Cat and a Witch (Kuroneko to Majo no Kyoushitsu), basada en la popular obra escrita e ilus...",
-    "href": "articulos/kuroneko1.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kyotoanimation1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Kyoto Animation presenta fecha de estreno y PV de nuevo anime",
-    "description": "El nuevo proyecto de Kyoto Animation, Nijusseiki Denki Mokuroku – Eureka Evrika, presentó su tercer visual clave y un PV previo al estreno.",
-    "href": "articulos/kyotoanimation1.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/lovelive1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Love Live! Nijigasaki: visual del capítulo final revelado",
-    "description": "La franquicia Love Live! Nijigasaki Gakuen School Idol Doukoukai presentó el visual oficial de su capítulo final cinematográfico, previsto para estrenarse en...",
-    "href": "articulos/lovelive1.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mao1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "20th Century interpretará el nuevo tema de apertura para el anime MAO",
-    "description": "La legendaria agrupación 20th Century interpretará Bokura ga Uwagaki suru Sekai, el nuevo tema de apertura de la serie de anime MAO.",
-    "href": "articulos/mao1.html"
-  },
-  {
-    "category": "anime",
     "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mappa1-1.png",
-    "date": "20 Jun 2026",
+    "date": "19 Jun 2026",
     "categoryLabel": "Anime",
     "title": "MAPPA celebra 15 años de historia con nuevas producciones, películas y exposiciones",
     "description": "El estudio de animación MAPPA celebra su 15 aniversario anunciando los animes de BEAT & MOTION y Koi seyo Mayakashi Tenshi-domo.",
@@ -352,80 +37,44 @@
   },
   {
     "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mappa1-1.png",
-    "date": "20 Jun 2026",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/supersenpai1-1.png",
+    "date": "19 Jun 2026",
     "categoryLabel": "Anime",
-    "title": "Chainsaw Man protagoniza el primer visual conmemorativo por los 15 años de MAPPA",
-    "description": "El prestigioso estudio de animación japonés MAPPA, fundado originalmente el 14 de junio de 2011, ha comenzado oficialmente las actividades de celebración por...",
-    "href": "articulos/mappa1.html"
+    "title": "Anuncian elenco principal y estreno de la comedia Choujun! Chojo Senpai",
+    "description": "Anuncian el elenco principal del anime Choujun! Chojo Senpai, comedia de Weekly Shonen Jump que estrenará Arvo Animation en octubre de 2026.",
+    "href": "articulos/supersenpai1.html"
   },
   {
     "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/minecraft1-1.png",
-    "date": "20 Jun 2026",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/cyborg009_1-1.png",
+    "date": "18 Jun 2026",
     "categoryLabel": "Anime",
-    "title": "Minecraft Chaos Cubed: actualización con cubos de azufre y nuevo bioma",
-    "description": "Mojang ha lanzado esta semana la actualización «Chaos Cubed» (Caos en Cubos) para Minecraft, disponible tanto para la edición Java como para la edición Bedrock.",
-    "href": "articulos/minecraft1.html"
+    "title": "Confirmaron estreno y arte promocional del nuevo anime Cyborg 009 Nemesis",
+    "description": "El nuevo anime Cyborg 009 Nemesis confirma su estreno simultáneo para el 19 de julio de 2026 y revela un visual del choque de 9 contra 9.",
+    "href": "articulos/cyborg009_1.html"
   },
   {
     "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mobseka2_1-1.png",
-    "date": "20 Jun 2026",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hanakimi1-1.png",
+    "date": "18 Jun 2026",
     "categoryLabel": "Anime",
-    "title": "Mobseka 2 estrena un nuevo PV con intensos combates mecánicos y revela sus temas musicales",
-    "description": "La segunda temporada de «Otome Game Sekai wa Mob ni Kibishii Sekai desu» (El mundo de los juegos otome es duro para los mobs), conocida cariñosamente como «M...",
-    "href": "articulos/mobseka2_1.html"
+    "title": "Revelan avance visual de la segunda temporada para el anime de Hana-Kimi",
+    "description": "La segunda temporada del anime de Hana-Kimi revela su póster promocional y confirma su fecha de estreno en televisión para el 1 de julio.",
+    "href": "articulos/hanakimi1.html"
   },
   {
-    "category": "anime",
-    "img": "https://blogger.googleusercontent.com/img/a/AVvXsEgnbM9lg0NJS_KG07MNkSqODSiXjm51aKSPRi7XmOBHdHDDu41Tk6UH_cePdqBo99ieJtTHAXXpmoDcqh-G3kA2wuiJgJ3MgyR-gQne82pFEkXQG5NxVKR8Y5p9vTXyQuqzo9J-uY5r8hWe8D-BfrFkUgTIGIsYSluH1TsW2nt5BpUC-At_1jNuMkB-Ivg=w569-h340",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Anuncian anime de Just Like Mona Lisa con el reconocido estudio Shaft",
-    "description": "Confirman la producción de la serie de anime Just Like Mona Lisa con el prestigioso estudio Shaft, coincidiendo con su 50.° aniversario.",
-    "href": "articulos/monalisa1.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/psyren1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "PSYREN revela su segundo teaser con animación y escenas de batalla",
-    "description": "La adaptación al anime de PSYREN, el manga de Iwashiro Toshiaki publicado en Weekly Shonen Jump, ha desvelado su segundo teaser promocional.",
-    "href": "articulos/psyren1.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/saikyou1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Revelan visual y temas musicales de Saikyou Degarashi Ouji para su estreno en julio",
-    "description": "Saikyou Degarashi Ouji estrena key visual y PV con temas de BUDDiiS y Kura Wan. La serie de acción y fantasía se estrena el 6 de julio.",
-    "href": "articulos/saikyou1.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/sasaki1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Sasaki and Peeps: Confirman segunda temporada para octubre y revelan avance",
-    "description": "La producción de la divertida serie de fantasía y comedia Sasaki and Peeps (Sasaki to Pii-chan) ha confirmado de manera oficial que su segunda temporada se e...",
-    "href": "articulos/sasaki1.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/seishunbutayarou-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Seishun Buta Yarou: Tráiler final y visual de Shoko Makinohara",
-    "description": "La producción de la película Seishun Buta Yarou wa Dear Friend no Yume wo Minai (El sinvergüenza joven no sueña con una querida amiga) ha revelado detalles c...",
-    "href": "articulos/seishunbutayarou.html"
+    "category": "musica",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mao1-1.png",
+    "date": "18 Jun 2026",
+    "categoryLabel": "Música",
+    "title": "20th Century interpretará el nuevo tema de apertura para el anime MAO",
+    "description": "La legendaria agrupación 20th Century interpretará Bokura ga Uwagaki suru Sekai, el nuevo tema de apertura de la serie de anime MAO.",
+    "href": "articulos/mao1.html"
   },
   {
     "category": "anime",
     "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/sekaisaikyou_1-1.png",
-    "date": "20 Jun 2026",
+    "date": "18 Jun 2026",
     "categoryLabel": "Anime",
     "title": "Anuncian fecha de estreno y temas musicales para The World's Strongest Rearguard",
     "description": "El anime The World's Strongest Rearguard estrena su video promocional principal, revela su fecha de estreno y detalla sus temas musicales.",
@@ -434,7 +83,7 @@
   {
     "category": "anime",
     "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/shinchan1-1.png",
-    "date": "20 Jun 2026",
+    "date": "18 Jun 2026",
     "categoryLabel": "Anime",
     "title": "Miembros de FRUITS ZIPPER se suman al elenco de la nueva película de Shin-chan",
     "description": "Las idols Nakagawa Ruka y Hayase Noel de FRUITS ZIPPER participarán en el doblaje de la nueva 33° película de Crayon Shin-chan en julio.",
@@ -442,53 +91,107 @@
   },
   {
     "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/supersenpai1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Anuncian elenco principal y estreno de la comedia Choujun! Chojo Senpai",
-    "description": "Anuncian el elenco principal del anime Choujun! Chojo Senpai, comedia de Weekly Shonen Jump que estrenará Arvo Animation en octubre de 2026.",
-    "href": "articulos/supersenpai1.html"
-  },
-  {
-    "category": "anime",
     "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tenseielf1-1.png",
-    "date": "20 Jun 2026",
+    "date": "18 Jun 2026",
     "categoryLabel": "Anime",
     "title": "Anuncian adaptación al anime de Tensei Elf y revelan su primer avance oficial",
     "description": "Anuncian la adaptación al anime de la novela ligera Tensei Elf para el año 2027 con avance oficial y elenco de voces confirmado.",
     "href": "articulos/tenseielf1.html"
   },
   {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tokyorevengers1-1.png",
-    "date": "20 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Tokyo Revengers: Disney+ tendrá exclusiva del arco Santen Sensou",
-    "description": "El anime Tokyo Revengers: Santen Sensou-hen (Arco de la Guerra de los Tres Dioses), basado en el manga de Wakui Ken, confirmó su fecha de estreno para el 2 d...",
-    "href": "articulos/tokyorevengers1.html"
+    "category": "videojuegos",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/minecraft1-1.png",
+    "date": "17 Jun 2026",
+    "categoryLabel": "Videojuegos",
+    "title": "Minecraft Chaos Cubed: actualización con cubos de azufre y nuevo bioma",
+    "description": "Mojang ha lanzado esta semana la actualización «Chaos Cubed» (Caos en Cubos) para Minecraft, disponible tanto para la edición Java como para la edición Bedrock.",
+    "href": "articulos/minecraft1.html"
   },
   {
     "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tribeca1-1.png",
-    "date": "20 Jun 2026",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mobseka2_1-1.png",
+    "date": "17 Jun 2026",
     "categoryLabel": "Anime",
-    "title": "Tribeca Festival 2026 confirma tres juegos independientes como favoritos",
-    "description": "Mientras el Summer Game Fest acaparaba titulares, el Tribeca Festival de Nueva York volvió a demostrar por qué se ha convertido en un trampolín para los vide...",
-    "href": "articulos/tribeca1.html"
+    "title": "Mobseka 2 estrena un nuevo PV con intensos combates mecánicos y revela sus temas musicales",
+    "description": "La segunda temporada de «Otome Game Sekai wa Mob ni Kibishii Sekai desu» (El mundo de los juegos otome es duro para los mobs), conocida cariñosamente como «M...",
+    "href": "articulos/mobseka2_1.html"
   },
   {
     "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tsuihou1-1.png",
-    "date": "20 Jun 2026",
+    "img": "https://blogger.googleusercontent.com/img/a/AVvXsEgnbM9lg0NJS_KG07MNkSqODSiXjm51aKSPRi7XmOBHdHDDu41Tk6UH_cePdqBo99ieJtTHAXXpmoDcqh-G3kA2wuiJgJ3MgyR-gQne82pFEkXQG5NxVKR8Y5p9vTXyQuqzo9J-uY5r8hWe8D-BfrFkUgTIGIsYSluH1TsW2nt5BpUC-At_1jNuMkB-Ivg=w569-h340",
+    "date": "17 Jun 2026",
     "categoryLabel": "Anime",
-    "title": "Tsuihou sareta Tensei Juukishi: Estrenan avance de su anime y revelan temas musicales",
-    "description": "La producción de la esperada adaptación animada de la novela de fantasía y aventura Tsuihou sareta Tensei Juukishi wa Game Chishiki de Musou suru (El caballe...",
-    "href": "articulos/tsuihou1.html"
+    "title": "Anuncian anime de Just Like Mona Lisa con el reconocido estudio Shaft",
+    "description": "Confirman la producción de la serie de anime Just Like Mona Lisa con el prestigioso estudio Shaft, coincidiendo con su 50.° aniversario.",
+    "href": "articulos/monalisa1.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/psyren1-1.png",
+    "date": "17 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "PSYREN revela su segundo teaser con animación y escenas de batalla",
+    "description": "La adaptación al anime de PSYREN, el manga de Iwashiro Toshiaki publicado en Weekly Shonen Jump, ha desvelado su segundo teaser promocional.",
+    "href": "articulos/psyren1.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/saikyou1-1.png",
+    "date": "17 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Revelan visual y temas musicales de Saikyou Degarashi Ouji para su estreno en julio",
+    "description": "Saikyou Degarashi Ouji estrena key visual y PV con temas de BUDDiiS y Kura Wan. La serie de acción y fantasía se estrena el 6 de julio.",
+    "href": "articulos/saikyou1.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/devilmycry1-1.png",
+    "date": "16 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "El anime de Netflix impulsa un histórico récord de ventas para Devil May Cry 5",
+    "description": "La gigante de la industria de los videojuegos Capcom ha revelado un espectacular e histórico resurgimiento comercial para uno de sus títulos más emblemáticos.",
+    "href": "articulos/devilmycry1.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ghostintheshell1-1.png",
+    "date": "16 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "La nueva serie animada de Ghost in the Shell se estrenará en julio por Prime Video",
+    "description": "Prime Video anuncia el estreno global de Ghost in the Shell: The Ghost in the Shell, producida por Science SARU, para este 7 de julio.",
+    "href": "articulos/ghostintheshell1.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kokoore1-1.png",
+    "date": "16 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Presentan avance principal y temas musicales para Koko Ore",
+    "description": "La adaptación al anime de Koko wa Ore ni Makasete Saki ni Ike to Itte kara 10-nen ga Tattara Densetsu ni Natteita (Dije que me dejaran esto a mí y se fueran,...",
+    "href": "articulos/kokoore1.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mappa1-1.png",
+    "date": "16 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Chainsaw Man protagoniza el primer visual conmemorativo por los 15 años de MAPPA",
+    "description": "El prestigioso estudio de animación japonés MAPPA, fundado originalmente el 14 de junio de 2011, ha comenzado oficialmente las actividades de celebración por...",
+    "href": "articulos/mappa1.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/seishunbutayarou-1.png",
+    "date": "16 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Seishun Buta Yarou: Tráiler final y visual de Shoko Makinohara",
+    "description": "La producción de la película Seishun Buta Yarou wa Dear Friend no Yume wo Minai (El sinvergüenza joven no sueña con una querida amiga) ha revelado detalles c...",
+    "href": "articulos/seishunbutayarou.html"
   },
   {
     "category": "anime",
     "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/votoms1-1.png",
-    "date": "20 Jun 2026",
+    "date": "16 Jun 2026",
     "categoryLabel": "Anime",
     "title": "Celebran 50 años de Sunrise con magno arte visual y un nuevo proyecto animado",
     "description": "La productora de animación Bandai Namco Filmworks ha anunciado las últimas novedades de la campaña de celebración por el cincuentenario de su histórica marca...",
@@ -496,8 +199,71 @@
   },
   {
     "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/witchhatatelier2-1.png",
+    "date": "16 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Witch Hat Atelier: Lanzan dramática imagen de Richeh y avance del final",
+    "description": "La producción de la adaptación animada de Witch Hat Atelier (Tongari Boushi no Atelier), basada en la aclamada obra escrita e ilustrada por la autora Shiraha...",
+    "href": "articulos/witchhatatelier2.html"
+  },
+  {
+    "category": "videojuegos",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/blackclover1-1.png",
+    "date": "15 Jun 2026",
+    "categoryLabel": "Videojuegos",
+    "title": "Black Clover Temporada 2 ya tiene fecha: octubre 2026 con nuevo director y un video resumen de 10 minutos",
+    "description": "Cinco años y medio después de que el último episodio de la primera temporada viera la luz, Black Clover regresa. La segunda temporada del anime basado en el ...",
+    "href": "articulos/blackclover1.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/charamix1-1.png",
+    "date": "15 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Charamix: Yabuki Kentaro diseña personajes para innovador proyecto interactivo",
+    "description": "La compañía japonesa de tecnología y entretenimiento Remore ha anunciado el lanzamiento de Charamix (Kyaramikusu), un innovador proyecto interactivo que busc...",
+    "href": "articulos/charamix1.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/inukami1-1.png",
+    "date": "15 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Inukami!: Liberan gratis todos sus episodios y estrenan su música en plataformas",
+    "description": "La mítica adaptación animada de la comedia romántica y fantasía Inukami! (Deidades perro), basada en la popular serie de novelas ligeras escritas por Arisawa...",
+    "href": "articulos/inukami1.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kuroneko1-1.png",
+    "date": "15 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "The Classroom of a Black Cat and a Witch: Revelan nuevo visual de antagonistas",
+    "description": "La producción de la adaptación animada de The Classroom of a Black Cat and a Witch (Kuroneko to Majo no Kyoushitsu), basada en la popular obra escrita e ilus...",
+    "href": "articulos/kuroneko1.html"
+  },
+  {
+    "category": "videojuegos",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tribeca1-1.png",
+    "date": "15 Jun 2026",
+    "categoryLabel": "Videojuegos",
+    "title": "Tribeca Festival 2026 confirma tres juegos independientes como favoritos",
+    "description": "Mientras el Summer Game Fest acaparaba titulares, el Tribeca Festival de Nueva York volvió a demostrar por qué se ha convertido en un trampolín para los vide...",
+    "href": "articulos/tribeca1.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tsuihou1-1.png",
+    "date": "15 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Tsuihou sareta Tensei Juukishi: Estrenan avance de su anime y revelan temas musicales",
+    "description": "La producción de la esperada adaptación animada de la novela de fantasía y aventura Tsuihou sareta Tensei Juukishi wa Game Chishiki de Musou suru (El caballe...",
+    "href": "articulos/tsuihou1.html"
+  },
+  {
+    "category": "anime",
     "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/witchhatatelier1-1.png",
-    "date": "20 Jun 2026",
+    "date": "15 Jun 2026",
     "categoryLabel": "Anime",
     "title": "Witch Hat Atelier: Lanzan campaña con emoji de Fudemushi en redes",
     "description": "La producción de la adaptación animada de Witch Hat Atelier (Tongari Boushi no Atelier), basada en la aclamada obra escrita e ilustrada por la autora Shiraha...",
@@ -505,11 +271,245 @@
   },
   {
     "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/witchhatatelier2-1.png",
-    "date": "20 Jun 2026",
+    "img": "https://images.somoskudasai.com/2026/06/uma-musume-arte-refact-2.jpg",
+    "date": "14 Jun 2026",
     "categoryLabel": "Anime",
-    "title": "Witch Hat Atelier: Lanzan dramática imagen de Richeh y avance del final",
-    "description": "La producción de la adaptación animada de Witch Hat Atelier (Tongari Boushi no Atelier), basada en la aclamada obra escrita e ilustrada por la autora Shiraha...",
-    "href": "articulos/witchhatatelier2.html"
+    "title": "Arte Refact colapsa: todos sus creadores renuncian tras esc&aacute;ndalo",
+    "description": "El sello musical Arte Refact, responsable de incontables canciones para franquicias como Love Live!, Uma Musume, Idolmaster y Ensemble Stars!, est&amp;aacute...",
+    "href": "articulos/articulo-arte-refact.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/bleach1-1.png",
+    "date": "14 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "BLEACH: Revelan nuevo arte y anuncian maratón gratuito en YouTube",
+    "description": "La producción de la exitosa adaptación animada BLEACH: Thousand-Year Blood War (BLEACH: Sennen Kessen-hen), basada en la legendaria obra de acción y fantasía...",
+    "href": "articulos/bleach1.html"
+  },
+  {
+    "category": "videojuegos",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/godzilla1-1.png",
+    "date": "14 Jun 2026",
+    "categoryLabel": "Videojuegos",
+    "title": "Atari apuesta por Godzilla para enfrentar a GTA 6",
+    "description": "Con el lanzamiento de Grand Theft Auto VI programado para el 19 de noviembre de 2026, la mayoría de las editoras han evitado esa ventana de estreno. Sin emba...",
+    "href": "articulos/godzilla1.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hanayome1-1.png",
+    "date": "14 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Oni no Hanayome: revela su PV principal y visual oficial",
+    "description": "El anime Oni no Hanayome, adaptación de la novela de Kureha, presentó su PV principal y el visual oficial, además de anunciar los temas musicales. El opening...",
+    "href": "articulos/hanayome1.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/irumakun-1.png",
+    "date": "14 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Iruma-kun: temporada 4 presenta PV con batallas y idols",
+    "description": "La cuarta temporada de Mairimashita! Iruma-kun (*¡Bienvenido al demonio! Iruma-kun*), basada en el manga de Nishi Osamu, continúa su emisión en NHK E-Tele de...",
+    "href": "articulos/irumakun.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kimetsu1-1.png",
+    "date": "14 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Kimetsu no Yaiba: sexta obra teatral inicia funciones en Tokio",
+    "description": "El 13 de junio de 2026 se estrenó en Tokio la sexta entrega de la saga teatral Kimetsu no Yaiba, titulada “Pilar Training / Ingreso al Castillo Infinito”. La...",
+    "href": "articulos/kimetsu1.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kyotoanimation1-1.png",
+    "date": "14 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Kyoto Animation presenta fecha de estreno y PV de nuevo anime",
+    "description": "El nuevo proyecto de Kyoto Animation, Nijusseiki Denki Mokuroku – Eureka Evrika, presentó su tercer visual clave y un PV previo al estreno.",
+    "href": "articulos/kyotoanimation1.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/lovelive1-1.png",
+    "date": "14 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Love Live! Nijigasaki: visual del capítulo final revelado",
+    "description": "La franquicia Love Live! Nijigasaki Gakuen School Idol Doukoukai presentó el visual oficial de su capítulo final cinematográfico, previsto para estrenarse en...",
+    "href": "articulos/lovelive1.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/sasaki1-1.png",
+    "date": "14 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Sasaki and Peeps: Confirman segunda temporada para octubre y revelan avance",
+    "description": "La producción de la divertida serie de fantasía y comedia Sasaki and Peeps (Sasaki to Pii-chan) ha confirmado de manera oficial que su segunda temporada se e...",
+    "href": "articulos/sasaki1.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tokyorevengers1-1.png",
+    "date": "14 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Tokyo Revengers: Disney+ tendrá exclusiva del arco Santen Sensou",
+    "description": "El anime Tokyo Revengers: Santen Sensou-hen (Arco de la Guerra de los Tres Dioses), basado en el manga de Wakui Ken, confirmó su fecha de estreno para el 2 d...",
+    "href": "articulos/tokyorevengers1.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/grow-up-show-1.png",
+    "date": "13 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Grow Up Show: estreno confirmado con nuevos videos",
+    "description": "Artículo",
+    "href": "articulos/articulo-grow-up-show.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/keroro1-1.png",
+    "date": "13 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Sargento Keroro: nueva película confirma estreno y MV de ano",
+    "description": "Artículo",
+    "href": "articulos/keroro1.html"
+  },
+  {
+    "category": "manga",
+    "img": "https://ogre.natalie.mu/media/pp/bunch-25th/pc_heade11.jpg?impolicy=pp_image",
+    "date": "12 Jun 2026",
+    "categoryLabel": "Manga",
+    "title": "Bunch 25 a&ntilde;os: Inoue y Kanzaki recuerdan el legado de BTOOOM! y Uroboros",
+    "description": "El sello Comic Bunch de Shinchosha celebr&oacute; su 25 aniversario en mayo de 2026, y para conmemorarlo, la revista reuni&oacute; a dos de sus autores m&aac...",
+    "href": "articulos/articulo-bunch25-aniversario.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://ogre.natalie.mu/media/news/comic/2026/0612/01_miya_teru.jpg?imwidth=1280",
+    "date": "12 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Ibikko Konai Gibo to Gibane: nuevo PV revela m&aacute;s reparto y temas musicales",
+    "description": "La adaptaci&oacute;n al anime del manga Ibikko Konai Gibo to Gibane (&laquo;La madrastra y hermanastra que no me maltratan&raquo;), de Otsuji, contin&uacute;...",
+    "href": "articulos/articulo-ibikko-gibo-anime.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/articulo-kekkaishi-ichirinka-anime-1.png",
+    "date": "12 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Kekkaishi no Ichirinka: Kito Akari y Totani Kikunosuke lideran el reparto",
+    "description": "Kekkaishi no Ichirinka: Kito Akari y Totani Kikunosuke lideran el reparto",
+    "href": "articulos/articulo-kekkaishi-ichirinka-anime.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://leolarata35.github.io/e-radiomagazine/assets/BCS_2026_13.jpg",
+    "date": "12 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Vista da Gigantessa: nuevo manga de Aoki y LAB sobre viajes por Jap&oacute;n",
+    "description": "El nuevo ensayo manga Vista da Gigantessa, con historia original de Aoki Juntaro (autor de Nabe ni Dangan wo Ukenagara) e ilustraciones del artista italiano ...",
+    "href": "articulos/articulo-vista-gigantessa.html"
+  },
+  {
+    "category": "cine",
+    "img": "https://img.youtube.com/vi/ZPqIvoDeMT0/hqdefault.jpg",
+    "date": "11 Jun 2025",
+    "categoryLabel": "Cine",
+    "title": "'El Pu&ntilde;o de la Estrella del Norte' spin-off estrena 2da temporada en julio",
+    "description": "El anime corto ",
+    "href": "articulos/articulo-elegia-esbirros.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://ogre.natalie.mu/media/news/comic/2026/0611/kagekisyoujyo0507_FIX.jpg?impolicy=twitter_card_face_crop",
+    "date": "11 Jun 2025",
+    "categoryLabel": "Anime",
+    "title": "Kageki Shojo!!: reading theater del 5&deg; aniversario con todo su elenco",
+    "description": "El anime Kageki Shojo!! celebrar&amp;aacute; su quinto aniversario con un reading theater especial titulado ",
+    "href": "articulos/articulo-kageki-shojo-5th.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://leolarata35.github.io/e-radiomagazine/assets/E-Radio%20Magazine.png",
+    "date": "11 Jun 2025",
+    "categoryLabel": "Anime",
+    "title": "Koisero Mayakashi Tenshi-domo: el manga rom-com llega al anime en 2027",
+    "description": "El manga shojo de comedia rom&amp;aacute;ntica Koisero Mayakashi Tenshi-domo, de la autora Coco Uzuki, tendr&amp;aacute; una adaptaci&amp;oacute;n al anime q...",
+    "href": "articulos/articulo-koisero-tenshi.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://contents.oricon.co.jp/upimg/news/2461000/2460622/20260611_233721_p_o_27842483.jpg",
+    "date": "11 Jun 2025",
+    "categoryLabel": "Anime",
+    "title": "Kokur&omacr;-j&omacr;: el visual colaborativo con Touken Ranbu ONLINE muestra a Atagigiri dibujado por Oyo",
+    "description": "La pel&amp;iacute;cula Kokur&amp;omacr;-j&amp;omacr; (Black Prison), que se estrena el 19 de junio, ha revelado un visual colaborativo con el popular juego d...",
+    "href": "articulos/articulo-kokurojo-tourabu.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://contents.oricon.co.jp/upimg/news/2461000/2460026/20260609_193033_p_l_55642868.jpg",
+    "date": "11 Jun 2025",
+    "categoryLabel": "Anime",
+    "title": "'Lupin III' celebra 55 a&ntilde;os con votaci&oacute;n de sus mejores episodios",
+    "description": "El ladr&amp;oacute;n m&amp;aacute;s carism&amp;aacute;tico de la animaci&amp;oacute;n japonesa est&amp;aacute; de fiesta. Lupin III cumple 55 a&amp;ntilde;os...",
+    "href": "articulos/articulo-lupin55.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://ogre.natalie.mu/media/news/comic/2026/0611/osomatsu_mukai.jpg?impolicy=twitter_card_face_crop",
+    "date": "11 Jun 2025",
+    "categoryLabel": "Anime",
+    "title": "Osomatsu-san: Snow Man Koji Mukai regresa como el Viejo Osomatsu en la secuela",
+    "description": "La secuela live-action de Osomatsu-san lleg&amp;oacute; hoy a los cines japoneses con una sorpresa para los fans: Koji Mukai, integrante del grupo Snow Man, ...",
+    "href": "articulos/articulo-osomatsu-mukai.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://nami.news/wordpress/wp-content/uploads/2026/03/Suterare-Seijo-no-Isekai-Gohan-Tabi-anime-visual-1-e1773838785393.jpeg",
+    "date": "11 Jun 2025",
+    "categoryLabel": "Anime",
+    "title": "La santa abandonada: el anime gastron&oacute;mico se estrena el 6 de julio con Yukari Tamura",
+    "description": "La adaptaci&amp;oacute;n animada de la novela ligera La santa abandonada y su viaje gastron&amp;oacute;mico en otro mundo: invoqu&amp;eacute; un campista con...",
+    "href": "articulos/articulo-santa-abandonada.html"
+  },
+  {
+    "category": "cine",
+    "img": "https://leolarata35.github.io/e-radiomagazine/assets/E-Radio%20Magazine.png",
+    "date": "11 Jun 2025",
+    "categoryLabel": "Cine",
+    "title": "Shin-chan: Ai Suotome regresa a los 25 en live-action de Coca-Cola",
+    "description": "La colaboraci&amp;oacute;n entre Crayon Shin-chan y Coca-Cola Jap&amp;oacute;n a trav&amp;eacute;s de su marca ",
+    "href": "articulos/articulo-shinchan-liveaction.html"
+  },
+  {
+    "category": "musica",
+    "img": "https://www.animationmagazine.net/wordpress/wp-content/uploads/Kochikame_Landscape_re.jpg",
+    "date": "10 Jun 2025",
+    "categoryLabel": "Música",
+    "title": "'Katsushika Rhapsody' de Kochikame llega por primera vez en vinilo 7 pulgadas",
+    "description": "Uno de los openings mas iconicos del anime japones volvera a sonar, pero esta vez en vinilo. ",
+    "href": "articulos/articulo-kochikame-vinilo.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://ogre.natalie.mu/media/news/comic/2026/0610/ossankensei2_cm_cut1.jpg?imwidth=900",
+    "date": "10 Jun 2025",
+    "categoryLabel": "Anime",
+    "title": "'Ossan Kensei' temporada 2 revela CM y ending de BLUE ENCOUNT",
+    "description": "La segunda temporada de ",
+    "href": "articulos/articulo-ossankensei2.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://ogre.natalie.mu/media/news/comic/2026/0610/saokyomahoushi_pv_01.jpg?imwidth=900",
+    "date": "10 Jun 2025",
+    "categoryLabel": "Anime",
+    "title": "'Saikyo Mahoushi no Ininton Keikaku' tendr&aacute; anime en 2027",
+    "description": "La popular serie de novelas ligeras ",
+    "href": "articulos/articulo-saikyo-mahoushi.html"
   }
 ]
