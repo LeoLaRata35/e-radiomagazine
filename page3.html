@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Radio Magazine – Anime & Gaming</title>
+  <meta property="og:title" content="E-Radio Magazine – Anime & Gaming">
+  <meta property="og:description" content="Tu fuente de noticias sobre anime, manga y videojuegos. Actualidad, reviews y análisis desde 2016.">
+  <meta property="og:image" content="https://LeoLaRata35.github.io/e-radiomagazine/assets/E-Radio%20Magazine%20HORIZONTAL.png">
+  <meta property="og:url" content="https://LeoLaRata35.github.io/e-radiomagazine/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="css/styles.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9HCBF8HCM"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-X9HCBF8HCM');</script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="header-left">
+          <a href="#" class="logo"><img src="assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio Magazine"></a>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#" class="active" data-filter="all">Inicio</a></li>
+            <li class="nav-dropdown">
+              <a href="#" class="nav-dropdown-toggle">Cultura Otaku <span class="dropdown-arrow">▾</span></a>
+              <ul class="nav-dropdown-menu">
+                <li><a href="#" data-filter="anime">Anime</a></li>
+                <li><a href="#" data-filter="manga">Manga</a></li>
+                <li><a href="#" data-filter="reviews">Reviews</a></li>
+                <li><a href="#" data-filter="cine">Cine</a></li>
+                <li><a href="#" data-filter="musica">Música</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#" class="nav-dropdown-toggle">Cultura Geek <span class="dropdown-arrow">▾</span></a>
+              <ul class="nav-dropdown-menu">
+                <li><a href="#" data-filter="videojuegos">Videojuegos</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#" class="nav-dropdown-toggle">Eventos <span class="dropdown-arrow">▾</span></a>
+              <ul class="nav-dropdown-menu">
+                <li><a href="https://comicconparaguay.com/" target="_blank" rel="noopener">Comic Con PY</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#" class="nav-dropdown-toggle nav-blog-link" style="display:flex;align-items:center;gap:4px;">EN VIVO <span class="dropdown-arrow">▾</span></a>
+              <ul class="nav-dropdown-menu nav-live-menu">
+                <li><a href="https://radioakari.blogspot.com/" target="_blank" rel="noopener">Radio Akari</a></li>
+                <li><a href="https://www.radiofurcast.qzz.io/" target="_blank" rel="noopener">Radio Furcast</a></li>
+                <li><a href="https://radiogolatino.blogspot.com/" target="_blank" rel="noopener">Radio GO! Latino</a></li>
+                <li><a href="https://onlineradiobox.com/py/quieromas/?cs=py.quieromas&played=1" target="_blank" rel="noopener">Invasiva Radio</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+        <button class="search-toggle" id="searchToggle" aria-label="Buscar">🔍</button>
+      </div>
+    </div>
+    <div class="search-panel" id="searchPanel">
+      <div class="container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Buscar artículos..." autocomplete="off">
+        <div class="search-results" id="searchResults"></div>
+      </div>
+    </div>
+  </header>
+
+        <section class="banner-carousel">
+    <div class="banner-track" id="bannerTrack">
+      <div class="banner-slide">
+        <a href="https://www.youtube.com/@Luchitosama4" target="_blank" rel="noopener">
+          <img src="assets/direct1.png" alt="Splatoon Raiders Direct - 30 de junio 2026">
+        </a>
+      </div>
+      <div class="banner-slide">
+        <a href="https://qr.me-qr.com/es/link-list/9mH1wqkg/show" target="_blank" rel="noopener">
+          <img src="assets/banner1.png" alt="Banner 1">
+        </a>
+      </div>
+    </div>
+    <div class="banner-dots" id="bannerDots">
+      <span class="banner-dot active" data-slide="0"></span>
+      <span class="banner-dot" data-slide="1"></span>
+    </div>
+  </section>
+
+  <section class="hero" id="most-read-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Más leídas</h2>
+      </div>
+      <div class="hero-grid">
+        <div class="hero-featured" id="heroCarousel">
+          <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+        <div class="hero-side" id="heroSide"></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="container">
+      <div class="section-header">
+        <h2>últimas noticias</h2>
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-btn active" data-filter="all">Todo</button>
+          <button class="filter-btn" data-filter="anime">Anime</button>
+          <button class="filter-btn" data-filter="manga">Manga</button>
+          <button class="filter-btn" data-filter="reviews">Reviews</button>
+          <button class="filter-btn" data-filter="musica">Música</button>
+          <button class="filter-btn" data-filter="videojuegos">Videojuegos</button>
+          <button class="filter-btn" data-filter="cine">Cine</button>
+        </div>
+      </div>
+
+      <div class="articles-grid" id="articlesGrid">
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/charamix1-1.png');">
+            <span class="article-date">15 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Charamix: Yabuki Kentaro diseña personajes para innovador proyecto interactivo</h3>
+            <p>La compañía japonesa de tecnología y entretenimiento Remore ha anunciado el lanzamiento de Charamix (Kyaramikusu), un innovador proyecto interactivo que busc...</p>
+            <a href="articulos/charamix1.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/inukami1-1.png');">
+            <span class="article-date">15 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Inukami!: Liberan gratis todos sus episodios y estrenan su música en plataformas</h3>
+            <p>La mítica adaptación animada de la comedia romántica y fantasía Inukami! (Deidades perro), basada en la popular serie de novelas ligeras escritas por Arisawa...</p>
+            <a href="articulos/inukami1.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kuroneko1-1.png');">
+            <span class="article-date">15 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>The Classroom of a Black Cat and a Witch: Revelan nuevo visual de antagonistas</h3>
+            <p>La producción de la adaptación animada de The Classroom of a Black Cat and a Witch (Kuroneko to Majo no Kyoushitsu), basada en la popular obra escrita e ilus...</p>
+            <a href="articulos/kuroneko1.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="videojuegos">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tribeca1-1.png');">
+            <span class="article-date">15 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Videojuegos</span>
+            <h3>Tribeca Festival 2026 confirma tres juegos independientes como favoritos</h3>
+            <p>Mientras el Summer Game Fest acaparaba titulares, el Tribeca Festival de Nueva York volvió a demostrar por qué se ha convertido en un trampolín para los vide...</p>
+            <a href="articulos/tribeca1.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tsuihou1-1.png');">
+            <span class="article-date">15 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Tsuihou sareta Tensei Juukishi: Estrenan avance de su anime y revelan temas musicales</h3>
+            <p>La producción de la esperada adaptación animada de la novela de fantasía y aventura Tsuihou sareta Tensei Juukishi wa Game Chishiki de Musou suru (El caballe...</p>
+            <a href="articulos/tsuihou1.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/witchhatatelier1-1.png');">
+            <span class="article-date">15 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Witch Hat Atelier: Lanzan campaña con emoji de Fudemushi en redes</h3>
+            <p>La producción de la adaptación animada de Witch Hat Atelier (Tongari Boushi no Atelier), basada en la aclamada obra escrita e ilustrada por la autora Shiraha...</p>
+            <a href="articulos/witchhatatelier1.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://images.somoskudasai.com/2026/06/uma-musume-arte-refact-2.jpg');">
+            <span class="article-date">14 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Arte Refact colapsa: todos sus creadores renuncian tras esc&aacute;ndalo</h3>
+            <p>El sello musical Arte Refact, responsable de incontables canciones para franquicias como Love Live!, Uma Musume, Idolmaster y Ensemble Stars!, est&amp;aacute...</p>
+            <a href="articulos/articulo-arte-refact.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/bleach1-1.png');">
+            <span class="article-date">14 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>BLEACH: Revelan nuevo arte y anuncian maratón gratuito en YouTube</h3>
+            <p>La producción de la exitosa adaptación animada BLEACH: Thousand-Year Blood War (BLEACH: Sennen Kessen-hen), basada en la legendaria obra de acción y fantasía...</p>
+            <a href="articulos/bleach1.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="videojuegos">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/godzilla1-1.png');">
+            <span class="article-date">14 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Videojuegos</span>
+            <h3>Atari apuesta por Godzilla para enfrentar a GTA 6</h3>
+            <p>Con el lanzamiento de Grand Theft Auto VI programado para el 19 de noviembre de 2026, la mayoría de las editoras han evitado esa ventana de estreno. Sin emba...</p>
+            <a href="articulos/godzilla1.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hanayome1-1.png');">
+            <span class="article-date">14 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Oni no Hanayome: revela su PV principal y visual oficial</h3>
+            <p>El anime Oni no Hanayome, adaptación de la novela de Kureha, presentó su PV principal y el visual oficial, además de anunciar los temas musicales. El opening...</p>
+            <a href="articulos/hanayome1.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/irumakun-1.png');">
+            <span class="article-date">14 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Iruma-kun: temporada 4 presenta PV con batallas y idols</h3>
+            <p>La cuarta temporada de Mairimashita! Iruma-kun (*¡Bienvenido al demonio! Iruma-kun*), basada en el manga de Nishi Osamu, continúa su emisión en NHK E-Tele de...</p>
+            <a href="articulos/irumakun.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kimetsu1-1.png');">
+            <span class="article-date">14 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Kimetsu no Yaiba: sexta obra teatral inicia funciones en Tokio</h3>
+            <p>El 13 de junio de 2026 se estrenó en Tokio la sexta entrega de la saga teatral Kimetsu no Yaiba, titulada “Pilar Training / Ingreso al Castillo Infinito”. La...</p>
+            <a href="articulos/kimetsu1.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<div class="pagination">
+      <a href="page2.html">&laquo;</a>
+      <a href="page2.html">&laquo; Anterior</a>
+      <div class="page-numbers">
+        <a href="index.html" class="page-num">1</a>
+        <a href="page2.html" class="page-num">2</a>
+        <a href="page3.html" class="page-num active">3</a>
+        <a href="page4.html" class="page-num">4</a>
+        <a href="page5.html" class="page-num">5</a>
+      </div>
+      <a href="page4.html">Siguiente &raquo;</a>
+      <a href="page5.html" title="Última">&raquo;</a>
+    </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo"><img src="assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio Magazine"></a>
+          <p>Tu fuente de noticias sobre anime, manga y videojuegos. Actualidad, reviews y análisis desde 2016.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Secciones</h4>
+          <ul>
+            <li><a href="#">Anime</a></li>
+            <li><a href="#">Videojuegos</a></li>
+            <li><a href="#">Manga</a></li>
+            <li><a href="#">Reviews</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Aviso legal</a></li>
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 E-Radio Magazine. Todos los derechos reservados.</p>
+        <p style="margin-top:8px;font-size:0.75rem;"><img src="https://visitor-badge.laobi.icu/badge?page_id=LeoLaRata35.e-radiomagazine&left_text=Visitas&left_color=1a1a2e&right_color=d4af37" alt="Visitor Count" style="display:inline-block;vertical-align:middle;"></p>
+      </div>
+    </div>
+  </footer>
+<script src="js/main.js"></script> </body> </html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Radio Magazine – Anime & Gaming</title>
+  <meta property="og:title" content="E-Radio Magazine – Anime & Gaming">
+  <meta property="og:description" content="Tu fuente de noticias sobre anime, manga y videojuegos. Actualidad, reviews y análisis desde 2016.">
+  <meta property="og:image" content="https://LeoLaRata35.github.io/e-radiomagazine/assets/E-Radio%20Magazine%20HORIZONTAL.png">
+  <meta property="og:url" content="https://LeoLaRata35.github.io/e-radiomagazine/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="css/styles.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9HCBF8HCM"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-X9HCBF8HCM');</script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="header-left">
+          <a href="#" class="logo"><img src="assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio Magazine"></a>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#" class="active" data-filter="all">Inicio</a></li>
+            <li class="nav-dropdown">
+              <a href="#" class="nav-dropdown-toggle">Cultura Otaku <span class="dropdown-arrow">▾</span></a>
+              <ul class="nav-dropdown-menu">
+                <li><a href="#" data-filter="anime">Anime</a></li>
+                <li><a href="#" data-filter="manga">Manga</a></li>
+                <li><a href="#" data-filter="reviews">Reviews</a></li>
+                <li><a href="#" data-filter="cine">Cine</a></li>
+                <li><a href="#" data-filter="musica">Música</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#" class="nav-dropdown-toggle">Cultura Geek <span class="dropdown-arrow">▾</span></a>
+              <ul class="nav-dropdown-menu">
+                <li><a href="#" data-filter="videojuegos">Videojuegos</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#" class="nav-dropdown-toggle">Eventos <span class="dropdown-arrow">▾</span></a>
+              <ul class="nav-dropdown-menu">
+                <li><a href="https://comicconparaguay.com/" target="_blank" rel="noopener">Comic Con PY</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#" class="nav-dropdown-toggle nav-blog-link" style="display:flex;align-items:center;gap:4px;">EN VIVO <span class="dropdown-arrow">▾</span></a>
+              <ul class="nav-dropdown-menu nav-live-menu">
+                <li><a href="https://radioakari.blogspot.com/" target="_blank" rel="noopener">Radio Akari</a></li>
+                <li><a href="https://www.radiofurcast.qzz.io/" target="_blank" rel="noopener">Radio Furcast</a></li>
+                <li><a href="https://radiogolatino.blogspot.com/" target="_blank" rel="noopener">Radio GO! Latino</a></li>
+                <li><a href="https://onlineradiobox.com/py/quieromas/?cs=py.quieromas&played=1" target="_blank" rel="noopener">Invasiva Radio</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+        <button class="search-toggle" id="searchToggle" aria-label="Buscar">🔍</button>
+      </div>
+    </div>
+    <div class="search-panel" id="searchPanel">
+      <div class="container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Buscar artículos..." autocomplete="off">
+        <div class="search-results" id="searchResults"></div>
+      </div>
+    </div>
+  </header>
+
+        <section class="banner-carousel">
+    <div class="banner-track" id="bannerTrack">
+      <div class="banner-slide">
+        <a href="https://www.youtube.com/@Luchitosama4" target="_blank" rel="noopener">
+          <img src="assets/direct1.png" alt="Splatoon Raiders Direct - 30 de junio 2026">
+        </a>
+      </div>
+      <div class="banner-slide">
+        <a href="https://qr.me-qr.com/es/link-list/9mH1wqkg/show" target="_blank" rel="noopener">
+          <img src="assets/banner1.png" alt="Banner 1">
+        </a>
+      </div>
+    </div>
+    <div class="banner-dots" id="bannerDots">
+      <span class="banner-dot active" data-slide="0"></span>
+      <span class="banner-dot" data-slide="1"></span>
+    </div>
+  </section>
+
+  <section class="hero" id="most-read-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Más leídas</h2>
+      </div>
+      <div class="hero-grid">
+        <div class="hero-featured" id="heroCarousel">
+          <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+        <div class="hero-side" id="heroSide"></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="container">
+      <div class="section-header">
+        <h2>últimas noticias</h2>
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-btn active" data-filter="all">Todo</button>
+          <button class="filter-btn" data-filter="anime">Anime</button>
+          <button class="filter-btn" data-filter="manga">Manga</button>
+          <button class="filter-btn" data-filter="reviews">Reviews</button>
+          <button class="filter-btn" data-filter="musica">Música</button>
+          <button class="filter-btn" data-filter="videojuegos">Videojuegos</button>
+          <button class="filter-btn" data-filter="cine">Cine</button>
+        </div>
+      </div>
+
+      <div class="articles-grid" id="articlesGrid">
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kyotoanimation1-1.png');">
+            <span class="article-date">14 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Kyoto Animation presenta fecha de estreno y PV de nuevo anime</h3>
+            <p>El nuevo proyecto de Kyoto Animation, Nijusseiki Denki Mokuroku – Eureka Evrika, presentó su tercer visual clave y un PV previo al estreno.</p>
+            <a href="articulos/kyotoanimation1.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/lovelive1-1.png');">
+            <span class="article-date">14 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Love Live! Nijigasaki: visual del capítulo final revelado</h3>
+            <p>La franquicia Love Live! Nijigasaki Gakuen School Idol Doukoukai presentó el visual oficial de su capítulo final cinematográfico, previsto para estrenarse en...</p>
+            <a href="articulos/lovelive1.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/sasaki1-1.png');">
+            <span class="article-date">14 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Sasaki and Peeps: Confirman segunda temporada para octubre y revelan avance</h3>
+            <p>La producción de la divertida serie de fantasía y comedia Sasaki and Peeps (Sasaki to Pii-chan) ha confirmado de manera oficial que su segunda temporada se e...</p>
+            <a href="articulos/sasaki1.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tokyorevengers1-1.png');">
+            <span class="article-date">14 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Tokyo Revengers: Disney+ tendrá exclusiva del arco Santen Sensou</h3>
+            <p>El anime Tokyo Revengers: Santen Sensou-hen (Arco de la Guerra de los Tres Dioses), basado en el manga de Wakui Ken, confirmó su fecha de estreno para el 2 d...</p>
+            <a href="articulos/tokyorevengers1.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/grow-up-show-1.png');">
+            <span class="article-date">13 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Grow Up Show: estreno confirmado con nuevos videos</h3>
+            <p>Artículo</p>
+            <a href="articulos/articulo-grow-up-show.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/keroro1-1.png');">
+            <span class="article-date">13 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Sargento Keroro: nueva película confirma estreno y MV de ano</h3>
+            <p>Artículo</p>
+            <a href="articulos/keroro1.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="manga">
+          <div class="article-img" style="background-image: url('https://ogre.natalie.mu/media/pp/bunch-25th/pc_heade11.jpg?impolicy=pp_image');">
+            <span class="article-date">12 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Manga</span>
+            <h3>Bunch 25 a&ntilde;os: Inoue y Kanzaki recuerdan el legado de BTOOOM! y Uroboros</h3>
+            <p>El sello Comic Bunch de Shinchosha celebr&oacute; su 25 aniversario en mayo de 2026, y para conmemorarlo, la revista reuni&oacute; a dos de sus autores m&aac...</p>
+            <a href="articulos/articulo-bunch25-aniversario.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://ogre.natalie.mu/media/news/comic/2026/0612/01_miya_teru.jpg?imwidth=1280');">
+            <span class="article-date">12 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Ibikko Konai Gibo to Gibane: nuevo PV revela m&aacute;s reparto y temas musicales</h3>
+            <p>La adaptaci&oacute;n al anime del manga Ibikko Konai Gibo to Gibane (&laquo;La madrastra y hermanastra que no me maltratan&raquo;), de Otsuji, contin&uacute;...</p>
+            <a href="articulos/articulo-ibikko-gibo-anime.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/articulo-kekkaishi-ichirinka-anime-1.png');">
+            <span class="article-date">12 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Kekkaishi no Ichirinka: Kito Akari y Totani Kikunosuke lideran el reparto</h3>
+            <p>Kekkaishi no Ichirinka: Kito Akari y Totani Kikunosuke lideran el reparto</p>
+            <a href="articulos/articulo-kekkaishi-ichirinka-anime.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://leolarata35.github.io/e-radiomagazine/assets/BCS_2026_13.jpg');">
+            <span class="article-date">12 Jun 2026</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Vista da Gigantessa: nuevo manga de Aoki y LAB sobre viajes por Jap&oacute;n</h3>
+            <p>El nuevo ensayo manga Vista da Gigantessa, con historia original de Aoki Juntaro (autor de Nabe ni Dangan wo Ukenagara) e ilustraciones del artista italiano ...</p>
+            <a href="articulos/articulo-vista-gigantessa.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="cine">
+          <div class="article-img" style="background-image: url('https://img.youtube.com/vi/ZPqIvoDeMT0/hqdefault.jpg');">
+            <span class="article-date">11 Jun 2025</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Cine</span>
+            <h3>'El Pu&ntilde;o de la Estrella del Norte' spin-off estrena 2da temporada en julio</h3>
+            <p>El anime corto </p>
+            <a href="articulos/articulo-elegia-esbirros.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<article class="article-card" data-category="anime">
+          <div class="article-img" style="background-image: url('https://ogre.natalie.mu/media/news/comic/2026/0611/kagekisyoujyo0507_FIX.jpg?impolicy=twitter_card_face_crop');">
+            <span class="article-date">11 Jun 2025</span>
+          </div>
+          <div class="article-content">
+            <span class="article-category">Anime</span>
+            <h3>Kageki Shojo!!: reading theater del 5&deg; aniversario con todo su elenco</h3>
+            <p>El anime Kageki Shojo!! celebrar&amp;aacute; su quinto aniversario con un reading theater especial titulado </p>
+            <a href="articulos/articulo-kageki-shojo-5th.html" class="read-more">Seguir leyendo</a>
+          </div>
+        </article>
+<div class="pagination">
+      <a href="page3.html">&laquo;</a>
+      <a href="page3.html">&laquo; Anterior</a>
+      <div class="page-numbers">
+        <a href="index.html" class="page-num">1</a>
+        <a href="page2.html" class="page-num">2</a>
+        <a href="page3.html" class="page-num">3</a>
+        <a href="page4.html" class="page-num active">4</a>
+        <a href="page5.html" class="page-num">5</a>
+      </div>
+      <a href="page5.html">Siguiente &raquo;</a>
+      <a href="page5.html" title="Última">&raquo;</a>
+    </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo"><img src="assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio Magazine"></a>
+          <p>Tu fuente de noticias sobre anime, manga y videojuegos. Actualidad, reviews y análisis desde 2016.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Secciones</h4>
+          <ul>
+            <li><a href="#">Anime</a></li>
+            <li><a href="#">Videojuegos</a></li>
+            <li><a href="#">Manga</a></li>
+            <li><a href="#">Reviews</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Aviso legal</a></li>
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 E-Radio Magazine. Todos los derechos reservados.</p>
+        <p style="margin-top:8px;font-size:0.75rem;"><img src="https://visitor-badge.laobi.icu/badge?page_id=LeoLaRata35.e-radiomagazine&left_text=Visitas&left_color=1a1a2e&right_color=d4af37" alt="Visitor Count" style="display:inline-block;vertical-align:middle;"></p>
+      </div>
+    </div>
+  </footer>
+<script src="js/main.js"></script> </body> </html>
