@@ -1,5 +1,86 @@
 [
   {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/akane-banashi-1.png",
+    "date": "21 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Anuncian segunda temporada y nuevas voces para el anime de Akane-banashi",
+    "description": "El anime de Akane-banashi confirma su segunda temporada para enero de 2027 y suma a Hochu Otsuka y Tomokazu Seki a su elenco de voces.",
+    "href": "articulos/akane-banashi.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/bleach-1.png",
+    "date": "21 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "BLEACH revela el visual del arco final y desvela sus temas musicales con comentarios de Kubo Tite",
+    "description": "BLEACH estrena el visual de «Kashin-tan» con comentarios de Kubo Tite sobre los temas de jo0ji y 9Lana. El arco final se estrena el 25 de julio.",
+    "href": "articulos/bleach.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://kanachoro-anime.com/ogimage.png",
+    "date": "21 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Canaan-sama wa Akumade Choroi anuncia su segunda temporada con una ilustración especial",
+    "description": "El anime Canaan-sama wa Akumade Choroi tendrá segunda temporada. Se revela una ilustración de Aikari Minagawa y la carátula del Blu-ray Vol.3.",
+    "href": "articulos/canaansama.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/horemajo-1.png",
+    "date": "21 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Hore Majo estrena teaser PV con Mikako Komatsu y Yohei Azakami como protagonistas",
+    "description": "Hore Majo estrena teaser PV con Mikako Komatsu y Yohei Azakami. La comedia romántica de la bruja y el caballero se estrena en octubre de 2026.",
+    "href": "articulos/horemajo.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kaikigumi-1.png",
+    "date": "21 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Let's Go Kaikigumi estrena nuevo visual y PV con Kana Hanazawa como Yukinko",
+    "description": "Let's Go Kaikigumi estrena key visual y PV con Kana Hanazawa como Yukinko. La comedia de terror se estrena el 5 de julio con temas de SWEET STEADY y Utsuana.",
+    "href": "articulos/kaikigumi.html"
+  },
+  {
+    "category": "videojuegos",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kemuri-1.png",
+    "date": "21 Jun 2026",
+    "categoryLabel": "Videojuegos",
+    "title": "Ikumi Nakamura anuncia «Kemuri», su nuevo juego de caza de yokai para PS5 y PC",
+    "description": "Ikumi Nakamura anuncia «Kemuri», su nuevo juego de caza de yokai para PS5 y PC. Cooperativo, estilo único y lanzamiento en 2027.",
+    "href": "articulos/kemuri.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mahounoshimai-1.png",
+    "date": "21 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Mahou no Shimai Lulut Lily anuncia segunda temporada con nuevo personaje",
+    "description": "Mahou no Shimai Lulut Lily tendrá segunda temporada en octubre con un nuevo personaje, Asahi Niiki (voz de Kyori Nemoto), y la canción Magical Rendezvous.",
+    "href": "articulos/mahounoshimai.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mushokutensei-1.png",
+    "date": "21 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Anuncian estreno y nuevas voces para la tercera temporada de Mushoku Tensei",
+    "description": "Anuncian la fecha de estreno y nuevas voces para Mushoku Tensei Temporada 3, iniciando en julio de 2026 con el entrenamiento de Eris.",
+    "href": "articulos/mushokutensei.html"
+  },
+  {
+    "category": "videojuegos",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ubisoft-1.png",
+    "date": "21 Jun 2026",
+    "categoryLabel": "Videojuegos",
+    "title": "Claude Guillemot, cofundador de Ubisoft, fallece en un accidente aéreo a los 69 años",
+    "description": "Claude Guillemot, cofundador de Ubisoft y presidente de Guillemot Corp., fallece en un accidente aéreo en Francia a los 69 años.",
+    "href": "articulos/ubisoft.html"
+  },
+  {
     "category": "manga",
     "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kagurabachi-1.png",
     "date": "20 Jun 2026",
@@ -394,15 +475,6 @@
     "title": "Vista da Gigantessa: nuevo manga de Aoki y LAB sobre viajes por Jap&oacute;n",
     "description": "El nuevo ensayo manga Vista da Gigantessa, con historia original de Aoki Juntaro (autor de Nabe ni Dangan wo Ukenagara) e ilustraciones del artista italiano ...",
     "href": "articulos/articulo-vista-gigantessa.html"
-  },
-  {
-    "category": "anime",
-    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/akane-banashi-1.png",
-    "date": "10 Jun 2026",
-    "categoryLabel": "Anime",
-    "title": "Anuncian segunda temporada y nuevas voces para el anime de Akane-banashi",
-    "description": "El anime de Akane-banashi confirma su segunda temporada para enero de 2027 y suma a Hochu Otsuka y Tomokazu Seki a su elenco de voces.",
-    "href": "articulos/akane-banashi.html"
   },
   {
     "category": "cine",
