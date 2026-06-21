@@ -134,13 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!articlesGrid || !allArticlesCache) return;
     currentFilter = filter;
     loadMoreBtn.style.display = 'none';
-    // Always re-build con cards de JSON para el filtro
     if (filter === 'all') {
-      // Mostrar primeras 12 del JSON (pero mantener las estáticas visibles)
-      // Como las estáticas ya están, solo ocultamos las que no coinciden
-      var allCards = articlesGrid.querySelectorAll('.article-card');
-      allCards.forEach(function(c) { c.style.display = ''; });
-      loadedCount = allCards.length;
+      var toShow = allArticlesCache.slice(0, Math.min(12, allArticlesCache.length));
+      articlesGrid.innerHTML = toShow.map(articleCardHTML).join('\n');
+      animateCards(articlesGrid);
+      loadedCount = toShow.length;
       loadMoreBtn.style.display = allArticlesCache.length > loadedCount ? 'block' : 'none';
     } else {
       var matching = allArticlesCache.filter(function(a) { return a.category === filter; });
@@ -164,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function applyFilter(filter) {
-    var targetBtn = filterTabs ? Array.from(filterTabs.querySelectorAll('.filter-btn')).find(function(b) { b.dataset.filter === filter; }) : null;
+    var targetBtn = filterTabs ? Array.from(filterTabs.querySelectorAll('.filter-btn')).find(function(b) { return b.dataset.filter === filter; }) : null;
     if (targetBtn) targetBtn.click();
   }
 
