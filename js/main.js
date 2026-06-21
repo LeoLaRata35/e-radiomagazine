@@ -103,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function loadMore() {
+    if (!allArticlesCache) return;
     var articles = currentFilter === 'all' ? allArticlesCache
       : (allArticlesCache || []).filter(function(a) { return a.category === currentFilter; });
     if (!articles) return;
@@ -131,7 +132,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ===== FILTER BY CATEGORY =====
   function filterGridByCategory(filter) {
-    if (!articlesGrid || !allArticlesCache) return;
+    if (!articlesGrid) return;
+    if (!allArticlesCache) {
+      loadAllArticles().then(function(articles) {
+        if (articles.length > 0) {
+          allArticlesCache = articles;
+          filterGridByCategory(filter);
+        }
+      });
+      return;
+    }
     currentFilter = filter;
     loadMoreBtn.style.display = 'none';
     if (filter === 'all') {
