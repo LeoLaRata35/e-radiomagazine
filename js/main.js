@@ -370,9 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadAllArticles().then(function(articles) {
     allArticlesCache = articles;
     if (articlesGrid) {
-      // Contar cuántas cards estáticas ya hay en el HTML
-      var staticCards = articlesGrid.querySelectorAll('.article-card');
-      loadedCount = staticCards.length;
+      loadedCount = 0;
       showInitialArticles(articles);
     }
     buildHero(articles);
