@@ -1,6 +1,78 @@
 [
   {
     "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/nijusseiki-1.png",
+    "date": "23 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Kyoto Animation revela nuevas im&aacute;genes de Nijusseiki Denki Mokuroku",
+    "description": "Kyoto Animation revela nuevas im&aacute;genes de Nijusseiki Denki Mokuroku: Eureka Evrika. El anime se estrena el 5 de julio en Netflix y TV japonesa.",
+    "href": "articulos/nijusseiki.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/amano-1.png",
+    "date": "22 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Anime Expo acoger&aacute; el estreno del tr&aacute;iler de &laquo;ZAN&raquo; de Yoshitaka Amano",
+    "description": "Yoshitaka Amano, el legendario ilustrador de Final Fantasy, produce ZAN, un anime de fantas&iacute;a oscura. El tr&aacute;iler se estrena en Anime Expo el 3 de julio.",
+    "href": "articulos/amano.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://us.oricon-group.com/upimg/sns/8000/8547/img1200/The-World-Is-Dancing_logo_Key%20Visual.jpg",
+    "date": "22 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "The World Is Dancing estrena su tr&aacute;iler final y anuncia nuevo elenco",
+    "description": "El anime &laquo;The World Is Dancing&raquo; estrena su tr&aacute;iler final con el ending de hockrockb y anuncia nuevos personajes para su estreno del 2 de julio.",
+    "href": "articulos/worldisdancing.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mujikakuseijo-1.png",
+    "date": "22 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "El anime Mujikaku Seijo revela su tercer PV y desvela sus temas musicales",
+    "description": "El anime Mujikaku Seijo estrena su tercer PV con el opening de Hana ya y el ending de Utahime Dream All Stars. Se estrena el 30 de junio.",
+    "href": "articulos/mujikakuseijo.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/liargame-1.png",
+    "date": "22 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "LIAR GAME estrena su segunda temporada con nuevo visual y un elenco de lujo",
+    "description": "LIAR GAME entra en su segunda temporada con nuevo visual, nueve participantes y temas de Kroi y muque. Estreno con marat&oacute;n gratuito el 6 de julio.",
+    "href": "articulos/liargame.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mahoushoujo-1.png",
+    "date": "22 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Mahou Shoujo Lyrical Nanoha desvela un nuevo personaje y su seiyuu para la nueva serie",
+    "description": "El nuevo anime de &laquo;Mahou Shoujo Lyrical Nanoha&raquo; revela a Shinomiya Mana, interpretada por Sumire Uesaka, y un nuevo visual. Se estrena el 4 de julio.",
+    "href": "articulos/mahoushoujo.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/dodgetamako-1.png",
+    "date": "22 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Dodge Danpei tendr&aacute; una secuela oficial con el anime &laquo;Dodge Tamako&raquo; en julio",
+    "description": "El anime Dodge Tamako, secuela oficial de &laquo;Dodge Danpei&raquo;, revela su visual principal y 18 miembros del elenco. Se estrena el 6 de julio.",
+    "href": "articulos/dodgetamako.html"
+  },
+  {
+    "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/grandblue-1.png",
+    "date": "21 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "Grand Blue estrena su tercera temporada con una fiesta de verano que promete caos y diversi&oacute;n",
+    "description": "Grand Blue estrena su tercera temporada el 6 de julio con el episodio Yarinokoshi. Los chicos de PaB organizan una fiesta de verano que no saldr&aacute; bien.",
+    "href": "articulos/grandblue.html"
+  },
+  {
+    "category": "anime",
     "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/akane-banashi-1.png",
     "date": "21 Jun 2026",
     "categoryLabel": "Anime",
