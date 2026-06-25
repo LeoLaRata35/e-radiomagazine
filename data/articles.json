@@ -1,6 +1,15 @@
 [
   {
     "category": "anime",
+    "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/suterare-1.png",
+    "date": "24 Jun 2026",
+    "categoryLabel": "Anime",
+    "title": "El viaje culinario de la santa abandonada estrena avance y sinopsis de su debut",
+    "description": "El anime El viaje de comida de la santa abandonada revela su segundo avance y adelanta el estreno de su primer episodio este 6 de julio.",
+    "href": "articulos/suterare.html"
+  },
+  {
+    "category": "anime",
     "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/nijusseiki-1.png",
     "date": "23 Jun 2026",
     "categoryLabel": "Anime",
