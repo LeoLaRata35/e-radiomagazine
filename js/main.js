@@ -370,7 +370,8 @@ document.addEventListener('DOMContentLoaded', () => {
   loadAllArticles().then(function(articles) {
     allArticlesCache = articles;
     if (articlesGrid) {
-      loadedCount = 0;
+      var staticCards = articlesGrid.querySelectorAll('.article-card');
+      loadedCount = staticCards.length;
       showInitialArticles(articles);
     }
     buildHero(articles);

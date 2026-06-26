@@ -22,10 +22,17 @@ function ConvertTo-DisplayDate($isoDate) {
 function Get-MetaContent($html, $attrName, $attrValue) {
     $regex1 = "<meta\s+$attrName=\`"$attrValue\`"\s+content=\`"([^\`"]+)\`""
     if ($html -match $regex1) {
-        return $matches[1]
+        $val = $matches[1]
+        if ($val -and $val.Length -gt 0) { return $val }
     }
     $regex2 = "<meta\s+content=\`"([^\`"]+)\`"\s+$attrName=\`"$attrValue\`""
     if ($html -match $regex2) {
+        $val = $matches[1]
+        if ($val -and $val.Length -gt 0) { return $val }
+    }
+    # Fallback: match content with possible quotes inside by not using [^"]
+    $regex3 = "<meta\s+$attrName=\`"$attrValue\`"\s+content=\`"([^>]+)\`"\s*/?>"
+    if ($html -match $regex3) {
         return $matches[1]
     }
     return $null
