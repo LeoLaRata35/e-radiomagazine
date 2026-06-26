@@ -61,9 +61,29 @@ Get-ChildItem "$ArticulosDir\*.html" | ForEach-Object {
         Write-Host "WARN: No title in $($_.Name), skipping" -ForegroundColor Yellow
         return
     }
+
+    $fileChanged = $false
     if (-not $published) {
-        Write-Host "WARN: No published_time in $($_.Name), using file date" -ForegroundColor Yellow
         $published = $_.LastWriteTime.ToString("yyyy-MM-dd")
+        $tag = "  <meta name=`"article:published_time`" content=`"$published`">`n"
+        $newHtml = $html -replace '(</head>)', "$tag`$1"
+        if ($newHtml -ne $html) {
+            Set-Content $file -Value $newHtml -Encoding UTF8 -NoNewline
+            Write-Host "AUTO: added published_time=$published to $($_.Name)" -ForegroundColor Cyan
+            $html = $newHtml
+            $fileChanged = $true
+        }
+    }
+    if (-not $category) {
+        $category = "anime"
+        $tag = "  <meta name=`"article:category`" content=`"$category`">`n"
+        $newHtml = $html -replace '(</head>)', "$tag`$1"
+        if ($newHtml -ne $html) {
+            Set-Content $file -Value $newHtml -Encoding UTF8 -NoNewline
+            Write-Host "AUTO: added category=$category to $($_.Name)" -ForegroundColor Cyan
+            $html = $newHtml
+            $fileChanged = $true
+        }
     }
 
     $displayDate = ConvertTo-DisplayDate $published
