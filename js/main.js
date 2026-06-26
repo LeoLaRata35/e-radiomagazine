@@ -107,11 +107,26 @@ document.addEventListener('DOMContentLoaded', () => {
     var articles = currentFilter === 'all' ? allArticlesCache
       : (allArticlesCache || []).filter(function(a) { return a.category === currentFilter; });
     if (!articles) return;
-    var next = Math.min(loadedCount + PER_PAGE, articles.length);
-    var html = articles.slice(loadedCount, next).map(articleCardHTML).join('\n');
-    articlesGrid.insertAdjacentHTML('beforeend', html);
-    loadedCount = next;
-    animateCards(articlesGrid);
+    // Obtener hrefs ya visibles en el grid (estáticas + cargadas)
+    var existingHrefs = {};
+    articlesGrid.querySelectorAll('.article-card').forEach(function(card) {
+      var link = card.querySelector('.read-more');
+      if (link) existingHrefs[link.getAttribute('href')] = true;
+    });
+    // Cargar siguientes PER_PAGE artículos que NO estén ya visibles
+    var added = 0;
+    var html = '';
+    for (var i = 0; i < articles.length && added < PER_PAGE; i++) {
+      if (!existingHrefs[articles[i].href]) {
+        html += articleCardHTML(articles[i]);
+        added++;
+      }
+    }
+    if (html) {
+      articlesGrid.insertAdjacentHTML('beforeend', html);
+      animateCards(articlesGrid);
+    }
+    loadedCount += added;
     if (loadedCount >= articles.length) loadMoreBtn.style.display = 'none';
   }
 
