@@ -1,12 +1,30 @@
 [
     {
         "category": "anime",
+        "img": "https://blogger.googleusercontent.com/img/a/AVvXsEgx_iBwPBR3O2-amKR0qhrbJqtDCI226hFgSzDl0eZn5wNC5ySQKNtA4MPqiYFm3M0KLaZiy503Q4bBgj0Dxo4EKaUbLI98wyMrY_Wkl9enFTX9LKmmch_MSYY_A1UcDjfo5LL_jslLXj3dU064umwK7Px_FOFoqegYea0ul3YLaqTB3TOAKHkw95yYd_Y=w554-h391",
+        "date": "15 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime Kyouran Reijou Nia Liston revela nuevo arte visual y voces para su elenco",
+        "description": "El anime Kyouran Reijou Nia Liston anuncia su estreno para el 6 de octubre de 2026. Conoce el nuevo arte visual, elenco y detalles de esta historia de reenca...",
+        "href": "articulos/nialiston.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/crayonshinchan-1.png",
         "date": "14 Sep 2026",
         "categoryLabel": "Anime",
         "title": "Crayon Shin-chan rompe récord histórico en cines y revela nueva ilustración",
         "description": "La película número 33 de Crayon Shin-chan rompe el récord de taquilla de toda la franquicia. El director Masaki Watanabe lo celebra con una nueva ilustración.",
         "href": "articulos/crayonshinchan.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/labruja-1.png",
+        "date": "14 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime de",
+        "description": "El anime",
+        "href": "articulos/labruja.html"
     },
     {
         "category": "anime",
