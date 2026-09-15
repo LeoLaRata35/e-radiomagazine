@@ -1,0 +1,51 @@
+name: Regenerar índice de artículos
+
+# Cada vez que se publica o modifica un artículo, GitHub regenera
+# data/articles.json automáticamente. No hay que hacer nada a mano.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'articulos/**'
+      - 'index.html'
+      - 'scripts/generate_json.py'
+      - 'data/articles.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Evita carreras si subes varios commits seguidos
+concurrency:
+  group: regenerar-indice
+  cancel-in-progress: true
+
+jobs:
+  regenerar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout con historial completo (para fechas reales)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Regenerar data/articles.json
+        run: python scripts/generate_json.py
+
+      - name: Commit y push si cambió algo
+        run: |
+          if [[ -n "$(git status --porcelain data/articles.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/articles.json
+            git commit -m "Regenerar índice de artículos [skip ci]"
+            git push
+            echo "Índice actualizado automáticamente"
+          else
+            echo "Sin cambios en el índice"
+          fi

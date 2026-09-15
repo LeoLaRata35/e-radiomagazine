@@ -25,6 +25,7 @@ import argparse
 import json
 import os
 import re
+import subprocess
 import sys
 from datetime import datetime
 
@@ -64,6 +65,24 @@ def titulo_respaldo(html):
         texto = re.sub(r'<[^>]+>', '', m.group(1)).strip()
         if texto:
             return texto
+    return None
+
+
+def fecha_primer_commit(raiz, ruta_absoluta):
+    """Primera fecha (YYYY-MM-DD) en que el archivo aparecio en git, o None.
+    Requiere historial completo (en CI: actions/checkout con fetch-depth: 0)."""
+    try:
+        relativo = os.path.relpath(ruta_absoluta, raiz).replace(os.sep, '/')
+        out = subprocess.run(
+            ['git', 'log', '--follow', '--reverse', '--date=format:%Y-%m-%d',
+             '--format=%ad', '--', relativo],
+            cwd=raiz, capture_output=True, text=True, timeout=30)
+        for linea in out.stdout.splitlines():
+            linea = linea.strip()
+            if linea:
+                return linea
+    except (OSError, subprocess.SubprocessError):
+        pass
     return None
 
 
@@ -157,9 +176,13 @@ def main():
             publicado = fecha_legible_a_iso(fechas_tarjetas[href])
             origen_fecha = 'tarjeta index'
         if not publicado:
-            publicado = datetime.fromtimestamp(os.path.getmtime(ruta)).strftime('%Y-%m-%d')
-            origen_fecha = 'mtime'
-            avisos.append(f"SIN fecha conocida, usa mtime: {filename} -> {publicado}")
+            publicado = fecha_primer_commit(raiz, ruta)
+            if publicado:
+                origen_fecha = 'git primer commit'
+            else:
+                publicado = datetime.fromtimestamp(os.path.getmtime(ruta)).strftime('%Y-%m-%d')
+                origen_fecha = 'mtime'
+                avisos.append(f"SIN fecha conocida, usa mtime: {filename} -> {publicado}")
 
         descripcion = meta(html, 'property', 'og:description') or meta(html, 'name', 'og:description') or ''
         imagen = meta(html, 'property', 'og:image') or meta(html, 'name', 'og:image')
