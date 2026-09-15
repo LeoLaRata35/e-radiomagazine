@@ -1,12 +1,705 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/crayonshinchan-1.png",
+        "date": "14 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Crayon Shin-chan rompe récord histórico en cines y revela nueva ilustración",
+        "description": "La película número 33 de Crayon Shin-chan rompe el récord de taquilla de toda la franquicia. El director Masaki Watanabe lo celebra con una nueva ilustración.",
+        "href": "articulos/crayonshinchan.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ranma1_2-1.png",
+        "date": "14 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime de Ranma 1/2 revela su tercer avance y los nuevos temas musicales",
+        "description": "El nuevo anime de Ranma 1/2 estrena su tercer tráiler oficial. Conoce los nuevos temas musicales de Fumino y Yuika, y la fecha de estreno en Netflix.",
+        "href": "articulos/ranma1_2(1).html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tempal-1.png",
+        "date": "14 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime TEMPAL revela su tercer tráiler y presenta a las nuevas voces de su elenco",
+        "description": "El anime de realidad virtual TEMPAL: El Poder de los Objetos estrena su tercer tráiler y confirma a Yuki Murata y Yurika Hirayama en su elenco.",
+        "href": "articulos/tempal.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/zombiesagashitemasu-1.png",
+        "date": "14 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime de comedia #Zombiesagashitemasu revela su fecha de estreno y un nuevo tráiler",
+        "description": "El anime #Zombiesagashitemasu estrena un nuevo tráiler y confirma su fecha de estreno para el 3 de octubre. Conoce al nuevo elenco y su música oficial.",
+        "href": "articulos/zombiesagashitemasu.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/madokamagica-1.png",
+        "date": "13 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Madoka Magica revela nuevo tráiler e introduce a un enigmático personaje",
+        "description": "La exitosa película de anime Madoka Magica: Walpurgisnacht Rising estrena nuevo tráiler y confirma a Maaya Sakamoto como la voz del misterioso personaje Wasu.",
+        "href": "articulos/madokamagica(4).html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/groteske-1.png",
+        "date": "12 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "La película GROTESQQQUE desata la acción con el tráiler de Yoroshiku Girl",
+        "description": "La película de anime GROTESQQQUE revela el tráiler de su segmento Yoroshiku Girl, sumando a Yoko Hikasa y Ayaka Ohashi al elenco. Estreno 6 de noviembre.",
+        "href": "articulos/groteske.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/lasantareencarnada-1.png",
+        "date": "8 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "La Gran Santa Reencarnada revela su fecha de estreno y nuevo tráiler",
+        "description": "El anime La Gran Santa Reencarnada Oculta que es una Santa confirma su fecha de estreno para el 3 de octubre. Conoce el nuevo tráiler, música y elenco.",
+        "href": "articulos/lasantareencarnada.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/blackclover-1.png",
+        "date": "7 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Black Clover confirma su segunda temporada para este tres de octubre",
+        "description": "Black Clover confirma el estreno de su segunda temporada para el 3 de octubre. Conoce los nuevos temas musicales, detalles de la trama y programas especiales.",
+        "href": "articulos/blackclover.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hololive-1.png",
+        "date": "7 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Hololive anuncia OdeHolo, su primer proyecto de anime para televisión",
+        "description": "La agencia de talentos virtuales Hololive anuncia OdeHolo, su primer proyecto de anime para televisión animado por Studio KAI. Conoce la fecha del evento rev...",
+        "href": "articulos/hololive.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/bluebox-1.png",
+        "date": "6 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "La premiere mundial de Blue Box revela detalles de su segunda temporada",
+        "description": "La segunda temporada del anime Blue Box celebra su premiere mundial en Tokio. Conoce la fecha de estreno, las revelaciones del elenco y su colaboración depor...",
+        "href": "articulos/bluebox.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/shinchan-1.png",
+        "date": "5 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Sho Hasumi sorprende al escribir un inusual episodio para Crayon Shin-chan",
+        "description": "El aclamado dramaturgo Sho Hasumi escribe un peculiar episodio para el anime Crayon Shin-chan centrado en Misae y Hiroshi. Conoce los detalles de esta colabo...",
+        "href": "articulos/shinchan.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/anime1-1.png",
+        "date": "4 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Anuncian misterioso proyecto animado: tornillos y un esperado regreso",
+        "description": "Un misterioso nuevo proyecto animado libera dos teasers mostrando una lluvia de tornillos y la frase",
+        "href": "articulos/anime1.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/elusivesamurai-1.png",
+        "date": "4 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "The Elusive Samurai suma a la actriz Niina Hanamiya en su segunda temporada",
+        "description": "La segunda temporada del anime The Elusive Samurai anuncia a la actriz Niina Hanamiya como la voz de Mima. Conoce todos los detalles del nuevo personaje.",
+        "href": "articulos/elusivesamurai.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/finestassassin-1.png",
+        "date": "4 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "The World",
+        "description": "El anime The World",
+        "href": "articulos/finestassassin.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kaiyun8-1.png",
+        "date": "4 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Kaiju No. 8 estrena el minianime de Gen Narumi con escenas inéditas",
+        "description": "El anime Kaiju No. 8 estrena La rutina de Narumi, una nueva serie de cortos animados sobre el capitán de la Primera División, a través del canal de YouTube d...",
+        "href": "articulos/kaiyun8.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/nihonsangoku-1.png",
+        "date": "3 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime Nihon Sangoku anuncia la producción de su esperada secuela",
+        "description": "El aclamado anime Nihon Sangoku confirma la producción de su esperada secuela con un nuevo tráiler oficial. Conoce los detalles de esta historia táctica y de...",
+        "href": "articulos/nihonsangoku.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ojousama-1.png",
+        "date": "3 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime Giant Ojou-sama revela su primer avance y voces para enero de 2027",
+        "description": "El anime de comedia Giant Ojou-sama revela su primer tráiler y confirma su estreno para enero de 2027. Conoce al elenco de voces encabezado por Yu Serizawa.",
+        "href": "articulos/ojousama.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ranma1_2-1.png",
+        "date": "3 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El comediante Seiya será embajador y actor de voz en Ranma 1/2",
+        "description": "El comediante Seiya del dúo Shimofuri Myojo será el embajador promocional y actor de voz invitado en la nueva temporada del anime Ranma 1/2.",
+        "href": "articulos/ranma1_2.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/sekironodefeat-1.png",
+        "date": "3 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Sekiro: No Defeat revela el épico combate entre Lobo y Genichiro en su nuevo avance",
+        "description": "La película animada en 2D de SEKIRO: NO DEFEAT revela un nuevo avance mostrando la violenta batalla entre Lobo y Genichiro Ashina antes de su estreno en cines.",
+        "href": "articulos/sekironodefeat.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/takeyukiyanase-1.png",
+        "date": "2 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Fallece Takeyuki Yanase, director del anime Sekai Saikyou no Kouei, a los 59 años",
+        "description": "Takeyuki Yanase, director del anime Sekai Saikyou no Kouei y animador de Lunar y Grandia, falleció a los 59 años. El estudio MAHO FILM compartió un emotivo c...",
+        "href": "articulos/takeyukiyanase.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/reborn-1.png",
+        "date": "1 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Katekyo Hitman REBORN! celebra su 20 aniversario con un mes dedicado a su música",
+        "description": "El anime Katekyo Hitman REBORN! celebra su 20 aniversario con un mes dedicado a su música. Conoce los detalles de los videos y eventos en YouTube.",
+        "href": "articulos/reborn.html"
+    },
+    {
+        "category": "cine",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/streetfighter-1.png",
+        "date": "1 Sep 2026",
+        "categoryLabel": "Cine",
+        "title": "La nueva película de Street Fighter revela su electrizante tráiler y fecha de estreno",
+        "description": "La película de acción real de Street Fighter revela su nuevo tráiler oficial y fecha de estreno en cines. Conoce al elenco que incluye a Jason Momoa y Cody R...",
+        "href": "articulos/streetfighter.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tefuda-1.png",
+        "date": "1 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime Tefuda ga Oome no Victoria confirma su segunda temporada",
+        "description": "El anime Tefuda ga Oome no Victoria (Victoria de muchas cartas) confirma la producción de su segunda temporada, un nuevo episodio inédito y un resumen especial.",
+        "href": "articulos/tefuda(1).html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/goshoaoyama-1.png",
+        "date": "31 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "Eisei Gekijo emitirá un especial con nueve OVAs clásicos de los años 80 y 90",
+        "description": "La cadena japonesa Eisei Gekijo transmitirá un especial de dos meses con nueve OVAs clásicos, incluyendo obras de Gosho Aoyama y CLAMP.",
+        "href": "articulos/goshoaoyama.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kurumi-chan-1.png",
+        "date": "31 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime FX Senshi Kurumi-chan revela su tráiler principal y fecha de estreno",
+        "description": "El anime FX Senshi Kurumi-chan lanza su nuevo tráiler principal y confirma su fecha de estreno para el 1 de octubre de 2026. Conoce todos los detalles.",
+        "href": "articulos/kurumi-chan.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/madokamagica-1.png",
+        "date": "31 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "La película Madoka Magica: Walpurgis no Kaiten recauda 939 millones en 3 días",
+        "description": "La película Puella Magi Madoka Magica: Walpurgis no Kaiten recauda más de 939 millones de yenes y supera el medio millón de espectadores en sus primeros tres...",
+        "href": "articulos/madokamagica(3).html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/spiceandwolf-1.png",
+        "date": "31 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "La segunda temporada de Spice and Wolf llegará a la televisión en 2027",
+        "description": "La segunda temporada del anime Spice and Wolf: Merchant Meets the Wise Wolf se estrenará en 2027. Conoce los detalles de la trama y su nuevo arte visual.",
+        "href": "articulos/spiceandwolf.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/arcanadea-1.png",
+        "date": "29 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime Arcanadea presenta su primer tráiler y confirma su elenco de voces",
+        "description": "El anime Arcanadea revela su primer tráiler y elenco de voces principal. Conoce los detalles de esta nueva serie que se estrenará en 2027.",
+        "href": "articulos/arcanadea.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/jujutsukaisen-1.png",
+        "date": "29 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "Revelan el primer visual y la trama de la cuarta temporada de Jujutsu Kaisen",
+        "description": "Revelan la trama y el primer póster oficial de Jujutsu Kaisen Temporada 4 (Shimetsu Kaiyū - Parte 2), anticipando los oscuros planes de Sukuna.",
+        "href": "articulos/jujutsukaisen.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/madokamagica-1.png",
+        "date": "29 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "Emiri Kato detalla su regreso como Kyubey en la nueva película de Madoka Magica",
+        "description": "La actriz de voz Emiri Kato revela los retos de volver a interpretar a Kyubey para la película Puella Magi Madoka Magica: Walpurgis no Kaiten tras 13 años.",
+        "href": "articulos/madokamagica(2).html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/dandevine-1.png",
+        "date": "28 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "Anuncian ocho nuevos actores para el elenco del anime Juo Bushin Dandevine",
+        "description": "Anuncian ocho nuevos actores para el elenco del anime Jūō Bushin Dandevine, destacando a Nao Toyama, Aya Yamane y Misaki Kuno como las misteriosas hermanas.",
+        "href": "articulos/dandevine(1).html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/magicalexplorer-1.png",
+        "date": "28 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "Revelan tráiler y nueva imagen del anime Magical Explorer con ASCA en los temas",
+        "description": "Revelan el segundo tráiler y nueva imagen clave del anime Magical Explorer. ASCA interpretará tanto el opening como el ending de la serie.",
+        "href": "articulos/magicalexplorer(1).html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ghostintheshell1-1.png",
+        "date": "27 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "Chikahiro Kobayashi se suma al elenco de la nueva serie de Ghost in the Shell",
+        "description": "Chikahiro Kobayashi se une al elenco del anime Ghost in the Shell THE GHOST IN THE SHELL como Lee. Conoce los detalles y el end card del episodio 8.",
+        "href": "articulos/ghostintheshell1(1).html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/korinojoheki-1.png",
+        "date": "27 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "Revelan tráiler y visual de la segunda temporada del anime Kori no Jōheki",
+        "description": "Revelan el primer tráiler y la imagen promocional de la segunda temporada del anime Kori no Jōheki, con estreno programado para el 1 de octubre de 2026.",
+        "href": "articulos/korinojoheki.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/madokamagica-1.png",
+        "date": "27 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "Revelan tráiler exclusivo de Rakuen Tsuihō: Kokoro no Resonance en cines",
+        "description": "Revelan un tráiler exclusivo de la película Rakuen Tsuihō: Kokoro no Resonance en cines, proyectándose antes de la nueva cinta de Madoka Magica.",
+        "href": "articulos/madokamagica(1).html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ribbonhero-1.png",
+        "date": "27 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "La película The Ribbon Hero tendrá estreno en cines por tiempo limitado",
+        "description": "La película animada The Ribbon Hero, basada en la obra de Osamu Tezuka (Princesa Caballero), anuncia su estreno en cines por tiempo limitado con un CD de reg...",
+        "href": "articulos/ribbonhero.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/yugioh-1.png",
+        "date": "27 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "Lanzan lujosas réplicas en plata 925 de los Artículos del Milenio de Yu-Gi-Oh!",
+        "description": "Anuncian lujosas réplicas en plata 925 y oro de los Artículos del Milenio de Yu-Gi-Oh!. Conoce la lista completa de ítems, portadores y precios.",
+        "href": "articulos/yugioh.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://contents.oricon.co.jp/upimg/news/2477000/2476329/20260826_183100_p_o_38684627.jpg",
+        "date": "26 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "Mushoku Tensei III: el “Rey Inmortal” Atoferatofe bloquea el camino de Rudéus en el episodio 10",
+        "description": "Mushoku Tensei III ep.10: el “Rey Inmortal” Atoferatofe bloquea a Rudéus. Nanako Mori da voz a la hermana del Rey Demonio; magia demoníaca y batalla épica el...",
+        "href": "articulos/mushokutensei(2).html"
+    },
+    {
+        "category": "anime",
+        "img": "https://contents.oricon.co.jp/upimg/news/2477000/2476261/20260826_174447_p_o_27235974.jpg",
+        "date": "26 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "Yui Ogura interpretará a Loki en la adaptación al anime de Saikyou Mahoushi no Inton Keikaku",
+        "description": "Yui Ogura dará voz a Loki en la adaptación al anime de Saikyou Mahoushi no Inton Keikaku. Conoce los detalles de su imagen promocional y declaraciones.",
+        "href": "articulos/saikyou-mahoushi-no-inton-keikaku.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/chainsawman-1.png",
+        "date": "25 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "La película del arco de Reze de Chainsaw Man llega a Prime Video el 19 de septiembre",
+        "description": "La película Chainsaw Man: arco de Reze (2025) llegará a Prime Video el 19 de septiembre de 2026, exactamente un año después de su estreno en cines.",
+        "href": "articulos/chainsawman.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://ogre.natalie.mu/media/news/comic/2026/0825/kokoore_anime_ep9_1.jpg?imwidth=1460&amp;imdensity=1&amp;impolicy=hq",
+        "date": "25 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "Ami Koshimizu se une a",
+        "description": "Ami Koshimizu se une a Koko Ore como Leffi, la curandera legendaria del grupo del héroe. Estreno ep.9 el 31 de agosto en TV y streaming.",
+        "href": "articulos/kokoore.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://img.youtube.com/vi/RRNBNnCRPqU/maxresdefault.jpg",
+        "date": "25 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "\"La magia prestada se cobra a plazos\" revela a Linka y estrena el 3 de octubre",
+        "description": "El proyecto de anime revela a Linka (Risae Matsuda) y estrena el 3 de octubre por TV Asahi, ABEMA y d Anime Store.",
+        "href": "articulos/plazos.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://www.samurai-trooper.net/assets/img/top/visual/visual6.jpg",
+        "date": "24 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "Samurai Troopers estrena visual de Ryusei y avance del episodio 20 en su tramo final",
+        "description": "Samurai Troopers, la secuela del clásico de 1988, publica el avance del episodio 20, el visual de Ryusei y anuncia los Blu-ray Box 3 y 4.",
+        "href": "articulos/samuraiwarriors.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://img.youtube.com/vi/Nm21TTXUkf4/maxresdefault.jpg",
+        "date": "24 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "Tokyo Revengers cambia de horario y muestra a Takemichi frente a Mikey en nuevo PV",
+        "description": "Tokyo Revengers cambia de horario: la guerra de las Tres Deidades llega el 2 de octubre con «IGNITE» de JO1 y un Takemichi frente a Mikey.",
+        "href": "articulos/tokyorevengers.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://hyakkano.com/xUtUy1FY/wp-content/uploads/2026/08/100kano_CD_H1_260727_s-scaled.jpg",
+        "date": "23 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "Rie Kugimiya dará vida a la abuela Yaku en la tercera temporada de 100 Kanojo",
+        "description": "Rie Kugimiya se une a 100 Kanojo T3 como la abuela Yaku; nuevo visual en yukata y key visual actualizado con 17 novias.",
+        "href": "articulos/100-novias.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://img.youtube.com/vi/AOR_K6DWXY0/maxresdefault.jpg",
+        "date": "22 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "Fate/strange Fake tendrá nueva temporada del anime",
+        "description": "Fate/strange Fake confirmó una nueva serie del anime en Anime NYC 2026, con tráiler y visual teaser de Ayaka, Saber y Sigma fragmentados.",
+        "href": "articulos/fatestrange.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/gegegenokitaro-1.png",
+        "date": "22 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "GeGeGe no Kitaro abrirá un canal gratuito en ABEMA con 536 episodios",
+        "description": "GeGeGe no Kitaro abre canal en ABEMA del 24/8 al 27/9: 536 episodios gratis de las temporadas 1 a 6, más la película Kitaro Tanjo: GeGeGe no Nazo.",
+        "href": "articulos/gegegenokitaro.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://contents.oricon.co.jp/upimg/news/2476000/2475558/20260823_005337_o_47219339.jpg",
+        "date": "22 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "MURCIÉLAGO tendrá adaptación al anime en enero de 2027",
+        "description": "MURCIÉLAGO, el manga cuyo título es la palabra española para murciélago, tendrá anime en enero de 2027 producido por Satelight y Staple Entertainment.",
+        "href": "articulos/murcielago.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://contents.oricon.co.jp/upimg/news/2476000/2475447/20260821_190447_p_l_44459970.jpg",
+        "date": "21 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "Bleach: Ichigo desata el Gran Rey Cero en el episodio 45",
+        "description": "Bleach Sennen Kessen-hen revela el episodio 45 «DEFEND YOU»: Ichigo se semi-Hollowifica y lanza el Gran Rey Cero contra Yhwach.",
+        "href": "articulos/bleach(1).html"
+    },
+    {
+        "category": "anime",
+        "img": "https://contents.oricon.co.jp/upimg/news/2476000/2475421/20260821_180719_o_91160320.jpg",
+        "date": "21 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "Pen to Wappa to Jijitsukon: anime confirmado para enero de 2027",
+        "description": "Pen to Wappa to Jijitsukon llegará como anime en enero de 2027 con Maeno Tomoaki y Minase Inori; estudio EMT Squared, PV y visual teaser ya disponibles.",
+        "href": "articulos/pentowappa.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/yanineko-1.png",
+        "date": "21 Aug 2026",
+        "categoryLabel": "Anime",
+        "title": "Causa furor la avalancha de tributos de prestigiosos mangakas a Yani Neko",
+        "description": "El anime Yanineko desata la locura en redes con ilustraciones tributo de los reconocidos mangakas Shinsuke Kondo y Kei Yamajion. Conoce de qué trata esta com...",
+        "href": "articulos/yanineko.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/noasempai-1.png",
+        "date": "13 Jul 2026",
+        "categoryLabel": "Anime",
+        "title": "Anuncian la adaptación al anime de la comedia de oficina Noa-senpai wa Tomodachi",
+        "description": "El manga cómico Noa-senpai wa Tomodachi. de Enma Akiyama será adaptado al anime de televisión bajo la producción del estudio feel.",
+        "href": "articulos/noasempai.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ghostintheshell-1.png",
+        "date": "7 Jul 2026",
+        "categoryLabel": "Anime",
+        "title": "Ghost in the Shell renueva su elenco con Maaya Sakamoto como la nueva Motoko Kusanagi",
+        "description": "El nuevo anime de «Ghost in the Shell» estrena elenco: Maaya Sakamoto da voz a Motoko Kusanagi tras el fallecimiento de Atsuko Tanaka. La serie se estrena el...",
+        "href": "articulos/ghostintheshell.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/shangrila-1.png",
+        "date": "7 Jul 2026",
+        "categoryLabel": "Anime",
+        "title": "La tercera temporada de Shangri-La Frontier confirma estreno para enero de 2027",
+        "description": "La tercera temporada de Shangri-La Frontier confirma su estreno para enero de 2027 en la televisión japonesa y estrena un singular tráiler.",
+        "href": "articulos/shangrila.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ibite-1.png",
+        "date": "1 Jul 2026",
+        "categoryLabel": "Anime",
+        "title": "Ibitte Konai Gibo to Gishi revela avances de su primer episodio",
+        "description": "El anime Mi madrastra y hermanastras no me molestan publica adelantos de su estreno y revela su primer minuto en un especial de YouTube.",
+        "href": "articulos/ibite.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mushokutensei-1.png",
+        "date": "1 Jul 2026",
+        "categoryLabel": "Anime",
+        "title": "Mushoku Tensei III revela avances de sus primeros episodios dedicados al viaje de Eris",
+        "description": "Mushoku Tensei III revela las primeras imágenes de sus dos episodios de estreno titulados Burn, Mad Dog y dedicados al entrenamiento de Eris.",
+        "href": "articulos/mushokutensei(1).html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/thunder3-1.png",
+        "date": "1 Jul 2026",
+        "categoryLabel": "Anime",
+        "title": "Revelan las primeras escenas del anime Thunder 3 antes de su estreno en Netflix",
+        "description": "El anime Thunder 3 revela sus primeras escenas promocionales y confirma su fecha de estreno exclusivo global en Netflix para el 8 de julio.",
+        "href": "articulos/thunder3.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/futsutsuka-1.png",
+        "date": "28 Jun 2026",
+        "categoryLabel": "Anime",
+        "title": "La serie Futsutsuka na Akuyo estrena avance y revela su tema de cierre",
+        "description": "El anime Aunque soy una villana inepta revela su tráiler previo al estreno, confirmando el tema de cierre Houkiboshi de Rokudenashi y Eve.",
+        "href": "articulos/futsutsuka.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/girlsandpanzer-1.png",
+        "date": "28 Jun 2026",
+        "categoryLabel": "Anime",
+        "title": "Revelan avance de la quinta parte de GIRLS und PANZER Das Finale",
+        "description": "La quinta entrega de GIRLS und PANZER Das Finale presenta su primer tráiler promocional y confirma estreno en cines para octubre de 2026.",
+        "href": "articulos/girlsandpanzer.html"
+    },
+    {
+        "category": "cine",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kingofprism-1.png",
+        "date": "28 Jun 2026",
+        "categoryLabel": "Cine",
+        "title": "King of Prism anuncia nueva película y celebra su décimo aniversario en Tokio",
+        "description": "La saga King of Prism conmemora sus 10 años con un masivo evento en Tokio y anuncia el nuevo filme animado KING OF PRISM -Tri-Star Act-.",
+        "href": "articulos/kingofprism.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/lona-1.png",
+        "date": "28 Jun 2026",
+        "categoryLabel": "Anime",
+        "title": "Anuncian LONA, el nuevo y ambicioso anime de WIT STUDIO para la primavera de 2027",
+        "description": "WIT STUDIO anuncia LONA, un anime original de misterio y neurociencia escrito por Akiko Nogi con diseños de Posuka Demizu para primavera de 2027.",
+        "href": "articulos/lona.html"
+    },
+    {
+        "category": "cine",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/madokamagica-1.png",
+        "date": "28 Jun 2026",
+        "categoryLabel": "Cine",
+        "title": "Estrenan el tráiler principal de la nueva película de Madoka Magica",
+        "description": "Lanzan el tráiler oficial y la canción de la nueva película de Madoka Magica, confirmando su esperado estreno en cines para agosto de 2026.",
+        "href": "articulos/madokamagica.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/magilumiere-1.png",
+        "date": "28 Jun 2026",
+        "categoryLabel": "Anime",
+        "title": "Magilumiere Co. Ltd. estrena nuevo avance y tema de apertura de su segunda entrega",
+        "description": "La segunda temporada de Magilumiere Co. Ltd. estrena su nuevo tráiler, mostrando el pasado de Koshigaya y el opening de syudou.",
+        "href": "articulos/magilumiere.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/wistoria-1.png",
+        "date": "28 Jun 2026",
+        "categoryLabel": "Anime",
+        "title": "Confirman la producción de una tercera temporada para Wistoria Wand and Sword",
+        "description": "Confirman de forma oficial la producción de la tercera temporada del anime de fantasía Wistoria: Wand and Sword tras su final en Japón.",
+        "href": "articulos/wistoria.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/yozakura-1.png",
+        "date": "28 Jun 2026",
+        "categoryLabel": "Anime",
+        "title": "La segunda parte de Mission Yozakura Family confirma su estreno para octubre",
+        "description": "La segunda parte de la temporada 2 de Mission: Yozakura Family se estrenará en octubre de 2026, revelando el debut de los espías dorados.",
+        "href": "articulos/yozakura.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/100novias-1.png",
+        "date": "27 Jun 2026",
+        "categoryLabel": "Anime",
+        "title": "Las 100 novias revelan un avance de su tercera temporada y un misterio en el elenco",
+        "description": "La tercera temporada de Las 100 novias devela su tráiler oficial y estrena las voces de Yamame, Momiji y Kishika, ocultando su elenco.",
+        "href": "articulos/100novias.html"
+    },
+    {
+        "category": "cine",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/aliens-1.png",
+        "date": "27 Jun 2026",
+        "categoryLabel": "Cine",
+        "title": "La aclamada película animada",
+        "description": "La película animada Somos alienígenas (Wareware wa Uchujin) de Kohei Kadowaki fija su estreno en cines de Japón para el 25 de septiembre.",
+        "href": "articulos/aliens.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/bookworm-1.png",
+        "date": "27 Jun 2026",
+        "categoryLabel": "Anime",
+        "title": "Ascendance of a Bookworm estrena un avance de su segunda parte y revela su música",
+        "description": "La cuarta temporada de Ascendance of a Bookworm estrena el tercer avance de su segunda parte y revela su canción de cierre por adieu.",
+        "href": "articulos/bookworm.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/dandevine-1.png",
+        "date": "27 Jun 2026",
+        "categoryLabel": "Anime",
+        "title": "Estrenan avance de El Rey de las Bestias y Dios de la Guerra Dandevine",
+        "description": "Good Smile Company estrena el primer avance en video de El Rey de las Bestias y Dios de la Guerra: Dandevine, su nuevo anime de mechas para octubre.",
+        "href": "articulos/dandevine.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ken-o-1.png",
+        "date": "27 Jun 2026",
+        "categoryLabel": "Anime",
+        "title": "Confirman la segunda parte de El Puño de la Estrella del Norte para 2027",
+        "description": "La segunda parte de El Puño de la Estrella del Norte se estrenará en 2027, revelando su primer tráiler y el debut del temible Jagi.",
+        "href": "articulos/ken-o.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/killblue-1.png",
+        "date": "27 Jun 2026",
+        "categoryLabel": "Anime",
+        "title": "Confirman la segunda temporada del anime Kill Blue",
+        "description": "Confirman la producción de la segunda temporada de Juventud Asesina (Kill Blue) tras emitirse el emotivo episodio final de la serie.",
+        "href": "articulos/killblue.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/magicalexplorer-1.png",
+        "date": "27 Jun 2026",
+        "categoryLabel": "Anime",
+        "title": "Magical Explorer confirma a MAO en su elenco y presenta nuevo arte visual",
+        "description": "El anime Magical Explorer confirma la participación de la actriz MAO en el papel de la sirvienta Nanami y revela un nuevo arte visual.",
+        "href": "articulos/magicalexplorer.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mao2-1.png",
+        "date": "27 Jun 2026",
+        "categoryLabel": "Anime",
+        "title": "Reina Ueda interpretará el nuevo tema de cierre para el anime de Mao",
+        "description": "La cantante Reina Ueda interpretará «Vacilante» (Tayutau), el nuevo tema de cierre para el anime Mao: El exorcista de las dos eras.",
+        "href": "articulos/mao2.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/sayonaralara-1.png",
+        "date": "27 Jun 2026",
+        "categoryLabel": "Anime",
+        "title": "Presentan adelantos del primer episodio del anime original Adiós, Lara",
+        "description": "El anime original Adiós, Lara revela las primeras imágenes y el tráiler de su primer capítulo, con estreno fijado para el 5 de julio.",
+        "href": "articulos/sayonaralara.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/shuumatsu-1.png",
+        "date": "27 Jun 2026",
+        "categoryLabel": "Anime",
+        "title": "Confirman la producción de la cuarta temporada para Las Valquirias del Fin del Mundo",
+        "description": "Confirman de manera oficial la producción de la cuarta temporada del anime Las Valquirias del Fin del Mundo (Record of Ragnarok).",
+        "href": "articulos/shuumatsu.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/snowballearth-1.png",
+        "date": "27 Jun 2026",
+        "categoryLabel": "Anime",
+        "title": "Anuncian la segunda temporada de la serie animada Snowball Earth",
+        "description": "Anuncian la producción de la segunda temporada del anime Tierra Bola de Nieve tras el emocionante final de su primera parte.",
+        "href": "articulos/snowballearth.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tefuda-1.png",
         "date": "27 Jun 2026",
         "categoryLabel": "Anime",
         "title": "Tefuda ga Oome no Victoria estrena un colorido avance y presenta personajes",
         "description": "El anime Tefuda ga Oome no Victoria lanza su avance promocional Suteki na Hitotachi-hen y confirma estreno para el 7 de julio.",
         "href": "articulos/tefuda.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/yominotsugai-1.png",
+        "date": "27 Jun 2026",
+        "categoryLabel": "Anime",
+        "title": "Yomi no Tsugai estrena tráiler y revela temas de su segunda parte",
+        "description": "El anime Los guardianes del inframundo de Hiromu Arakawa estrena el tráiler y confirma la fecha de emisión de su segunda parte para julio.",
+        "href": "articulos/yominotsugai.html"
     },
     {
         "category": "anime",
@@ -40,7 +733,7 @@
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/super-1.png",
         "date": "26 Jun 2026",
         "categoryLabel": "Anime",
-        "title": "\"Fumando atrás del súper contigo\" estrena avance y escenas de su anime",
+        "title": "&quot;Fumando atrás del súper contigo&quot; estrena avance y escenas de su anime",
         "description": "El anime de Fumando atrás del súper con vos estrena nuevas escenas, un comercial para taxis y prepara su gran debut para el 9 de julio.",
         "href": "articulos/super.html"
     },
@@ -84,7 +777,7 @@
         "category": "musica",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/karasu-1.png",
         "date": "25 Jun 2026",
-        "categoryLabel": "Música",
+        "categoryLabel": "Musica",
         "title": "MAPPA produce un corto animado para la nueva canción de Kenshi Yonezu",
         "description": "El estudio MAPPA anima el espectacular cortometraje de Karasu, la nueva canción futbolística de Kenshi Yonezu para la cadena NHK.",
         "href": "articulos/karasu.html"
@@ -292,8 +985,8 @@
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kaikigumi-1.png",
         "date": "21 Jun 2026",
         "categoryLabel": "Anime",
-        "title": "Let's Go Kaikigumi estrena nuevo visual y PV con Kana Hanazawa como Yukinko",
-        "description": "Let's Go Kaikigumi estrena key visual y PV con Kana Hanazawa como Yukinko. La comedia de terror se estrena el 5 de julio con temas de SWEET STEADY y Utsuana.",
+        "title": "Let",
+        "description": "Let",
         "href": "articulos/kaikigumi.html"
     },
     {
@@ -381,7 +1074,7 @@
         "category": "musica",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mao1-1.png",
         "date": "18 Jun 2026",
-        "categoryLabel": "Música",
+        "categoryLabel": "Musica",
         "title": "20th Century interpretará el nuevo tema de apertura para el anime MAO",
         "description": "La legendaria agrupación 20th Century interpretará Bokura ga Uwagaki suru Sekai, el nuevo tema de apertura de la serie de anime MAO.",
         "href": "articulos/mao1.html"
@@ -391,8 +1084,8 @@
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/sekaisaikyou_1-1.png",
         "date": "18 Jun 2026",
         "categoryLabel": "Anime",
-        "title": "Anuncian fecha de estreno y temas musicales para The World's Strongest Rearguard",
-        "description": "El anime The World's Strongest Rearguard estrena su video promocional principal, revela su fecha de estreno y detalla sus temas musicales.",
+        "title": "Anuncian fecha de estreno y temas musicales para The World",
+        "description": "El anime The World",
         "href": "articulos/sekaisaikyou_1.html"
     },
     {
@@ -589,8 +1282,8 @@
         "img": "https://images.somoskudasai.com/2026/06/uma-musume-arte-refact-2.jpg",
         "date": "14 Jun 2026",
         "categoryLabel": "Anime",
-        "title": "Arte Refact colapsa: todos sus creadores renuncian tras escándalo",
-        "description": "El sello musical Arte Refact, responsable de incontables canciones para franquicias como Love Live!, Uma Musume, Idolmaster y Ensemble Stars!, est&aacute...",
+        "title": "Arte Refact colapsa: todos sus creadores renuncian tras esc&aacute;ndalo",
+        "description": "El sello musical Arte Refact, responsable de incontables canciones para franquicias como Love Live!, Uma Musume, Idolmaster y Ensemble Stars!, est&amp;aacute...",
         "href": "articulos/articulo-arte-refact.html"
     },
     {
@@ -697,8 +1390,8 @@
         "img": "https://ogre.natalie.mu/media/pp/bunch-25th/pc_heade11.jpg?impolicy=pp_image",
         "date": "12 Jun 2026",
         "categoryLabel": "Manga",
-        "title": "Bunch 25 años: Inoue y Kanzaki recuerdan el legado de BTOOOM! y Uroboros",
-        "description": "El sello Comic Bunch de Shinchosha celebró su 25 aniversario en mayo de 2026, y para conmemorarlo, la revista reunió a dos de sus autores m&aac...",
+        "title": "Bunch 25 a&ntilde;os: Inoue y Kanzaki recuerdan el legado de BTOOOM! y Uroboros",
+        "description": "El sello Comic Bunch de Shinchosha celebr&oacute; su 25 aniversario en mayo de 2026, y para conmemorarlo, la revista reuni&oacute; a dos de sus autores m&aac...",
         "href": "articulos/articulo-bunch25-aniversario.html"
     },
     {
@@ -706,8 +1399,8 @@
         "img": "https://ogre.natalie.mu/media/news/comic/2026/0612/01_miya_teru.jpg?imwidth=1280",
         "date": "12 Jun 2026",
         "categoryLabel": "Anime",
-        "title": "Ibikko Konai Gibo to Gibane: nuevo PV revela más reparto y temas musicales",
-        "description": "La adaptación al anime del manga Ibikko Konai Gibo to Gibane («La madrastra y hermanastra que no me maltratan»), de Otsuji, continú...",
+        "title": "Ibikko Konai Gibo to Gibane: nuevo PV revela m&aacute;s reparto y temas musicales",
+        "description": "La adaptaci&oacute;n al anime del manga Ibikko Konai Gibo to Gibane (&laquo;La madrastra y hermanastra que no me maltratan&raquo;), de Otsuji, contin&uacute;...",
         "href": "articulos/articulo-ibikko-gibo-anime.html"
     },
     {
@@ -724,7 +1417,7 @@
         "img": "https://leolarata35.github.io/e-radiomagazine/assets/BCS_2026_13.jpg",
         "date": "12 Jun 2026",
         "categoryLabel": "Anime",
-        "title": "Vista da Gigantessa: nuevo manga de Aoki y LAB sobre viajes por Japón",
+        "title": "Vista da Gigantessa: nuevo manga de Aoki y LAB sobre viajes por Jap&oacute;n",
         "description": "El nuevo ensayo manga Vista da Gigantessa, con historia original de Aoki Juntaro (autor de Nabe ni Dangan wo Ukenagara) e ilustraciones del artista italiano ...",
         "href": "articulos/articulo-vista-gigantessa.html"
     },
@@ -733,8 +1426,8 @@
         "img": "https://img.youtube.com/vi/ZPqIvoDeMT0/hqdefault.jpg",
         "date": "11 Jun 2025",
         "categoryLabel": "Cine",
-        "title": "'El Puño de la Estrella del Norte' spin-off estrena 2da temporada en julio",
-        "description": "El anime corto ",
+        "title": "'El Pu&amp;ntilde;o de la Estrella del Norte' spin-off estrena 2da temporada en julio",
+        "description": "El anime corto",
         "href": "articulos/articulo-elegia-esbirros.html"
     },
     {
@@ -742,8 +1435,8 @@
         "img": "https://ogre.natalie.mu/media/news/comic/2026/0611/kagekisyoujyo0507_FIX.jpg?impolicy=twitter_card_face_crop",
         "date": "11 Jun 2025",
         "categoryLabel": "Anime",
-        "title": "Kageki Shojo!!: reading theater del 5° aniversario con todo su elenco",
-        "description": "El anime Kageki Shojo!! celebrar&aacute; su quinto aniversario con un reading theater especial titulado ",
+        "title": "Kageki Shojo!!: reading theater del 5&deg; aniversario con todo su elenco",
+        "description": "El anime Kageki Shojo!! celebrar&amp;aacute; su quinto aniversario con un reading theater especial titulado",
         "href": "articulos/articulo-kageki-shojo-5th.html"
     },
     {
@@ -752,7 +1445,7 @@
         "date": "11 Jun 2025",
         "categoryLabel": "Anime",
         "title": "Koisero Mayakashi Tenshi-domo: el manga rom-com llega al anime en 2027",
-        "description": "El manga shojo de comedia rom&aacute;ntica Koisero Mayakashi Tenshi-domo, de la autora Coco Uzuki, tendr&aacute; una adaptaci&oacute;n al anime q...",
+        "description": "El manga shojo de comedia rom&amp;aacute;ntica Koisero Mayakashi Tenshi-domo, de la autora Coco Uzuki, tendr&amp;aacute; una adaptaci&amp;oacute;n al anime q...",
         "href": "articulos/articulo-koisero-tenshi.html"
     },
     {
@@ -760,8 +1453,8 @@
         "img": "https://contents.oricon.co.jp/upimg/news/2461000/2460622/20260611_233721_p_o_27842483.jpg",
         "date": "11 Jun 2025",
         "categoryLabel": "Anime",
-        "title": "Kokurō-jō: el visual colaborativo con Touken Ranbu ONLINE muestra a Atagigiri dibujado por Oyo",
-        "description": "La pel&iacute;cula Kokur&omacr;-j&omacr; (Black Prison), que se estrena el 19 de junio, ha revelado un visual colaborativo con el popular juego d...",
+        "title": "Kokur&omacr;-j&omacr;: el visual colaborativo con Touken Ranbu ONLINE muestra a Atagigiri dibujado por Oyo",
+        "description": "La pel&amp;iacute;cula Kokur&amp;omacr;-j&amp;omacr; (Black Prison), que se estrena el 19 de junio, ha revelado un visual colaborativo con el popular juego d...",
         "href": "articulos/articulo-kokurojo-tourabu.html"
     },
     {
@@ -769,8 +1462,8 @@
         "img": "https://contents.oricon.co.jp/upimg/news/2461000/2460026/20260609_193033_p_l_55642868.jpg",
         "date": "11 Jun 2025",
         "categoryLabel": "Anime",
-        "title": "'Lupin III' celebra 55 años con votación de sus mejores episodios",
-        "description": "El ladr&oacute;n m&aacute;s carism&aacute;tico de la animaci&oacute;n japonesa est&aacute; de fiesta. Lupin III cumple 55 a&ntilde;os...",
+        "title": "'Lupin III' celebra 55 a&amp;ntilde;os con votaci&amp;oacute;n de sus mejores episodios",
+        "description": "El ladr&amp;oacute;n m&amp;aacute;s carism&amp;aacute;tico de la animaci&amp;oacute;n japonesa est&amp;aacute; de fiesta. Lupin III cumple 55 a&amp;ntilde;os...",
         "href": "articulos/articulo-lupin55.html"
     },
     {
@@ -779,7 +1472,7 @@
         "date": "11 Jun 2025",
         "categoryLabel": "Anime",
         "title": "Osomatsu-san: Snow Man Koji Mukai regresa como el Viejo Osomatsu en la secuela",
-        "description": "La secuela live-action de Osomatsu-san lleg&oacute; hoy a los cines japoneses con una sorpresa para los fans: Koji Mukai, integrante del grupo Snow Man, ...",
+        "description": "La secuela live-action de Osomatsu-san lleg&amp;oacute; hoy a los cines japoneses con una sorpresa para los fans: Koji Mukai, integrante del grupo Snow Man, ...",
         "href": "articulos/articulo-osomatsu-mukai.html"
     },
     {
@@ -787,8 +1480,8 @@
         "img": "https://nami.news/wordpress/wp-content/uploads/2026/03/Suterare-Seijo-no-Isekai-Gohan-Tabi-anime-visual-1-e1773838785393.jpeg",
         "date": "11 Jun 2025",
         "categoryLabel": "Anime",
-        "title": "La santa abandonada: el anime gastronómico se estrena el 6 de julio con Yukari Tamura",
-        "description": "La adaptaci&oacute;n animada de la novela ligera La santa abandonada y su viaje gastron&oacute;mico en otro mundo: invoqu&eacute; un campista con...",
+        "title": "La santa abandonada: el anime gastron&oacute;mico se estrena el 6 de julio con Yukari Tamura",
+        "description": "La adaptaci&amp;oacute;n animada de la novela ligera La santa abandonada y su viaje gastron&amp;oacute;mico en otro mundo: invoqu&amp;eacute; un campista con...",
         "href": "articulos/articulo-santa-abandonada.html"
     },
     {
@@ -797,16 +1490,16 @@
         "date": "11 Jun 2025",
         "categoryLabel": "Cine",
         "title": "Shin-chan: Ai Suotome regresa a los 25 en live-action de Coca-Cola",
-        "description": "La colaboraci&oacute;n entre Crayon Shin-chan y Coca-Cola Jap&oacute;n a trav&eacute;s de su marca ",
+        "description": "La colaboraci&amp;oacute;n entre Crayon Shin-chan y Coca-Cola Jap&amp;oacute;n a trav&amp;eacute;s de su marca",
         "href": "articulos/articulo-shinchan-liveaction.html"
     },
     {
         "category": "musica",
         "img": "https://www.animationmagazine.net/wordpress/wp-content/uploads/Kochikame_Landscape_re.jpg",
         "date": "10 Jun 2025",
-        "categoryLabel": "Música",
+        "categoryLabel": "Musica",
         "title": "'Katsushika Rhapsody' de Kochikame llega por primera vez en vinilo 7 pulgadas",
-        "description": "Uno de los openings mas iconicos del anime japones volvera a sonar, pero esta vez en vinilo. ",
+        "description": "Uno de los openings mas iconicos del anime japones volvera a sonar, pero esta vez en vinilo.",
         "href": "articulos/articulo-kochikame-vinilo.html"
     },
     {
@@ -815,7 +1508,7 @@
         "date": "10 Jun 2025",
         "categoryLabel": "Anime",
         "title": "'Ossan Kensei' temporada 2 revela CM y ending de BLUE ENCOUNT",
-        "description": "La segunda temporada de ",
+        "description": "La segunda temporada de",
         "href": "articulos/articulo-ossankensei2.html"
     },
     {
@@ -823,8 +1516,8 @@
         "img": "https://ogre.natalie.mu/media/news/comic/2026/0610/saokyomahoushi_pv_01.jpg?imwidth=900",
         "date": "10 Jun 2025",
         "categoryLabel": "Anime",
-        "title": "'Saikyo Mahoushi no Ininton Keikaku' tendrá anime en 2027",
-        "description": "La popular serie de novelas ligeras ",
+        "title": "'Saikyo Mahoushi no Ininton Keikaku' tendr&amp;aacute; anime en 2027",
+        "description": "La popular serie de novelas ligeras",
         "href": "articulos/articulo-saikyo-mahoushi.html"
     }
 ]
