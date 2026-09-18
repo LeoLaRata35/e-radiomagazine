@@ -1,12 +1,147 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/magicalexplorer-1.png",
+        "date": "18 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime Magical Explorer revela un nuevo avance de la princesa Ludy",
+        "description": "El anime de reencarnación y fantasía Magical Explorer revela un nuevo avance centrado en la heroína Ludy. Conoce la fecha de estreno y su increíble historia.",
+        "href": "articulos/magicalexplorer(2).html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/seitokai-1.png",
+        "date": "18 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime Seitokai ni mo Ana wa Aru revela nuevo tráiler y tema musical",
+        "description": "El anime de comedia escolar Seitokai ni mo Ana wa Aru revela su nuevo tráiler, su tema de cierre interpretado por Nanawo Akari y anuncia una versión sin cens...",
+        "href": "articulos/seitokai.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/vertexforce-1.png",
+        "date": "18 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Vertex Force revela su secuencia de apertura y tema musical de ClariS",
+        "description": "El anime original de mechas Vertex Force revela su increíble secuencia de apertura acompañada del tema musical Synchro Blue de ClariS. Estreno en octubre.",
+        "href": "articulos/vertexforce.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/bless-1.png",
+        "date": "17 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime Bless suma a Nobuhiko Okamoto como un estricto maquillista",
+        "description": "El anime Bless sobre el mundo del maquillaje y la moda confirma al actor Nobuhiko Okamoto para su elenco. Estreno en enero de 2027.",
+        "href": "articulos/bless.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hotarunoyomeri-1.png",
+        "date": "17 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime romántico Hotaru no Yomeiri revela su avance y tema de apertura",
+        "description": "El anime de romance y suspenso Hotaru no Yomeiri lanza su tráiler principal y confirma su tema de apertura interpretado por la cantante iri. Estreno en octubre.",
+        "href": "articulos/hotarunoyomeri.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/reiwwanodara-1.png",
+        "date": "17 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Reiwa no Dara-san revela impactante avance para su gran final",
+        "description": "El anime Reiwa no Dara-san lanza un emocionante video promocional preparándose para su gran episodio final este 24 de septiembre. Conoce los detalles de la b...",
+        "href": "articulos/reiwwanodara.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/spaceyamato-1.png",
+        "date": "17 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El remake de Space Battleship Yamato estrena avance de su épica película final",
+        "description": "La película final del anime Space Battleship Yamato: Be Forever REBEL3199 lanza su espectacular tráiler preparándose para su estreno este 30 de octubre.",
+        "href": "articulos/spaceyamato.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/aokidenshou-1.jpeg",
+        "date": "16 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Aoki Denshou: Welsh &amp; Shedar revela fecha de estreno y elenco estelar",
+        "description": "El anime Aoki Denshou: Welsh & Shedar revela su fecha de estreno para el 2 de octubre. Conoce la nueva aventura fantástica producida por Ankama con las voces...",
+        "href": "articulos/aokidenshou.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/demonscrest-1.png",
+        "date": "16 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime Demon",
+        "description": "El anime Demon",
+        "href": "articulos/demonscrest.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mahotoyouhei-1.png",
+        "date": "16 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime Majo to Youhei confirma su estreno para abril de 2027",
+        "description": "El anime Majo to Youhei (La bruja y el mercenario) lanza su primer tráiler y confirma su estreno para abril de 2027. Conoce a los nuevos personajes.",
+        "href": "articulos/mahotoyouhei.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/shangrilafrontier-1.png",
+        "date": "16 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Shangri-La Frontier revela fecha y arte para su tercera temporada",
+        "description": "El anime Shangri-La Frontier anuncia su tercera temporada para el 10 de enero de 2027. Conoce el nuevo arte visual, el arco del torneo GGC y todos los detalles.",
+        "href": "articulos/shangrilafrontier.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/thefable-1.png",
+        "date": "16 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime The Fable confirma su segunda temporada para enero de 2027",
+        "description": "El anime The Fable anuncia su segunda temporada para enero de 2027. Descubre los detalles del nuevo avance y la llegada del temido Arco de Yamaoka.",
+        "href": "articulos/thefable.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/yugioh-1.png",
+        "date": "16 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Sorpresa nostálgica: Yu-Gi-Oh! estrena animación con los personajes originales",
+        "description": "La franquicia de Yu-Gi-Oh! sorprende a sus fans con una animación especial con Yugi, Kaiba y el elenco original para celebrar la exposición de arte de Kazuki...",
+        "href": "articulos/yugioh(1).html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/magicshould-1.png",
+        "date": "15 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "A Returner",
+        "description": "El anime A Returner",
+        "href": "articulos/magicshould.html"
+    },
+    {
+        "category": "anime",
         "img": "https://blogger.googleusercontent.com/img/a/AVvXsEgx_iBwPBR3O2-amKR0qhrbJqtDCI226hFgSzDl0eZn5wNC5ySQKNtA4MPqiYFm3M0KLaZiy503Q4bBgj0Dxo4EKaUbLI98wyMrY_Wkl9enFTX9LKmmch_MSYY_A1UcDjfo5LL_jslLXj3dU064umwK7Px_FOFoqegYea0ul3YLaqTB3TOAKHkw95yYd_Y=w554-h391",
         "date": "15 Sep 2026",
         "categoryLabel": "Anime",
         "title": "El anime Kyouran Reijou Nia Liston revela nuevo arte visual y voces para su elenco",
         "description": "El anime Kyouran Reijou Nia Liston anuncia su estreno para el 6 de octubre de 2026. Conoce el nuevo arte visual, elenco y detalles de esta historia de reenca...",
         "href": "articulos/nialiston.html"
+    },
+    {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/wearealiens-1.png",
+        "date": "15 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime We Are Aliens revela nuevo avance y el debut actoral de Ten Yamasaki",
+        "description": "La película animada We Are Aliens estrena un nuevo avance, revela su fecha de estreno para el 25 de septiembre y muestra el debut actoral de Ten Yamasaki.",
+        "href": "articulos/wearealiens.html"
     },
     {
         "category": "anime",
