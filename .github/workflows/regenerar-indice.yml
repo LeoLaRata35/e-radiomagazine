@@ -39,13 +39,27 @@ jobs:
 
       - name: Commit y push si cambió algo
         run: |
-          if [[ -n "$(git status --porcelain data/articles.json)" ]]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/articles.json
-            git commit -m "Regenerar índice de artículos [skip ci]"
-            git push
-            echo "Índice actualizado automáticamente"
-          else
+          if [[ -z "$(git status --porcelain data/articles.json)" ]]; then
             echo "Sin cambios en el índice"
+            exit 0
           fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/articles.json
+          git commit -m "Regenerar índice de artículos [skip ci]"
+          # Si llegaron otros pushes mientras regeneraba, rebasar y reintentar
+          for intento in 1 2 3; do
+            git fetch origin main
+            if git rebase origin/main; then
+              if git push; then
+                echo "Índice actualizado automáticamente"
+                exit 0
+              fi
+            else
+              git rebase --abort
+            fi
+            echo "Intento $intento falló (llegaron cambios concurrentes), reintentando en 10s..."
+            sleep 10
+          done
+          echo "No se pudo publicar el índice tras 3 intentos"
+          exit 1
