@@ -19,6 +19,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/uchi-no-otouto-domo-ga-sumimasen-1.png",
+        "date": "25 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Uchi no Otouto-domo ga Sumimasen lanza avance y suma a Yoko Hikasa",
+        "description": "El anime Uchi no Otouto-domo ga Sumimasen revela su tercer tráiler, nuevos temas musicales y suma a Yoko Hikasa para su segunda parte en octubre.",
+        "href": "articulos/uchi-no-otouto-domo-ga-sumimasen.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/bless-1b.png",
         "date": "24 Sep 2026",
         "categoryLabel": "Anime",
