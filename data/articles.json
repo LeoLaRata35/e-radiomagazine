@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hellmode-1.png",
+        "date": "25 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Hell Mode confirma su tercera temporada con una mazmorra de rango S",
+        "description": "Hell Mode tendrá una tercera temporada centrada en una mazmorra de rango S. El anuncio incluyó un nuevo visual con Allen, Merle y el gólem Tam-Tam.",
+        "href": "articulos/hellmode.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tougen-anki-1.png",
         "date": "25 Sep 2026",
         "categoryLabel": "Anime",
