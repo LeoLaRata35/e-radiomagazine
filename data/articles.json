@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/gintama-1.png",
+        "date": "26 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El 10 de octubre es declarado oficialmente como el Día de Gintama en Japón",
+        "description": "El 10 de octubre es declarado oficialmente como el Día de Gintama en Japón. Conoce los divertidos mensajes del elenco y del creador Hideaki Sorachi.",
+        "href": "articulos/gintama.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/duel-masters-lost-1.png",
         "date": "25 Sep 2026",
         "categoryLabel": "Anime",
