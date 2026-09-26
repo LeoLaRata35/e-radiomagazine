@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/yanineko-1.png",
+        "date": "26 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El legendario músico Keiichi Suzuki revela los secretos sonoros del anime Yani Neko",
+        "description": "El legendario compositor Keiichi Suzuki detalla su trabajo en la banda sonora del anime Yani Neko. El soundtrack oficial se lanza el 30 de septiembre.",
+        "href": "articulos/yanineko(1).html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/duel-masters-lost-1.png",
         "date": "25 Sep 2026",
         "categoryLabel": "Anime",
