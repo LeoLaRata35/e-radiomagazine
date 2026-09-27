@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/baki-1.png",
+        "date": "27 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime Baki-Dou revela brutal arte estilo Ukiyo-e para su segunda parte",
+        "description": "Baki-Dou revela un brutal arte visual estilo Ukiyo-e para su segunda parte. Conoce los detalles del choque entre Baki y Miyamoto Musashi que llegará a Netflix.",
+        "href": "articulos/baki.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/irumakun-1.png",
         "date": "27 Sep 2026",
         "categoryLabel": "Anime",
