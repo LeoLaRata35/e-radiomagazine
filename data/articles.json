@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kurumi-chan-1.png",
+        "date": "27 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime financiero FX Fighter Kurumi-chan revela su dramático primer episodio",
+        "description": "El anime FX Fighter Kurumi-chan revela su crudo primer episodio sobre una estudiante que entra al mercado de divisas para recuperar 20 millones de yenes.",
+        "href": "articulos/kurumi-chan(1).html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/monsterstrike-1.png",
         "date": "27 Sep 2026",
         "categoryLabel": "Anime",
