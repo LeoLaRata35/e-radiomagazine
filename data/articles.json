@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/monsterstrike-1.png",
+        "date": "27 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Monster Strike anuncia el nuevo anime Mera x Death para enero",
+        "description": "La franquicia Monster Strike anuncia el estreno del anime Mera x Death para el 5 de enero de 2027. Conoce la oscura y misteriosa historia de Mera y Thirteen.",
+        "href": "articulos/monsterstrike.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/gintama-1.png",
         "date": "26 Sep 2026",
         "categoryLabel": "Anime",
