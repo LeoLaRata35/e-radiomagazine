@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/futsutsuka-na-akujo-dewa-gozaimasu-ga-1.png",
+        "date": "28 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Futsutsuka na Akujo revela arte epílogo y fecha para su segunda temporada",
+        "description": "El anime Futsutsuka na Akujo revela su arte visual epílogo tras el final de su primera parte y confirma el estreno de sus nuevos episodios para enero de 2027.",
+        "href": "articulos/futsutsuka-na-akujo-dewa-gozaimasu-ga.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/liargame-1.png",
         "date": "28 Sep 2026",
         "categoryLabel": "Anime",
