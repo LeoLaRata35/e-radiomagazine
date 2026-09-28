@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/liargame-1.png",
+        "date": "28 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El tenso anime LIAR GAME confirma la producción de su segunda temporada",
+        "description": "El thriller psicológico LIAR GAME confirma la producción de su segunda temporada animada. Conoce las reacciones del elenco de voces y los detalles de las pró...",
+        "href": "articulos/liargame(1).html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/baki-1.png",
         "date": "27 Sep 2026",
         "categoryLabel": "Anime",
