@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/blackclover-1.png",
+        "date": "29 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Black Clover revela visual y evento global para su segunda temporada",
+        "description": "La segunda temporada del anime Black Clover revela un nuevo arte visual protagonizado por la Tríada Oscura y anuncia un evento de transmisión global.",
+        "href": "articulos/blackclover(2).html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kaketa-tsuki-no-mercedes-1.png",
         "date": "29 Sep 2026",
         "categoryLabel": "Anime",
