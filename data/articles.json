@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/paradox-live-1.png",
+        "date": "29 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Paradox Live revela a los tres integrantes del nuevo equipo ILLGATOR",
+        "description": "El proyecto multimedia Paradox Live estrena su cuarta temporada y presenta al nuevo equipo de hip-hop ILLGATOR. Conoce a los integrantes y actores de voz.",
+        "href": "articulos/paradox-live.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/shuiro-no-kamen-1.png",
         "date": "29 Sep 2026",
         "categoryLabel": "Anime",
