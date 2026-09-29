@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/shuiro-no-kamen-1.png",
+        "date": "29 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Yuya Tegoshi debutará como actor de voz en el anime Shuiro no Kamen",
+        "description": "El artista Yuya Tegoshi participará como actor de voz en el anime de fantasía oscura Shuiro no Kamen. Conoce los detalles del estreno y las transmisiones en ...",
+        "href": "articulos/shuiro-no-kamen.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/sutegoro-bucchi-1.jpeg",
         "date": "29 Sep 2026",
         "categoryLabel": "Anime",
