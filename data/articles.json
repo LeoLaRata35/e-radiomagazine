@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kaketa-tsuki-no-mercedes-1.png",
+        "date": "29 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Kaketa Tsuki no Mercedes revela arte visual y promete novedades mensuales",
+        "description": "El anime de fantasía Kaketa Tsuki no Mercedes revela su primer arte visual protagonizado por Anna Nagase y confirma su estreno para enero de 2027.",
+        "href": "articulos/kaketa-tsuki-no-mercedes.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/sutegoro-bucchi-1.jpeg",
         "date": "29 Sep 2026",
         "categoryLabel": "Anime",
