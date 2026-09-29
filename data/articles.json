@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/sutegoro-bucchi-1.jpeg",
+        "date": "29 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "El explosivo manga de comedia Sutegoro Bucchi lanza su primer volumen",
+        "description": "El divertido manga Sutegoro Bucchi lanza su primer volumen recopilatorio. Conoce la historia del niño más fuerte del mundo y su amigo, el príncipe demonio.",
+        "href": "articulos/sutegoro-bucchi.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/futsutsuka-na-akujo-dewa-gozaimasu-ga-1.png",
         "date": "28 Sep 2026",
         "categoryLabel": "Anime",
