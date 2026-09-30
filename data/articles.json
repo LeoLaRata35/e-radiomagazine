@@ -28,6 +28,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/obocchama-kun-reborn-1.png",
+        "date": "30 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Obocchama-kun REBORN: El millonario más gracioso de Japón regresa 35 años después",
+        "description": "Tras 35 años, el clásico anime de comedia Obocchama-kun anuncia su regreso con una nueva serie llamada REBORN. Conoce los detalles de esta co-producción con ...",
+        "href": "articulos/obocchama-kun-reborn.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/villana-regordeta-1.png",
         "date": "30 Sep 2026",
         "categoryLabel": "Anime",
