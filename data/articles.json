@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hajimemashita-1.png",
+        "date": "30 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Nana Mizuki se une al mundo mágico de Sekai Saikyou no Majo, Hajimemashita",
+        "description": "El anime Sekai Saikyou no Majo revela los detalles de su primer episodio, confirmando la participación de Nana Mizuki y un evento especial en YouTube.",
+        "href": "articulos/hajimemashita.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/blackclover-1.png",
         "date": "29 Sep 2026",
         "categoryLabel": "Anime",
