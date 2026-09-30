@@ -19,6 +19,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/yugioh-1.png",
+        "date": "30 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Yu-Gi-Oh! El Lado Oscuro de las Dimensiones regresa a los cines",
+        "description": "La película Yu-Gi-Oh! El Lado Oscuro de las Dimensiones anuncia su regreso a los cines de Japón para celebrar el 30° aniversario de la franquicia y el legado...",
+        "href": "articulos/yugioh(2).html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/blackclover-1.png",
         "date": "29 Sep 2026",
         "categoryLabel": "Anime",
