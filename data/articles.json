@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mahoutsukai-no-yoru-1.png",
+        "date": "30 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Mahoutsukai no Yoru revela su espectacular avance final y el tema principal",
+        "description": "La película animada Mahoutsukai no Yoru revela su tráiler final y confirma que supercell (ryo y Nagi Yanagi) interpretará el tema principal. Estreno en novie...",
+        "href": "articulos/mahoutsukai-no-yoru.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/villana-regordeta-1.png",
         "date": "30 Sep 2026",
         "categoryLabel": "Anime",
