@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kenijirotsuda-1.png",
+        "date": "30 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Kenjiro Tsuda sienta un precedente legal contra el uso de IA en videos",
+        "description": "El actor Kenjiro Tsuda (Seto Kaiba, Nanami) gana una batalla legal histórica en Japón contra videos generados con inteligencia artificial que clonaban su voz.",
+        "href": "articulos/kenijirotsuda.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mahoutsukai-no-yoru-1.png",
         "date": "30 Sep 2026",
         "categoryLabel": "Anime",
