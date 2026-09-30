@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/bleach-1.png",
+        "date": "29 Sep 2026",
+        "categoryLabel": "Anime",
+        "title": "Los actores de Bleach conmueven las redes presentando a la nueva generación",
+        "description": "Los actores de voz originales de Bleach emocionan a los fanáticos al presentar a los personajes de Kazui e Ichika como si fueran sus verdaderos hijos y sobri...",
+        "href": "articulos/bleach(2).html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kaketa-tsuki-no-mercedes-1.png",
         "date": "29 Sep 2026",
         "categoryLabel": "Anime",
