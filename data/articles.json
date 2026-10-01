@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kurumi-chan-1.png",
+        "date": "1 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime Guerrera FX Kurumi debuta con una inusual advertencia de riesgo financiero",
+        "description": "El anime sobre finanzas Guerrera FX Kurumi (FX Senshi Kurumi-chan) sorprende a los fans al iniciar su emisión con una extensa advertencia legal sobre los pel...",
+        "href": "articulos/kurumi-chan(2).html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/seirei-gensouki-1.png",
         "date": "1 Oct 2026",
         "categoryLabel": "Anime",
