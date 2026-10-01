@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/fatezero-1.png",
+        "date": "1 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime Fate/Zero celebra quince años de historia permitiendo a los fans elegir sus episodios favoritos",
+        "description": "Fate/Zero celebra su 15° aniversario con una increíble colaboración visual junto a Mahoutsukai no Yoru. Los fans podrán votar qué episodios se retransmitirán...",
+        "href": "articulos/fatezero.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kurumi-chan-1.png",
         "date": "1 Oct 2026",
         "categoryLabel": "Anime",
