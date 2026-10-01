@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/seirei-gensouki-1.png",
+        "date": "1 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime Seirei Gensouki confirma la producción de su tercera temporada",
+        "description": "El popular anime isekai Seirei Gensouki (Spirit Chronicles) confirma oficialmente la producción de su tercera temporada. Conoce los detalles y el mensaje de ...",
+        "href": "articulos/seirei-gensouki.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hajimemashita-1.png",
         "date": "30 Sep 2026",
         "categoryLabel": "Anime",
