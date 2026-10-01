@@ -19,6 +19,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ranma12-1.png",
+        "date": "1 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Ranma y Ryoga vuelven a enfrentarse en el estreno de la tercera temporada",
+        "description": "La tercera temporada de Ranma 1/2 revela los detalles y el primer avance de su episodio estreno, donde Ranma y Ryoga se reencuentran en el dojo.",
+        "href": "articulos/ranma12.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/seirei-gensouki-1.png",
         "date": "1 Oct 2026",
         "categoryLabel": "Anime",
