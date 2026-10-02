@@ -46,6 +46,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tokyorevengers-1.png",
+        "date": "2 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Tokyo Revengers arranca su arco de la Guerra de las Tres Deidades",
+        "description": "Tokyo Revengers: Sonten Sensou-hen inicia su emisión en la televisión japonesa y revela sus impresionantes videos de opening y ending.",
+        "href": "articulos/tokyorevengers(1).html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/yamato-yo-eien-ni-rebel3199-1.png",
         "date": "2 Oct 2026",
         "categoryLabel": "Anime",
