@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/dark-gathering-1.png",
+        "date": "1 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Dark Gathering revela su segundo afiche de terror enfocado en el misterioso santuario de Kioto",
+        "description": "La segunda temporada de Dark Gathering revela su segundo afiche de terror enfocado en el misterioso santuario Kubizuka Daimyojin de Kioto.",
+        "href": "articulos/dark-gathering.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/fatezero-1.png",
         "date": "1 Oct 2026",
         "categoryLabel": "Anime",
