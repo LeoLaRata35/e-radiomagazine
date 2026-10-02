@@ -19,6 +19,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/lasguerrerasmagicas-1.png",
+        "date": "2 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Las Guerreras Mágicas inician su reedición en Nakayoshi",
+        "description": "Las Guerreras Mágicas (Magic Knight Rayearth) inician su reedición en la revista Nakayoshi para celebrar el estreno del nuevo anime.",
+        "href": "articulos/lasguerrerasmagicas(1).html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/magicalexplorer-1.png",
         "date": "2 Oct 2026",
         "categoryLabel": "Anime",
