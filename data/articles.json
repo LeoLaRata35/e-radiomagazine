@@ -1,5 +1,14 @@
 [
     {
+        "category": "manga",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/phantombusters-1.png",
+        "date": "2 Oct 2026",
+        "categoryLabel": "Manga",
+        "title": "Phantom Busters estrena su octavo tomo y su primera novela ligera",
+        "description": "Phantom Busters lanza su octavo volumen y su primera novela ligera oficial, impulsado por su esperada adaptación al anime.",
+        "href": "articulos/phantombusters.html"
+    },
+    {
         "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/yamato-yo-eien-ni-rebel3199-1.png",
         "date": "2 Oct 2026",
