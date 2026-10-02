@@ -1,5 +1,14 @@
 [
     {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kyouran-reijou-nia-liston-1.png",
+        "date": "2 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Kyouran Reijou Nia Liston revela sus primeras imágenes para el estreno",
+        "description": "El anime Kyouran Reijou Nia Liston revela las primeras imágenes y detalles de su esperado primer episodio que se estrenará el 6 de octubre.",
+        "href": "articulos/kyouran-reijou-nia-liston.html"
+    },
+    {
         "category": "manga",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/phantombusters-1.png",
         "date": "2 Oct 2026",
