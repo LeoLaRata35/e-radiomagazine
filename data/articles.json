@@ -28,6 +28,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/megane-tokidoki-yankee-kun-1.png",
+        "date": "1 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "El manga Megane, Tokidoki, Yankee-kun confirma su adaptación al anime para abril de 2027",
+        "description": "El manga romántico Megane, Tokidoki, Yankee-kun anuncia su adaptación al anime para abril de 2027 con Hiroto Shimizu y Ryoko Hara como protagonistas.",
+        "href": "articulos/megane-tokidoki-yankee-kun.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ranma12-1.png",
         "date": "1 Oct 2026",
         "categoryLabel": "Anime",
