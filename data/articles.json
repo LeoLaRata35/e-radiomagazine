@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/demonscrest-1.png",
+        "date": "2 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Demons",
+        "description": "El anime Demons",
+        "href": "articulos/demonscrest(1).html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kyouran-reijou-nia-liston-1.png",
         "date": "2 Oct 2026",
         "categoryLabel": "Anime",
