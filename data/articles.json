@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/yamato-yo-eien-ni-rebel3199-1.png",
+        "date": "2 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Yamato y Forever REBEL3199 revela su tema final interpretado por Junko Yagami y nuevos visuales",
+        "description": "La última parte de Space Battleship Yamato REBEL3199 revela su tema final interpretado por Junko Yagami y nuevos visuales oficiales.",
+        "href": "articulos/yamato-yo-eien-ni-rebel3199.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/dark-gathering-1.png",
         "date": "1 Oct 2026",
         "categoryLabel": "Anime",
