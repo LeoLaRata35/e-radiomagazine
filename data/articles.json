@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/biblia-koshodou-no-jiken-techou-1.png",
+        "date": "3 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Biblia Koshodou no Jiken Techou revela su primer avance oficial",
+        "description": "El anime de misterio Biblia Koshodou no Jiken Techou revela su primer tráiler oficial, nuevos miembros del elenco y fija su estreno para abril de 2027.",
+        "href": "articulos/biblia-koshodou-no-jiken-techou.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/dorei-kara-no-kitai-to-hyouka-no-seide-sakushu-dekinai-no-daga-1.png",
         "date": "3 Oct 2026",
         "categoryLabel": "Anime",
