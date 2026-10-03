@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/spiceandwolf-1.png",
+        "date": "3 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Spice and Wolf estrena el primer avance animado de su segunda temporada",
+        "description": "Spice and Wolf revela el primer avance animado de su segunda temporada y confirma a la actriz Romi Park como la misteriosa comerciante Eve Boland.",
+        "href": "articulos/spiceandwolf(1).html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/demonscrest-1.png",
         "date": "2 Oct 2026",
         "categoryLabel": "Anime",
