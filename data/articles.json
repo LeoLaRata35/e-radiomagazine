@@ -19,6 +19,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/lasguerrerasmagicas-1.png",
+        "date": "3 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime Las Guerreras Mágicas revela la sinopsis y las imágenes de su primer episodio",
+        "description": "El nuevo anime de Magic Knight Rayearth (Las guerreras mágicas) revela la sinopsis y las primeras imágenes de su episodio debut. Conoce los detalles de su re...",
+        "href": "articulos/lasguerrerasmagicas(2).html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/shin-no-seijo-1.png",
         "date": "3 Oct 2026",
         "categoryLabel": "Anime",
