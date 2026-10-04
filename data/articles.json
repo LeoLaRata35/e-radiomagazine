@@ -37,6 +37,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/rebuild-world-1.png",
+        "date": "3 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Rebuild World revela su primer arte visual y el equipo detrás de su anime",
+        "description": "El anime postapocalíptico Rebuild World revela su primer arte visual, el equipo de producción del estudio Raging Bull y su sinopsis oficial tras años de espera.",
+        "href": "articulos/rebuild-world.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/shin-no-seijo-1.png",
         "date": "3 Oct 2026",
         "categoryLabel": "Anime",
