@@ -9,6 +9,15 @@
         "href": "articulos/lasguerrerasmagicas(3).html"
     },
     {
+        "category": "videojuegos",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/madokamagica-1.png",
+        "date": "4 Oct 2026",
+        "categoryLabel": "Videojuegos",
+        "title": "Madoka Magica: Magia Exedra sorprende con Sorana Magica, una épica historia de ciencia ficción",
+        "description": "Madoka Magica: Magia Exedra lanza Sorana Magica, una nueva historia de ciencia ficción ambientada en el año 2225 con 150 tiradas gratis y recompensas.",
+        "href": "articulos/madokamagica(5).html"
+    },
+    {
         "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/biblia-koshodou-no-jiken-techou-1.png",
         "date": "3 Oct 2026",
