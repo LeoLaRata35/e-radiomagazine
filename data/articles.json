@@ -1,7 +1,7 @@
 [
     {
         "category": "anime",
-        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/lasguerrerasmagicas-1.png",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/lasguerrerasmagicas-3-header.png",
         "date": "4 Oct 2026",
         "categoryLabel": "Anime",
         "title": "Las guerreras mágicas revelan nuevos diseños y secretos en su premier de Japón",
@@ -10,7 +10,7 @@
     },
     {
         "category": "videojuegos",
-        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/madokamagica-1.png",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/madokamagica-5-header.png",
         "date": "4 Oct 2026",
         "categoryLabel": "Videojuegos",
         "title": "Madoka Magica: Magia Exedra sorprende con Sorana Magica, una épica historia de ciencia ficción",
@@ -46,7 +46,7 @@
     },
     {
         "category": "anime",
-        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/lasguerrerasmagicas-1.png",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/lasguerrerasmagicas-2-header.png",
         "date": "3 Oct 2026",
         "categoryLabel": "Anime",
         "title": "El anime Las Guerreras Mágicas revela la sinopsis y las imágenes de su primer episodio",
@@ -109,7 +109,7 @@
     },
     {
         "category": "anime",
-        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/lasguerrerasmagicas-1.png",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/lasguerrerasmagicas-1-header.png",
         "date": "2 Oct 2026",
         "categoryLabel": "Anime",
         "title": "Las Guerreras Mágicas inician su reedición en Nakayoshi",
@@ -622,7 +622,7 @@
     },
     {
         "category": "anime",
-        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/lasguerrerasmagicas-1.png",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/lasguerrerasmagicas-base-header.png",
         "date": "20 Sep 2026",
         "categoryLabel": "Anime",
         "title": "Las Guerreras Mágicas revelan épico segundo avance con nuevas voces",
@@ -892,7 +892,7 @@
     },
     {
         "category": "anime",
-        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/madokamagica-1.png",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/madokamagica-base-header.png",
         "date": "13 Sep 2026",
         "categoryLabel": "Anime",
         "title": "Madoka Magica revela nuevo tráiler e introduce a un enigmático personaje",
@@ -1081,7 +1081,7 @@
     },
     {
         "category": "anime",
-        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/madokamagica-1.png",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/madokamagica-base-header.png",
         "date": "31 Aug 2026",
         "categoryLabel": "Anime",
         "title": "La película Madoka Magica: Walpurgis no Kaiten recauda 939 millones en 3 días",
@@ -1117,7 +1117,7 @@
     },
     {
         "category": "anime",
-        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/madokamagica-1.png",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/madokamagica-base-header.png",
         "date": "29 Aug 2026",
         "categoryLabel": "Anime",
         "title": "Emiri Kato detalla su regreso como Kyubey en la nueva película de Madoka Magica",
@@ -1162,7 +1162,7 @@
     },
     {
         "category": "anime",
-        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/madokamagica-1.png",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/madokamagica-base-header.png",
         "date": "27 Aug 2026",
         "categoryLabel": "Anime",
         "title": "Revelan tráiler exclusivo de Rakuen Tsuihō: Kokoro no Resonance en cines",
@@ -1405,7 +1405,7 @@
     },
     {
         "category": "cine",
-        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/madokamagica-1.png",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/madokamagica-base-header.png",
         "date": "28 Jun 2026",
         "categoryLabel": "Cine",
         "title": "Estrenan el tráiler principal de la nueva película de Madoka Magica",
