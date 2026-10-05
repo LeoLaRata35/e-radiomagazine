@@ -19,6 +19,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/the-detective-is-already-dead-1.png",
+        "date": "5 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "The Detective Is Already Dead revela tráiler y visual de su segunda temporada",
+        "description": "El anime The Detective Is Already Dead (Tantei wa Mou, Shindeiru) revela un nuevo tráiler y póster previo al estreno de su segunda temporada este 7 de octubre.",
+        "href": "articulos/the-detective-is-already-dead.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/vampire-1.png",
         "date": "5 Oct 2026",
         "categoryLabel": "Anime",
