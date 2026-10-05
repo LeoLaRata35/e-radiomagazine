@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
   async function loadAllArticles() {
     if (allArticlesCache) return allArticlesCache;
     try {
-      var resp = await fetch('data/articles.json');
+      var resp = await fetch('data/articles.json?v=' + Date.now(), { cache: 'no-store' });
       if (!resp.ok) throw new Error('Failed to load articles.json');
       allArticlesCache = await resp.json();
       return allArticlesCache;
