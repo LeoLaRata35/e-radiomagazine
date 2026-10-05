@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/caperucita-1.png",
+        "date": "5 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Caperucita Roja se encuentra con un cadáver llegará en enero de 2027",
+        "description": "El anime de misterio Caperucita Roja se encuentra con un cadáver revela su primer tráiler y confirma su estreno en televisión para enero de 2027.",
+        "href": "articulos/caperucita.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hyaku-youfu-1.png",
         "date": "5 Oct 2026",
         "categoryLabel": "Anime",
