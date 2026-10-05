@@ -19,6 +19,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/space-battleship-yamato-2199-1.png",
+        "date": "5 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Hideaki Anno dirigirá la nueva película Space Battleship Yamato √2199",
+        "description": "Hideaki Anno y Yutaka Izubuchi dirigirán Space Battleship Yamato √2199, una nueva película animada producida por Studio Khara y Production I.G.",
+        "href": "articulos/space-battleship-yamato-2199.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/the-detective-is-already-dead-1.png",
         "date": "5 Oct 2026",
         "categoryLabel": "Anime",
