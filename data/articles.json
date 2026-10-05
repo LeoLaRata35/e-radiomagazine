@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hyaku-youfu-1.png",
+        "date": "5 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Hyaku Youfu revela sinopsis y un nuevo personaje para su tercera temporada",
+        "description": "El anime de fantasía Hyaku Youfu (Manual de los Cien Demonios) revela la sinopsis de su tercera temporada y la llegada del actor Kazuhiro Nakatani.",
+        "href": "articulos/hyaku-youfu.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/lasguerrerasmagicas-3-header.png",
         "date": "4 Oct 2026",
         "categoryLabel": "Anime",
