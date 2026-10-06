@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/otome-game-no-heroine-de-saikyou-survival-1.png",
+        "date": "6 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Otome Game no Heroine de Saikyou Survival estrenará su anime en julio de 2027",
+        "description": "El anime de fantasía oscura Otome Game no Heroine de Saikyou Survival revela su primer tráiler y confirma su estreno en televisión para julio de 2027.",
+        "href": "articulos/otome-game-no-heroine-de-saikyou-survival.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/sudachi-no-maoujou-1.png",
         "date": "6 Oct 2026",
         "categoryLabel": "Anime",
