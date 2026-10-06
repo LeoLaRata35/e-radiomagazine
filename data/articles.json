@@ -9,6 +9,15 @@
         "href": "articulos/caperucita.html"
     },
     {
+        "category": "videojuegos",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hideokojima-1.png",
+        "date": "5 Oct 2026",
+        "categoryLabel": "Videojuegos",
+        "title": "Hideo Kojima revive su programa de radio con novedades sobre PHYSINT y OD",
+        "description": "Hideo Kojima revive su programa de radio Koji 10 con un episodio especial en video donde hablará sobre el desarrollo de PHYSINT, OD y Death Stranding 2.",
+        "href": "articulos/hideokojima.html"
+    },
+    {
         "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hyaku-youfu-1.png",
         "date": "5 Oct 2026",
