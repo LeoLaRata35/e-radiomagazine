@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/grotesqqque-1.png",
+        "date": "6 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "La película GROTESQQQUE revela el tenso tráiler de su segmento Nocturne",
+        "description": "La película original GROTESQQQUE revela el tráiler de Nocturne, una oscura historia animada por CloverWorks sobre la supervivencia vampírica tras el apocalip...",
+        "href": "articulos/grotesqqque.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/otome-game-no-heroine-de-saikyou-survival-1.png",
         "date": "6 Oct 2026",
         "categoryLabel": "Anime",
