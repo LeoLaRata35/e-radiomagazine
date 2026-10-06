@@ -37,6 +37,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kenjiro-tsuda-1.png",
+        "date": "5 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Kenjiro Tsuda logra que la justicia reconozca los derechos de publicidad de su voz frente a la IA",
+        "description": "El actor de voz Kenjiro Tsuda logró un histórico fallo judicial contra la IA tras demandar a TikTok por clonar y monetizar su voz sin permiso en 188 videos.",
+        "href": "articulos/kenjiro-tsuda.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/space-battleship-yamato-2199-1.png",
         "date": "5 Oct 2026",
         "categoryLabel": "Anime",
