@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/cheat-fuyo-1.png",
+        "date": "6 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "La Madre de los Asesinos se roba el nuevo tráiler del anime Cheat Fuyo",
+        "description": "El anime Cheat Fuyo revela un divertido tráiler narrado por el impredecible personaje de la Madre de los Asesinos justo antes de su gran estreno en Japón.",
+        "href": "articulos/cheat-fuyo.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/caperucita-1.png",
         "date": "5 Oct 2026",
         "categoryLabel": "Anime",
