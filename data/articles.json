@@ -28,6 +28,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ssss.gridman-1.png",
+        "date": "6 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Inicia transmisión gratuita de SSSS.GRIDMAN por colaboración con Ultraman",
+        "description": "El canal oficial de YouTube transmite gratis el anime SSSS.GRIDMAN para celebrar su llegada al Ultraman Card Game en diciembre de 2026.",
+        "href": "articulos/ssss.gridman.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/sudachi-no-maoujou-1.png",
         "date": "6 Oct 2026",
         "categoryLabel": "Anime",
