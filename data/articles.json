@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/sudachi-no-maoujou-1.png",
+        "date": "6 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime Sudachi no Maoujou revela nuevo tráiler y confirma elenco para 2027",
+        "description": "El anime de comedia Sudachi no Maoujou revela su segundo tráiler y suma al actor Yohei Azakami al elenco. Conoce los detalles de su estreno en enero de 2027.",
+        "href": "articulos/sudachi-no-maoujou.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/caperucita-1.png",
         "date": "5 Oct 2026",
         "categoryLabel": "Anime",
