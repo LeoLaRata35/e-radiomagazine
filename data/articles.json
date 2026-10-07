@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/love-live-hasunosora-1.png",
+        "date": "7 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Anuncian la llegada del formato 4DX para la película de Love Live Hasunosora",
+        "description": "La película Love Live! Hasunosora Bloom Garden Party anuncia sus proyecciones en formato 4DX a partir del 23 de octubre en 61 cines de Japón.",
+        "href": "articulos/love-live-hasunosora.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/cheat-fuyo-1.png",
         "date": "6 Oct 2026",
         "categoryLabel": "Anime",
