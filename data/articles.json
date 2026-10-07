@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/amayo-no-tsuki-1.png",
+        "date": "7 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Revelan el elenco principal y tráiler para el anime Amayo no Tsuki",
+        "description": "El anime Amayo no Tsuki confirma su estreno para 2027 y revela su primer tráiler junto con las voces de Iori Saeki y Sora Amamiya en los papeles principales.",
+        "href": "articulos/amayo-no-tsuki.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/houkago-kitaku-biyori-1.png",
         "date": "7 Oct 2026",
         "categoryLabel": "Anime",
