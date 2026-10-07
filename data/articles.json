@@ -19,6 +19,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/las-guerreras-mágicas-1.png",
+        "date": "7 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "El nuevo anime de Las Guerreras Mágicas utiliza el clásico opening de 1994",
+        "description": "El primer episodio del nuevo anime de Las Guerreras Mágicas rinde homenaje a la serie original utilizando el icónico tema musical Yuzurenai Negai de 1994.",
+        "href": "articulos/las-guerreras-mágicas.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/love-live-hasunosora-1.png",
         "date": "7 Oct 2026",
         "categoryLabel": "Anime",
