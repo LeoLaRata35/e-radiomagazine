@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/houkago-kitaku-biyori-1.png",
+        "date": "7 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Anuncian anime de Houkago Kitaku Biyori para abril de 2027",
+        "description": "El manga de comedia romántica Houkago Kitaku Biyori confirma su adaptación al anime para abril de 2027 en la televisión japonesa.",
+        "href": "articulos/houkago-kitaku-biyori.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/cheat-fuyo-1.png",
         "date": "6 Oct 2026",
         "categoryLabel": "Anime",
