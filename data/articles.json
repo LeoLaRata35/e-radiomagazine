@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hokuhokusei-ni-kumo-to-yuke-1.png",
+        "date": "8 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime Hokuhokusei ni Kumo to Yuke llegará a Netflix en 2027",
+        "description": "El anime de misterio Hokuhokusei ni Kumo to Yuke anuncia su estreno mundial exclusivo por Netflix para el año 2027 con Tomohiro Ohno como el protagonista.",
+        "href": "articulos/hokuhokusei-ni-kumo-to-yuke.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hone-dragon-no-mana-musume-1.png",
         "date": "8 Oct 2026",
         "categoryLabel": "Anime",
