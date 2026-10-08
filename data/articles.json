@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/bless1-1.png",
+        "date": "8 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Yoshiki Nakajima dará vida a Joe Osaki en el anime Bless",
+        "description": "El actor Yoshiki Nakajima se une al elenco del anime Bless como Joe Osaki. La serie producida por A-1 Pictures se estrenará en enero de 2027.",
+        "href": "articulos/bless1.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kyoufu-collector-1.png",
         "date": "8 Oct 2026",
         "categoryLabel": "Anime",
