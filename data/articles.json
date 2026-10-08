@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hone-dragon-no-mana-musume-1.png",
+        "date": "8 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime de Hone Dragon no Mana Musume llegará en 2027",
+        "description": "El manga Hone Dragon no Mana Musume anuncia su adaptación al anime para 2027 con la animación de Doga Kobo y las voces de Kana Hanazawa y Kazuhiko Inoue.",
+        "href": "articulos/hone-dragon-no-mana-musume.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kyoufu-collector-1.png",
         "date": "8 Oct 2026",
         "categoryLabel": "Anime",
