@@ -37,6 +37,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ki-ni-natteru-hito-ga-otoko-janakatta-1.png",
+        "date": "8 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Ki ni Natteru Hito ga Otoko Janakatta revela nuevo tráiler y elenco",
+        "description": "El anime Ki ni Natteru Hito ga Otoko Janakatta revela su primer tráiler oficial y anuncia a Kenjiro Tsuda y Fairouz Ai en su elenco para enero de 2027.",
+        "href": "articulos/ki-ni-natteru-hito-ga-otoko-janakatta.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kyoufu-collector-1.png",
         "date": "8 Oct 2026",
         "categoryLabel": "Anime",
