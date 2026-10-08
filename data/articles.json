@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/gundam-seed-freedom-zero-1.png",
+        "date": "8 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "La película Gundam SEED Freedom Zero llegará a los cines en enero de 2027",
+        "description": "La nueva película precuela Mobile Suit Gundam SEED Freedom Zero confirma su estreno para el 15 de enero de 2027 con Shinn Asuka como protagonista.",
+        "href": "articulos/gundam-seed-freedom-zero.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hokuhokusei-ni-kumo-to-yuke-1.png",
         "date": "8 Oct 2026",
         "categoryLabel": "Anime",
