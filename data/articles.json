@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/dreamland-1.png",
+        "date": "9 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime francés Dreamland detalla la historia de su primer episodio",
+        "description": "El anime francés Dreamland revela la sinopsis de su primer episodio donde Terence enfrentará sus miedos para convertirse en un viajero de los sueños.",
+        "href": "articulos/dreamland.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/eatman-1.png",
         "date": "9 Oct 2026",
         "categoryLabel": "Anime",
