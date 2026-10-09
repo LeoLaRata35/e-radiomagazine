@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/teenage-mercenary-1.png",
+        "date": "9 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime de Teenage Mercenary confirma su gran estreno para 2027",
+        "description": "El popular webtoon de acción Teenage Mercenary confirma su adaptación al anime para 2027 con la animación de J.C.STAFF y la música de Hiroyuki Sawano.",
+        "href": "articulos/teenage-mercenary.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/bless1-1.png",
         "date": "8 Oct 2026",
         "categoryLabel": "Anime",
