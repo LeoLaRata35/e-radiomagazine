@@ -55,6 +55,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/zatsuyou-fuyojutsushi-1.png",
+        "date": "8 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "LiSA y TK se unen para el opening del anime Zatsuyou Fuyojutsushi",
+        "description": "El anime Zatsuyou Fuyojutsushi revela su segundo tráiler y confirma que la cantante LiSA y TK de Ling tosite sigure interpretarán su nuevo opening.",
+        "href": "articulos/zatsuyou-fuyojutsushi.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/amayo-no-tsuki-1.png",
         "date": "7 Oct 2026",
         "categoryLabel": "Anime",
