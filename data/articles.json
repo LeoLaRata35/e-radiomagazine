@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/eatman-1.png",
+        "date": "9 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "El clásico EAT-MAN regresa con un nuevo anime después de 28 años",
+        "description": "El clásico manga de ciencia ficción EAT-MAN confirma un nuevo anime llamado The Over Order tras 28 años de espera con el regreso del actor Masashi Ebara.",
+        "href": "articulos/eatman.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/emperatriz-divorciada-1.png",
         "date": "9 Oct 2026",
         "categoryLabel": "Anime",
