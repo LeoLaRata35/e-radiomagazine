@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/emperatriz-divorciada-1.png",
+        "date": "9 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime de La Emperatriz Divorciada confirma su estreno para 2027",
+        "description": "El aclamado webtoon de fantasía y romance La Emperatriz Divorciada anuncia su adaptación al anime para 2027 bajo la animación del estudio TROYCA.",
+        "href": "articulos/emperatriz-divorciada.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/teenage-mercenary-1.png",
         "date": "9 Oct 2026",
         "categoryLabel": "Anime",
