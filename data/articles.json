@@ -28,6 +28,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/monster-no-niku-wo-kutteitara-1.png",
+        "date": "9 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Monster no Niku wo Kutteitara anuncia su anime para 2027",
+        "description": "La exitosa novela de fantasía Monster no Niku wo Kutteitara anuncia su adaptación al anime para el año 2027 bajo la producción del estudio WHITE FOX.",
+        "href": "articulos/monster-no-niku-wo-kutteitara.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/teenage-mercenary-1.png",
         "date": "9 Oct 2026",
         "categoryLabel": "Anime",
