@@ -55,6 +55,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/the-boxer-1.png",
+        "date": "8 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "El aclamado webtoon The Boxer tendrá su propia serie de anime",
+        "description": "El exitoso webtoon The Boxer confirma su adaptación al anime con Koki Uchiyama y Kensho Ono en el elenco principal, bajo la producción de breccia y Studio Jemi.",
+        "href": "articulos/the-boxer.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/zatsuyou-fuyojutsushi-1.png",
         "date": "8 Oct 2026",
         "categoryLabel": "Anime",
