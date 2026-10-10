@@ -28,6 +28,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ghost-of-tsushima-legends-1.png",
+        "date": "9 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "El anime de Ghost of Tsushima Legends confirma su estreno para 2028",
+        "description": "El anime basado en el multijugador Ghost of Tsushima Legends confirma su estreno para 2028 y revela a su equipo de producción liderado por Gen Urobuchi.",
+        "href": "articulos/ghost-of-tsushima-legends.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/monster-no-niku-wo-kutteitara-1.png",
         "date": "9 Oct 2026",
         "categoryLabel": "Anime",
