@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/streetfightet-1.png",
+        "date": "11 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Película de Street Fighter ya prepara su secuela antes del estreno",
+        "description": "El director Kitao Sakurai confirma que ya escribe la secuela de la película de Street Fighter, aunque su realización dependerá del éxito en la taquilla mundial.",
+        "href": "articulos/streetfightet.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/zombie-no-afureta-sekai-1.png",
         "date": "10 Oct 2026",
         "categoryLabel": "Anime",
