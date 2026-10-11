@@ -1,5 +1,14 @@
 [
     {
+        "category": "videojuegos",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/gtavi-1.png",
+        "date": "11 Oct 2026",
+        "categoryLabel": "Videojuegos",
+        "title": "Nintendo opina sobre la posible llegada de GTA 6 a Switch 2",
+        "description": "La presidenta de Nintendo de América, Devon Pritchard, aborda la posibilidad de llevar Grand Theft Auto 6 a Switch 2 y deja la decisión en manos de Rockstar.",
+        "href": "articulos/gtavi(1).html"
+    },
+    {
         "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/noa-senpai-wa-tomodachi-1.png",
         "date": "11 Oct 2026",
