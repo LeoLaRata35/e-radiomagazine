@@ -1,5 +1,14 @@
 [
     {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/nue-no-onmyouji-1.png",
+        "date": "12 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Nue no Onmyouji revela detalles de su esperada adaptación animada",
+        "description": "El popular manga de fantasía Nue no Onmyouji de la revista Shonen Jump confirma su adaptación al anime para el verano de 2027 a cargo del estudio Studio Hibari.",
+        "href": "articulos/nue-no-onmyouji.html"
+    },
+    {
         "category": "videojuegos",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/gtavi-1.png",
         "date": "11 Oct 2026",
