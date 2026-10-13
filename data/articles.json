@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kenichi-suzumura-1.png",
+        "date": "13 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Kenichi Suzumura disolverá su agencia Intention en marzo de 2027",
+        "description": "Kenichi Suzumura disolverá su agencia Intention en marzo de 2027 debido a su trastorno de adaptación. La empresa continuará operando hasta el cierre.",
+        "href": "articulos/kenichi-suzumura.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/nue-no-onmyouji-1.png",
         "date": "12 Oct 2026",
         "categoryLabel": "Anime",
