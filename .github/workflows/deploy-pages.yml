@@ -4,6 +4,13 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # El commit de "Regenerar índice" usa [skip ci] y además es hecho por el
+  # bot de GitHub (sus pushes no disparan el evento push), así que sin este
+  # trigger el JSON actualizado nunca se despliega en Pages.
+  workflow_run:
+    workflows: ["Regenerar índice de artículos"]
+    types:
+      - completed
 
 permissions:
   contents: read
