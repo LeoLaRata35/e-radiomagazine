@@ -19,6 +19,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/yumene-connect-1.png",
+        "date": "14 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Yumene Connect tendrá adaptación al anime con Yusuke Kobayashi y Yu Shinohara",
+        "description": "Yumene Connect tendrá adaptación al anime con Yusuke Kobayashi y Yu Shinohara. La comedia espacial de Kou Sawada llega a la televisión japonesa.",
+        "href": "articulos/yumene-connect.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kenichi-suzumura-1.png",
         "date": "13 Oct 2026",
         "categoryLabel": "Anime",
