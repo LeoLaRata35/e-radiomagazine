@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/grotesqqque1-1.png",
+        "date": "14 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "GROTESQQQUE estrena colaboración de Æliens y el tema TERASE",
+        "description": "GROTESQQQUE revela video colaborativo de Æliens con el tema TERASE. La película de Atsushi Nishigori y CloverWorks se estrena en Japón el 6 de noviembre.",
+        "href": "articulos/grotesqqque1.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kenichi-suzumura-1.png",
         "date": "13 Oct 2026",
         "categoryLabel": "Anime",
