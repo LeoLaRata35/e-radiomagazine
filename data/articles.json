@@ -19,6 +19,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/las-guerreras-mágicas-1.png",
+        "date": "14 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Las Guerreras Mágicas revela el video sin créditos de su nuevo ending",
+        "description": "Las Guerreras Mágicas revela el video sin créditos de su nuevo ending «Hoshihi», interpretado por Kawaguchi Yurina. Ya disponible en Crunchyroll.",
+        "href": "articulos/las-guerreras-mágicas(2).html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/yumene-connect-1.png",
         "date": "14 Oct 2026",
         "categoryLabel": "Anime",
