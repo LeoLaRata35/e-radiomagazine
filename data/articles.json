@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/aniplex-1.png",
+        "date": "15 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Aniplex revelará su nuevo anime el 18 de octubre con Kai Igarashi como director",
+        "description": "Aniplex revelará su nuevo anime el 18 de octubre con Kai Igarashi, director de Cyberpunk: Edgerunners 2, como responsable de la serie.",
+        "href": "articulos/aniplex.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/bless4-1.png",
         "date": "15 Oct 2026",
         "categoryLabel": "Anime",
