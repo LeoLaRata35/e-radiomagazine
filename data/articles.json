@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/bless4-1.png",
+        "date": "15 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Koki Uchiyama se une al elenco del anime Bless como Meiji Nakano",
+        "description": "Koki Uchiyama se une al anime Bless como Meiji Nakano. La serie de Yuki Sonoyama se estrena en enero de 2027 en el bloque Noitamina de Fuji TV.",
+        "href": "articulos/bless4.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/bs12-1.png",
         "date": "14 Oct 2026",
         "categoryLabel": "Anime",
