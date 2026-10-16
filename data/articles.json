@@ -19,6 +19,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/iseleve-1.png",
+        "date": "15 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "La segunda temporada de Iseleve estrena en enero de 2027",
+        "description": "Iseleve temporada 2 estrena en enero de 2027. Ikumi Hasegawa y Sora Amamiya se unen al elenco. Nuevo visual y primer PV revelados.",
+        "href": "articulos/iseleve.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/bs12-1.png",
         "date": "14 Oct 2026",
         "categoryLabel": "Anime",
