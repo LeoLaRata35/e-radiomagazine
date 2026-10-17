@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/blackclover-1.png",
+        "date": "17 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Black Clover temporada 2 revela visual de batalla de Asta contra Lilith y Naamah",
+        "description": "Black Clover temporada 2 revela el visual de batalla de Asta contra Lilith y Naamah. Disponible en Crunchyroll con subtítulos; doblaje latino próximamente.",
+        "href": "articulos/blackclover(4).html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/las-guerreras-mágicas-1.png",
         "date": "17 Oct 2026",
         "categoryLabel": "Anime",
