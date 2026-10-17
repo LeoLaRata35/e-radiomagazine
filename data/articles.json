@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/las-guerreras-mágicas-1.png",
+        "date": "17 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Las Guerreras Mágicas revela el avance de su tercer episodio",
+        "description": "Las Guerreras Mágicas revela el avance de su tercer episodio, «Vínculo del destino». Disponible en Crunchyroll con subtítulos; doblaje latino sin confirmar.",
+        "href": "articulos/las-guerreras-mágicas(3).html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/la-feliz-vida-asesina-de-kanako-1.png",
         "date": "16 Oct 2026",
         "categoryLabel": "Anime",
