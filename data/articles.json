@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/aikatsu-stars-1.png",
+        "date": "17 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Aikatsu Stars! confirma nueva película para el 22 de enero de 2027",
+        "description": "Aikatsu Stars! confirma su nueva película para el 22 de enero de 2027. Yume y sus amigas reciben una invitación al Venus Jamboree en su décimo aniversario.",
+        "href": "articulos/aikatsu-stars.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/la-feliz-vida-asesina-de-kanako-1.png",
         "date": "16 Oct 2026",
         "categoryLabel": "Anime",
