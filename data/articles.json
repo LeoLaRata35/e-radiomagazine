@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/nurumeta-1.png",
+        "date": "18 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Nurumeta tendrá adaptación al anime en 2027 con Kai Igarashi como director",
+        "description": "Nurumeta tendrá adaptación al anime en 2027. Kai Igarashi (Cyberpunk: Edgerunners 2) dirige y Soigne produce la serie.",
+        "href": "articulos/nurumeta.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/aikatsu-stars-1.png",
         "date": "17 Oct 2026",
         "categoryLabel": "Anime",
