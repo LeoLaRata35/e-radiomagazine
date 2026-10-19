@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kaiju-decode-1.png",
+        "date": "19 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Kaiju Decode El anillo de Aidara revela tráiler y elenco para 2027",
+        "description": "Kaiju Decode: El anillo de Aidara revela su tercer visual y tráiler para 2027. La película de Toei y Tsuburaya explora la coexistencia entre humanos y kaijus.",
+        "href": "articulos/kaiju-decode.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/nurumeta-1.png",
         "date": "18 Oct 2026",
         "categoryLabel": "Anime",
