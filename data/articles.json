@@ -28,6 +28,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/yona-of-the-dawn-1.png",
+        "date": "20 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Yona of the Dawn confirma su anime secuela con PIERROT FILMS",
+        "description": "Yona of the Dawn confirma su anime secuela con PIERROT FILMS. El estudio regresa para continuar la historia de Yona y Hak tras el final del manga.",
+        "href": "articulos/yona-of-the-dawn.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kaiju-decode-1.png",
         "date": "19 Oct 2026",
         "categoryLabel": "Anime",
