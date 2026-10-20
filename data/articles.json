@@ -19,6 +19,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/umamusume-1.png",
+        "date": "20 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Umamusume cancela su concierto en Los Ángeles por problemas de visa",
+        "description": "Umamusume cancela su concierto en Los Ángeles por problemas de visa. Cygames confirma el reembolso de entradas y estudia compensaciones.",
+        "href": "articulos/umamusume.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kaiju-decode-1.png",
         "date": "19 Oct 2026",
         "categoryLabel": "Anime",
