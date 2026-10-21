@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/grotesqqqe01-1.png",
+        "date": "21 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Grotesqqque revela el video de ZUKIZUKI, su tema más intenso",
+        "description": "Grotesqqque revela el video de «ZUKIZUKI», el tema de Yoroshiku★Girl. El segmento llegará a Netflix del 23 de octubre al 5 de noviembre.",
+        "href": "articulos/grotesqqqe01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/just-like-mona-lisa-1.png",
         "date": "21 Oct 2026",
         "categoryLabel": "Anime",
