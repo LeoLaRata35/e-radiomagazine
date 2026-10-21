@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/just-like-mona-lisa-1.png",
+        "date": "21 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Just Like Mona Lisa estrena en 2027 con Shaft y un elenco de lujo",
+        "description": "Just Like Mona Lisa estrena en 2027 con Shaft. Chika Anzai y Daisuke Sakuma lideran el elenco de esta historia sobre identidad y amor.",
+        "href": "articulos/just-like-mona-lisa.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/murcielago0-1.png",
         "date": "20 Oct 2026",
         "categoryLabel": "Anime",
