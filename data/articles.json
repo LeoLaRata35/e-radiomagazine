@@ -28,6 +28,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/magicaldoremiprecure-1.png",
+        "date": "21 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Detective Precure y Magical DoReMi se unen en un crossover histórico",
+        "description": "Detective Precure y Magical DoReMi tendrán un crossover histórico el 25 de octubre. Un episodio de Halloween que une a dos leyendas del domingo.",
+        "href": "articulos/magicaldoremiprecure.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/murcielago0-1.png",
         "date": "20 Oct 2026",
         "categoryLabel": "Anime",
