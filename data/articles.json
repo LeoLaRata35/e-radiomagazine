@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ghostintheshell01-1.png",
+        "date": "23 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Ghost in the Shell tendrá un nuevo anime de la mano de Science SARU",
+        "description": "Ghost in the Shell tendrá un nuevo anime producido por Science SARU. El anuncio se reveló en un evento en Tokio. Aún sin fecha ni detalles.",
+        "href": "articulos/ghostintheshell01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/bless01-1.png",
         "date": "22 Oct 2026",
         "categoryLabel": "Anime",
