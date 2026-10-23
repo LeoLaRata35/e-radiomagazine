@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/dreamland01-1.png",
+        "date": "23 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Dreamland suma a Junichi Suwabe y Miyu Irino a su elenco de doblaje",
+        "description": "Dreamland suma a Junichi Suwabe y Miyu Irino a su elenco de doblaje japonés. La serie está disponible en Crunchyroll para Latinoamérica.",
+        "href": "articulos/dreamland01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/dungeonmeshi01-1.png",
         "date": "23 Oct 2026",
         "categoryLabel": "Anime",
