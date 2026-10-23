@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/dungeonmeshi01-1.png",
+        "date": "23 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Tragones y Mazmorras revela los visuales de Falin, Kabru, Mithrun y Sissel",
+        "description": "Tragones y Mazmorras revela los visuales de Falin, Kabru, Mithrun y Sissel para su temporada 2, que llegará a Netflix en octubre de 2027.",
+        "href": "articulos/dungeonmeshi01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ghostintheshell01-1.png",
         "date": "23 Oct 2026",
         "categoryLabel": "Anime",
