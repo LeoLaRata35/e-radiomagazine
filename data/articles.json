@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/bless01-1.png",
+        "date": "22 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Tarusuke Shingaki se une al elenco de Bless como Akira Oya",
+        "description": "Tarusuke Shingaki se une al elenco de Bless como Akira Oya, el modelo y maquillador que inspira a la protagonista. Estreno en enero de 2027.",
+        "href": "articulos/bless01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/eleceed0-1.png",
         "date": "21 Oct 2026",
         "categoryLabel": "Anime",
