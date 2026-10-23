@@ -28,6 +28,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/made-in-abyss01-1.png",
+        "date": "23 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Made in Abyss confirma la segunda película y revela voces de lujo",
+        "description": "Made in Abyss confirma la segunda película y revela el elenco de Hail Hex, con Nana Mizuki como Srajo. La primera parte ya está en cines de Japón.",
+        "href": "articulos/made-in-abyss01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/wound-bandage-1.png",
         "date": "23 Oct 2026",
         "categoryLabel": "Anime",
