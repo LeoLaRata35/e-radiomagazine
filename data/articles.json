@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/psyren01-1.png",
+        "date": "22 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Psyren suma a Reiko Suzuki y Ayumu Murase a su elenco",
+        "description": "Psyren suma a Reiko Suzuki y Ayumu Murase como Elmore y Van Tenjuin. La serie está disponible en Crunchyroll con subtítulos en español latino.",
+        "href": "articulos/psyren01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/eleceed0-1.png",
         "date": "21 Oct 2026",
         "categoryLabel": "Anime",
