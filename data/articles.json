@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kaijunumer8-01-1.png",
+        "date": "24 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Kaiju No. 8 anuncia su película final para 2027 con un visual aterrador",
+        "description": "Kaiju No. 8 anuncia su película final para 2027. El visual teaser promete la batalla definitiva de Kafka contra el Kaiju No. 9.",
+        "href": "articulos/kaijunumer8-01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/lasguerrerasmagicas01-1.png",
         "date": "24 Oct 2026",
         "categoryLabel": "Anime",
