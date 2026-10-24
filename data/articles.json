@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/lasguerrerasmagicas01-1.png",
+        "date": "24 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Las Guerreras Mágicas presentan a Ferio, el misterioso espadachín del episodio 4",
+        "description": "Las Guerreras Mágicas presentan a Ferio en el episodio 4. El misterioso espadachín llega el 28 de octubre a Crunchyroll con subtítulos en español.",
+        "href": "articulos/lasguerrerasmagicas01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/dreamland01-1.png",
         "date": "23 Oct 2026",
         "categoryLabel": "Anime",
