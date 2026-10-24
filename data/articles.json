@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/doremi01-1.png",
+        "date": "24 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Detective Precure y Magical DoReMi revelan las primeras imágenes de su crossover",
+        "description": "Detective Precure y Magical DoReMi revelan las primeras imágenes de su crossover de Halloween. El episodio 39 llega el 25 de octubre a Crunchyroll.",
+        "href": "articulos/doremi01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kaijunumer8-01-1.png",
         "date": "24 Oct 2026",
         "categoryLabel": "Anime",
