@@ -19,6 +19,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/though-i-am-an-inept-villainess-1.png",
+        "date": "24 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Though I Am an Inept Villainess estrena su segunda parte en enero de 2027",
+        "description": "Though I Am an Inept Villainess anuncia su segunda parte para enero de 2027. La primera temporada está en Crunchyroll y Disney+ con doblaje latino.",
+        "href": "articulos/though-i-am-an-inept-villainess.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/dreamland01-1.png",
         "date": "23 Oct 2026",
         "categoryLabel": "Anime",
