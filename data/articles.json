@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/luluttolily01-1.png",
+        "date": "25 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Lulutto Lily y Sabagebu! se unen en un video de batalla contra cangrejos",
+        "description": "Lulutto Lily y Sabagebu! lanzan un video de batalla contra cangrejos. Incluye campaña con Ajipon y episodio gratis en YouTube.",
+        "href": "articulos/luluttolily01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/our-last-crusade-1.png",
         "date": "25 Oct 2026",
         "categoryLabel": "Anime",
