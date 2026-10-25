@@ -19,6 +19,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ousama-no-propose-1.png",
+        "date": "25 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "The King",
+        "description": "The King",
+        "href": "articulos/ousama-no-propose.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/doremi01-1.png",
         "date": "24 Oct 2026",
         "categoryLabel": "Anime",
