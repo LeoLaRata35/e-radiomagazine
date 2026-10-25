@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/akane-banashi-01-1.png",
+        "date": "25 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Akane-banashi temporada 2 revela elenco y fecha de estreno",
+        "description": "Akane-banashi temporada 2 se estrena en enero de 2027. Taku Yashiro y Yōji Ueda se unen al elenco. Temporada 1 en Netflix con doblaje latino.",
+        "href": "articulos/akane-banashi-01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/our-last-crusade-1.png",
         "date": "25 Oct 2026",
         "categoryLabel": "Anime",
