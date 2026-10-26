@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/fairies-album-01-1.png",
+        "date": "26 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Fairies Album presenta a Feifei con la voz de Akiko Yajima",
+        "description": "Fairies Album suma a Akiko Yajima como Feifei, el demonio que invierte deseos. El episodio 4 se emite el 28 de octubre. Temporadas anteriores en Crunchyroll.",
+        "href": "articulos/fairies-album-01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/fujimiya-llega-a-as-a-reincarnated-aristocrat-1.png",
         "date": "26 Oct 2026",
         "categoryLabel": "Anime",
