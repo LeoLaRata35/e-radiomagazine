@@ -28,6 +28,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/the-eternal-fools-words-of-wisdom-1.png",
+        "date": "26 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "The Eternal Fool",
+        "description": "The Eternal Fool",
+        "href": "articulos/the-eternal-fools-words-of-wisdom.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/akane-banashi-01-1.png",
         "date": "25 Oct 2026",
         "categoryLabel": "Anime",
