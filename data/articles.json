@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mecha-samurai-1.png",
+        "date": "27 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Mecha Samurai, el nuevo anime corto de TV Tokyo, llega en noviembre",
+        "description": "Mecha Samurai, el anime corto de TV Tokyo con diseños de Hiroyuki Takei, llega en noviembre a YouTube, X, Instagram y TikTok.",
+        "href": "articulos/mecha-samurai.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/phantom-busters-001-1.png",
         "date": "27 Oct 2026",
         "categoryLabel": "Anime",
