@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/phantom-busters-001-1.png",
+        "date": "27 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Phantom Busters revela el elenco y el equipo de su anime",
+        "description": "Phantom Busters revela el elenco y el equipo de su anime para 2027. Nobuhiko Okamoto y Natsuki Hanae lideran el reparto. Manga disponible en Manga Plus.",
+        "href": "articulos/phantom-busters-001.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/yona-princesa-del-amanecer-001-1.png",
         "date": "27 Oct 2026",
         "categoryLabel": "Anime",
