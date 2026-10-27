@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/irumakun001-1.png",
+        "date": "27 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "El spin-off de Iruma-kun estrena su anime en enero de 2027",
+        "description": "El spin-off de Iruma-kun, IruMafia Edition, estrena su anime el 4 de enero de 2027. El elenco original regresa en esta versión mafiosa.",
+        "href": "articulos/irumakun001.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/phantom-busters-001-1.png",
         "date": "27 Oct 2026",
         "categoryLabel": "Anime",
