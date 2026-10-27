@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/yona-princesa-del-amanecer-001-1.png",
+        "date": "27 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Yona, princesa del amanecer, celebra su final con un póster especial",
+        "description": "Yona, princesa del amanecer celebra el final de su manga con un póster especial en Za Hana to Yume Legend. La secuela del anime está en producción.",
+        "href": "articulos/yona-princesa-del-amanecer-001.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/bleach2026-1.png",
         "date": "26 Oct 2026",
         "categoryLabel": "Anime",
