@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Fans Club Paraguay (AFC) – Eventos | E-Radio Magazine</title>
+  <meta name="description" content="Espacio de los eventos de Anime Fans Club Py (AFC): Expo Anime, torneos de cosplay y actividades en Paraguay. Alojado por E-Radio Magazine.">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png">
+  <link rel="shortcut icon" href="../assets/favicon.ico">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9HCBF8HCM"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-X9HCBF8HCM');</script>
+  <style>
+    /* === Estilos exclusivos de la sección AFC === */
+    .afc-hero {
+      background: linear-gradient(135deg, rgba(124,58,237,0.55), rgba(236,72,153,0.35));
+      border-bottom: 1px solid var(--border);
+      padding: 64px 0 48px;
+    }
+    .afc-hero .afc-badge {
+      display: inline-block;
+      background: rgba(15,15,19,0.6);
+      border: 1px solid var(--header-yellow);
+      color: var(--header-yellow);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+    .afc-hero h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .afc-hero .afc-tagline {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 640px;
+    }
+    .afc-section {
+      padding: 40px 0;
+    }
+    .afc-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .afc-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+    }
+    .afc-card h2 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    .afc-card p + p {
+      margin-top: 10px;
+    }
+    .afc-card p {
+      color: var(--text-secondary);
+    }
+    .afc-event {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .afc-event:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .afc-event-date {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-gradient);
+      border-radius: 12px;
+      color: #fff;
+      padding: 14px 8px;
+      text-align: center;
+    }
+    .afc-event-date .day {
+      font-size: 1.8rem;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+    .afc-event-date .month {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .afc-event h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .afc-event .place {
+      color: var(--accent-secondary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .afc-event p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+    }
+    .afc-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .afc-btn:hover {
+      background: var(--accent-hover);
+    }
+    .afc-btn.ghost {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      margin-left: 8px;
+    }
+    .afc-btn.ghost:hover {
+      border-color: var(--accent);
+      background: var(--bg-secondary);
+    }
+    .afc-links {
+      display: grid;
+      gap: 12px;
+    }
+    .afc-links a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: var(--text-primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .afc-links a:hover {
+      border-color: var(--accent);
+      transform: translateX(3px);
+    }
+    .afc-links .icon {
+      font-size: 1.2rem;
+    }
+    .afc-links .sub {
+      display: block;
+      color: var(--text-secondary);
+      font-weight: 400;
+      font-size: 0.8rem;
+    }
+    .afc-note {
+      margin-top: 20px;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      .afc-grid {
+        grid-template-columns: 1fr;
+      }
+      .afc-hero h1 {
+        font-size: 1.7rem;
+      }
+      .afc-event {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="header-left">
+          <a href="../index.html" class="logo"><img src="../assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio Magazine"></a>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="afc.html" class="active">Eventos AFC</a></li>
+          </ul>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="afc-hero">
+    <div class="container">
+      <span class="afc-badge">Espacio anfitrionado por E-Radio Magazine</span>
+      <h1>Anime Fans Club Paraguay <span style="color:var(--header-yellow)">(AFC)</span></h1>
+      <p class="afc-tagline">Club de fans de anime de Paraguay: Expo Anime, conciertos, competencias de cosplay, dibujo y coreografías, y actividades para toda la familia. Este espacio pertenece a la organización — aquí publican sus eventos y novedades.</p>
+    </div>
+  </section>
+
+  <main class="afc-section">
+    <div class="container">
+      <div class="afc-grid">
+        <div>
+          <div class="section-header">
+            <h2>Próximos eventos</h2>
+          </div>
+
+          <div class="afc-event" style="margin-bottom:20px;">
+            <div class="afc-event-date">
+              <span class="day">05–06</span>
+              <span class="month">Dic 2026</span>
+            </div>
+            <div>
+              <h3>Expo Anime 2026</h3>
+              <span class="place">📍 Centro Cultural UNACE — San Lorenzo, Paraguay</span>
+              <p>La gran convención del club vuelve al UNACE: conciertos en vivo, competencia de cosplay, competencia de dibujo, coreografías y stands para toda la familia. Sábado 5 de diciembre de 10:00 a 20:00 y domingo 6 de diciembre de 10:00 a 20:00.</p>
+              <a class="afc-btn" href="https://wa.me/qr/JZ7UP7KFVK2YP1" target="_blank" rel="noopener">Entradas por WhatsApp</a>
+              <a class="afc-btn ghost" href="https://www.facebook.com/events/centro-cultural-unace/expo-anime-2026/2106474419961557/" target="_blank" rel="noopener">Evento en Facebook</a>
+            </div>
+          </div>
+
+          <p class="afc-note">Los eventos se agregan a medida que la organización los anuncia. Consultá también sus redes para datos de última hora.</p>
+        </div>
+
+        <aside>
+          <div class="afc-card">
+            <h2>Sobre el club</h2>
+            <p>Anime Fans Club Py es una organización de fans del anime con base en San Lorenzo, Paraguay. Desde hace años organiza la <strong style="color:var(--text-primary)">Expo Anime</strong>, una de las convenciones otaku más consolidadas del país, con conciertos, cosplay y actividades culturales.</p>
+            <p>Más de <strong style="color:var(--text-primary)">22.000 seguidores</strong> acompañan sus anuncios en redes sociales.</p>
+          </div>
+
+          <div class="afc-card" style="margin-top:24px;">
+            <h2>Seguí al club</h2>
+            <div class="afc-links">
+              <a href="https://www.facebook.com/animefansclubpy/" target="_blank" rel="noopener">
+                <span class="icon">📘</span>
+                <span>Facebook<span class="sub">@animefansclubpy</span></span>
+              </a>
+              <a href="https://www.instagram.com/afcparaguay/" target="_blank" rel="noopener">
+                <span class="icon">📸</span>
+                <span>Instagram<span class="sub">@afcparaguay</span></span>
+              </a>
+              <a href="https://www.tiktok.com/@afcparaguay" target="_blank" rel="noopener">
+                <span class="icon">🎵</span>
+                <span>TikTok<span class="sub">@afcparaguay</span></span>
+              </a>
+              <a href="https://wa.me/qr/JZ7UP7KFVK2YP1" target="_blank" rel="noopener">
+                <span class="icon">💬</span>
+                <span>WhatsApp<span class="sub">Consultas y entradas</span></span>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo"><img src="../assets/E-Radio%20Magazine%20HORIZONTAL.png" alt="E-Radio Magazine"></a>
+          <p>Tu fuente de noticias sobre anime, manga y videojuegos. Actualidad, reviews y análisis desde 2016.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Secciones</h4>
+          <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="afc.html">Anime Fans Club Py</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Aviso legal</a></li>
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 E-Radio Magazine. Todos los derechos reservados.</p>
+        <p style="margin-top:8px;font-size:0.75rem;">Contenido de la sección AFC © Anime Fans Club Paraguay.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/main.js?v=20261005"></script>
+</body>
+</html>
