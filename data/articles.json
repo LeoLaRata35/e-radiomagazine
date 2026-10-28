@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/toritsukare-otoko-1.png",
+        "date": "28 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Toritsukare Otoko vuelve a cines por un día con charla del director",
+        "description": "Toritsukare Otoko tendrá un reestreno por un día en Tokio con charla del director. La película musical animada no tiene estreno confirmado en Latinoamérica.",
+        "href": "articulos/toritsukare-otoko.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/irumakun001-1.png",
         "date": "27 Oct 2026",
         "categoryLabel": "Anime",
