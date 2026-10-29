@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/twisted-wonderland-01-1.png",
+        "date": "29 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Savanaclaw toma el control en la temporada 2 de Twisted Wonderland",
+        "description": "La temporada 2 de Twisted Wonderland, Episode of Savanaclaw, llega a Disney+ el 23 de diciembre de 2026 con 8 episodios.",
+        "href": "articulos/twisted-wonderland-01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/saikyou-mahoushi-no-inton-keikaku-01-1.png",
         "date": "28 Oct 2026",
         "categoryLabel": "Anime",
