@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/firefly-wedding-1.png",
+        "date": "29 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Firefly Wedding suma a Nanako Abe como Aoi, la voz que guía a Satoko",
+        "description": "Firefly Wedding suma a Nanako Abe como Aoi. El anime está disponible en Crunchyroll para Latinoamérica con subtítulos y doblaje latino.",
+        "href": "articulos/firefly-wedding.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/saikyou-mahoushi-no-inton-keikaku-01-1.png",
         "date": "28 Oct 2026",
         "categoryLabel": "Anime",
