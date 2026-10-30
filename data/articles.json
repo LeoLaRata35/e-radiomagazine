@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hiragisan-1.png",
+        "date": "30 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "La casa de vampiros de Hiiragi anuncia su anime con un visual de Yukiho",
+        "description": "Hiragi-san",
+        "href": "articulos/hiragisan.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/horrorcollector001-1.png",
         "date": "30 Oct 2026",
         "categoryLabel": "Anime",
