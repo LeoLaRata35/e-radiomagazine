@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/horrorcollector001-1.png",
+        "date": "30 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Horror Collector suma a Daiki Yamashita y Akari Kito como invitados",
+        "description": "Horror Collector suma a Daiki Yamashita, Yuka Iguchi y Akari Kito como invitados en los episodios 4, 5 y 6. Disponible en Crunchyroll.",
+        "href": "articulos/horrorcollector001.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kaketa-tsuki-no-mercedes-01-1.png",
         "date": "30 Oct 2026",
         "categoryLabel": "Anime",
