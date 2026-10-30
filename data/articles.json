@@ -1,5 +1,14 @@
 [
     {
+        "category": "videojuegos",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/pubg-1.png",
+        "date": "30 Oct 2026",
+        "categoryLabel": "Videojuegos",
+        "title": "PUBG tendrá un live-action en Netflix con Donald Glover",
+        "description": "Netflix prepara un live-action de PUBG con Donald Glover como protagonista, director y guionista. Estará disponible en Latinoamérica.",
+        "href": "articulos/pubg.html"
+    },
+    {
         "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/firefly-wedding-1.png",
         "date": "29 Oct 2026",
