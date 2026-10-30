@@ -1,5 +1,14 @@
 [
     {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kaketa-tsuki-no-mercedes-01-1.png",
+        "date": "30 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Mercedes and the Waning Moon suma cuatro voces a su elenco",
+        "description": "Mercedes and the Waning Moon suma a Kenta Miyake y Junichi Suwabe. El anime se estrena en enero de 2027, pero aún no tiene streaming confirmado para Latinoam...",
+        "href": "articulos/kaketa-tsuki-no-mercedes-01.html"
+    },
+    {
         "category": "videojuegos",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/pubg-1.png",
         "date": "30 Oct 2026",
