@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/inherit-the-winds-01-1.png",
+        "date": "31 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Inherit the Winds suma a cuatro voces a su elenco para 2027",
+        "description": "Inherit the Winds suma a Daisuke Hirakawa y Kappei Yamaguchi a su elenco. El anime original sobre el Shinsengumi se estrena en enero de 2027.",
+        "href": "articulos/inherit-the-winds-01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ishiki-san01-1.png",
         "date": "31 Oct 2026",
         "categoryLabel": "Anime",
