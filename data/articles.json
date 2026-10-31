@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/expelled-from-paradise-resonance-of-the-heart-001-1.png",
+        "date": "31 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Expelled from Paradise: Resonance of the Heart tendrá funciones en 4DX y Dolby Cinema",
+        "description": "Expelled from Paradise: Resonance of the Heart tendrá funciones en 4DX y Dolby Cinema en Japón el 13 de noviembre. Sin estreno confirmado en Latinoamérica.",
+        "href": "articulos/expelled-from-paradise-resonance-of-the-heart-001.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/inherit-the-winds-01-1.png",
         "date": "31 Oct 2026",
         "categoryLabel": "Anime",
