@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ishiki-san01-1.png",
+        "date": "31 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Isshiki-san quiere saber qué es el amor revela su tráiler y elenco",
+        "description": "Isshiki-san quiere saber qué es el amor revela su tráiler y elenco. Enako cantará el opening y dará voz a Nene Haga. Estreno en enero de 2027.",
+        "href": "articulos/ishiki-san01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hiragisan-1.png",
         "date": "30 Oct 2026",
         "categoryLabel": "Anime",
