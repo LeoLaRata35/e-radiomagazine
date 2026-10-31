@@ -19,6 +19,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/romelia-war-chronicle-01-1.png",
+        "date": "31 Oct 2026",
+        "categoryLabel": "Anime",
+        "title": "Romelia War Chronicle anuncia su segunda parte para abril de 2027",
+        "description": "Romelia War Chronicle anuncia su segunda parte para abril de 2027. Hiro Shimono interpretará el ending. Disponible en Crunchyroll.",
+        "href": "articulos/romelia-war-chronicle-01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/hiragisan-1.png",
         "date": "30 Oct 2026",
         "categoryLabel": "Anime",
