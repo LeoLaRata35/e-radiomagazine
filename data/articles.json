@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/shiba-inu-rooms-01-1.png",
+        "date": "1 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "Shiba Inu Rooms anuncia su anime para el verano de 2027",
+        "description": "Shiba Inu Rooms anuncia su anime para el verano de 2027. La comedia sobrenatural de Esu Omori llega de la mano de TMS Entertainment.",
+        "href": "articulos/shiba-inu-rooms-01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/expelled-from-paradise-resonance-of-the-heart-001-1.png",
         "date": "31 Oct 2026",
         "categoryLabel": "Anime",
