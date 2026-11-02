@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/japan-anime-award-1.png",
+        "date": "2 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "Japón tendrá su propio premio de anime en noviembre de 2027",
+        "description": "Japón crea el Japan Anime Award, que se celebrará el 21 de noviembre de 2027 en el SGC Hall Ariake de Tokio.",
+        "href": "articulos/japan-anime-award.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/sakura-card-captors-1793627685065-1.png",
         "date": "2 Nov 2026",
         "categoryLabel": "Anime",
