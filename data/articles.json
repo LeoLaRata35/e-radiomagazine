@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/fool-night-01-1.png",
+        "date": "2 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "Fool Night inicia cuenta regresiva para revelar nueva información",
+        "description": "Fool Night inicia cuenta regresiva en X para revelar nueva información el 5 de noviembre. La serie llega a Netflix el 26 de noviembre con 12 episodios.",
+        "href": "articulos/fool-night-01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/japan-anime-award-1.png",
         "date": "2 Nov 2026",
         "categoryLabel": "Anime",
