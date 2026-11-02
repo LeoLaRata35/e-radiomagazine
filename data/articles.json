@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/sakura-card-captors-1793627685065-1.png",
+        "date": "2 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "Sakura Card Captors lanza una lotería con figuras y accesorios de Clear Card",
+        "description": "Sakura Card Captors lanza una lotería en Japón con figuras, joyeros y accesorios de Clear Card. Cada boleto cuesta 750 yenes.",
+        "href": "articulos/sakura-card-captors.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/charisma01-1.png",
         "date": "1 Nov 2026",
         "categoryLabel": "Anime",
