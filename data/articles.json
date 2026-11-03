@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/dark-gathering-02-1.png",
+        "date": "3 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "Dark Gathering revela el visual de terror del túnel T para su segunda temporada",
+        "description": "Dark Gathering revela el visual de terror del túnel T para su segunda temporada. Estreno en 2027. Temporada 1 disponible en Amazon Prime Video.",
+        "href": "articulos/dark-gathering-02.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/girls-band-cry-001-1.png",
         "date": "3 Nov 2026",
         "categoryLabel": "Anime",
