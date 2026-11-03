@@ -9,6 +9,15 @@
         "href": "articulos/dark-gathering-02.html"
     },
     {
+        "category": "videojuegos",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/fuga-melodies-of-steel-1.png",
+        "date": "3 Nov 2026",
+        "categoryLabel": "Videojuegos",
+        "title": "El diario de Fuga conecta su historia con el legado de Solatorobo",
+        "description": "El diario de Fuga: Melodies of Steel revela la conexión entre Gasco y el mundo de Solatorobo. Los juegos están disponibles en varias plataformas.",
+        "href": "articulos/fuga-melodies-of-steel.html"
+    },
+    {
         "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/girls-band-cry-001-1.png",
         "date": "3 Nov 2026",
