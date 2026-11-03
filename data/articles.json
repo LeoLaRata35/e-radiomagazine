@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/girls-band-cry-001-1.png",
+        "date": "3 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "Girls Band Cry anuncia su película para mayo de 2027",
+        "description": "Girls Band Cry: La Película se estrena el 21 de mayo de 2027. Togenashi Togeari anuncia una gira nacional de 50 paradas y un concierto en K Arena Yokohama.",
+        "href": "articulos/girls-band-cry-001.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/fool-night-01-1.png",
         "date": "2 Nov 2026",
         "categoryLabel": "Anime",
