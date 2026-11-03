@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/the-iceblade-sorcerer-02-1.png",
+        "date": "3 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "\"El Hechicero de la Espada de Hielo\" presenta a la realeza élfica en su temporada 2",
+        "description": "El Hechicero de la Espada de Hielo presenta a la realeza élfica en el episodio 5 de su temporada 2. Disponible en Crunchyroll con subtítulos.",
+        "href": "articulos/the-iceblade-sorcerer-02.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/fool-night-01-1.png",
         "date": "2 Nov 2026",
         "categoryLabel": "Anime",
