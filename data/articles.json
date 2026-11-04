@@ -1,5 +1,14 @@
 [
     {
+        "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/death-note-1.png",
+        "date": "4 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "Death Note conmemora la muerte de L con un maratón en streaming",
+        "description": "Death Note conmemora la muerte de L con un maratón en ABEMA. En Latinoamérica, la serie está en Pluto TV, Netflix y HBO Max con doblaje latino.",
+        "href": "articulos/death-note.html"
+    },
+    {
         "category": "videojuegos",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/dragons-dogma-2-dark-arisen-01-1.png",
         "date": "4 Nov 2026",
