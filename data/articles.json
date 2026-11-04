@@ -1,5 +1,14 @@
 [
     {
+        "category": "videojuegos",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/dragons-dogma-2-dark-arisen-01-1.png",
+        "date": "4 Nov 2026",
+        "categoryLabel": "Videojuegos",
+        "title": "Tragones y Mazmorras llega a Dragon",
+        "description": "Tragones y Mazmorras llega a Dragon",
+        "href": "articulos/dragons-dogma-2-dark-arisen-01.html"
+    },
+    {
         "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/game-sekai-tensei-dan-katsu-1.png",
         "date": "4 Nov 2026",
