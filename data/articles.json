@@ -37,6 +37,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/oshi-ni-amagami-1793757633070-1.png",
+        "date": "3 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "Un tierno mordisco a mi ídolo tendrá adaptación al anime",
+        "description": "Un tierno mordisco a mi ídolo tendrá adaptación al anime. La comedia romántica de vampiros de Julietta Suzuki llega a la televisión.",
+        "href": "articulos/oshi-ni-amagami.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/the-iceblade-sorcerer-02-1.png",
         "date": "3 Nov 2026",
         "categoryLabel": "Anime",
