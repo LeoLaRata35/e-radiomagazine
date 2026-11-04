@@ -28,6 +28,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mashle01-1793755872442-1.png",
+        "date": "3 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "MASHLE anuncia su live-action para marzo de 2027",
+        "description": "MASHLE tendrá un live-action el 19 de marzo de 2027. El anime está disponible en Crunchyroll y Netflix con doblaje latino.",
+        "href": "articulos/mashle01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/the-iceblade-sorcerer-02-1.png",
         "date": "3 Nov 2026",
         "categoryLabel": "Anime",
