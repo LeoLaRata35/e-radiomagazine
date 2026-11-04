@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/game-sekai-tensei-dan-katsu-1.png",
+        "date": "4 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "\"Reencarnación en el mundo del juego\" revela a sus cuatro heroínas",
+        "description": "Reencarnación en el mundo del juego revela a sus cuatro heroínas y se estrena en enero de 2027. Fantasía, aventura e isekai.",
+        "href": "articulos/game-sekai-tensei-dan-katsu.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/dark-gathering-02-1.png",
         "date": "3 Nov 2026",
         "categoryLabel": "Anime",
