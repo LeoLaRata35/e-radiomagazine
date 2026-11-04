@@ -28,6 +28,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tensei-shitara-ken-deshita-ii-01-1.png",
+        "date": "4 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "Reencarnado como una espada II presenta el arco de Seedrun",
+        "description": "Reencarnado como una espada II entra en el arco de Seedrun con nuevo tráiler, visual y cinco voces adicionales.",
+        "href": "articulos/tensei-shitara-ken-deshita-ii-01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/dark-gathering-02-1.png",
         "date": "3 Nov 2026",
         "categoryLabel": "Anime",
