@@ -19,6 +19,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/el-detective-culete-1.png",
+        "date": "4 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "El detective Culete regresa con nuevos episodios en abril de 2027",
+        "description": "El detective Culete regresa con nuevos episodios en abril de 2027. La serie infantil de NHK E-TV revela un visual teaser con sus villanos clásicos.",
+        "href": "articulos/el-detective-culete.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/game-sekai-tensei-dan-katsu-1.png",
         "date": "4 Nov 2026",
         "categoryLabel": "Anime",
