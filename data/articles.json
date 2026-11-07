@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/rascal-does-not-dream-of-a-dear-friend-1.png",
+        "date": "7 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "Rascal Does Not Dream of a Dear Friend revela un avance de su metraje final",
+        "description": "Rascal Does Not Dream of a Dear Friend revela un avance de su metraje. El final de la franquicia llega a Japón el 16 de octubre.",
+        "href": "articulos/rascal-does-not-dream-of-a-dear-friend.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/death-note-1.png",
         "date": "4 Nov 2026",
         "categoryLabel": "Anime",
