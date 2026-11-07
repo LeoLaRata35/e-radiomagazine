@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/yuusha-party-ni-kawaii-ko-ga-ita-node-kokuhaku-shitemita-01-1.png",
+        "date": "7 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "Había una chica linda en el grupo del héroe tendrá segunda temporada",
+        "description": "Había una chica linda en el grupo del héroe tendrá segunda temporada. La primera está disponible en Crunchyroll para Latinoamérica.",
+        "href": "articulos/yuusha-party-ni-kawaii-ko-ga-ita-node-kokuhaku-shitemita-01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/death-note-1.png",
         "date": "4 Nov 2026",
         "categoryLabel": "Anime",
