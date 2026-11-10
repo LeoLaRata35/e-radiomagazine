@@ -74,6 +74,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("rutas", nargs="*", default=["assets"])
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--min-size", type=int, default=MIN_SIZE // 1024, metavar="KB",
+                    help=f"ignorar archivos menores de KB (por defecto {MIN_SIZE // 1024})")
     args = ap.parse_args()
 
     archivos = []
@@ -92,7 +94,7 @@ def main():
             antes = os.path.getsize(ruta)
         except OSError:
             continue
-        if antes < MIN_SIZE:
+        if antes < args.min_size * 1024:
             continue
         try:
             with Image.open(ruta) as im:

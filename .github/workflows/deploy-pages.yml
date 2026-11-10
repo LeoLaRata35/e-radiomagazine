@@ -34,13 +34,13 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # Pages rechaza artefactos de más de 1 GB (y el deploy expira a los 10
-      # minutos), así que las imágenes grandes se reducen antes de publicar.
-      # El script es idempotente: en un push normal no toca nada.
+      # Pages rechaza artefactos de más de 1 GB, así que las imágenes grandes se
+      # reducen antes de publicar. El script es idempotente y solo mira archivos
+      # de más de 800 KB, para no recorrer las 1.400 imágenes en cada deploy.
       - name: Comprimir imágenes nuevas
         run: |
           python3 -m pip install --quiet --disable-pip-version-check pillow
-          python3 scripts/comprimir-imagenes.py
+          python3 scripts/comprimir-imagenes.py --min-size 800
 
       - name: Comprobar peso del sitio
         run: |
@@ -60,6 +60,10 @@ jobs:
         with:
           path: .
 
+      # El default son 10 minutos y con ~500 MB la sincronización de Pages a
+      # veces se pasa de ahí: el run se marca como fallido sin publicar nada.
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          timeout: 900000
