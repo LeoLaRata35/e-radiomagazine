@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ghost-yoru-no-hate-1.png",
+        "date": "10 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "Ghost: Al final de la noche revela su tráiler y elenco para 2027",
+        "description": "Ghost: Al final de la noche revela su tráiler y elenco. La película de Shingo Natsume se estrena en Japón el 11 de febrero de 2027.",
+        "href": "articulos/ghost-yoru-no-hate.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/rascal-does-not-dream-of-a-dear-friend-1.png",
         "date": "7 Nov 2026",
         "categoryLabel": "Anime",
