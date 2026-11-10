@@ -34,6 +34,27 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      # Pages rechaza artefactos de más de 1 GB (y el deploy expira a los 10
+      # minutos), así que las imágenes grandes se reducen antes de publicar.
+      # El script es idempotente: en un push normal no toca nada.
+      - name: Comprimir imágenes nuevas
+        run: |
+          python3 -m pip install --quiet --disable-pip-version-check pillow
+          python3 scripts/comprimir-imagenes.py
+
+      - name: Comprobar peso del sitio
+        run: |
+          total=$(du -sb --exclude=.git . | cut -f1)
+          mb=$(( total / 1048576 ))
+          echo "El sitio pesa ${mb} MB (límite de GitHub Pages: 1024 MB)"
+          if [ "$mb" -ge 950 ]; then
+            echo "::error::El sitio pesa ${mb} MB y está al límite de 1 GB de Pages. Comprime o elimina imágenes antes de publicar."
+            exit 1
+          fi
+          if [ "$mb" -ge 900 ]; then
+            echo "::warning::El sitio pesa ${mb} MB: quedan menos de 125 MB hasta el límite de 1 GB."
+          fi
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
