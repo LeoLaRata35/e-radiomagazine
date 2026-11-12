@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mashle001-1.png",
+        "date": "12 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "MASHLE temporada 3 anuncia su estreno y suma dos voces al elenco",
+        "description": "MASHLE temporada 3 se estrena el 9 de enero de 2027. Soma Saito y Ryota Suzuki se unen al elenco. Disponible en Crunchyroll.",
+        "href": "articulos/mashle001.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/shi-shite-ikiru-sss-kyuu-hunter-1.png",
         "date": "11 Nov 2026",
         "categoryLabel": "Anime",
