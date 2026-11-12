@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/shi-shite-ikiru-sss-kyuu-hunter-1.png",
+        "date": "11 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "El Cazador SSS que vive tras morir revela un nuevo tráiler",
+        "description": "El Cazador SSS que vive tras morir revela un nuevo tráiler con el tema «Fading». Se estrena en enero de 2027 y estará en Crunchyroll.",
+        "href": "articulos/shi-shite-ikiru-sss-kyuu-hunter.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/ghost-yoru-no-hate-1.png",
         "date": "10 Nov 2026",
         "categoryLabel": "Anime",
