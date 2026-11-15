@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/a-certain-dark-sides-item-001-1.png",
+        "date": "15 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "A Certain Dark Side",
+        "description": "A Certain Dark Side",
+        "href": "articulos/a-certain-dark-sides-item-001.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/mashle001-1.png",
         "date": "12 Nov 2026",
         "categoryLabel": "Anime",
