@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kanan-sama-wa-akumade-choroi-2-easy-01-1.png",
+        "date": "17 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "Kanan-sama wa Akumade Choroi anuncia su segunda temporada para 2027",
+        "description": "Kanan-sama wa Akumade Choroi tendrá una segunda temporada titulada «2 EASY» en 2027. Misato Matsuoka, Miku Ito, Miyu Tomita y Lynn se unen al elenco.",
+        "href": "articulos/kanan-sama-wa-akumade-choroi-2-easy-01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kekkaishi-no-ichirinka-1.png",
         "date": "17 Nov 2026",
         "categoryLabel": "Anime",
