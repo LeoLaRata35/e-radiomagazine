@@ -1091,3 +1091,117 @@ body::after {
     gap: 32px;
   }
 }
+
+/* Compartir artículo */
+.share-bar {
+  max-width: 940px;
+  margin: 28px auto 0;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.share-bar__label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.share-bar__icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.share-btn {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  padding: 0;
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+}
+
+.share-btn svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  fill: currentColor;
+}
+
+.share-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.share-btn:focus-visible {
+  outline: 2px solid var(--header-yellow);
+  outline-offset: 2px;
+}
+
+.share-btn--facebook {
+  background: #1877f2;
+  box-shadow: 0 6px 18px rgba(24, 119, 242, 0.3);
+}
+
+.share-btn--x {
+  background: #000;
+  border: 1px solid #3a3a4a;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+.share-btn--whatsapp {
+  background: #25d366;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3);
+}
+
+.share-btn--telegram {
+  background: #229ed9;
+  box-shadow: 0 6px 18px rgba(34, 158, 217, 0.3);
+}
+
+.share-btn--copy {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.share-btn--copy svg {
+  fill: none;
+  stroke: currentColor;
+}
+
+.share-btn--copy.is-copied {
+  background: #1f6f4a;
+  border-color: #2fae74;
+  color: #fff;
+}
+
+.share-bar__msg {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--header-yellow);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.share-bar__msg.show {
+  opacity: 1;
+}
+
+@media (max-width: 520px) {
+  .share-bar {
+    justify-content: center;
+    text-align: center;
+  }
+}

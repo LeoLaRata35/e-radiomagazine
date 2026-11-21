@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // En páginas dentro de subcarpetas el header indica la raíz del sitio.
+  const searchPanelEl = document.getElementById('searchPanel');
+  const siteRoot = searchPanelEl && searchPanelEl.dataset.root ? searchPanelEl.dataset.root : '';
+
   const menuToggle = document.getElementById('menuToggle');
   const nav = document.querySelector('.nav');
 
@@ -49,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   async function loadAllArticles() {
     if (allArticlesCache) return allArticlesCache;
     try {
-      var resp = await fetch('data/articles.json?v=' + Date.now(), { cache: 'no-store' });
+      var resp = await fetch(siteRoot + 'data/articles.json?v=' + Date.now(), { cache: 'no-store' });
       if (!resp.ok) throw new Error('Failed to load articles.json');
       allArticlesCache = await resp.json();
       return allArticlesCache;
@@ -191,6 +195,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (targetBtn) targetBtn.click();
   }
 
+  // Llegada desde el menú de un artículo: index.html#anime, #manga, etc.
+  var hashFilter = (location.hash || '').replace('#', '');
+  if (hashFilter && filterTabs) {
+    var hashBtn = Array.from(filterTabs.querySelectorAll('.filter-btn')).find(function(b) {
+      return b.dataset.filter === hashFilter;
+    });
+    if (hashBtn) hashBtn.click();
+  }
+
   const navLinks = document.querySelectorAll('.nav a[data-filter]');
   navLinks.forEach(function(link) {
     link.addEventListener('click', function(e) {
@@ -245,29 +258,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (searchInput && searchResults) {
     var searchTimeout = null;
+    var runSearch = function() {
+      var q = searchInput.value.trim().toLowerCase();
+      if (!q) { searchResults.innerHTML = ''; searchResults.classList.remove('has-results'); return; }
+      if (!allArticlesCache) return;
+      var matches = allArticlesCache.filter(function(a) {
+        var text = (a.title || '') + ' ' + (a.description || '') + ' ' + (a.categoryLabel || '');
+        return text.toLowerCase().indexOf(q) !== -1;
+      });
+      if (matches.length === 0) {
+        searchResults.innerHTML = '<div class="search-result-item no-results">Sin resultados</div>';
+      } else {
+        searchResults.innerHTML = matches.slice(0, 20).map(function(a) {
+          return '<a href="' + siteRoot + escapeHTML(a.href) + '" class="search-result-item">' +
+            '<img src="' + escapeHTML(a.img) + '" alt="">' +
+            '<div class="search-result-info">' +
+              '<span>' + escapeHTML(a.categoryLabel) + '</span>' +
+              '<h4>' + escapeHTML(a.title) + '</h4>' +
+            '</div></a>';
+        }).join('');
+      }
+      searchResults.classList.add('has-results');
+    };
+
     searchInput.addEventListener('input', function() {
       clearTimeout(searchTimeout);
       searchTimeout = setTimeout(function() {
-        var q = searchInput.value.trim().toLowerCase();
-        if (!q) { searchResults.innerHTML = ''; searchResults.classList.remove('has-results'); return; }
-        if (!allArticlesCache) return;
-        var matches = allArticlesCache.filter(function(a) {
-          var text = (a.title || '') + ' ' + (a.description || '') + ' ' + (a.categoryLabel || '');
-          return text.toLowerCase().indexOf(q) !== -1;
+        if (allArticlesCache) { runSearch(); return; }
+        loadAllArticles().then(function(articles) {
+          allArticlesCache = articles;
+          runSearch();
         });
-        if (matches.length === 0) {
-          searchResults.innerHTML = '<div class="search-result-item no-results">Sin resultados</div>';
-        } else {
-          searchResults.innerHTML = matches.slice(0, 20).map(function(a) {
-            return '<a href="' + escapeHTML(a.href) + '" class="search-result-item">' +
-              '<img src="' + escapeHTML(a.img) + '" alt="">' +
-              '<div class="search-result-info">' +
-                '<span>' + escapeHTML(a.categoryLabel) + '</span>' +
-                '<h4>' + escapeHTML(a.title) + '</h4>' +
-              '</div></a>';
-          }).join('');
-        }
-        searchResults.classList.add('has-results');
       }, 200);
     });
   }
