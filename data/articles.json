@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/yugiohelod1-1.png",
+        "date": "21 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "Yu-Gi-Oh! vuelve al cine y sus voces prometen seguir jugando 20 años más",
+        "description": "Shunsuke Kazama y Kenjiro Tsuda vuelven a ser Yugi y Kaiba en el reestreno de Yu-Gi-Oh! y prometen seguir contando su historia 20 años más.",
+        "href": "articulos/yugiohelod1.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kanan-sama-wa-akumade-choroi-2-easy-01-1.png",
         "date": "17 Nov 2026",
         "categoryLabel": "Anime",
