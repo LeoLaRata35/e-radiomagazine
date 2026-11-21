@@ -1205,3 +1205,106 @@ body::after {
     text-align: center;
   }
 }
+
+/* ===== Cuerpo de artículo en el tema oscuro =====
+   Los artículos traen estilos claros escritos inline; esta capa los adapta
+   al tema sin tocar el contenido de cada HTML. */
+.article-shell {
+  max-width: 900px;
+  margin: 40px auto !important;
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Fuera tarjetas blancas y degradados amarillo/rojo del diseño anterior. */
+.article-shell div,
+.article-shell article,
+.article-shell section,
+.article-shell figure {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+.article-shell p,
+.article-shell li,
+.article-shell span,
+.article-shell strong,
+.article-shell em,
+.article-shell b,
+.article-shell div,
+.article-shell td,
+.article-shell th,
+.article-shell figcaption {
+  color: var(--text-primary) !important;
+}
+
+.article-shell h1,
+.article-shell h2,
+.article-shell h3,
+.article-shell h4 {
+  color: #e0b830 !important;
+  border-bottom-color: rgba(224, 184, 48, 0.35) !important;
+}
+
+.article-shell h1 {
+  color: #ffffff !important;
+  font-size: 28px !important;
+}
+
+.article-shell a {
+  color: #e0b830 !important;
+}
+
+.article-shell a:hover {
+  color: #ffffff !important;
+}
+
+/* Etiqueta de categoría sobre el título. */
+.article-shell span[style*="border-radius: 30px"] {
+  background: rgba(224, 184, 48, 0.12) !important;
+  border: 1px solid rgba(224, 184, 48, 0.45) !important;
+  color: #e0b830 !important;
+}
+
+/* Ficha técnica. */
+.article-shell div[style*="border-radius: 20px"] {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: var(--border) !important;
+}
+
+/* Separadores punteados de la ficha. */
+.article-shell [style*="border-bottom: 1px dashed"] {
+  border-bottom-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+/* Tablas comparativas. */
+.article-shell table,
+.article-shell thead,
+.article-shell tbody,
+.article-shell tr,
+.article-shell td,
+.article-shell th {
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+@media (max-width: 640px) {
+  .article-shell {
+    margin: 24px auto !important;
+    padding: 0 12px !important;
+    border-radius: 12px !important;
+  }
+  .article-shell > div {
+    padding: 20px 16px !important;
+  }
+  .article-shell h1 {
+    font-size: 22px !important;
+  }
+  /* El texto justificado deja huecos enormes en pantallas angostas. */
+  .article-shell p {
+    text-align: left !important;
+  }
+}
