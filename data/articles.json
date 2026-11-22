@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tensei-kizoku-001-1.png",
+        "date": "22 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "El noble reencarnado entra en su arco más oscuro con un nuevo tráiler",
+        "description": "Tensei Kizoku entra en su arco más peligroso. Asesinos acechan a Ars y tres nuevas voces se suman al elenco. El Shikaku-hen ya está en emisión.",
+        "href": "articulos/tensei-kizoku-001.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/yugiohelod1-1.png",
         "date": "21 Nov 2026",
         "categoryLabel": "Anime",
