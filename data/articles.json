@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/shang-shan-01-1.png",
+        "date": "22 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "Shouzen llega con un nuevo tráiler y promete redefinir la fantasía taoísta",
+        "description": "Shouzen revela su segundo tráiler y confirma estreno para abril de 2027. La fantasía taoísta del manhua Shang Shan llega con un elenco de lujo.",
+        "href": "articulos/shang-shan-01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/yugiohelod1-1.png",
         "date": "21 Nov 2026",
         "categoryLabel": "Anime",
