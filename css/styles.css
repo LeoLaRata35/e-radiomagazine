@@ -1308,3 +1308,34 @@ body::after {
     text-align: left !important;
   }
 }
+
+/* ===== Portada alineada con el tema oscuro de los articulos ===== */
+/* Fondo plano en todo el sitio: fuera la foto difuminada. */
+body::before,
+body::after {
+  display: none;
+}
+
+/* Titulos y enlaces en dorado, como el cuerpo de los articulos. */
+.section-header h2,
+.hero-slide h1,
+.hero-item h3,
+.article-content h3 {
+  color: #e0b830;
+}
+
+.btn-read,
+.read-more {
+  color: #e0b830;
+}
+
+.btn-read:hover,
+.read-more:hover {
+  color: #f0c840;
+}
+
+/* El banner actual respira dentro del mismo ancho que el contenido. */
+.banner-carousel {
+  padding: 20px 20px 0;
+}
+
