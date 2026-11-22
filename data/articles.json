@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tantei-wa-mou-shindeiru-03-1.png",
+        "date": "22 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "La detective está muerta afronta su arco más peligroso con Mia en el centro",
+        "description": "La detective está muerta entra en su arco más tenso. Mia Whitlock, Kimizuka y Natsunagi se enfrentan a SPES desde el 25 de noviembre de 2026.",
+        "href": "articulos/tantei-wa-mou-shindeiru-03.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/tensei-kizoku-001-1.png",
         "date": "22 Nov 2026",
         "categoryLabel": "Anime",
