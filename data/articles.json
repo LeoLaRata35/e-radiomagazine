@@ -1,6 +1,15 @@
 [
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kekkaishi-no-ichirinka-01-1.png",
+        "date": "22 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "La novia del amo de las barreras desata su poder en un nuevo tráiler",
+        "description": "La novia del amo de las barreras revela nuevo tráiler, elenco y opening de Naniwa Danshi. La fantasía romántica llega a Netflix el 6 de enero de 2027.",
+        "href": "articulos/kekkaishi-no-ichirinka-01.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/shang-shan-01-1.png",
         "date": "22 Nov 2026",
         "categoryLabel": "Anime",
