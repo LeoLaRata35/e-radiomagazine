@@ -1,5 +1,14 @@
 [
     {
+        "category": "manga",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/horo-beat-1.png",
+        "date": "27 Nov 2026",
+        "categoryLabel": "Manga",
+        "title": "El manga que une a un gato con un chico para salvar a los monstruos olvidados",
+        "description": "Horo Beat llega con un gato que se transforma en bestia y un chico que ve monstruos olvidados. Acción, yokai y un equipo creativo de lujo.",
+        "href": "articulos/horo-beat.html"
+    },
+    {
         "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kekkaishi-no-ichirinka-01-1.png",
         "date": "22 Nov 2026",
