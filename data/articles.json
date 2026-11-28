@@ -10,6 +10,15 @@
     },
     {
         "category": "anime",
+        "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/neko-to-ryuu-02-1.png",
+        "date": "27 Nov 2026",
+        "categoryLabel": "Anime",
+        "title": "\"El gato y el dragón\" vuelve en enero con nuevas voces y un tráiler que derrite el corazón",
+        "description": "El gato y el dragón temporada 2 llega en enero de 2027 con nuevas voces, tráiler y opening de Harutya. Crunchyroll la transmitirá en simulcast.",
+        "href": "articulos/neko-to-ryuu-02.html"
+    },
+    {
+        "category": "anime",
         "img": "https://raw.githubusercontent.com/LeoLaRata35/e-radiomagazine/main/assets/kekkaishi-no-ichirinka-01-1.png",
         "date": "22 Nov 2026",
         "categoryLabel": "Anime",
